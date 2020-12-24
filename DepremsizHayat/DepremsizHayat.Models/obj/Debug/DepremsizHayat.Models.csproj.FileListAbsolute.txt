@@ -1,0 +1,6 @@
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Models\obj\Debug\DepremsizHayat.Models.csproj.CoreCompileInputs.cache
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Models\bin\Debug\DepremsizHayat.Models.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Models\bin\Debug\DepremsizHayat.Models.pdb
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Models\obj\Debug\DepremsizHayat.Models.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Models\obj\Debug\DepremsizHayat.Models.pdb
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Models\obj\Debug\DepremsizHayat.Models.csprojAssemblyReference.cache

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="depremsizHayatModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ERRORCODE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResourceCode" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nchar" MaxLength="500" Nullable="false" />
+    <Property Name="LanguageCode" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ERRORRESOURCE">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="LANGUAGE">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="90" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="USER_ACCOUNT">
+    <Key>
+      <PropertyRef Name="ACCOUNT_ID" />
+    </Key>
+    <Property Name="ACCOUNT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="nvarchar" MaxLength="80" />
+    <Property Name="LAST_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="E_MAIL" Type="nvarchar" MaxLength="90" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="12" />
+    <Property Name="IS_ACTIVE" Type="bit" />
+    <Property Name="USER_ROLE_ID" Type="int" />
+    <Property Name="ACTIVATIONCODE" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="depremsizHayatModelStoreContainer">
+    <EntitySet Name="ERRORCODE" EntityType="Self.ERRORCODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ERRORRESOURCE" EntityType="Self.ERRORRESOURCE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LANGUAGE" EntityType="Self.LANGUAGE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER_ACCOUNT" EntityType="Self.USER_ACCOUNT" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

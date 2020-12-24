@@ -5,7 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7ceed1d42e644c288d81c9586bc5059c" Name="Diagram1" >
-        <EntityTypeShape EntityType="depremsizHayatModel.USER_ACCOUNT" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="depremsizHayatModel.ERRORCODE" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="depremsizHayatModel.ERRORRESOURCE" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="depremsizHayatModel.LANGUAGE" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="depremsizHayatModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="depremsizHayatModel.USER_ACCOUNT" Width="1.5" PointX="4.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

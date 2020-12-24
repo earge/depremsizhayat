@@ -1,0 +1,103 @@
+﻿@using DepremsizHayat.Models
+@Model UserAccountCreateModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form id="registerform">
+        <table>
+            <tr><td>Ad</td><td><input type="text" name="fn" id="firstname" /></td></tr>
+            <tr><td>Soyad</td><td><input type="text" name="ln " id="lastname" /></td></tr>
+            <tr><td>E-Posta</td><td><input type="text" name="em" id="email" /></td></tr>
+            <tr><td>Şifre</td><td><input type="text" name="pw " id="password" /></td></tr>
+            <tr><td>Şifre onay</td><td><input type="text" name="cpw" id="confirmpassword" /></td></tr>
+            <tr><td><button type="submit">Gönder</button></td></tr>
+        </table>
+    </form>
+</body>
+</html>
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.js"></script>
+    <script>
+        $(document).ready(function () {
+            function PostRegister() {
+                var model = {
+                    FIRST_NAME: $("#firstname").val(),
+                    LAST_NAME: $("#lastname").val(),
+                    E_MAIL: $("#email").val(),
+                    PASSWORD: $("#password").val(),
+                    PASSWORD_VALIDATION: $("#confirmpassword").val(),
+                };
+                $.ajax({
+                    url: '/Register/Reg',
+                    type: "POST",
+                    beforeSend: function () { },
+                    data: JSON.stringify(model),
+                    contentType: "application/json",
+                    success: function (data) {
+                    },
+                    error: function (err) {
+                    }
+                });
+            }
+            var requiredmessage = "Bu alan zorunludur.";
+            $('#registerform').validate({
+                rules: {
+                    fn: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 40
+                    },
+                    ln: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 60
+                    },
+                    em: {
+                        pattern: '^[\\w-\\.]+@@([\\w-]+\\.)+[\\w-]{2,4}$',
+                        required: true
+                    },
+                    pw: {
+                        required: true
+                    },
+                    cp: {
+                        required: true,
+                        equalTo: '#pw',
+                    }
+                },
+                messages: {
+                    fn: {
+                        required: requiredmessage,
+                        minlength: "Ad çok kısa.",
+                        maxlength: "Ad çok uzun."
+                    },
+                    ln: {
+                        required: requiredmessage,
+                        minlength: "Soyad çok kısa.",
+                        maxlength: "Soyad çok uzun."
+                    },
+                    em: {
+                        pattern: 'Lütfen geçerli bir e-posta adresi girin.',
+                        required: requiredmessage
+                    },
+                    pw: {
+                        required: requiredmessage
+                    },
+                    cpw: {
+                        required: requiredmessage,
+                        equalTo: 'Şifreler birbiriyle uyuşmuyor.',
+                    }
+                },
+                submitHandler: function () {
+                    PostRegister();
+                }
+            });
+        });
+    </script>
+}

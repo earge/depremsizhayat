@@ -21,5 +21,6 @@ namespace DepremsizHayat.Data
         public string PASSWORD { get; set; }
         public Nullable<bool> IS_ACTIVE { get; set; }
         public Nullable<int> USER_ROLE_ID { get; set; }
+        public string ACTIVATIONCODE { get; set; }
     }
 }

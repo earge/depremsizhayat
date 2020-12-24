@@ -9,8 +9,7 @@ namespace DepremsizHayat.Models
     public class BaseModel
     {
         public List<string> ErrorCodes = new List<string>();
-
-        public bool IsSuccess { get { return ErrorCodes.Count == 0 } }
+        public bool IsSuccess { get { return ErrorCodes.Count == 0; } }
 
         public string ErrorCodesCommaSeperated
         {

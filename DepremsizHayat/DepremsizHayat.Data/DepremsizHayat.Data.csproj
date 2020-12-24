@@ -65,7 +65,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DepremsizHayatDatabaseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ERRORCODE.cs">
+      <DependentUpon>DepremsizHayatDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ERRORRESOURCE.cs">
+      <DependentUpon>DepremsizHayatDatabaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LANGUAGE.cs">
+      <DependentUpon>DepremsizHayatDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>DepremsizHayatDatabaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="USER_ACCOUNT.cs">
       <DependentUpon>DepremsizHayatDatabaseModel.tt</DependentUpon>
     </Compile>

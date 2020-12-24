@@ -4,3 +4,15 @@ C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\o
 C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.csproj.CoreCompileInputs.cache
 C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.dll
 C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.pdb
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\bin\Debug\DepremsizHayat.Data.dll.config
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\bin\Debug\DepremsizHayat.Data.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\bin\Debug\DepremsizHayat.Data.pdb
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\bin\Debug\EntityFramework.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\bin\Debug\EntityFramework.xml
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.csprojAssemblyReference.cache
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.csproj.CoreCompileInputs.cache
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.csproj.CopyComplete
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Data\obj\Debug\DepremsizHayat.Data.pdb

@@ -25,6 +25,10 @@ namespace DepremsizHayat.Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ERRORCODE> ERRORCODE { get; set; }
+        public virtual DbSet<ERRORRESOURCE> ERRORRESOURCE { get; set; }
+        public virtual DbSet<LANGUAGE> LANGUAGE { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<USER_ACCOUNT> USER_ACCOUNT { get; set; }
     }
 }
