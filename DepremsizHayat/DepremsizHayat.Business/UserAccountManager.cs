@@ -45,6 +45,23 @@ namespace DepremsizHayat.Business
             }
         }
 
+        public void GetList(UserAccountListModel model)
+        {
+            var list1 = _db.USER_ACCOUNT.ToList();
+
+            var users = list1.Select(x=>new UserAccountListItemModel() { 
+                ACCOUNT_ID=x.ACCOUNT_ID,
+                ACTIVATIONCODE=x.ACTIVATIONCODE,
+                E_MAIL=x.E_MAIL,
+                FIRST_NAME=x.FIRST_NAME,
+                IS_ACTIVE=x.IS_ACTIVE,
+                LAST_NAME=x.LAST_NAME,
+                USER_ROLE_ID=x.USER_ROLE_ID,
+                PASSWORD=x.PASSWORD
+            }).ToList();
+            model.Items = users;
+        }
+
         private bool IsEmailExist(string mail)
         {
             bool dummy;
@@ -65,9 +82,9 @@ namespace DepremsizHayat.Business
                     }
                     else
                     {
-                        return "Hesabınız zaten doğrulanmış.";
+                        return "YourAccountAlreadyActivated";
                     }
-                    return "Doğrulandı";
+                    return "AccessAccepted";
                 }
                 else
                 {

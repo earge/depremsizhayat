@@ -119,7 +119,7 @@
           <Property Name="USER_ROLE_ID" Type="Int32" />
           <Property Name="ACTIVATIONCODE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

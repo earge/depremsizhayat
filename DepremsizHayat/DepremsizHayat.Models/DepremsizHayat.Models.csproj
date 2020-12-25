@@ -45,6 +45,8 @@
     <Compile Include="BaseModel.cs" />
     <Compile Include="UserAccountCreateModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAccountListItemModel.cs" />
+    <Compile Include="UserAccountListModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -180,3 +180,15 @@ C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bi
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\EntityFramework.xml
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\EntityFramework.SqlServer.dll
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\EntityFramework.SqlServer.xml
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Business.dll
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Models.dll
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\EntityFramework.dll
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\EntityFramework.SqlServer.dll
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Data.dll
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Business.pdb
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Business.dll.config
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Models.pdb
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\EntityFramework.xml
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\EntityFramework.SqlServer.xml
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Data.pdb
+C:\Users\EAL002\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Data.dll.config
