@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Api", "Depre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.App", "DepremsizHayat.App\DepremsizHayat.App.csproj", "{F1313C12-3C79-4F0C-AE0D-AAF6E680044F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Admin", "DepremsizHayat.Admin\DepremsizHayat.Admin.csproj", "{C4D0A042-5678-4C38-B849-C71DB99F73E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Admin", "DepremsizHayat.Admin\DepremsizHayat.Admin.csproj", "{BB72B374-B6E1-4032-A211-071E58497B69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{F1313C12-3C79-4F0C-AE0D-AAF6E680044F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1313C12-3C79-4F0C-AE0D-AAF6E680044F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1313C12-3C79-4F0C-AE0D-AAF6E680044F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4D0A042-5678-4C38-B849-C71DB99F73E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4D0A042-5678-4C38-B849-C71DB99F73E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4D0A042-5678-4C38-B849-C71DB99F73E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4D0A042-5678-4C38-B849-C71DB99F73E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB72B374-B6E1-4032-A211-071E58497B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB72B374-B6E1-4032-A211-071E58497B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB72B374-B6E1-4032-A211-071E58497B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB72B374-B6E1-4032-A211-071E58497B69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
