@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="depremsizHayatModel.ERRORCODE" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="depremsizHayatModel.ERRORRESOURCE" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="depremsizHayatModel.LANGUAGE" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="depremsizHayatModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="depremsizHayatModel.sysdiagrams" Width="1.5" PointX="2.7560607021469905" PointY="3.7340676205857042" />
         <EntityTypeShape EntityType="depremsizHayatModel.USER_ACCOUNT" Width="1.5" PointX="4.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
