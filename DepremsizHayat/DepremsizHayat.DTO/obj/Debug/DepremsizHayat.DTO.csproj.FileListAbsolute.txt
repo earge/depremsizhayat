@@ -1,0 +1,6 @@
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.DTO.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csprojAssemblyReference.cache
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.pdb

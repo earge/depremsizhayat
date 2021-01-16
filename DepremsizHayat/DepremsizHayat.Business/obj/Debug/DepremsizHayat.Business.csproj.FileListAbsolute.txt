@@ -11,13 +11,11 @@ C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Busine
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Business.dll.config
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Business.dll
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Business.pdb
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Data.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Models.dll
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.dll
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Data.pdb
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Data.dll.config
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Models.pdb
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.xml
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.CopyComplete
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.dll.config

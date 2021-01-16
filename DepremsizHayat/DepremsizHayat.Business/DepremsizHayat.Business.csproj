@@ -48,23 +48,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseRepository\IRepository.cs" />
+    <Compile Include="BaseRepository\Repository.cs" />
+    <Compile Include="Factory\DbFactory.cs" />
+    <Compile Include="Factory\IDbFactory.cs" />
+    <Compile Include="IServiceRepository\IRoleRepository.cs" />
+    <Compile Include="IServiceRepository\IUserRepository.cs" />
+    <Compile Include="IService\IRoleService.cs" />
+    <Compile Include="IService\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserAccountManager.cs" />
-    <Compile Include="_BaseManager.cs" />
+    <Compile Include="ServiceRepository\RoleRepository.cs" />
+    <Compile Include="ServiceRepository\UserRepository.cs" />
+    <Compile Include="Service\RoleService.cs" />
+    <Compile Include="Service\UserService.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DepremsizHayat.Data\DepremsizHayat.Data.csproj">
-      <Project>{be6fcf4b-80f2-4ad5-9d71-deb43c571ec2}</Project>
-      <Name>DepremsizHayat.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DepremsizHayat.Models\DepremsizHayat.Models.csproj">
-      <Project>{6a3b3f2b-ea64-4e2e-9d4b-d33c3fc084a6}</Project>
-      <Name>DepremsizHayat.Models</Name>
+    <ProjectReference Include="..\DepremsizHayat.DataAccess\DepremsizHayat.DataAccess.csproj">
+      <Project>{608c229d-b667-4565-aeae-7a1a961c807d}</Project>
+      <Name>DepremsizHayat.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

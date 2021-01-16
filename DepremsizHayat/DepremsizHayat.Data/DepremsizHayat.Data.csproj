@@ -65,6 +65,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DepremsizHayatDatabaseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DummyModel.cs" />
     <Compile Include="ERRORCODE.cs">
       <DependentUpon>DepremsizHayatDatabaseModel.tt</DependentUpon>
     </Compile>
