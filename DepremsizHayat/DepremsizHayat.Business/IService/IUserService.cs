@@ -1,4 +1,5 @@
 ﻿using DepremsizHayat.DataAccess;
+using DepremsizHayat.DTO.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,8 @@ namespace DepremsizHayat.Business.IService
         List<USER> GetAll();
         USER CreateUser(USER user);
         bool Login(string mail,string pwd);
+        bool Activate(string actCode,string mail);
+        USER GetByMail(string mail);
+        bool ResetPassword(ResetPasswordRequest request);
     }
 }

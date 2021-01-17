@@ -186,8 +186,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\mailactivation.css" />
     <Content Include="Content\css\main.css" />
     <Content Include="Content\css\register.css" />
+    <Content Include="Content\js\activationDigit.js" />
     <Content Include="Content\js\login.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\register.js" />
@@ -230,6 +232,7 @@
     <Content Include="Views\Account\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Activate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,6 +267,10 @@
     <ProjectReference Include="..\DepremsizHayat.Security\DepremsizHayat.Security.csproj">
       <Project>{2a7d843b-695d-4dcd-8801-37595c881ddb}</Project>
       <Name>DepremsizHayat.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DepremsizHayat.Utility\DepremsizHayat.Utility.csproj">
+      <Project>{2dd9e118-2a10-464b-99cb-6a6214b8d97d}</Project>
+      <Name>DepremsizHayat.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

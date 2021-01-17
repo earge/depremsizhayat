@@ -11,13 +11,20 @@
         $.ajax({
             url: "Login",
             data: loginModel,
-            type: "POST",
-            dataType: "application/JSON",
+            type: "post",
             success: function (data) {
-                console.log("başarılı")
+                if (data.Status) {
+                    window.location = "/Home/Index"
+                }
+                else {
+                    event.target.classList.remove("loading")
+                    event.target.disabled = false
+                    document.querySelector("#loginJsonError").classList.remove("none")
+                    document.querySelector("#loginJsonError").innerHTML = data.Message
+                }
             },
-            error: function (data) {
-                console.log(data.statusText)
+            error: function (err) {
+                window.location = "/Account/Login"
             }
         })
     }

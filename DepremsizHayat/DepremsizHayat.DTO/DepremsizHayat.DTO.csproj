@@ -45,7 +45,14 @@
     <Compile Include="BaseResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\CreateUserRequest.cs" />
+    <Compile Include="User\ResetPasswordRequest.cs" />
     <Compile Include="User\UserLoginRequest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DepremsizHayat.Security\DepremsizHayat.Security.csproj">
+      <Project>{2a7d843b-695d-4dcd-8801-37595c881ddb}</Project>
+      <Name>DepremsizHayat.Security</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

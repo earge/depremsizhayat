@@ -1,0 +1,53 @@
+﻿@using DepremsizHayat.DTO;
+@{
+    ViewBag.Title = "Activate";
+    Layout = "~/Views/Account/Shared/_Layout.cshtml";
+}
+@section styles{
+    <link href="~/Content/css/mailactivation.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Content/js/activationDigit.js"></script>
+}
+<div class="flex h-center">
+    <div class="container">
+        <div class="white-box">
+            <div class="top-header align-left p15">Mail Aktivasyonu</div>
+            <div class="fs-14 tx-gray p15 align-center">Lütfen e-mailinize gelen 6 haneli kodu giriniz.</div>
+            <div class="digitArea flex h-center pl15 pr15 pb15">
+                <input type="text" maxlength="1" id="digitOne">
+                <input type="text" maxlength="1" id="digitTwo">
+                <input type="text" maxlength="1" id="digitTree">
+                <input type="text" maxlength="1" id="digitFour">
+                <input type="text" maxlength="1" id="digitFive">
+                <input type="text" maxlength="1" id="digitSix">
+            </div>
+            @if (((BaseResponse)TempData["Response"]).Message != null)
+            {
+                if (((BaseResponse)TempData["Response"]).Status == true)
+                { 
+                    <div class="info-boxes success ml15 mr15 mb15">
+                        @(
+                        ((BaseResponse)TempData["Response"]).Message
+                        )
+                    </div>
+                }
+                else
+                {
+                    <div class="info-boxes error ml15 mr15 mb15">
+                        @(
+                        ((BaseResponse)TempData["Response"]).Message
+                        )
+                    </div>
+                }
+
+            }
+            <div class="align-center pb15">
+                <button class="btn btn-main btn-blue spinner">
+                    <span class="spinner"></span> Aktive Et
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

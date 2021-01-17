@@ -1,10 +1,7 @@
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Security.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Security.pdb
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Business.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.DataAccess.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\EntityFramework.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Business.pdb
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Business.dll.config
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.DataAccess.pdb
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.DataAccess.dll.config
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\EntityFramework.xml

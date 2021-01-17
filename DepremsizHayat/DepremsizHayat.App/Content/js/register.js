@@ -13,13 +13,22 @@ document.querySelector("#register").addEventListener("click", (event) => {
         $.ajax({
             url: "Register",
             data: registerModel,
-            dataType: "application/JSON",
             type: "POST",
             success: function (data) {
-                console.log("ok");
+                debugger;
+                if (data.Status) {
+                    window.location = "/Account/Login"
+                }
+                else {
+                    event.target.classList.remove("loading")
+                    event.target.disabled = false
+                    document.querySelector("#registerJsonError").classList.remove("none")
+                    document.querySelector("#registerJsonError").innerHTML = data.Message
+                }
             },
             error: function (data) {
-                console.log(data.statusText)
+                debugger;
+                window.location = "/Account/Register"
             }
         })
     }

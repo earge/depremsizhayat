@@ -93,14 +93,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decryptor.cs" />
+    <Compile Include="Encryptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DepremsizHayat.Business\DepremsizHayat.Business.csproj">
-      <Project>{e50d2179-10a8-40be-aaaf-3872ad0e88a8}</Project>
-      <Name>DepremsizHayat.Business</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DepremsizHayat.DataAccess\DepremsizHayat.DataAccess.csproj">
       <Project>{608C229D-B667-4565-AEAE-7A1A961C807D}</Project>
       <Name>DepremsizHayat.DataAccess</Name>

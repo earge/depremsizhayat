@@ -2,6 +2,8 @@
 using DepremsizHayat.Business.IServiceRepository;
 using DepremsizHayat.Business.UnitOfWork;
 using DepremsizHayat.DataAccess;
+using DepremsizHayat.DTO.User;
+using DepremsizHayat.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,17 +22,37 @@ namespace DepremsizHayat.Business.Service
             this._userRepository = userRepository;
             this._unitOfWork = unitOfWork;
         }
-
+        public bool Activate(string actCode,string mail)
+        {
+            var user = _userRepository.GetByMail(mail);
+            bool result = false;
+            /* 1=user.ACTIVATONCODE olacak. */
+            if (Decryptor.DecryptInt(actCode)!=1)
+            {
+                result = false;
+            }
+            else
+            {
+                user.ACTIVE = true;
+                _unitOfWork.Commit();
+                result = true;
+            }
+            return result;
+        }
         public USER CreateUser(USER user)
         {
             user = _userRepository.Add(user);
             _unitOfWork.Commit();
             return user;
         }
-
         public List<USER> GetAll()
         {
             return _userRepository.GetAll();
+        }
+
+        public USER GetByMail(string mail)
+        {
+            return _userRepository.GetByMail(mail);
         }
 
         public bool Login(string mail,string pwd)
@@ -39,12 +61,24 @@ namespace DepremsizHayat.Business.Service
             var userFromDb = _userRepository.GetByMail(mail);
             if (userFromDb != null)
             {
-                if (userFromDb.PASSWORD == pwd)
+                if (Decryptor.Decrypt(userFromDb.PASSWORD) == Decryptor.Decrypt(pwd))
                 {
                     result = true;
                 }
             }
             return result;
+        }
+
+        public bool ResetPassword(ResetPasswordRequest request)
+        {
+            USER user = _userRepository.GetByMail(request.Mail);
+            if (user!=null)
+            {
+                user.PASSWORD = request.Password;
+                _unitOfWork.Commit();
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -19,3 +19,8 @@ C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Busine
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.pdb
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Security.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Security.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Security.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DTO.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DTO.pdb

@@ -5,6 +5,7 @@ using DepremsizHayat.Business.Factory;
 using DepremsizHayat.Business.IService;
 using DepremsizHayat.Business.UnitOfWork;
 using DepremsizHayat.Security;
+using DepremsizHayat.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;

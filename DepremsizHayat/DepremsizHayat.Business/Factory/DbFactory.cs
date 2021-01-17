@@ -18,6 +18,8 @@ namespace DepremsizHayat.Business.Factory
             }
         }
 
+      
+
         public void Dispose()
         {
             Dispose(true);

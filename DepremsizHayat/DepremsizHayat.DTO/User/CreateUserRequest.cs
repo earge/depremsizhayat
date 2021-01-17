@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DepremsizHayat.Security;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace DepremsizHayat.DTO.User
 {
     public class CreateUserRequest
     {
+        private string password { get; set; }
         [Required]
         public string FIRST_NAME { get; set; }
         [Required]
@@ -16,7 +18,11 @@ namespace DepremsizHayat.DTO.User
         [Required]
         public string E_MAIL { get; set; }
         [Required]
-        public string PASSWORD { get; set; }
+        public string PASSWORD
+        {
+            get { return password; }
+            set { password = Encryptor.Encrypt(value); }
+        }
         public string PROFILE_IMAGE { get; set; }
     }
 }

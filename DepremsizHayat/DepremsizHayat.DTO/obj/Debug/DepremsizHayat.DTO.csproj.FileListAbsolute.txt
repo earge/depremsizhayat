@@ -4,3 +4,7 @@ C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\ob
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CoreCompileInputs.cache
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CopyComplete

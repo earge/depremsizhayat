@@ -69,6 +69,14 @@
       <Project>{608c229d-b667-4565-aeae-7a1a961c807d}</Project>
       <Name>DepremsizHayat.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DepremsizHayat.DTO\DepremsizHayat.DTO.csproj">
+      <Project>{27cdf5e9-804b-4a43-b089-f0c4ad7038dc}</Project>
+      <Name>DepremsizHayat.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DepremsizHayat.Security\DepremsizHayat.Security.csproj">
+      <Project>{2a7d843b-695d-4dcd-8801-37595c881ddb}</Project>
+      <Name>DepremsizHayat.Security</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,16 +1,11 @@
-.white-box{
-  margin-top: 100px;
-}
 .container{
   width: 100%;
-  max-width: 600px;
+  max-width:600px;
+  margin: 100px 10px 10px 10px;
 }
 
-.top-header{
-  color: black;
-  font-weight: bold;
-  border-bottom: 2px solid var(--color-border-gray);
-  font-size: 30px;
+.white-box{
+  width: 100%;
 }
 
 form-input input[type="text"],

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.DTO", "Depre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Security", "DepremsizHayat.Security\DepremsizHayat.Security.csproj", "{2A7D843B-695D-4DCD-8801-37595C881DDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Utility", "DepremsizHayat.Utility\DepremsizHayat.Utility.csproj", "{2DD9E118-2A10-464B-99CB-6A6214B8D97D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{2A7D843B-695D-4DCD-8801-37595C881DDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A7D843B-695D-4DCD-8801-37595C881DDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A7D843B-695D-4DCD-8801-37595C881DDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DD9E118-2A10-464B-99CB-6A6214B8D97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DD9E118-2A10-464B-99CB-6A6214B8D97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DD9E118-2A10-464B-99CB-6A6214B8D97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DD9E118-2A10-464B-99CB-6A6214B8D97D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
