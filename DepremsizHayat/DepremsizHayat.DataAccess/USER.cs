@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,7 @@ namespace DepremsizHayat.DataAccess
         public string E_MAIL { get; set; }
         [Required]
         public string PASSWORD { get; set; }
+        [DefaultValue(null)]
         public Nullable<DateTime> LAST_ANSWER_DATE { get; set; }
         public Nullable<int> MAX_COUNT_REQUEST { get; set; }
         public Nullable<int> COUNT_ANSWER { get; set; }

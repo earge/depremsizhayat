@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Security", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Utility", "DepremsizHayat.Utility\DepremsizHayat.Utility.csproj", "{2DD9E118-2A10-464B-99CB-6A6214B8D97D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepremsizHayat.Job", "DepremsizHayat.Job\DepremsizHayat.Job.csproj", "{3618D320-8DCD-405B-AA9C-4A7A2566EDD3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{2DD9E118-2A10-464B-99CB-6A6214B8D97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DD9E118-2A10-464B-99CB-6A6214B8D97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DD9E118-2A10-464B-99CB-6A6214B8D97D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3618D320-8DCD-405B-AA9C-4A7A2566EDD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3618D320-8DCD-405B-AA9C-4A7A2566EDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3618D320-8DCD-405B-AA9C-4A7A2566EDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3618D320-8DCD-405B-AA9C-4A7A2566EDD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

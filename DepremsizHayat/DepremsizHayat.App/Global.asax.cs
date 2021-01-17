@@ -1,4 +1,5 @@
 using DepremsizHayat.App.App_Start;
+using DepremsizHayat.Job;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace DepremsizHayat.App
     {
         protected void Application_Start()
         {
+            TestJobScheduler trigger = new TestJobScheduler();
+            trigger.Trigger();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

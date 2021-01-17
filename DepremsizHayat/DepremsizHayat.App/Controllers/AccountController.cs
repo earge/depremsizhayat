@@ -49,7 +49,8 @@ namespace DepremsizHayat.App.Controllers
                             CREATED_DATE = DateTime.Now,
                             LAST_NAME = request.LAST_NAME,
                             PASSWORD = request.PASSWORD,
-                            ROLE_ID = 1
+                            ROLE_ID = 1,
+                            LAST_ANSWER_DATE = null
                         });
                         response.Status = true;
                     }

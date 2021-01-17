@@ -175,6 +175,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -263,6 +264,10 @@
     <ProjectReference Include="..\DepremsizHayat.DTO\DepremsizHayat.DTO.csproj">
       <Project>{27cdf5e9-804b-4a43-b089-f0c4ad7038dc}</Project>
       <Name>DepremsizHayat.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DepremsizHayat.Job\DepremsizHayat.Job.csproj">
+      <Project>{3618d320-8dcd-405b-aa9c-4a7a2566edd3}</Project>
+      <Name>DepremsizHayat.Job</Name>
     </ProjectReference>
     <ProjectReference Include="..\DepremsizHayat.Security\DepremsizHayat.Security.csproj">
       <Project>{2a7d843b-695d-4dcd-8801-37595c881ddb}</Project>

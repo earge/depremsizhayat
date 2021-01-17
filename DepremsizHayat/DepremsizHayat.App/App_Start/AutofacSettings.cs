@@ -4,6 +4,7 @@ using Autofac.Integration.Web;
 using DepremsizHayat.Business.Factory;
 using DepremsizHayat.Business.IService;
 using DepremsizHayat.Business.UnitOfWork;
+using DepremsizHayat.Job;
 using DepremsizHayat.Security;
 using DepremsizHayat.Utility;
 using System;
@@ -28,6 +29,7 @@ namespace DepremsizHayat.App.App_Start
             IContainer container = builder.Build();
             builder.Register(c => new UserRoleProvider { _userService = c.Resolve<IUserService>() });
             builder.Register(c => new UserRoleProvider { _roleService = c.Resolve<IRoleService>() });
+            builder.Register(c => new TestJob { userService = c.Resolve<IUserService>() });
             AutofacDependencyResolver resolver = new AutofacDependencyResolver(container);
             DependencyResolver.SetResolver(resolver);
         }

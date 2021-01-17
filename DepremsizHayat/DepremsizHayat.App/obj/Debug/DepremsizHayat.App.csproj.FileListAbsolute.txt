@@ -209,3 +209,10 @@ C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bi
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Utility.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Utility.pdb
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Utility.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Job.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\Quartz.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Job.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Job.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\Quartz.xml
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\Microsoft.Extensions.Logging.Abstractions.xml
