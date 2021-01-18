@@ -16,7 +16,7 @@ namespace DepremsizHayat.App
         protected void Application_Start()
         {
             TestJobScheduler trigger = new TestJobScheduler();
-            trigger.Trigger();
+            trigger.Trig();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

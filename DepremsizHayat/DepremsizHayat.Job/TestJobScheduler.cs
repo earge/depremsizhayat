@@ -19,7 +19,7 @@ namespace DepremsizHayat.Job
             ITrigger trigger = TriggerBuilder.Create().WithSimpleSchedule(
                 s =>
                 s
-                .WithIntervalInSeconds(6).WithRepeatCount(5)
+                .WithIntervalInSeconds(30).WithRepeatCount(3)
                 ).StartNow().Build();
             scheduler.ScheduleJob(job, trigger);
 
