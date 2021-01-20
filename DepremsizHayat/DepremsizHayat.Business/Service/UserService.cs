@@ -39,6 +39,17 @@ namespace DepremsizHayat.Business.Service
             }
             return result;
         }
+        public bool CheckResetAuth(string code, string mail)
+        {
+            if (Decryptor.Decrypt(_userRepository.GetByMail(mail).ACTIVATION_CODE) == Decryptor.Decrypt(code))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public USER CreateUser(USER user)
         {
             user = _userRepository.Add(user);
@@ -49,12 +60,10 @@ namespace DepremsizHayat.Business.Service
         {
             return _userRepository.GetAll();
         }
-
         public USER GetByMail(string mail)
         {
             return _userRepository.GetByMail(mail);
         }
-
         public bool Login(string mail, string pwd)
         {
             bool result = false;
@@ -68,7 +77,6 @@ namespace DepremsizHayat.Business.Service
             }
             return result;
         }
-
         public bool ResetPassword(ResetPasswordRequest request)
         {
             USER user = _userRepository.GetByMail(request.Mail);
@@ -80,20 +88,29 @@ namespace DepremsizHayat.Business.Service
             }
             return false;
         }
-
-        public void SendResetMail(string mail)
+        public string SendResetMail(string mail)
         {
-            if (_userRepository.GetByMail(mail) != null)
+            var user = _userRepository.GetByMail(mail);
+            if (user != null)
             {
+                var code = Guid.NewGuid().ToString();
+                code = Encryptor.Encrypt(code);
+                user.ACTIVATION_CODE = code;
                 var subject = "Şifre Sıfırlama Talebi";
-                var body = "";
-                _userRepository.SendMail(mail, subject, body);
+                var body = "Talebiniz üzerine iletilen şifre sıfırlama linki: /Account/SetNewPassword?authCode=" + code;
+                if (_userRepository.SendMail(mail, subject, body))
+                {
+                    return "+_Şifre sıfırlama linki mail adresinize gönderildi.";
+                }
+                else
+                {
+                    return "-_Bir hata oluştu! Lütfen tekrar deneyin.";
+                }
             }
             else
             {
-
+                return "-_Girmiş olduğunuz mail adresiyle eşleşen bir kullanıcı hesabı bulunamadı.";
             }
-            throw new NotImplementedException();
         }
     }
 }

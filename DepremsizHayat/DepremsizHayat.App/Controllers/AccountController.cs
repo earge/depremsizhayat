@@ -150,30 +150,46 @@ namespace DepremsizHayat.App.Controllers
         }
         public ActionResult ForgotPassword(string mail)
         {
-
+            BaseResponse response = new BaseResponse();
+            if (mail != null)
+            {
+                var result = _userService.SendResetMail(mail).Split('_');
+                if (result[0] == "+")
+                {
+                    response.Status = true;
+                    response.Message = result[1];
+                }
+                else
+                {
+                    response.Status = false;
+                    response.Message = result[1];
+                }
+            }
+            TempData["Response"] = response;
             return View();
         }
         public ActionResult SetNewPassword(string authCode, ResetPasswordRequest request)
         {
-            DataAccess.USER user = _userService.GetByMail(request.Mail);
-            if (/*user.ACTIVATIONCODE!=*/authCode != null)
-            {
-                return RedirectToAction("Login");
-            }
-            else
+            if (authCode != null && _userService.CheckResetAuth(authCode, request.Mail))
             {
                 BaseResponse response = new BaseResponse() { Status = false };
                 if (_userService.ResetPassword(request))
                 {
                     response.Status = true;
                     response.Message = "Şifreniz başarıyla güncellendi.";
+                    TempData["Response"] = response;
                     return RedirectToAction("Login");
                 }
                 else
                 {
+                    TempData["Response"] = response;
                     response.Message = "Şifreniz güncellenemedi. Lütfen tekrar deneyin.";
                     return View();
                 }
+            }
+            else
+            {
+                return RedirectToAction("Login");
             }
         }
     }
