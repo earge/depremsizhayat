@@ -4,26 +4,6 @@ C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Busine
 C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.csproj.CoreCompileInputs.cache
 C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.dll
 C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.pdb
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.csprojAssemblyReference.cache
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.csproj.CoreCompileInputs.cache
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.dll
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.pdb
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Business.dll.config
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Business.dll
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Business.pdb
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/EntityFramework.dll
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/EntityFramework.SqlServer.dll
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/EntityFramework.xml
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/EntityFramework.SqlServer.xml
-C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.csproj.CopyComplete
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.DataAccess.dll
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.DataAccess.pdb
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.DataAccess.dll.config
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Security.dll
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Security.pdb
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Security.dll.config
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.DTO.dll
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.DTO.pdb
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Business.dll.config
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Business.dll
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/bin/Debug/DepremsizHayat.Business.pdb
@@ -44,3 +24,22 @@ C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Busine
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.csproj.CopyComplete
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.dll
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Business/obj/Debug/DepremsizHayat.Business.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Business.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Business.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Business.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DTO.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Security.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DataAccess.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Security.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Security.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.xml
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.CoreCompileInputs.cache
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.CopyComplete
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.pdb
