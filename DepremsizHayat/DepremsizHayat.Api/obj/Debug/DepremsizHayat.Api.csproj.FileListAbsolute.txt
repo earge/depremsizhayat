@@ -1,170 +1,254 @@
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Api.dll.config
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Api.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Api.pdb
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csc.exe
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csc.exe.config
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csc.rsp
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csi.exe
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csi.exe.config
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csi.rsp
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.AppContext.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Console.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.Compression.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Net.Http.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Net.Sockets.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.ValueTuple.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.XPath.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\vbc.exe
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\vbc.exe.config
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\vbc.rsp
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\VBCSCompiler.exe
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Antlr3.Runtime.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Newtonsoft.Json.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Net.Http.Formatting.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Helpers.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.WebHost.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Mvc.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Optimization.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Razor.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Razor.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\WebGrease.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Newtonsoft.Json.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Net.Http.Formatting.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Helpers.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.WebHost.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Mvc.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Optimization.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Razor.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Razor.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Antlr3.Runtime.pdb
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csprojAssemblyReference.cache
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csproj.CoreCompileInputs.cache
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csproj.CopyComplete
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.dll
-C:\Users\Yiğit\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.pdb
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Api.dll.config
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Api.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Api.pdb
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csc.exe
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csc.exe.config
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csc.rsp
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csi.exe
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csi.exe.config
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\csi.rsp
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.AppContext.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Console.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.Compression.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Net.Http.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Net.Sockets.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.ValueTuple.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.XPath.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\vbc.exe
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\vbc.exe.config
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\vbc.rsp
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\VBCSCompiler.exe
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Antlr3.Runtime.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Newtonsoft.Json.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Net.Http.Formatting.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Helpers.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.WebHost.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Mvc.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Optimization.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Razor.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Deployment.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Razor.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\WebGrease.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Newtonsoft.Json.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Net.Http.Formatting.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Helpers.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Http.WebHost.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Mvc.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Optimization.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.Razor.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Deployment.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\System.Web.WebPages.Razor.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Antlr3.Runtime.pdb
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csprojAssemblyReference.cache
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csproj.CoreCompileInputs.cache
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csproj.CopyComplete
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.dll
-C:\Users\EAL002\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.pdb
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.dll.config
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.pdb
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.exe
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.exe.config
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.rsp
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.exe
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.exe.config
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.rsp
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CSharp.Core.targets
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Managed.Core.targets
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.VisualBasic.Core.targets
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Win32.Primitives.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.AppContext.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Collections.Immutable.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Console.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.DiagnosticSource.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.FileVersionInfo.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.StackTrace.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Globalization.Calendars.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.Compression.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.Compression.ZipFile.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.FileSystem.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.FileSystem.Primitives.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Net.Http.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Net.Sockets.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Reflection.Metadata.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Algorithms.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Encoding.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Primitives.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.X509Certificates.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Text.Encoding.CodePages.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Threading.Tasks.Extensions.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.ValueTuple.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.ReaderWriter.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XmlDocument.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XPath.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XPath.XDocument.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.exe
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.exe.config
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.rsp
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/VBCSCompiler.exe
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/VBCSCompiler.exe.config
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Antlr3.Runtime.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.Web.Infrastructure.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Newtonsoft.Json.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Net.Http.Formatting.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Helpers.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.WebHost.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Mvc.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Optimization.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Razor.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Deployment.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Razor.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/WebGrease.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Newtonsoft.Json.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Net.Http.Formatting.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Helpers.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.WebHost.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Mvc.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Optimization.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Razor.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Deployment.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Razor.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Antlr3.Runtime.pdb
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csprojAssemblyReference.cache
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csproj.CoreCompileInputs.cache
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csproj.CopyComplete
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.dll
+C:/Users/Yiğit/Source/Repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.pdb
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.dll.config
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.pdb
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.exe
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.exe.config
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.rsp
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.exe
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.exe.config
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.rsp
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CSharp.Core.targets
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Managed.Core.targets
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.VisualBasic.Core.targets
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Win32.Primitives.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.AppContext.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Collections.Immutable.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Console.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.DiagnosticSource.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.FileVersionInfo.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.StackTrace.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Globalization.Calendars.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.Compression.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.Compression.ZipFile.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.FileSystem.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.FileSystem.Primitives.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Net.Http.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Net.Sockets.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Reflection.Metadata.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Algorithms.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Encoding.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Primitives.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.X509Certificates.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Text.Encoding.CodePages.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Threading.Tasks.Extensions.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.ValueTuple.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.ReaderWriter.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XmlDocument.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XPath.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XPath.XDocument.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.exe
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.exe.config
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.rsp
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/VBCSCompiler.exe
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/VBCSCompiler.exe.config
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Antlr3.Runtime.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.Web.Infrastructure.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Newtonsoft.Json.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Net.Http.Formatting.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Helpers.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.WebHost.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Mvc.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Optimization.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Razor.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Deployment.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Razor.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/WebGrease.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Newtonsoft.Json.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Net.Http.Formatting.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Helpers.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.WebHost.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Mvc.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Optimization.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Razor.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Deployment.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Razor.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Antlr3.Runtime.pdb
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csprojAssemblyReference.cache
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csproj.CoreCompileInputs.cache
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csproj.CopyComplete
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.dll
+C:/Users/EAL002/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.pdb
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/DepremsizHayat.Api.pdb
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.exe
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.exe.config
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csc.rsp
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.exe
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.exe.config
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/csi.rsp
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.CSharp.Core.targets
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Managed.Core.targets
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.VisualBasic.Core.targets
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/Microsoft.Win32.Primitives.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.AppContext.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Collections.Immutable.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Console.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.DiagnosticSource.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.FileVersionInfo.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Diagnostics.StackTrace.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Globalization.Calendars.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.Compression.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.Compression.ZipFile.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.FileSystem.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.IO.FileSystem.Primitives.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Net.Http.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Net.Sockets.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Reflection.Metadata.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Algorithms.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Encoding.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.Primitives.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Security.Cryptography.X509Certificates.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Text.Encoding.CodePages.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Threading.Tasks.Extensions.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.ValueTuple.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.ReaderWriter.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XmlDocument.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XPath.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/System.Xml.XPath.XDocument.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.exe
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.exe.config
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/vbc.rsp
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/VBCSCompiler.exe
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/roslyn/VBCSCompiler.exe.config
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Antlr3.Runtime.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.Web.Infrastructure.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Newtonsoft.Json.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Net.Http.Formatting.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Helpers.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.WebHost.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Mvc.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Optimization.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Razor.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Deployment.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Razor.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/WebGrease.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Newtonsoft.Json.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Net.Http.Formatting.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Helpers.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Http.WebHost.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Mvc.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Optimization.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.Razor.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Deployment.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/System.Web.WebPages.Razor.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Antlr3.Runtime.pdb
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csprojAssemblyReference.cache
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csproj.CoreCompileInputs.cache
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.csproj.CopyComplete
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Api/obj/Debug/DepremsizHayat.Api.pdb

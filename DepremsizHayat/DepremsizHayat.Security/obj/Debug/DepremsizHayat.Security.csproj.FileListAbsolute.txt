@@ -1,46 +1,92 @@
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Security.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Security.pdb
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.DataAccess.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\EntityFramework.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.DataAccess.pdb
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.DataAccess.dll.config
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\EntityFramework.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\obj\Debug\DepremsizHayat.Security.csprojAssemblyReference.cache
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\obj\Debug\DepremsizHayat.Security.csproj.CoreCompileInputs.cache
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\obj\Debug\DepremsizHayat.Security.csproj.CopyComplete
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\obj\Debug\DepremsizHayat.Security.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\obj\Debug\DepremsizHayat.Security.pdb
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\DepremsizHayat.Security.dll.config
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Autofac.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Autofac.Integration.Web.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Buffers.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Memory.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Autofac.pdb
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Autofac.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Autofac.Integration.Web.pdb
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Autofac.Integration.Web.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Buffers.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Memory.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.Helpers.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.Mvc.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.Razor.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.WebPages.Deployment.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.WebPages.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.Helpers.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.Mvc.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.Razor.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.WebPages.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Security\bin\Debug\System.Web.WebPages.Razor.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.Security.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.Security.pdb
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.DataAccess.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/EntityFramework.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.DataAccess.pdb
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.DataAccess.dll.config
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/EntityFramework.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.csprojAssemblyReference.cache
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.csproj.CoreCompileInputs.cache
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.csproj.CopyComplete
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.pdb
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.Security.dll.config
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.Integration.Web.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Microsoft.Bcl.AsyncInterfaces.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Buffers.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Diagnostics.DiagnosticSource.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Memory.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Numerics.Vectors.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Threading.Tasks.Extensions.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.pdb
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.Integration.Web.pdb
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.Integration.Web.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Microsoft.Bcl.AsyncInterfaces.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Buffers.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Diagnostics.DiagnosticSource.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Memory.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Numerics.Vectors.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Threading.Tasks.Extensions.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Microsoft.Web.Infrastructure.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Helpers.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Mvc.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Razor.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Deployment.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Razor.dll
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Helpers.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Mvc.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Razor.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Deployment.xml
+C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Razor.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.Security.dll.config
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.Security.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.Security.pdb
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.Integration.Web.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.DataAccess.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Microsoft.Bcl.AsyncInterfaces.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Microsoft.Web.Infrastructure.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Buffers.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Diagnostics.DiagnosticSource.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Memory.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Numerics.Vectors.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Threading.Tasks.Extensions.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Helpers.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Mvc.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Razor.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Deployment.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Razor.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/EntityFramework.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.DataAccess.pdb
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/DepremsizHayat.DataAccess.dll.config
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.pdb
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.Integration.Web.pdb
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Autofac.Integration.Web.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/Microsoft.Bcl.AsyncInterfaces.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Buffers.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Diagnostics.DiagnosticSource.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Memory.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Numerics.Vectors.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Runtime.CompilerServices.Unsafe.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Threading.Tasks.Extensions.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Helpers.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Mvc.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.Razor.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Deployment.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/System.Web.WebPages.Razor.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/bin/Debug/EntityFramework.xml
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.csprojAssemblyReference.cache
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.csproj.CoreCompileInputs.cache
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.csproj.CopyComplete
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.dll
+/Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.Security/obj/Debug/DepremsizHayat.Security.pdb

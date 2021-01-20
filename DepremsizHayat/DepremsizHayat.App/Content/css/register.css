@@ -22,8 +22,6 @@ form-input input[type="text"]::placeholder,
 form-input input[type="password"]::placeholder{
   color: var(--color-placeholder-gray);
 }
-
-
 form-input[invalid] input[type="text"],
 form-input[invalid] input[type="password"],
 form-input[invalid] .select.one{
@@ -34,6 +32,8 @@ form-input span{
   font-size: 12px;
   padding-left: 10px;
   font-weight: bold;
+  padding-top:5px;
+  display:block;
 }
 
 .select.one{
