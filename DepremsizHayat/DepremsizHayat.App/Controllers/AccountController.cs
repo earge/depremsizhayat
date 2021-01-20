@@ -148,7 +148,12 @@ namespace DepremsizHayat.App.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-        public ActionResult ForgotPassword(string authCode, ResetPasswordRequest request)
+        public ActionResult ForgotPassword(string mail)
+        {
+
+            return View();
+        }
+        public ActionResult SetNewPassword(string authCode, ResetPasswordRequest request)
         {
             DataAccess.USER user = _userService.GetByMail(request.Mail);
             if (/*user.ACTIVATIONCODE!=*/authCode != null)
@@ -170,10 +175,6 @@ namespace DepremsizHayat.App.Controllers
                     return View();
                 }
             }
-        }
-        public ActionResult SetNewPassword()
-        {
-            return View();
         }
     }
 }

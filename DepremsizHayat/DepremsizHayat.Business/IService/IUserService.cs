@@ -16,5 +16,7 @@ namespace DepremsizHayat.Business.IService
         bool Activate(string actCode,string mail);
         USER GetByMail(string mail);
         bool ResetPassword(ResetPasswordRequest request);
+        void SendResetMail(string mail);
+
     }
 }

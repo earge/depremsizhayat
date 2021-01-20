@@ -28,11 +28,14 @@ namespace DepremsizHayat.DataAccess
         public string E_MAIL { get; set; }
         [Required]
         public string PASSWORD { get; set; }
+        [MaxLength(50)]
+        public string ACTIVATION_CODE { get; set; }
         [DefaultValue(null)]
         public Nullable<DateTime> LAST_ANSWER_DATE { get; set; }
         public Nullable<int> MAX_COUNT_REQUEST { get; set; }
         public Nullable<int> COUNT_ANSWER { get; set; }
-        public string PROFILE_IMAGE { get; set; }
+        [MaxLength(50)]
+        public string HASH_HELPER { get; set; }
 
     }
 }

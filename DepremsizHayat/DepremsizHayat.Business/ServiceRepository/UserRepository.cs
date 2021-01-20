@@ -20,5 +20,17 @@ namespace DepremsizHayat.Business.ServiceRepository
         {
             return _dbContext.USER.FirstOrDefault(p => p.E_MAIL == mail);
         }
+
+        public bool SendMail(string mail, string subject, string body)
+        {
+            try
+            {
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

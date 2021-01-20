@@ -11,5 +11,6 @@ namespace DepremsizHayat.Business.IServiceRepository
     public interface IUserRepository:IRepository<USER>
     {
         USER GetByMail(string mail);
+        bool SendMail(string mail,string subject,string body);
     }
 }
