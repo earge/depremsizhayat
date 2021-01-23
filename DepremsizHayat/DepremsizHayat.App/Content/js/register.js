@@ -17,7 +17,7 @@ document.querySelector("#register").addEventListener("click", (event) => {
             success: function (data) {
                 debugger;
                 if (data.Status) {
-                    window.location = "/Account/Login"
+                    window.location = "/Account/Activate"+data.Url
                 }
                 else {
                     event.target.classList.remove("loading")

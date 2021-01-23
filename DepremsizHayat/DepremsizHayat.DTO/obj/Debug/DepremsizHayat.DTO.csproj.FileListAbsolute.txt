@@ -1,13 +1,3 @@
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.DTO.dll
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.DTO.pdb
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.csprojAssemblyReference.cache
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.csproj.CoreCompileInputs.cache
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.dll
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.pdb
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.Security.dll
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.Security.pdb
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.Security.dll.config
-C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.csproj.CopyComplete
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.DTO.dll
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.DTO.pdb
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/bin/Debug/DepremsizHayat.Security.dll
@@ -18,3 +8,13 @@ C:/Users/Yiğit/source/repos/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/ob
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.csproj.CopyComplete
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.dll
 /Users/ridvanonal/Desktop/Ana Proje/depremsizhayat/DepremsizHayat/DepremsizHayat.DTO/obj/Debug/DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CoreCompileInputs.cache
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.DTO.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.dll
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CopyComplete
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csprojAssemblyReference.cache

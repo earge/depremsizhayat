@@ -1,6 +1,7 @@
 ﻿using DepremsizHayat.Business;
 using DepremsizHayat.Business.IService;
 using DepremsizHayat.DTO;
+using DepremsizHayat.DTO.Models;
 using DepremsizHayat.DTO.User;
 using DepremsizHayat.Security;
 using System;
@@ -35,28 +36,27 @@ namespace DepremsizHayat.App.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //string activationCode = new Random().Next(100000, 999999).ToString();
-                    //activationCode = Encryptor.Encrypt(activationCode);
-                    BaseResponse response = new BaseResponse() { Status = false };
+                    string activationCode = Encryptor.Encrypt(new Random().Next(100000, 999999).ToString());
+                    RegisterResponse response = new RegisterResponse() { Status = false };
                     try
                     {
-                        _userService.CreateUser(new DataAccess.USER()
-                        {
-                            ACTIVE = false,
-                            DELETED = false,
-                            E_MAIL = request.E_MAIL,
-                            FIRST_NAME = request.FIRST_NAME,
-                            CREATED_DATE = DateTime.Now,
-                            LAST_NAME = request.LAST_NAME,
-                            PASSWORD = request.PASSWORD,
-                            ROLE_ID = 1,
-                            LAST_ANSWER_DATE = null
-                        });
-                        response.Status = true;
-                    }
-                    catch (Exception ex)
+                        _userService.CreateUser(new UserModel()
                     {
-                        response.Message = ex.Message;
+                        ACTIVE = false,
+                        DELETED = false,
+                        E_MAIL = request.E_MAIL,
+                        FIRST_NAME = request.FIRST_NAME,
+                        CREATED_DATE = DateTime.Now,
+                        LAST_NAME = request.LAST_NAME,
+                        PASSWORD = request.PASSWORD,
+                        ROLE_ID = 1,
+                        ACTIVATION_CODE = activationCode
+                    });
+                    response.Status = true;
+                    response.Url = "?actCode=&mail=" + Encryptor.Encrypt(request.E_MAIL);
+                    }
+                    catch (Exception)
+                    {
                     }
                     return Json(response, JsonRequestBehavior.AllowGet);
                 }
@@ -70,35 +70,40 @@ namespace DepremsizHayat.App.Controllers
         public ActionResult Activate(string actCode, string mail)
         {
             BaseResponse response = new BaseResponse() { Status = false };
-            //if (actCode != null && mail != null)
-            //{
-            /*DAHA SONRA GELEN ACTCODE VE MAIL ENCRYPTED OLACAK*/
-            //if (_userService.GetByMail(mail)!=null)
-            //{
-            //if (_userService.GetByMail(mail).ACTIVE == true)
-            //{
-            //    response.Message = "Hesabınız zaten aktifleştirilmiş.";
-            //    TempData["Response"] = response;
-            //    return RedirectToAction("Login");
-            //}
-            //else
-            //{
-            //    if (_userService.Activate(actCode, mail))
-            //    {
-            //        response.Status = true;
-            //        response.Message = "Hesabınız başarıyla aktifleştirildi.";
-            //        TempData["Response"] = response;
-            //        return RedirectToAction("Login");
-            //    }
-            //    else
-            //    {
-            //        response.Message = "Hesabınız aktifleştirilemedi, lütfen tekrar deneyin.";
-            //    }
-            //}
-            TempData["Response"] = response;
-            return View();
-            //}
-            //}
+            string email = (mail != null) ? Decryptor.Decrypt(mail) : null;
+            if (email != null && _userService.GetByMail(email) != null)
+            {
+                if (_userService.GetByMail(email).ACTIVE == true)
+                {
+                    response.Message = "Hesabınız zaten aktifleştirilmiş.";
+                    TempData["Response"] = response;
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    if (actCode != null && actCode != "")
+                    {
+                        actCode = (actCode.Length == 6) ? Encryptor.Encrypt(actCode) : actCode;
+                        if (_userService.Activate(actCode, email))
+                        {
+                            response.Status = true;
+                            response.Message = "Hesabınız başarıyla aktifleştirildi.";
+                            TempData["Response"] = response;
+                            return RedirectToAction("Login");
+                        }
+                        else
+                        {
+                            response.Message = "Hesabınız aktifleştirilemedi, lütfen tekrar deneyin.";
+                        }
+                    }
+                    else
+                    {
+                        return View();
+                    }
+                }
+                TempData["Response"] = response;
+                return View();
+            }
             return RedirectToAction("Login");
         }
         public ActionResult Login(UserLoginRequest request, BaseResponse model)
@@ -170,27 +175,28 @@ namespace DepremsizHayat.App.Controllers
         }
         public ActionResult SetNewPassword(string authCode, ResetPasswordRequest request)
         {
-            if (authCode != null && _userService.CheckResetAuth(authCode, request.Mail))
-            {
-                BaseResponse response = new BaseResponse() { Status = false };
-                if (_userService.ResetPassword(request))
-                {
-                    response.Status = true;
-                    response.Message = "Şifreniz başarıyla güncellendi.";
-                    TempData["Response"] = response;
-                    return RedirectToAction("Login");
-                }
-                else
-                {
-                    TempData["Response"] = response;
-                    response.Message = "Şifreniz güncellenemedi. Lütfen tekrar deneyin.";
-                    return View();
-                }
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+            //if (authCode != null && _userService.CheckResetAuth(authCode, request.Mail))
+            //{
+            //    BaseResponse response = new BaseResponse() { Status = false };
+            //    if (_userService.ResetPassword(request))
+            //    {
+            //        response.Status = true;
+            //        response.Message = "Şifreniz başarıyla güncellendi.";
+            //        TempData["Response"] = response;
+            //        return RedirectToAction("Login");
+            //    }
+            //    else
+            //    {
+            //        TempData["Response"] = response;
+            //        response.Message = "Şifreniz güncellenemedi. Lütfen tekrar deneyin.";
+            //        return View();
+            //    }
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login");
+            //}
+            return View();
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DepremsizHayat.DataAccess
+namespace DepremsizHayat.DTO.Models
 {
-    public class USER
+    public class UserModel
     {
         [Key]
         public int USER_ID { get; set; }
@@ -28,15 +28,12 @@ namespace DepremsizHayat.DataAccess
         public string E_MAIL { get; set; }
         [Required]
         [MaxLength(50)]
-        public byte[] PASSWORD { get; set; }
+        public string PASSWORD { get; set; }
         [MaxLength(50)]
         public string ACTIVATION_CODE { get; set; }
         [DefaultValue(null)]
         public Nullable<DateTime> LAST_ANSWER_DATE { get; set; }
         public Nullable<int> MAX_COUNT_REQUEST { get; set; }
         public Nullable<int> COUNT_ANSWER { get; set; }
-        [MaxLength(50)]
-        public string HASH_HELPER { get; set; }
-
     }
 }

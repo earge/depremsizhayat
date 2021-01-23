@@ -65,3 +65,4 @@ C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utilit
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\bin\Debug\DepremsizHayat.Security.pdb
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\bin\Debug\DepremsizHayat.Security.dll.config
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.csproj.CopyComplete
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.csprojAssemblyReference.cache

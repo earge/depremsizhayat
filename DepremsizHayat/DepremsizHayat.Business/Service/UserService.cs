@@ -1,4 +1,5 @@
-﻿using DepremsizHayat.Business.IService;
+﻿using DepremsizHayat.DTO.Models;
+using DepremsizHayat.Business.IService;
 using DepremsizHayat.Business.IServiceRepository;
 using DepremsizHayat.Business.UnitOfWork;
 using DepremsizHayat.DataAccess;
@@ -26,8 +27,7 @@ namespace DepremsizHayat.Business.Service
         {
             var user = _userRepository.GetByMail(mail);
             bool result = false;
-            /* 1=user.ACTIVATONCODE olacak. */
-            if (Decryptor.DecryptInt(actCode) != 1)
+            if (actCode != user.ACTIVATION_CODE)
             {
                 result = false;
             }
@@ -50,11 +50,11 @@ namespace DepremsizHayat.Business.Service
                 return false;
             }
         }
-        public USER CreateUser(USER user)
+        public USER CreateUser(UserModel user)
         {
-            user = _userRepository.Add(user);
+            USER rUser = _userRepository.CreateUser(user);
             _unitOfWork.Commit();
-            return user;
+            return rUser;
         }
         public List<USER> GetAll()
         {
@@ -67,25 +67,28 @@ namespace DepremsizHayat.Business.Service
         public bool Login(string mail, string pwd)
         {
             bool result = false;
-            var userFromDb = _userRepository.GetByMail(mail);
-            if (userFromDb != null)
-            {
-                if (Decryptor.Decrypt(userFromDb.PASSWORD) == Decryptor.Decrypt(pwd))
+            //var userFromDb = _userRepository.GetByMail(mail);
+            //if (userFromDb != null)
+            //{
+
+                if (/*Decryptor.Decrypt(userFromDb.PASSWORD) == Decryptor.Decrypt(pwd)*/_userRepository.Login(new UserModel() { E_MAIL = mail, PASSWORD = pwd }))
                 {
                     result = true;
                 }
-            }
+            //}
             return result;
         }
         public bool ResetPassword(ResetPasswordRequest request)
         {
-            USER user = _userRepository.GetByMail(request.Mail);
-            if (user != null)
-            {
-                user.PASSWORD = request.Password;
-                _unitOfWork.Commit();
-                return true;
-            }
+            //Prosedüre ihtiyaç var.
+            //USER user = _userRepository.GetByMail(request.Mail);
+            //if (user != null)
+            //{
+            //    UserModel newUser = new UserModel();
+            //    user.PASSWORD = request.Password;
+            //    _unitOfWork.Commit();
+            //    return true;
+            //}
             return false;
         }
         public string SendResetMail(string mail)

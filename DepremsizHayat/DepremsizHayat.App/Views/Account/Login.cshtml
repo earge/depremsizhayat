@@ -21,26 +21,30 @@
             <div class="pr15 pl15 pb15"><input type="password" class="input one" id="password" placeholder="Şifreniz"></div>
             @if (TempData["Response"] != null)
             {
-                if (((BaseResponse)TempData["Response"]).Status)
+                if (((BaseResponse)TempData["Response"]).Message != null)
                 {
-                    //yeşil
-                    <div>
-                        @(
+                    if (((BaseResponse)TempData["Response"]).Status)
+                    {
+                        //yeşil
+                        <div>
+                            @(
     ((BaseResponse)TempData["Response"]).Message.ToString()
     )
-                    </div>
-                }
-                else
-                {
-                    //kırmızı
-                    <div>
-                        @(
+                        </div>
+                    }
+                    else
+                    {
+                        //kırmızı
+                        <div>
+                            @(
     ((BaseResponse)TempData["Response"]).Message.ToString()
     )
-                    </div>
-                }
+                        </div>
+                    }
 
+                }
             }
+
             <div class="info-boxes error mr15 ml15 mb15 none" id="loginJsonError">
             </div>
             <div class="align-center pb10">

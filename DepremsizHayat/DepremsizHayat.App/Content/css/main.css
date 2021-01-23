@@ -511,12 +511,12 @@ a.inline {
     position: fixed;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-area: "brend menu";
+    grid-area: "brand menu";
     height: auto;
 }
 
-    .navbar .brend {
-        grid-area: "brend";
+    .navbar .brand {
+        grid-area: "brand";
         display: block;
         height: 50px;
         line-height: 50px;
@@ -569,7 +569,7 @@ a.inline {
     .navbar {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
-        grid-area: "brend" "menu";
+        grid-area: "brand" "menu";
         box-shadow: 0px 4px 15px -5px rgb(182,182,182,0.50);
     }
 

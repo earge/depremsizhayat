@@ -43,3 +43,4 @@ C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Busine
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.CopyComplete
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.pdb
+C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csprojAssemblyReference.cache
