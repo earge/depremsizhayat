@@ -46,6 +46,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\CreateUserRequest.cs" />
+    <Compile Include="User\ForgotPasswordRequest.cs" />
     <Compile Include="User\RegisterResponse.cs" />
     <Compile Include="User\ResetPasswordRequest.cs" />
     <Compile Include="User\UserLoginRequest.cs" />

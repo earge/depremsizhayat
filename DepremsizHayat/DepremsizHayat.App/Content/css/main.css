@@ -629,6 +629,7 @@ a.inline {
         background-color: rgba(52,199,89,0.05);
         color: var(--color-green);
     }
-    .none{
-        display: none;
-    }
+
+.none {
+    display: none;
+}

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Kayıt Ol";
     Layout = "~/Views/Account/Shared/_Layout.cshtml";
 }
@@ -33,6 +32,7 @@
             </div>*@
             </div>
             <div class="info-boxes error mr15 ml15 mb15 none" id="registerJsonError"></div>
+            @Html.Partial("Shared/_StatusPartial")
             <div class="ml15 mr15 tx-gray fs-11 align-center">
                 Kaydol butonuna bastığınızda, <a class="link inline">Kullanım Koşullarını</a> ve <a class="link inline">Veri İlkelerimizi</a> kabul etmiş olursunuz.
             </div>
@@ -45,3 +45,7 @@
         </div>
     </div>
 </div>
+
+
+
+

@@ -192,6 +192,7 @@
     <Content Include="Content\css\register.css" />
     <Content Include="Content\js\activationControl.js" />
     <Content Include="Content\js\activationDigit.js" />
+    <Content Include="Content\js\forgotPassword.js" />
     <Content Include="Content\js\login.js" />
     <Content Include="Content\js\main.js" />
     <Content Include="Content\js\register.js" />
@@ -235,6 +236,7 @@
     <Content Include="Views\Account\Activate.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\SetNewPassword.cshtml" />
+    <Content Include="Views\Account\Shared\_StatusPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

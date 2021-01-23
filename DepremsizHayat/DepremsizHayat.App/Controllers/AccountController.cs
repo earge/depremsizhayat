@@ -36,29 +36,36 @@ namespace DepremsizHayat.App.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    string activationCode = Encryptor.Encrypt(new Random().Next(100000, 999999).ToString());
-                    RegisterResponse response = new RegisterResponse() { Status = false };
-                    try
+                    if (_userService.GetByMail(request.E_MAIL) == null)
                     {
-                        _userService.CreateUser(new UserModel()
-                    {
-                        ACTIVE = false,
-                        DELETED = false,
-                        E_MAIL = request.E_MAIL,
-                        FIRST_NAME = request.FIRST_NAME,
-                        CREATED_DATE = DateTime.Now,
-                        LAST_NAME = request.LAST_NAME,
-                        PASSWORD = request.PASSWORD,
-                        ROLE_ID = 1,
-                        ACTIVATION_CODE = activationCode
-                    });
-                    response.Status = true;
-                    response.Url = "?actCode=&mail=" + Encryptor.Encrypt(request.E_MAIL);
+                        string activationCode = Encryptor.Encrypt(new Random().Next(100000, 999999).ToString());
+                        RegisterResponse response = new RegisterResponse() { Status = false };
+                        try
+                        {
+                            _userService.CreateUser(new UserModel()
+                            {
+                                ACTIVE = false,
+                                DELETED = false,
+                                E_MAIL = request.E_MAIL,
+                                FIRST_NAME = request.FIRST_NAME,
+                                CREATED_DATE = DateTime.Now,
+                                LAST_NAME = request.LAST_NAME,
+                                PASSWORD = request.PASSWORD,
+                                ROLE_ID = 1,
+                                ACTIVATION_CODE = activationCode
+                            });
+                            response.Status = true;
+                            response.Url = "?actCode=&mail=" + Encryptor.Encrypt(request.E_MAIL);
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        return Json(response, JsonRequestBehavior.AllowGet);
                     }
-                    catch (Exception)
+                    else
                     {
+                        return Json(new BaseResponse() { Status = false, Message = "Bu e-posta adresi zaten sistemimizde kayıtlı." }, JsonRequestBehavior.AllowGet);
                     }
-                    return Json(response, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
@@ -76,7 +83,7 @@ namespace DepremsizHayat.App.Controllers
                 if (_userService.GetByMail(email).ACTIVE == true)
                 {
                     response.Message = "Hesabınız zaten aktifleştirilmiş.";
-                    TempData["Response"] = response;
+                    TempData["Carrier"] = response;
                     return RedirectToAction("Login");
                 }
                 else
@@ -88,7 +95,7 @@ namespace DepremsizHayat.App.Controllers
                         {
                             response.Status = true;
                             response.Message = "Hesabınız başarıyla aktifleştirildi.";
-                            TempData["Response"] = response;
+                            TempData["Carrier"] = response;
                             return RedirectToAction("Login");
                         }
                         else
@@ -101,12 +108,12 @@ namespace DepremsizHayat.App.Controllers
                         return View();
                     }
                 }
-                TempData["Response"] = response;
+                ViewBag.Response = response;
                 return View();
             }
             return RedirectToAction("Login");
         }
-        public ActionResult Login(UserLoginRequest request, BaseResponse model)
+        public ActionResult Login(UserLoginRequest request)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -145,6 +152,7 @@ namespace DepremsizHayat.App.Controllers
                 {
                     ModelState.AddModelError("", "E-mail veya şifre hatalı girildi.");
                 }
+                ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
                 return View();
             }
         }
@@ -153,12 +161,16 @@ namespace DepremsizHayat.App.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-        public ActionResult ForgotPassword(string mail)
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        public JsonResult SendForgotLink(ForgotPasswordRequest request)
         {
             BaseResponse response = new BaseResponse();
-            if (mail != null)
+            if (request != null && request.Mail != null && request.Mail != "")
             {
-                var result = _userService.SendResetMail(mail).Split('_');
+                var result = _userService.SendResetMail(request.Mail).Split('_');
                 if (result[0] == "+")
                 {
                     response.Status = true;
@@ -169,9 +181,15 @@ namespace DepremsizHayat.App.Controllers
                     response.Status = false;
                     response.Message = result[1];
                 }
+                ViewBag.Response = response;
+                return Json(response, JsonRequestBehavior.AllowGet);
             }
-            TempData["Response"] = response;
-            return View();
+            else
+            {
+                response.Status = false;
+                response.Message = "Mail adresi boş olamaz";
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
         }
         public ActionResult SetNewPassword(string authCode, ResetPasswordRequest request)
         {
@@ -182,12 +200,12 @@ namespace DepremsizHayat.App.Controllers
             //    {
             //        response.Status = true;
             //        response.Message = "Şifreniz başarıyla güncellendi.";
-            //        TempData["Response"] = response;
+            //        ViewBag.Response = response;
             //        return RedirectToAction("Login");
             //    }
             //    else
             //    {
-            //        TempData["Response"] = response;
+            //        ViewBag.Response = response;
             //        response.Message = "Şifreniz güncellenemedi. Lütfen tekrar deneyin.";
             //        return View();
             //    }

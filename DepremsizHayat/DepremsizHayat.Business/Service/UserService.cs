@@ -41,14 +41,8 @@ namespace DepremsizHayat.Business.Service
         }
         public bool CheckResetAuth(string code, string mail)
         {
-            if (Decryptor.Decrypt(_userRepository.GetByMail(mail).ACTIVATION_CODE) == Decryptor.Decrypt(code))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            bool result = (Decryptor.Decrypt(_userRepository.GetByMail(mail).ACTIVATION_CODE) == Decryptor.Decrypt(code)) ? true : false;
+            return result;
         }
         public USER CreateUser(UserModel user)
         {
@@ -71,10 +65,10 @@ namespace DepremsizHayat.Business.Service
             //if (userFromDb != null)
             //{
 
-                if (/*Decryptor.Decrypt(userFromDb.PASSWORD) == Decryptor.Decrypt(pwd)*/_userRepository.Login(new UserModel() { E_MAIL = mail, PASSWORD = pwd }))
-                {
-                    result = true;
-                }
+            if (/*Decryptor.Decrypt(userFromDb.PASSWORD) == Decryptor.Decrypt(pwd)*/_userRepository.Login(new UserModel() { E_MAIL = mail, PASSWORD = pwd }))
+            {
+                result = true;
+            }
             //}
             return result;
         }

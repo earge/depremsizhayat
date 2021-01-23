@@ -15,7 +15,6 @@ document.querySelector("#register").addEventListener("click", (event) => {
             data: registerModel,
             type: "POST",
             success: function (data) {
-                debugger;
                 if (data.Status) {
                     window.location = "/Account/Activate"+data.Url
                 }
