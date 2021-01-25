@@ -7,21 +7,23 @@ using System.Threading.Tasks;
 
 namespace DepremsizHayat.DataAccess
 {
-    public class ANALYSIS_REQUEST_ANSWER
+    public class FILE
     {
         [Key]
-        public int ANALYSIS_REQUEST_ANSWER_ID { get; set; }
+        public int FILE_ID { get; set; }
         [Required]
-        public int ANALYSIS_REQUEST_ID { get; set; }
-        [Required]
-        public string DETAIL { get; set; }
+        public string URL { get; set; }
         [Required]
         public DateTime CREATED_DATE { get; set; }
         [Required]
         public bool DELETED { get; set; }
         [Required]
-        public int RISK_SCORE { get; set; }
+        public int ENTITY_ID { get; set; }
         [Required]
-        public int USER_ID { get; set; }
+        [MaxLength(50)]
+        public string ENTITY_TYPE_CODE { get; set; }
+        [MaxLength(500)]
+        public string COMMENT { get; set; }
+        public Nullable<int> FILE_TYPE_ID { get; set; }
     }
 }

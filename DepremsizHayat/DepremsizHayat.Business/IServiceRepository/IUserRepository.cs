@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace DepremsizHayat.Business.IServiceRepository
 {
-    public interface IUserRepository:IRepository<USER>
+    public interface IUserRepository:IRepository<USER_ACCOUNT>
     {
-        USER GetByMail(string mail);
+        USER_ACCOUNT GetByMail(string mail);
         bool SendMail(string mail,string subject,string body);
-        USER CreateUser(UserModel user);
+        USER_ACCOUNT CreateUser(UserModel user);
         bool Login(UserModel user);
     }
 }

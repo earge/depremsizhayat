@@ -11,8 +11,6 @@ namespace DepremsizHayat.Utility
 {
     public class UserRoleProvider : RoleProvider
     {
-        public IUserService _userService { get; set; }
-        public IRoleService _roleService { get; set; }
         public override string ApplicationName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)

@@ -19,6 +19,7 @@ namespace DepremsizHayat.DataAccess
         public bool DELETED { get; set; }
         [Required]
         public string NAME { get; set; }
+        public string DESCRIPTION { get; set; }
 
     }
 }

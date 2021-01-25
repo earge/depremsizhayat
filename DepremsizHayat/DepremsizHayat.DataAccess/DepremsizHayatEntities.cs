@@ -20,10 +20,10 @@ namespace DepremsizHayat.DataAccess
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
         public virtual DbSet<ANALYSIS_IMAGE> ANALYSIS_IMAGE { get; set; }
-        public virtual DbSet<ANALYSIS_REQUEST> ANALYSIS_REQUEST { get; set; }
-        public virtual DbSet<ANALYSIS_REQUEST_ANSWER> ANALYSIS_REQUEST_ANSWER { get; set; }
+        public virtual DbSet<ANALYSE_REQUEST> ANALYSIS_REQUEST { get; set; }
+        public virtual DbSet<ANALYSE_REQUEST_ANSWER> ANALYSIS_REQUEST_ANSWER { get; set; }
         public virtual DbSet<ROLE> ROLE { get; set; }
         public virtual DbSet<STATUS> STATUS { get; set; }
-        public virtual DbSet<USER> USER { get; set; }
+        public virtual DbSet<USER_ACCOUNT> USER { get; set; }
     }
 }

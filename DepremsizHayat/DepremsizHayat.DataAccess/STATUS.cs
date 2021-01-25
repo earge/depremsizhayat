@@ -15,7 +15,10 @@ namespace DepremsizHayat.DataAccess
         [MaxLength(100)]
         public string NAME { get; set; }
         public bool ACTIVE { get; set; }
-        public bool DELETED { get; set; }
         public DateTime CREATED_DATE { get; set; }
+        public string DESCRIPTION { get; set; }
+        [MaxLength(50)]
+        public string STATUS_CODE { get; set; }
+
     }
 }

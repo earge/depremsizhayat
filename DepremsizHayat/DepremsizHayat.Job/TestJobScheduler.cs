@@ -5,24 +5,21 @@ namespace DepremsizHayat.Job
 {
     public class TestJobScheduler
     {
-        private IScheduler Start()
+        private readonly IScheduler _scheduler;
+        public TestJobScheduler(IScheduler scheduler)
         {
-            ISchedulerFactory schedulerFact = new StdSchedulerFactory();
-            IScheduler scheduler = schedulerFact.GetScheduler().GetAwaiter().GetResult();
-            scheduler.Start();
-            return scheduler;
+            this._scheduler = scheduler;
         }
-        public void Trig()
+        public void Start()
         {
-            IScheduler scheduler = Start();
+            _scheduler.Start();
             IJobDetail job = JobBuilder.Create<TestJob>().Build();
             ITrigger trigger = TriggerBuilder.Create().WithSimpleSchedule(
                 s =>
                 s
                 .WithIntervalInSeconds(30).WithRepeatCount(3)
                 ).StartNow().Build();
-            scheduler.ScheduleJob(job, trigger);
-
+            _scheduler.ScheduleJob(job, trigger);
         }
     }
 }

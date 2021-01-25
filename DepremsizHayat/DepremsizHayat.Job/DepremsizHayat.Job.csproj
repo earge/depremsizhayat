@@ -60,6 +60,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -103,6 +104,13 @@
       <Project>{608c229d-b667-4565-aeae-7a1a961c807d}</Project>
       <Name>DepremsizHayat.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DepremsizHayat.Utility\DepremsizHayat.Utility.csproj">
+      <Project>{2dd9e118-2a10-464b-99cb-6a6214b8d97d}</Project>
+      <Name>DepremsizHayat.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,12 +12,12 @@ using DepremsizHayat.DTO.Models;
 
 namespace DepremsizHayat.Business.ServiceRepository
 {
-    public class UserRepository : Repository<USER>, IUserRepository
+    public class UserRepository : Repository<USER_ACCOUNT>, IUserRepository
     {
         public UserRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
-        public USER CreateUser(UserModel user)
+        public USER_ACCOUNT CreateUser(UserModel user)
         {
             if (GetByMail(user.E_MAIL)==null)
             {
@@ -44,7 +44,7 @@ namespace DepremsizHayat.Business.ServiceRepository
                     " @ACTIVE," +
                     " @DELETED",
                     @params);
-                USER rUser = GetByMail(user.E_MAIL);
+                USER_ACCOUNT rUser = GetByMail(user.E_MAIL);
                 if (user != null)
                 {
                     bool sit = SendMail(user.E_MAIL, 
@@ -65,7 +65,7 @@ namespace DepremsizHayat.Business.ServiceRepository
             }
             return null;
         }
-        public USER GetByMail(string mail)
+        public USER_ACCOUNT GetByMail(string mail)
         {
             return _dbContext.USER.FirstOrDefault(p => p.E_MAIL == mail);
         }

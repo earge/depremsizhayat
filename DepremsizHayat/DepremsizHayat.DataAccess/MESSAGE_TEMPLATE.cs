@@ -18,5 +18,7 @@ namespace DepremsizHayat.DataAccess
         public string BODY { get; set; }
         [Required]
         public bool ACTIVE { get; set; }
+        [MaxLength(250)]
+        public string TITLE { get; set; }
     }
 }

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace DepremsizHayat.DataAccess
 {
-    public class USER
+    public class USER_ACCOUNT
     {
         [Key]
-        public int USER_ID { get; set; }
+        public int USER_ACCOUNT_ID { get; set; }
         [Required]
         public int ROLE_ID { get; set; }
         [Required]
@@ -37,6 +37,11 @@ namespace DepremsizHayat.DataAccess
         public Nullable<int> COUNT_ANSWER { get; set; }
         [MaxLength(50)]
         public string HASH_HELPER { get; set; }
+        [MaxLength(100)]
+        public string PASSWORD_RESET_HELPER { get; set; }
+        [DefaultValue(null)]
+        public Nullable<DateTime> PASSWORD_RESET_REQUEST_TIME { get; set; }
+        public Nullable<bool> PASSWORD_RESET_IS_USED { get; set; }
 
     }
 }

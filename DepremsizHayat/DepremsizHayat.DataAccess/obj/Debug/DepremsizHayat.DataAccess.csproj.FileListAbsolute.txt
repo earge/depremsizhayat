@@ -22,3 +22,15 @@ C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAc
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.dll
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.pdb
 C:\Users\Yiğit\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csprojAssemblyReference.cache
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.dll.config
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csprojAssemblyReference.cache
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CopyComplete
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.pdb

@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace DepremsizHayat.DataAccess
 {
-    public class ANALYSIS_REQUEST
+    public class ANALYSE_REQUEST
     {
         [Key]
         public int ANALYSIS_REQUEST_ID { get; set; }
         [Required]
         public DateTime CREATED_DATE { get; set; }
         [Required]
-        public int USER_ID { get; set; }
+        public int USER_ACCOUNT_ID { get; set; }
         [Required]
         public int STATUS_ID { get; set; }
+        [Required]
+        public bool DELETED { get; set; }
         [Required]
         public string ADDRESS { get; set; }
         [MaxLength(20)]
@@ -35,7 +37,5 @@ namespace DepremsizHayat.DataAccess
         public int NUMBER_OF_FLOORS { get; set; }
         [MaxLength(500)]
         public string USER_NOTE { get; set; }
-        [Required]
-        public bool DELETED { get; set; }
     }
 }

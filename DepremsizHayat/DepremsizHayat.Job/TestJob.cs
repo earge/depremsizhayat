@@ -1,6 +1,7 @@
 ﻿using DepremsizHayat.Business.IService;
 using DepremsizHayat.Business.IServiceRepository;
 using DepremsizHayat.DataAccess;
+using DepremsizHayat.Utility;
 using Quartz;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,11 @@ namespace DepremsizHayat.Job
 {
     public class TestJob : IJob
     {
-        public IUserService userService { get; set; }
+        public IUserService _userService;
+        public TestJob(IUserService userService)
+        {
+            _userService = userService;
+        }
         Task IJob.Execute(IJobExecutionContext context)
         {
             /* Mail Deneme */
@@ -41,7 +46,6 @@ namespace DepremsizHayat.Job
             //{
             //    smtp.Send(mess);
             //}
-            System.Diagnostics.Debug.WriteLine(DateTime.Now.ToString() + " tarihinde trigger çalıştı.");
             return Task.CompletedTask;
         }
     }

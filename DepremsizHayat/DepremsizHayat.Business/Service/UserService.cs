@@ -44,17 +44,17 @@ namespace DepremsizHayat.Business.Service
             bool result = (Decryptor.Decrypt(_userRepository.GetByMail(mail).ACTIVATION_CODE) == Decryptor.Decrypt(code)) ? true : false;
             return result;
         }
-        public USER CreateUser(UserModel user)
+        public USER_ACCOUNT CreateUser(UserModel user)
         {
-            USER rUser = _userRepository.CreateUser(user);
+            USER_ACCOUNT rUser = _userRepository.CreateUser(user);
             _unitOfWork.Commit();
             return rUser;
         }
-        public List<USER> GetAll()
+        public List<USER_ACCOUNT> GetAll()
         {
             return _userRepository.GetAll();
         }
-        public USER GetByMail(string mail)
+        public USER_ACCOUNT GetByMail(string mail)
         {
             return _userRepository.GetByMail(mail);
         }
