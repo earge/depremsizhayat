@@ -124,7 +124,7 @@ namespace DepremsizHayat.Business.Service
                 {
                     user = _userRepository.GetByMailForProcedure(mail);
                     var subject = "Şifre Sıfırlama Talebi";
-                    var body = "Talebiniz üzerine iletilen şifre sıfırlama linki: /Account/SetForgottenPassword?authCode=" + Encryptor.Encrypt(user.PASSWORD_RESET_HELPER);
+                    var body = "<b>Talebiniz </b>üzerine iletilen şifre sıfırlama linki: http://app.depremsizhayat.com/Account/SetForgottenPassword?authCode=" + Encryptor.Encrypt(user.PASSWORD_RESET_HELPER);
                     if (_mailRepository.SendMail("app", mail, subject, body))
                     {
                         result.Status = true;

@@ -44,7 +44,8 @@ namespace DepremsizHayat.Business.ServiceRepository
                 using (var mess = new MailMessage(GetMailInfo(emailAccount.USER_NAME), GetMailInfo(receiverMail))
                 {
                     Subject = subject,
-                    Body = body
+                    Body = body,
+                    IsBodyHtml=true
                 })
                 {
                     smtp.Send(mess);

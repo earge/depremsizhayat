@@ -72,7 +72,7 @@ namespace DepremsizHayat.Business.ServiceRepository
                 {
                     var subject = "E-Posta Doğrulama";
                     var body = "Depremsiz Hayat'a hoşgeldiniz " + user.FIRST_NAME + " " + user.LAST_NAME + "! E-Postanızı doğrulamak için linke tıklayabilirsiniz: " +
-                        "/Account/Activate?actCode=" + user.ACTIVATION_CODE + "&mail=" + Security.Encryptor.Encrypt(user.E_MAIL) +
+                        "http://app.depremsizhayat.com/Account/Activate?actCode=" + user.ACTIVATION_CODE + "&mail=" + Security.Encryptor.Encrypt(user.E_MAIL) +
                         " <br/>Doğrulama kodunuz: " + Security.Decryptor.Decrypt(user.ACTIVATION_CODE);
                     if (_mailRepository.SendMail("app", user.E_MAIL, subject, body) == true)
                         return rUser;

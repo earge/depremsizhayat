@@ -7,9 +7,10 @@ using System.Web.Mvc;
 
 namespace DepremsizHayat.App.Controllers
 {
-    [Authorize(Roles = "SystemAdmin,User,Expert")]
+
     public class HomeController : Controller
-    {       
+    {
+        [Authorize(Roles = "SystemAdmin,User,Expert")]
         public ActionResult Index()
         {
             return View();
@@ -24,6 +25,11 @@ namespace DepremsizHayat.App.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
+        public ActionResult PageNotFound()
+        {
             return View();
         }
     }

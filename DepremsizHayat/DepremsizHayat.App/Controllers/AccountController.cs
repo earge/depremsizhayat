@@ -195,9 +195,7 @@ namespace DepremsizHayat.App.Controllers
                         TempData["Carrier"] = ResetForgottenPassword(authCode, newPassword);
                         if (((BaseResponse)TempData["Carrier"]).Status)
                             return RedirectToAction("Login");
-                        //başarı basılacak
                         else
-                            //hata basılacak
                             return View();
                     }
                     else
