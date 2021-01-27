@@ -1,0 +1,36 @@
+﻿@using DepremsizHayat.DTO;
+@{
+    ViewBag.Title = "Activate";
+    Layout = "~/Views/Account/Shared/_Layout.cshtml";
+}
+@section styles{
+    <link href="~/Content/css/mailactivation.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Content/js/activationDigit.js"></script>
+    <script src="~/Content/js/activationControl.js"></script>
+}
+<div class="flex h-center">
+    <div class="container">
+        <div class="white-box">
+            <div class="top-header align-left p15">Mail Aktivasyonu</div>
+            <div class="fs-14 tx-gray p15 align-center">Lütfen e-mailinize gelen 6 haneli kodu giriniz.</div>
+            <div class="digitArea flex h-center pl15 pr15 pb15" id="digits">
+                <input type="text" maxlength="1" id="digitOne">
+                <input type="text" maxlength="1" id="digitTwo">
+                <input type="text" maxlength="1" id="digitTree">
+                <input type="text" maxlength="1" id="digitFour">
+                <input type="text" maxlength="1" id="digitFive">
+                <input type="text" maxlength="1" id="digitSix">
+            </div>
+            @Html.Partial("Shared/_StatusPartial")
+            <div class="info-boxes error mr15 ml15 mb15 none" id="activateJsonError"></div>
+            <div class="align-center pb15">
+                <button class="btn btn-main btn-blue spinner" id="activate">
+                    <span class="spinner"></span> Aktive Et
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

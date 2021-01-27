@@ -1,0 +1,18 @@
+﻿@if (ViewBag.Response != null)
+{
+    if (ViewBag.Response.Message != null && ViewBag.Response.Message != "")
+    {
+        if (ViewBag.Response.Status)
+        {
+            <div class="info-boxes success ml15 mr15 mb15">
+                @ViewBag.Response.Message
+            </div>
+        }
+        else
+        {
+            <div class="info-boxes error ml15 mr15 mb15">
+                @ViewBag.Response.Message
+            </div>
+        }
+    }
+}
