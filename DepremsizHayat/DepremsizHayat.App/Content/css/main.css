@@ -279,7 +279,7 @@ body {
             flex: 100%;
         }
 
-.felx.v-center {
+.flex.v-center {
     align-items: center;
 }
 
@@ -449,7 +449,11 @@ body {
 }
 
 .tx-gray {
-    color: var(--color-secondary);
+    color: var(--color-secondary) !important;
+}
+
+.tx-blue{
+    color: var(--color-blue) !important;
 }
 
 
@@ -480,7 +484,7 @@ body {
 /* LINK */
 .link {
     text-decoration: none;
-    color: var(--color-blue)
+    color:inherit;
 }
 
 a.inline {
@@ -559,6 +563,8 @@ a.inline {
         border-radius: 5px;
         cursor: pointer;
         font-size: 20px;
+        padding:0px;
+        text-align:center;
     }
 
         .navbar .toggle:hover {
@@ -570,7 +576,7 @@ a.inline {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-area: "brand" "menu";
-        box-shadow: 0px 4px 15px -5px rgb(182,182,182,0.50);
+        box-shadow: 0px 4px 15px -5px rgb(182,182,182,0.70);
     }
 
         .navbar .menu {
