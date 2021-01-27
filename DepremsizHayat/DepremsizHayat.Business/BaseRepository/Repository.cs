@@ -28,6 +28,7 @@ namespace DepremsizHayat.Business.BaseRepository
 
         public bool Delete(T entity)
         {
+            //_dbSet.Attach(entity);
             _dbSet.Remove(entity);
             return true;
         }

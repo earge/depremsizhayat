@@ -13,12 +13,18 @@ namespace DepremsizHayat.DataAccess
         [Key]
         public int E_MAIL_ACCOUNT_ID { get; set; }
         [Required]
-        public string FROM_ADDRESS { get; set; }
+        public string USER_NAME { get; set; }
         [Required]
-        public string TO_ADDRESS { get; set; }
+        public string HOST { get; set; }
         [Required]
-        public int MESSAGE_TEMPLATE_ID { get; set; }
-        [DefaultValue(null)]
-        public Nullable<DateTime> SENT_DATE { get; set; }
+        public string PASSWORD { get; set; }
+        public Nullable<bool> ENABLE_SSL { get; set; }
+        [Required]
+        public int PORT { get; set; }
+        [Required]
+        public bool ACTIVE { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string E_MAIL_ACCOUNT_CODE { get; set; }
     }
 }

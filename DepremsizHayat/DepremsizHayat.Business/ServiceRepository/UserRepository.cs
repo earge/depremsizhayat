@@ -9,17 +9,40 @@ using System.Data;
 using System.Net.Mail;
 using System.Net;
 using DepremsizHayat.DTO.Models;
+using DepremsizHayat.DTO.User;
+using DepremsizHayat.Security;
 
 namespace DepremsizHayat.Business.ServiceRepository
 {
     public class UserRepository : Repository<USER_ACCOUNT>, IUserRepository
     {
-        public UserRepository(IDbFactory dbFactory) : base(dbFactory)
+        private IMailRepository _mailRepository;
+        public UserRepository(IDbFactory dbFactory, IMailRepository mailRepository) : base(dbFactory)
         {
+            this._mailRepository = mailRepository;
+        }
+        public USER_ACCOUNT GetByResetAuth(string authCode)
+        {
+            return _dbContext.USER_ACCOUNT.FirstOrDefault(p => p.PASSWORD_RESET_HELPER == authCode);
+        }
+        public bool CreateForgottenPwdResetRequest(string mail)
+        {
+            SqlParameter[] @params =
+            {
+
+                new SqlParameter("@E_MAIL", mail),
+                new SqlParameter("@RETURN",SqlDbType.Int){ Direction=ParameterDirection.Output}
+            };
+            _dbContext.Database.ExecuteSqlCommand("exec @RETURN=SP_FORGET_PASSWORD_RESET @E_MAIL", @params);
+            if ((int)@params[1].Value == 1)
+            {
+                return true;
+            }
+            return false;
         }
         public USER_ACCOUNT CreateUser(UserModel user)
         {
-            if (GetByMail(user.E_MAIL)==null)
+            if (GetByMail(user.E_MAIL) == null)
             {
                 SqlParameter[] @params =
             {
@@ -47,27 +70,29 @@ namespace DepremsizHayat.Business.ServiceRepository
                 USER_ACCOUNT rUser = GetByMail(user.E_MAIL);
                 if (user != null)
                 {
-                    bool sit = SendMail(user.E_MAIL, 
-                        "E-Posta Doğrulama", 
-                        "Depremsiz Hayat'a hoşgeldiniz "+user.FIRST_NAME+" "+user.LAST_NAME+"! E-Postanızı doğrulamak için linke tıklayabilirsiniz: "+
-                        "/Account/Activate?actCode="+user.ACTIVATION_CODE+"&mail="+Security.Encryptor.Encrypt(user.E_MAIL)+
-                        " <br/>Doğrulama kodunuz: "+ Security.Decryptor.Decrypt(user.ACTIVATION_CODE));
-                    if (sit==true)
-                    {
+                    var subject = "E-Posta Doğrulama";
+                    var body = "Depremsiz Hayat'a hoşgeldiniz " + user.FIRST_NAME + " " + user.LAST_NAME + "! E-Postanızı doğrulamak için linke tıklayabilirsiniz: " +
+                        "/Account/Activate?actCode=" + user.ACTIVATION_CODE + "&mail=" + Security.Encryptor.Encrypt(user.E_MAIL) +
+                        " <br/>Doğrulama kodunuz: " + Security.Decryptor.Decrypt(user.ACTIVATION_CODE);
+                    if (_mailRepository.SendMail("app", user.E_MAIL, subject, body) == true)
                         return rUser;
-                    }
                     else
                     {
-                        _dbContext.USER.Remove(rUser);
+                        Delete(rUser);
+                        _dbContext.SaveChanges();
                         return null;
                     }
                 }
             }
             return null;
         }
+        public USER_ACCOUNT GetByMailForProcedure(string mail)
+        {
+            return _dbContext.USER_ACCOUNT.AsNoTracking().FirstOrDefault(p => p.E_MAIL == mail);
+        }
         public USER_ACCOUNT GetByMail(string mail)
         {
-            return _dbContext.USER.FirstOrDefault(p => p.E_MAIL == mail);
+            return _dbContext.USER_ACCOUNT.FirstOrDefault(p => p.E_MAIL == mail);
         }
         public bool Login(UserModel user)
         {
@@ -78,44 +103,28 @@ namespace DepremsizHayat.Business.ServiceRepository
                 new SqlParameter("@PASSWORD", user.PASSWORD),
                 new SqlParameter("@RETURN",SqlDbType.Int){ Direction=ParameterDirection.Output}
             };
-
-            _dbContext.Database.ExecuteSqlCommand("SP_USER_LOGIN_CONTROL @E_MAIL,@PASSWORD, @RETURN out", @params);
+            _dbContext.Database.ExecuteSqlCommand("exec @RETURN = SP_USER_LOGIN_CONTROL @E_MAIL,@PASSWORD", @params);
             if ((int)@params[2].Value == 1)
             {
                 return true;
             }
             return false;
         }
-        public bool SendMail(string mail, string subject, string body)
+        public bool ResetForgottenPassword(ResetPasswordRequest request)
         {
-            try
+            SqlParameter[] @params =
+           {
+                new SqlParameter("@PASSWORD_RESET_HELPER", request.PASSWORD_RESET_HELPER),
+                new SqlParameter("@NEW_PASSWORD", request.NewPassword),
+                new SqlParameter("@E_MAIL", request.Mail),
+                new SqlParameter("@RETURN",SqlDbType.Int){ Direction=ParameterDirection.Output}
+            };
+            _dbContext.Database.ExecuteSqlCommand("exec @RETURN=SP_AFTER_FORGET_PASSWORD_RESET @PASSWORD_RESET_HELPER,@NEW_PASSWORD,@E_MAIL", @params);
+            if ((int)@params[3].Value == 1)
             {
-                var senderEmail = new MailAddress("yigit.gok@depremsizhayat.com", "Depremsiz Hayat");
-                var receiverEmail = new MailAddress(mail, mail);
-                var password = "37665445";
-                var smtp = new SmtpClient
-                {
-                    Host = "mail.depremsizhayat.com",
-                    Port = 587,
-                    EnableSsl = false,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential(senderEmail.Address, password)
-                };
-                using (var mess = new MailMessage(senderEmail, receiverEmail)
-                {
-                    Subject = subject,
-                    Body = body
-                })
-                {
-                    smtp.Send(mess);
-                }
                 return true;
             }
-            catch (Exception)
-            {
-                return false;
-            }
+            return false;
         }
     }
 }

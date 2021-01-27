@@ -48,6 +48,7 @@
     <Compile Include="User\CreateUserRequest.cs" />
     <Compile Include="User\ForgotPasswordRequest.cs" />
     <Compile Include="User\RegisterResponse.cs" />
+    <Compile Include="User\ResetForgottenPaswordResponse.cs" />
     <Compile Include="User\ResetPasswordRequest.cs" />
     <Compile Include="User\UserLoginRequest.cs" />
   </ItemGroup>

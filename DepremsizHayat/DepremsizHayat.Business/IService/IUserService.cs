@@ -1,4 +1,5 @@
 ﻿using DepremsizHayat.DataAccess;
+using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Models;
 using DepremsizHayat.DTO.User;
 using System;
@@ -13,11 +14,13 @@ namespace DepremsizHayat.Business.IService
     {
         List<USER_ACCOUNT> GetAll();
         USER_ACCOUNT CreateUser(UserModel user);
-        bool Login(string mail,string pwd);
-        bool Activate(string actCode,string mail);
+        bool Login(string mail, string pwd);
+        bool Activate(string actCode, string mail);
         USER_ACCOUNT GetByMail(string mail);
-        bool ResetPassword(ResetPasswordRequest request);
-        string SendResetMail(string mail);
-        bool CheckResetAuth(string code, string mail);
+        BaseResponse ResetForgottenPassword(ResetPasswordRequest request);
+        BaseResponse SendResetMail(string mail);
+        ResetForgottenPaswordResponse CheckResetAuth(string code);
+        USER_ACCOUNT GetByResetAuth(string authCode);
+
     }
 }

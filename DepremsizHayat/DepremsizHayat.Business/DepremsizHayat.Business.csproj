@@ -52,13 +52,17 @@
     <Compile Include="BaseRepository\Repository.cs" />
     <Compile Include="Factory\DbFactory.cs" />
     <Compile Include="Factory\IDbFactory.cs" />
+    <Compile Include="IServiceRepository\IMailRepository.cs" />
     <Compile Include="IServiceRepository\IRoleRepository.cs" />
     <Compile Include="IServiceRepository\IUserRepository.cs" />
+    <Compile Include="IService\IMailService.cs" />
     <Compile Include="IService\IRoleService.cs" />
     <Compile Include="IService\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceRepository\MailRepository.cs" />
     <Compile Include="ServiceRepository\RoleRepository.cs" />
     <Compile Include="ServiceRepository\UserRepository.cs" />
+    <Compile Include="Service\MailService.cs" />
     <Compile Include="Service\RoleService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />

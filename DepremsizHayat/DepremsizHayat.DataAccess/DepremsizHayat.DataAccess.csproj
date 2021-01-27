@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ANALYSIS_IMAGE.cs" />
     <Compile Include="ANALYSE_REQUEST.cs" />
     <Compile Include="ANALYSE_REQUEST_ANSWER.cs" />
     <Compile Include="DepremsizHayatEntities.cs" />

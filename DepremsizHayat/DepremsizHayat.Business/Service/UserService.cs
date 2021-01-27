@@ -10,17 +10,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DepremsizHayat.DTO;
 
 namespace DepremsizHayat.Business.Service
 {
     public class UserService : IUserService
     {
-        IUserRepository _userRepository;
-        IUnitOfWork _unitOfWork;
+        private IUserRepository _userRepository;
+        private IMailRepository _mailRepository;
+        private IUnitOfWork _unitOfWork;
         public UserService(IUserRepository userRepository,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork,
+            IMailRepository mailRepository)
         {
             this._userRepository = userRepository;
+            this._mailRepository = mailRepository;
             this._unitOfWork = unitOfWork;
         }
         public bool Activate(string actCode, string mail)
@@ -39,9 +43,33 @@ namespace DepremsizHayat.Business.Service
             }
             return result;
         }
-        public bool CheckResetAuth(string code, string mail)
+        public ResetForgottenPaswordResponse CheckResetAuth(string code)
         {
-            bool result = (Decryptor.Decrypt(_userRepository.GetByMail(mail).ACTIVATION_CODE) == Decryptor.Decrypt(code)) ? true : false;
+            USER_ACCOUNT user = _userRepository.GetByResetAuth(code);
+            ResetForgottenPaswordResponse result = new ResetForgottenPaswordResponse();
+            if (user != null)
+            {
+                if (user.PASSWORD_RESET_REQUEST_TIME != null && ((DateTime)user.PASSWORD_RESET_REQUEST_TIME).AddDays(1) > DateTime.Now)
+                {
+                    if (user.PASSWORD_RESET_IS_USED != null && user.PASSWORD_RESET_IS_USED == false)
+                    {
+                        result.USER = _userRepository.GetByResetAuth(code);
+                        result.Status = true;
+                    }
+                    else
+                    {
+                        result.USER = null;
+                        result.Status = false;
+                        result.Message = "Bu şifre sıfırlama bağlantısı, daha önce kullanılmış.";
+                    }
+                }
+                else
+                {
+                    result.USER = null;
+                    result.Status = false;
+                    result.Message = "Bu şifre sıfırlama bağlantısının süresi geçmiş.";
+                }
+            }
             return result;
         }
         public USER_ACCOUNT CreateUser(UserModel user)
@@ -58,56 +86,65 @@ namespace DepremsizHayat.Business.Service
         {
             return _userRepository.GetByMail(mail);
         }
+        public USER_ACCOUNT GetByResetAuth(string authCode)
+        {
+            return _userRepository.GetByResetAuth(authCode);
+        }
         public bool Login(string mail, string pwd)
         {
             bool result = false;
-            //var userFromDb = _userRepository.GetByMail(mail);
-            //if (userFromDb != null)
-            //{
-
-            if (/*Decryptor.Decrypt(userFromDb.PASSWORD) == Decryptor.Decrypt(pwd)*/_userRepository.Login(new UserModel() { E_MAIL = mail, PASSWORD = pwd }))
+            if (_userRepository.Login(new UserModel() { E_MAIL = mail, PASSWORD = pwd }))
             {
                 result = true;
             }
-            //}
             return result;
         }
-        public bool ResetPassword(ResetPasswordRequest request)
+        public BaseResponse ResetForgottenPassword(ResetPasswordRequest request)
         {
-            //Prosedüre ihtiyaç var.
-            //USER user = _userRepository.GetByMail(request.Mail);
-            //if (user != null)
-            //{
-            //    UserModel newUser = new UserModel();
-            //    user.PASSWORD = request.Password;
-            //    _unitOfWork.Commit();
-            //    return true;
-            //}
-            return false;
+            var user = _userRepository.GetByMail(request.Mail);
+            BaseResponse response = new BaseResponse();
+            if (_userRepository.ResetForgottenPassword(request))
+            {
+                response.Message = "Şifreniz başarıyla sıfırlandı.";
+                response.Status = true;
+            }
+            else
+            {
+                response.Message = "Bir hata oluştu. Lütfen tekrar deneyin ya da yeni bir şifre sıfırlama talebi oluşturun.";
+            }
+            return response;
         }
-        public string SendResetMail(string mail)
+        public BaseResponse SendResetMail(string mail)
         {
             var user = _userRepository.GetByMail(mail);
+            BaseResponse result = new BaseResponse();
             if (user != null)
             {
-                var code = Guid.NewGuid().ToString();
-                code = Encryptor.Encrypt(code);
-                user.ACTIVATION_CODE = code;
-                var subject = "Şifre Sıfırlama Talebi";
-                var body = "Talebiniz üzerine iletilen şifre sıfırlama linki: /Account/SetNewPassword?authCode=" + code;
-                if (_userRepository.SendMail(mail, subject, body))
+                if (_userRepository.CreateForgottenPwdResetRequest(mail))
                 {
-                    return "+_Şifre sıfırlama linki mail adresinize gönderildi.";
+                    user = _userRepository.GetByMailForProcedure(mail);
+                    var subject = "Şifre Sıfırlama Talebi";
+                    var body = "Talebiniz üzerine iletilen şifre sıfırlama linki: /Account/SetForgottenPassword?authCode=" + Encryptor.Encrypt(user.PASSWORD_RESET_HELPER);
+                    if (_mailRepository.SendMail("app", mail, subject, body))
+                    {
+                        result.Status = true;
+                        result.Message = "Şifre sıfırlama linki mail adresinize gönderildi.";
+                    }
+                    else
+                    {
+                        result.Message = "Bir hata oluştu! Lütfen tekrar deneyin.";
+                    }
                 }
                 else
                 {
-                    return "-_Bir hata oluştu! Lütfen tekrar deneyin.";
+                    result.Message = "Bir hata oluştu. Lütfen mail adresinizi doğru girdiğinizden emin olunuz.";
                 }
             }
             else
             {
-                return "-_Girmiş olduğunuz mail adresiyle eşleşen bir kullanıcı hesabı bulunamadı.";
+                result.Message = "Bir hata oluştu. Lütfen mail adresinizi doğru girdiğinizden emin olunuz.";
             }
+            return result;
         }
     }
 }

@@ -40,8 +40,8 @@ namespace DepremsizHayat.App.Controllers
                     {
                         string activationCode = Encryptor.Encrypt(new Random().Next(100000, 999999).ToString());
                         RegisterResponse response = new RegisterResponse() { Status = false };
-                        try
-                        {
+                        //try
+                        //{
                             _userService.CreateUser(new UserModel()
                             {
                                 ACTIVE = false,
@@ -56,10 +56,10 @@ namespace DepremsizHayat.App.Controllers
                             });
                             response.Status = true;
                             response.Url = "?actCode=&mail=" + Encryptor.Encrypt(request.E_MAIL);
-                        }
-                        catch (Exception)
-                        {
-                        }
+                        //}
+                        //catch (Exception)
+                        //{
+                        //}
                         return Json(response, JsonRequestBehavior.AllowGet);
                     }
                     else
@@ -167,54 +167,65 @@ namespace DepremsizHayat.App.Controllers
         }
         public JsonResult SendForgotLink(ForgotPasswordRequest request)
         {
-            BaseResponse response = new BaseResponse();
+            BaseResponse response = null;
             if (request != null && request.Mail != null && request.Mail != "")
             {
-                var result = _userService.SendResetMail(request.Mail).Split('_');
-                if (result[0] == "+")
-                {
-                    response.Status = true;
-                    response.Message = result[1];
-                }
-                else
-                {
-                    response.Status = false;
-                    response.Message = result[1];
-                }
+                response = _userService.SendResetMail(request.Mail);
                 ViewBag.Response = response;
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
             else
             {
-                response.Status = false;
-                response.Message = "Mail adresi boş olamaz";
+                response = new BaseResponse()
+                {
+                    Message = "Mail adresi boş olamaz"
+                };
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
         }
-        public ActionResult SetNewPassword(string authCode, ResetPasswordRequest request)
+        public ActionResult SetForgottenPassword(string authCode, string newPassword)
         {
-            //if (authCode != null && _userService.CheckResetAuth(authCode, request.Mail))
-            //{
-            //    BaseResponse response = new BaseResponse() { Status = false };
-            //    if (_userService.ResetPassword(request))
-            //    {
-            //        response.Status = true;
-            //        response.Message = "Şifreniz başarıyla güncellendi.";
-            //        ViewBag.Response = response;
-            //        return RedirectToAction("Login");
-            //    }
-            //    else
-            //    {
-            //        ViewBag.Response = response;
-            //        response.Message = "Şifreniz güncellenemedi. Lütfen tekrar deneyin.";
-            //        return View();
-            //    }
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Login");
-            //}
-            return View();
+            if (authCode != null)
+            {
+                ResetForgottenPaswordResponse response = _userService.CheckResetAuth(Decryptor.Decrypt(authCode));
+                if (response.Status != false)
+                {
+                    if (newPassword != null)
+                    {
+                        TempData["Carrier"] = ResetForgottenPassword(authCode, newPassword);
+                        if (((BaseResponse)TempData["Carrier"]).Status)
+                            return RedirectToAction("Login");
+                        //başarı basılacak
+                        else
+                            //hata basılacak
+                            return View();
+                    }
+                    else
+                        return View();
+                }
+                else
+                {
+                    TempData["Carrier"] = response;
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+            else
+            {
+                //404
+                return RedirectToAction("Login", "Account");
+            }
+        }
+        private BaseResponse ResetForgottenPassword(string authCode, string newPassword)
+        {
+            var user = _userService.GetByResetAuth(Decryptor.Decrypt(authCode));
+            ResetPasswordRequest request = new ResetPasswordRequest()
+            {
+                Mail = user.E_MAIL,
+                NewPassword = newPassword,
+                PASSWORD_RESET_HELPER = Decryptor.Decrypt(authCode)
+            };
+            return _userService.ResetForgottenPassword(request);
         }
     }
 }
+
