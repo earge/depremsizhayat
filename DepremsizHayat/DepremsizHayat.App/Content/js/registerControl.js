@@ -10,6 +10,7 @@ document.querySelector("#register").addEventListener("click", (event) => {
             PASSWORD: document.querySelector("input[name='password']").value,
             E_MAIL: document.querySelector("input[name='email']").value
         }
+        infoBoxesCleaner()
         $.ajax({
             url: "Register",
             data: registerModel,
