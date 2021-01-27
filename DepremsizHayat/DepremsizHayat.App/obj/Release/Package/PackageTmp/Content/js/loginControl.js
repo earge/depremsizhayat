@@ -6,6 +6,7 @@
         PASSWORD: password
     }
     if (email && password) {
+        infoBoxesCleaner()
         event.target.classList.add("loading")
         event.target.disabled = true
         $.ajax({
