@@ -204,6 +204,7 @@
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\mailactivation.css" />
     <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\pagenotfound.css" />
     <Content Include="Content\css\register.css" />
     <Content Include="Content\css\setandforgotpassword.css" />
     <Content Include="Content\js\activationControl.js" />

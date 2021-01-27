@@ -292,6 +292,9 @@ body {
     width: 100%;
 }
 
+.flex.direction-column{
+    flex-direction:column;
+}
 /* TEXTS */
 .align-center {
     text-align: center;
@@ -345,6 +348,22 @@ body {
     font-size: 24px;
 }
 
+.fs-26 {
+    font-size: 26px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
 /* BUTTONS */
 .btn {
     border: 0px;
@@ -364,6 +383,7 @@ body {
         align-items: center;
         font-weight: bold;
         padding: 10px;
+        cursor:pointer;
     }
 
     .btn.loading .spinner {
@@ -454,6 +474,10 @@ body {
 
 .tx-blue{
     color: var(--color-blue) !important;
+}
+
+.tx-white{
+    color: white !important;
 }
 
 
@@ -636,6 +660,14 @@ a.inline {
         color: var(--color-green);
     }
 
+
+
 .none {
     display: none;
+}
+
+.full-page{
+    height:100%;
+    width:100%;
+    position:absolute;
 }
