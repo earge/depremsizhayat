@@ -9,6 +9,6 @@ document.querySelector(".navbar .toggle").addEventListener("click",()=>{
 })
 
 function infoBoxesCleaner() {
-    Array.from(document.querySelectorAll(".info-boxes")).forEach(item=> {item.remove()})
+    Array.from(document.querySelectorAll(".info-boxes:not(.json)")).forEach(item => { item.remove() })
 }
 

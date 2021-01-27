@@ -5,6 +5,7 @@
     }
     else {
         var model = { Mail: document.querySelector("input[name='mailForgot']").value }
+        infoBoxesCleaner()
         event.target.classList.add("loading")
         event.target.disabled = true
         $.ajax({
@@ -15,21 +16,18 @@
                 if (data.Status) {
                     event.target.classList.remove("loading")
                     event.target.disabled = false
-                    document.querySelector("#forgotJsonSuccess").classList.remove("none")
-                    document.querySelector("#forgotJsonSuccess").innerHTML = data.Message
 
-                    document.querySelector("#forgotJsonError").classList.add("none")
-                    document.querySelector("#forgotJsonError").innerHTML = ""
+                    document.querySelector("#forgotJsonInfo").classList.remove("none","error","success")
+                    document.querySelector("#forgotJsonInfo").classList.add("success")
+                    document.querySelector("#forgotJsonInfo").innerHTML = data.Message      
                 }
                 else {
-                    debugger;
                     event.target.classList.remove("loading")
                     event.target.disabled = false
-                    document.querySelector("#forgotJsonError").classList.remove("none")
-                    document.querySelector("#forgotJsonError").innerHTML = data.Message
 
-                    document.querySelector("#forgotJsonSuccess").classList.add("none")
-                    document.querySelector("#forgotJsonSuccess").innerHTML = ""
+                    document.querySelector("#forgotJsonInfo").classList.remove("none", "error", "success")
+                    document.querySelector("#forgotJsonInfo").classList.add("error")
+                    document.querySelector("#forgotJsonInfo").innerHTML = data.Message 
                 }
             },
             error: function (error) {
