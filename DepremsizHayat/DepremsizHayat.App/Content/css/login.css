@@ -10,7 +10,6 @@
 
 .last-header{
   border-top: 2px solid var(--color-border-gray);
-  color: var(--color-blue);
   font-weight: bold;
 }
 #imageWithText{

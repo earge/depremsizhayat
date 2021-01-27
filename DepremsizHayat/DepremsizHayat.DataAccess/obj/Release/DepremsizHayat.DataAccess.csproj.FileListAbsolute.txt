@@ -10,3 +10,15 @@ C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.D
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.csproj.CopyComplete
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.dll
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.pdb
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Release\DepremsizHayat.DataAccess.dll.config
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Release\DepremsizHayat.DataAccess.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Release\DepremsizHayat.DataAccess.pdb
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Release\EntityFramework.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Release\EntityFramework.xml
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.csprojAssemblyReference.cache
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.csproj.CopyComplete
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Release\DepremsizHayat.DataAccess.pdb

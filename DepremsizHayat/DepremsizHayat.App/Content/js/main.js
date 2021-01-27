@@ -8,3 +8,7 @@ document.querySelector(".navbar .toggle").addEventListener("click",()=>{
   }
 })
 
+function infoBoxesCleaner() {
+    Array.from(document.querySelectorAll(".info-boxes")).forEach(item=> {item.remove()})
+}
+
