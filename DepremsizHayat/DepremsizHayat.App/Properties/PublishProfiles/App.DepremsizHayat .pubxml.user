@@ -38,10 +38,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/24/2021 19:59:16</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.App.dll">
-      <publishTime>01/28/2021 01:23:06</publishTime>
+      <publishTime>01/28/2021 01:29:58</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.App.pdb">
-      <publishTime>01/28/2021 01:23:06</publishTime>
+      <publishTime>01/28/2021 01:29:58</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Business.dll">
       <publishTime>01/28/2021 01:23:05</publishTime>
@@ -350,19 +350,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/27/2021 20:40:54</publishTime>
     </File>
     <File Include="Content/css/mailactivation.css">
-      <publishTime>01/27/2021 20:40:54</publishTime>
+      <publishTime>01/28/2021 01:28:37</publishTime>
     </File>
     <File Include="Content/css/main.css">
-      <publishTime>01/27/2021 23:19:29</publishTime>
+      <publishTime>01/28/2021 01:28:37</publishTime>
     </File>
     <File Include="Content/css/pagenotfound.css">
       <publishTime>01/28/2021 00:34:34</publishTime>
     </File>
     <File Include="Content/css/register.css">
-      <publishTime>01/27/2021 20:40:54</publishTime>
+      <publishTime>01/28/2021 01:28:37</publishTime>
     </File>
     <File Include="Content/css/setandforgotpassword.css">
-      <publishTime>01/27/2021 20:40:54</publishTime>
+      <publishTime>01/28/2021 01:28:37</publishTime>
     </File>
     <File Include="Content/js/activationControl.js">
       <publishTime>01/24/2021 19:59:15</publishTime>
@@ -482,7 +482,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/27/2021 00:30:44</publishTime>
     </File>
     <File Include="Views/Account/Shared/_Layout.cshtml">
-      <publishTime>01/27/2021 20:40:54</publishTime>
+      <publishTime>01/28/2021 01:28:37</publishTime>
     </File>
     <File Include="Views/Account/Shared/_StatusPartial.cshtml">
       <publishTime>01/27/2021 22:02:17</publishTime>

@@ -541,21 +541,21 @@ a.inline {
     grid-template-columns: auto 1fr;
     grid-area: "brand menu";
     height: auto;
+    align-items:center;
 }
 
     .navbar .brand {
         grid-area: "brand";
         display: block;
-        height: 50px;
-        line-height: 50px;
         letter-spacing: 3px;
         color: var(--color-blue);
         font-weight: bold;
+        min-height: 50px;
+        line-height:50px;
     }
 
     .navbar .menu {
         grid-area: "menu";
-        line-height: 50px;
         margin-left: 20px;
         font-size: 14px;
     }
