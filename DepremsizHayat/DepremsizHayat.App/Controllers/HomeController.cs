@@ -16,11 +16,11 @@ namespace DepremsizHayat.App.Controllers
         private IAnalyseRequestService _analyseRequestService;
         private IStatusService _statusService;
         public HomeController(IUserService userService,
-            IAnalyseRequestService analyseRequestService,
+            //IAnalyseRequestService analyseRequestService,
             IStatusService statusService)
         {
             this._userService = userService;
-            this._analyseRequestService = analyseRequestService;
+            //this._analyseRequestService = /*analyseRequestService*/;
             this._statusService = statusService;
         }
         private DataAccess.USER_ACCOUNT CurrentUser()
@@ -28,12 +28,6 @@ namespace DepremsizHayat.App.Controllers
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
             FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
             return _userService.GetByMail(ticket.Name);
-        }
-        public ActionResult NameSurname()
-        {
-            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
-            return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
         }
         [Authorize(Roles = "SystemAdmin,User,Expert")]
         public ActionResult Index()
@@ -52,11 +46,11 @@ namespace DepremsizHayat.App.Controllers
                     {
                         HttpPostedFileBase file = files[i];
                         string fname = file.FileName;
-                        if (!(Directory.Exists(Server.MapPath("~/Areas/Teacher/Sources/" + "someValue"))))
+                        if (!(Directory.Exists(Server.MapPath("~//Sources/" + "someValue"))))
                         {
-                            Directory.CreateDirectory(Server.MapPath("~/Areas/Teacher/Sources/" + "someValue"));
+                            Directory.CreateDirectory(Server.MapPath("~/Sources/" + "someValue"));
                         }
-                        fname = Path.Combine(Server.MapPath("~/Areas/Teacher/Sources/" + "someValue"),
+                        fname = Path.Combine(Server.MapPath("~/Sources/" + "someValue"),
                                        fname);
                         file.SaveAs(fname);
                     }

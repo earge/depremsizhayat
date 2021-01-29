@@ -36,7 +36,6 @@ namespace DepremsizHayat.App.App_Start
             ConfigureScheduler(container);
             AutofacDependencyResolver resolver = new AutofacDependencyResolver(container);
             DependencyResolver.SetResolver(resolver);
-            
         }
 
         private static void RegisterScheduler(ContainerBuilder builder)

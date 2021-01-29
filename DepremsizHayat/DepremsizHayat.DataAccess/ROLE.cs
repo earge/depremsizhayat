@@ -18,6 +18,7 @@ namespace DepremsizHayat.DataAccess
         [Required]
         public string NAME { get; set; }
         public string DESCRIPTION { get; set; }
+        public virtual List<USER_ACCOUNT> USERS { get; set; }
 
     }
 }

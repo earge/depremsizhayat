@@ -42,6 +42,7 @@ namespace DepremsizHayat.DataAccess
         [DefaultValue(null)]
         public Nullable<DateTime> PASSWORD_RESET_REQUEST_TIME { get; set; }
         public Nullable<bool> PASSWORD_RESET_IS_USED { get; set; }
+        public virtual ROLE ROLE { get; set; }
 
     }
 }
