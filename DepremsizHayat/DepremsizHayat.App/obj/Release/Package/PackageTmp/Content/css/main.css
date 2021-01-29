@@ -279,7 +279,7 @@ body {
             flex: 100%;
         }
 
-.felx.v-center {
+.flex.v-center {
     align-items: center;
 }
 
@@ -292,6 +292,9 @@ body {
     width: 100%;
 }
 
+.flex.direction-column{
+    flex-direction:column;
+}
 /* TEXTS */
 .align-center {
     text-align: center;
@@ -345,6 +348,22 @@ body {
     font-size: 24px;
 }
 
+.fs-26 {
+    font-size: 26px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
 /* BUTTONS */
 .btn {
     border: 0px;
@@ -364,6 +383,7 @@ body {
         align-items: center;
         font-weight: bold;
         padding: 10px;
+        cursor:pointer;
     }
 
     .btn.loading .spinner {
@@ -449,7 +469,15 @@ body {
 }
 
 .tx-gray {
-    color: var(--color-secondary);
+    color: var(--color-secondary) !important;
+}
+
+.tx-blue{
+    color: var(--color-blue) !important;
+}
+
+.tx-white{
+    color: white !important;
 }
 
 
@@ -480,7 +508,7 @@ body {
 /* LINK */
 .link {
     text-decoration: none;
-    color: var(--color-blue)
+    color:inherit;
 }
 
 a.inline {
@@ -513,21 +541,21 @@ a.inline {
     grid-template-columns: auto 1fr;
     grid-area: "brand menu";
     height: auto;
+    align-items:center;
 }
 
     .navbar .brand {
         grid-area: "brand";
         display: block;
-        height: 50px;
-        line-height: 50px;
         letter-spacing: 3px;
         color: var(--color-blue);
         font-weight: bold;
+        min-height: 50px;
+        line-height:50px;
     }
 
     .navbar .menu {
         grid-area: "menu";
-        line-height: 50px;
         margin-left: 20px;
         font-size: 14px;
     }
@@ -559,6 +587,8 @@ a.inline {
         border-radius: 5px;
         cursor: pointer;
         font-size: 20px;
+        padding:0px;
+        text-align:center;
     }
 
         .navbar .toggle:hover {
@@ -570,7 +600,7 @@ a.inline {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-area: "brand" "menu";
-        box-shadow: 0px 4px 15px -5px rgb(182,182,182,0.50);
+        box-shadow: 0px 4px 15px -5px rgb(182,182,182,0.70);
     }
 
         .navbar .menu {
@@ -630,6 +660,14 @@ a.inline {
         color: var(--color-green);
     }
 
+
+
 .none {
     display: none;
+}
+
+.full-page{
+    height:100%;
+    width:100%;
+    position:absolute;
 }

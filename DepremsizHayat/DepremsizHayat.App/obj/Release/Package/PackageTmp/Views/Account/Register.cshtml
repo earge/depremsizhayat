@@ -6,7 +6,7 @@
     <link href="~/Content/css/register.css" rel="stylesheet" />
 }
 @section scripts{
-    <script src="~/Content/js/register.js"></script>
+    <script src="~/Content/js/registerControl.js"></script>
     <script src="~/Content/js/registerComponents.js"></script>
 }
 <div class="flex h-center">
@@ -31,7 +31,7 @@
                 <input type="radio" class="radio square" name="gender" id="genderNone" checked><label for="genderNone">Belirmek İstemiyorum</label>
             </div>*@
             </div>
-            <div class="info-boxes error mr15 ml15 mb15 none" id="registerJsonError"></div>
+            <div class="info-boxes error mr15 ml15 mb15 none json" id="registerJsonError"></div>
             @Html.Partial("Shared/_StatusPartial")
             <div class="ml15 mr15 tx-gray fs-11 align-center">
                 Kaydol butonuna bastığınızda, <a class="link inline">Kullanım Koşullarını</a> ve <a class="link inline">Veri İlkelerimizi</a> kabul etmiş olursunuz.

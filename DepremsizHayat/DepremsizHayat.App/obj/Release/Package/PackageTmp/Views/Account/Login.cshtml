@@ -6,7 +6,7 @@
     <link href="~/Content/css/login.css" rel="stylesheet" />
 }
 @section scripts{
-    <script src="~/Content/js/login.js"></script>
+    <script src="~/Content/js/loginControl.js"></script>
 }
 <div class="flex h-center">
     <div class="container">
@@ -19,16 +19,16 @@
             <div class="p15"><input type="text" class="input one" id="email" placeholder="E-Mailiniz"></div>
             <div class="pr15 pl15 pb15"><input type="password" class="input one" id="password" placeholder="Şifreniz"></div>
             @Html.Partial("Shared/_StatusPartial")
-            <div class="info-boxes error mr15 ml15 mb15 none" id="loginJsonError">
+            <div class="info-boxes error mr15 ml15 mb15 none json" id="loginJsonError">
             </div>
             <div class="align-center pb10">
                 <button id="loginButton" class="btn btn-main btn-blue spinner">
                     <span class="spinner"></span>Giriş Yap
                 </button>
             </div>
-            <div class="fs-12 tx-gray b align-center pb10" onclick="window.location='ForgotPassword'">Şifremi Unuttum</div>
+            <div class="fs-12 tx-gray b align-center pb10"><a href="ForgotPassword" class="link">Şifremi Unuttum</a></div>
             <div class="last-header p15 align-center">
-                <a class="link" href="Register">Yeni Hesap Oluştur</a>
+                <a class="link tx-blue" href="Register">Yeni Hesap Oluştur</a>
             </div>
         </div>
     </div>
