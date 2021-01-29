@@ -130,9 +130,9 @@ namespace DepremsizHayat.App.Controllers
                         {
                             FormsAuthentication.SetAuthCookie(request.E_MAIL, true);
                             var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, request.E_MAIL),
-            };
+                            {
+                                new Claim(ClaimTypes.NameIdentifier, request.E_MAIL),
+                            };
                             var userIdentity = new ClaimsIdentity(claims, "Login");
                             ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                             response.Status = true;
