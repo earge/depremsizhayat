@@ -279,22 +279,22 @@ body {
             flex: 100%;
         }
 
-.flex.v-center {
-    align-items: center;
-}
+    .flex.v-center {
+        align-items: center;
+    }
 
-.flex.h-center {
-    justify-content: center;
-}
+    .flex.h-center {
+        justify-content: center;
+    }
 
-.flex .container {
-    flex: 1 1 auto;
-    width: 100%;
-}
+    .flex .container {
+        flex: 1 1 auto;
+        width: 100%;
+    }
 
-.flex.direction-column{
-    flex-direction:column;
-}
+    .flex.direction-column {
+        flex-direction: column;
+    }
 /* TEXTS */
 .align-center {
     text-align: center;
@@ -383,7 +383,7 @@ body {
         align-items: center;
         font-weight: bold;
         padding: 10px;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     .btn.loading .spinner {
@@ -472,11 +472,15 @@ body {
     color: var(--color-secondary) !important;
 }
 
-.tx-blue{
+.tx-blue {
     color: var(--color-blue) !important;
 }
 
-.tx-white{
+.tx-red {
+    color: var(--color-red) !important;
+}
+
+.tx-white {
     color: white !important;
 }
 
@@ -508,7 +512,7 @@ body {
 /* LINK */
 .link {
     text-decoration: none;
-    color:inherit;
+    color: inherit;
 }
 
 a.inline {
@@ -541,7 +545,7 @@ a.inline {
     grid-template-columns: auto 1fr;
     grid-area: "brand menu";
     height: auto;
-    align-items:center;
+    align-items: center;
 }
 
     .navbar .brand {
@@ -551,8 +555,53 @@ a.inline {
         color: var(--color-blue);
         font-weight: bold;
         min-height: 50px;
-        line-height:50px;
+        line-height: 50px;
     }
+
+    .navbar .profile {
+        height: 50px;
+        line-height: 50px;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .navbar .profil-box-open {
+        position: absolute;
+        background-color:white;
+        top: 40px;
+        right: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 15px -5px rgba(182,182,182,0.9);
+        display:none;
+    }
+    .navbar .profil-box-open > a{
+        display:block;
+    }
+        .navbar .menu .mobile-profile {
+        height: 30px;
+        display: none;
+        border-top: 2px solid var(--color-border-gray);
+        padding-top: 5px;
+        margin-top: 5px;
+        align-items: center;
+        padding: 5px 10px 0px 10px;
+    }
+
+        .navbar .menu .mobile-profile > div:nth-child(1) {
+            width: 100%;
+        }
+
+        .navbar .menu .mobile-profile > div:nth-child(2) {
+            white-space: nowrap;
+        }
+
+            .navbar .menu .mobile-profile > div:nth-child(2) > a {
+                border-radius: 5px;
+            }
+
 
     .navbar .menu {
         grid-area: "menu";
@@ -560,7 +609,7 @@ a.inline {
         font-size: 14px;
     }
 
-        .navbar .menu a {
+        .navbar .menu > a {
             padding: 5px 10px;
             cursor: pointer;
             border-radius: 5px;
@@ -568,11 +617,11 @@ a.inline {
             font-weight: 500;
         }
 
-            .navbar .menu a.active {
+            .navbar .menu > a.active {
                 color: black;
             }
 
-            .navbar .menu a:hover {
+            .navbar .menu > a:hover {
                 background-color: var(--color-hover-gray);
                 color: black;
             }
@@ -587,8 +636,8 @@ a.inline {
         border-radius: 5px;
         cursor: pointer;
         font-size: 20px;
-        padding:0px;
-        text-align:center;
+        padding: 0px;
+        text-align: center;
     }
 
         .navbar .toggle:hover {
@@ -610,14 +659,22 @@ a.inline {
             margin-left: 0px;
         }
 
-            .navbar .menu a {
+            .navbar .menu > a {
                 display: block;
                 line-height: 20px;
                 border-radius: 10px;
             }
 
+            .navbar .menu .mobile-profile {
+                display: flex;
+            }
+
         .navbar .toggle {
             display: block;
+        }
+
+        .navbar .profile {
+            display: none;
         }
 }
 /* DISPLAY */
@@ -666,8 +723,8 @@ a.inline {
     display: none;
 }
 
-.full-page{
-    height:100%;
-    width:100%;
-    position:absolute;
+.full-page {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
