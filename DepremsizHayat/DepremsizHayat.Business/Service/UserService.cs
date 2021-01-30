@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DepremsizHayat.DTO;
+using DepremsizHayat.DTO.Admin;
 
 namespace DepremsizHayat.Business.Service
 {
@@ -82,6 +83,12 @@ namespace DepremsizHayat.Business.Service
         {
             return _userRepository.GetAll();
         }
+
+        public USER_ACCOUNT GetById(int id)
+        {
+            return _userRepository.GetById(id);
+        }
+
         public USER_ACCOUNT GetByMail(string mail)
         {
             return _userRepository.GetByMail(mail);
@@ -146,5 +153,21 @@ namespace DepremsizHayat.Business.Service
             }
             return result;
         }
+
+        public bool UpdateUserRole(EditRoleRequest request)
+        {
+            USER_ACCOUNT updating = GetById(request.USER_ACCOUNT_ID);
+            updating.ROLE_ID=request.NEW_ROLE_ID;
+            try
+            {
+                _userRepository.Update(updating);
+                _unitOfWork.Commit();
+                return true;
+        }
+            catch (Exception)
+            {
+                return false;
+            }
+}
     }
 }

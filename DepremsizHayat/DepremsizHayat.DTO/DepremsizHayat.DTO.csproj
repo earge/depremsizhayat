@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\EditRoleRequest.cs" />
+    <Compile Include="Admin\RoleRequest.cs" />
     <Compile Include="BaseResponse.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +55,10 @@
     <Compile Include="User\UserLoginRequest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DepremsizHayat.DataAccess\DepremsizHayat.DataAccess.csproj">
+      <Project>{608c229d-b667-4565-aeae-7a1a961c807d}</Project>
+      <Name>DepremsizHayat.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DepremsizHayat.Security\DepremsizHayat.Security.csproj">
       <Project>{2a7d843b-695d-4dcd-8801-37595c881ddb}</Project>
       <Name>DepremsizHayat.Security</Name>

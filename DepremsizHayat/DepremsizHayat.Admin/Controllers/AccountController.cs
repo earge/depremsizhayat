@@ -1,6 +1,7 @@
 ﻿using DepremsizHayat.Business.IService;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.User;
+using DepremsizHayat.Security;
 using DepremsizHayat.Utility;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,16 @@ using System.Web.Security;
 
 namespace DepremsizHayat.Admin.Controllers
 {
-    public class AccountController : BaseAccountController
+    public class AccountController : Controller
     {
-        public AccountController(IUserService userService) : base(userService)
+        private IUserService _userService;
+        public AccountController(IUserService userService)
         {
+            this._userService = userService;
         }
         public ActionResult Login(UserLoginRequest request)
         {
-            if (HttpContext.User.Identity.IsAuthenticated)
+            if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
             {
                 return RedirectToAction("Dashboard", "Panel");
             }
@@ -36,6 +39,7 @@ namespace DepremsizHayat.Admin.Controllers
                             var claims = new List<Claim>
                             {
                                 new Claim(ClaimTypes.NameIdentifier, request.E_MAIL),
+                                new Claim(ClaimTypes.Role,_userService.GetByMail(request.E_MAIL).ROLE.NAME)
                             };
                             var userIdentity = new ClaimsIdentity(claims, "Login");
                             ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
@@ -59,6 +63,80 @@ namespace DepremsizHayat.Admin.Controllers
                 ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
                 return View();
             }
+        }
+        public ActionResult NameSurname()
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+        public JsonResult SendForgotLink(ForgotPasswordRequest request)
+        {
+            BaseResponse response = null;
+            if (request != null && request.Mail != null && request.Mail != "")
+            {
+                response = _userService.SendResetMail(request.Mail);
+                ViewBag.Response = response;
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                response = new BaseResponse()
+                {
+                    Message = "Mail adresi boş olamaz"
+                };
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+        }
+        public ActionResult SetForgottenPassword(string authCode, string newPassword)
+        {
+            if (authCode != null)
+            {
+                ResetForgottenPaswordResponse response = _userService.CheckResetAuth(Decryptor.Decrypt(authCode));
+                if (response.Status != false)
+                {
+                    if (newPassword != null)
+                    {
+                        TempData["Carrier"] = ResetForgottenPassword(authCode, newPassword);
+                        if (((BaseResponse)TempData["Carrier"]).Status)
+                            return RedirectToAction("Login");
+                        else
+                            return View();
+                    }
+                    else
+                        return View();
+                }
+                else
+                {
+                    TempData["Carrier"] = response;
+                    return RedirectToAction("Login", "Account");
+                }
+            }
+            else
+            {
+                //404
+                return RedirectToAction("Login", "Account");
+            }
+        }
+        private BaseResponse ResetForgottenPassword(string authCode, string newPassword)
+        {
+            var user = _userService.GetByResetAuth(Decryptor.Decrypt(authCode));
+            ResetPasswordRequest request = new ResetPasswordRequest()
+            {
+                Mail = user.E_MAIL,
+                NewPassword = newPassword,
+                PASSWORD_RESET_HELPER = Decryptor.Decrypt(authCode)
+            };
+            return _userService.ResetForgottenPassword(request);
         }
     }
 }

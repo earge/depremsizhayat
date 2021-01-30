@@ -2115,10 +2115,11 @@
     <None Include="packages.config" />
     <Content Include="Views\Panel\Dashboard.cshtml" />
     <Content Include="Views\Panel\Shared\Layout_.cshtml" />
-    <Content Include="Views\Panel\EditRoles.cshtml" />
+    <Content Include="Views\Panel\ListUserRoles.cshtml" />
     <Content Include="Views\Account\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\Shared\_StatusPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Panel\Shared\_StatusPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2131,16 +2132,12 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DepremsizHayat.App\DepremsizHayat.App.csproj">
-      <Project>{f1313c12-3c79-4f0c-ae0d-aaf6e680044f}</Project>
-      <Name>DepremsizHayat.App</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DepremsizHayat.Business\DepremsizHayat.Business.csproj">
       <Project>{e50d2179-10a8-40be-aaaf-3872ad0e88a8}</Project>
       <Name>DepremsizHayat.Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\DepremsizHayat.DataAccess\DepremsizHayat.DataAccess.csproj">
-      <Project>{608C229D-B667-4565-AEAE-7A1A961C807D}</Project>
+      <Project>{608c229d-b667-4565-aeae-7a1a961c807d}</Project>
       <Name>DepremsizHayat.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\DepremsizHayat.DTO\DepremsizHayat.DTO.csproj">

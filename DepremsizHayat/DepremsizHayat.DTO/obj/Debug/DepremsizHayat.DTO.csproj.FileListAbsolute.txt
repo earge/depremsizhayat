@@ -28,3 +28,8 @@ C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.D
 C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CopyComplete
 C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.dll
 C:\Users\Yiğit\Source\Repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\EntityFramework.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.DataAccess.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\EntityFramework.xml

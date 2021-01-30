@@ -28,7 +28,6 @@ namespace DepremsizHayat.Business.BaseRepository
 
         public bool Delete(T entity)
         {
-            //_dbSet.Attach(entity);
             _dbSet.Remove(entity);
             return true;
         }
@@ -46,7 +45,8 @@ namespace DepremsizHayat.Business.BaseRepository
         public T Update(T entity)
         {
             _dbSet.Attach(entity);
-            //_dbContext.Entry(entity).State=EntityState.Modified;
+            _dbContext.Entry(entity).State = EntityState.Modified;
+            _dbContext.SaveChanges();
             return entity;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using DepremsizHayat.Business.IService;
 using DepremsizHayat.Business.IServiceRepository;
 using DepremsizHayat.DataAccess;
+using DepremsizHayat.DTO.Admin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
