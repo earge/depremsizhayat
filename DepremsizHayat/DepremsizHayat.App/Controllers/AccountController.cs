@@ -4,6 +4,7 @@ using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Models;
 using DepremsizHayat.DTO.User;
 using DepremsizHayat.Security;
+using DepremsizHayat.Utility;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -15,7 +16,7 @@ using System.Web.Security;
 
 namespace DepremsizHayat.App.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController:Controller
     {
         private IUserService _userService;
         public AccountController(IUserService userService)
@@ -113,48 +114,11 @@ namespace DepremsizHayat.App.Controllers
             }
             return RedirectToAction("Login");
         }
-        public ActionResult Login(UserLoginRequest request)
+        public ActionResult NameSurname()
         {
-            if (HttpContext.User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                if (ModelState.IsValid)
-                {
-                    BaseResponse response = new BaseResponse() { Status = false };
-                    if (_userService.Login(request.E_MAIL, request.PASSWORD))
-                    {
-                        try
-                        {
-                            FormsAuthentication.SetAuthCookie(request.E_MAIL, true);
-                            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, request.E_MAIL),
-            };
-                            var userIdentity = new ClaimsIdentity(claims, "Login");
-                            ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
-                            response.Status = true;
-                        }
-                        catch (Exception ex)
-                        {
-                            response.Message = ex.Message;
-                        }
-                    }
-                    else
-                    {
-                        response.Message = "E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.";
-                    }
-                    return Json(response, JsonRequestBehavior.AllowGet);
-                }
-                else
-                {
-                    ModelState.AddModelError("", "E-mail veya şifre hatalı girildi.");
-                }
-                ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
-                return View();
-            }
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
         }
         public ActionResult LogOut()
         {
@@ -223,6 +187,50 @@ namespace DepremsizHayat.App.Controllers
                 PASSWORD_RESET_HELPER = Decryptor.Decrypt(authCode)
             };
             return _userService.ResetForgottenPassword(request);
+        }
+        public ActionResult Login(UserLoginRequest request)
+        {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Dashboard", "Panel");
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    BaseResponse response = new BaseResponse() { Status = false };
+                    if (_userService.Login(request.E_MAIL, request.PASSWORD))
+                    {
+                        try
+                        {
+                            FormsAuthentication.SetAuthCookie(request.E_MAIL, true);
+                            var claims = new List<Claim>
+                            {
+                                new Claim(ClaimTypes.NameIdentifier, request.E_MAIL),
+                                new Claim(ClaimTypes.Role,_userService.GetByMail(request.E_MAIL).ROLE.NAME)
+                            };
+                            var userIdentity = new ClaimsIdentity(claims, "Login");
+                            ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
+                            response.Status = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            response.Message = ex.Message;
+                        }
+                    }
+                    else
+                    {
+                        response.Message = "E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.";
+                    }
+                    return Json(response, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "E-mail veya şifre hatalı girildi.");
+                }
+                ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
+                return View();
+            }
         }
     }
 }

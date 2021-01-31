@@ -1,5 +1,6 @@
 ﻿using DepremsizHayat.DataAccess;
 using DepremsizHayat.DTO;
+using DepremsizHayat.DTO.Admin;
 using DepremsizHayat.DTO.Models;
 using DepremsizHayat.DTO.User;
 using System;
@@ -21,6 +22,8 @@ namespace DepremsizHayat.Business.IService
         BaseResponse SendResetMail(string mail);
         ResetForgottenPaswordResponse CheckResetAuth(string code);
         USER_ACCOUNT GetByResetAuth(string authCode);
+        bool UpdateUserRole(EditRoleRequest request);
+        USER_ACCOUNT GetById(int id);
 
     }
 }
