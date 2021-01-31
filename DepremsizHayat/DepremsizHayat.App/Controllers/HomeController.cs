@@ -36,11 +36,25 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-        public ActionResult NameSurname()
+        FormsAuthenticationTicket GetTicket()
         {
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            return FormsAuthentication.Decrypt(authCookie.Value);
+        }
+        public ActionResult NameSurname()
+        {
+            var ticket = GetTicket();
             return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
+        }
+        public JsonResult NameSurnameJson()
+        {
+            var ticket = GetTicket();
+            var user = _userService.GetByMail(ticket.Name);
+            NameSurnameResponse response = new NameSurnameResponse() { 
+            Name= user.FIRST_NAME,
+            Surname =  user.LAST_NAME
+            };
+            return Json(user,JsonRequestBehavior.AllowGet);
         }
         public ActionResult SendAnalyzeRequest()
         {
