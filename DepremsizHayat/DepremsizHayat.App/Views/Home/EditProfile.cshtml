@@ -9,6 +9,7 @@
 }
 @section scripts{
     <script src="~/Content/js/registerComponents.js"></script>
+    <script src="~/Content/js/editProfile.js"></script>
 }
 <div class="flex h-center">
     <div class="container">
@@ -16,8 +17,8 @@
             <div class="top-header align-left p15">Profilimi Düzenle</div>
             <div class="align-center fs-14 p15">Adınızı Soyadınızı Düzenleyin</div>
             <div class="flex h-stretch-100 pb15 pl15 pr15">
-                <input class="input one mr7" name="newName"/>
-                <input class="input one ml7" name="newSurname"/>
+                <input type="text" class="input one mr7" name="newName" autocomplete="nope" />
+                <input type="text" class="input one ml7" name="newSurname" autocomplete="nope"/>
             </div>
             <div class="align-center fs-14 pb15 pr15 pl15">Şifrenizi Düzenleyin</div>
             <div class="flex h-stretch-100 pb15 pl15 pr15">
@@ -37,32 +38,3 @@
 <input type="text" id="name">
 <input type="text" id="surname">
 <button id="send" onclick="ajax()">Gönder</button>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-        crossorigin="anonymous"></script>
-<script>
-    function ajax() {
-        var name = $("#name").val();
-        var surname = $("#surname").val();
-        var data = {
-            Name: name,
-            Surname: surname
-        };
-        $.ajax({
-            data: data,
-            url: "EditProfile",
-            type: "POST",
-            success: function (data) {
-                debugger;
-                alert(data.Message);
-            }
-        })
-    }
-
-</script>
-@{
-    if (ViewBag.Response != null)
-    {
-        <h1>ViewBag.Response.Message</h1>
-    }
-}

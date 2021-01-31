@@ -206,6 +206,7 @@
     <Content Include="Content\css\setandforgotpassword.css" />
     <Content Include="Content\js\activationControl.js" />
     <Content Include="Content\js\activationDigit.js" />
+    <Content Include="Content\js\editProfile.js" />
     <Content Include="Content\js\forgotPasswordControl.js" />
     <Content Include="Content\js\forgottenPasswordControl.js" />
     <Content Include="Content\js\loginControl.js" />
