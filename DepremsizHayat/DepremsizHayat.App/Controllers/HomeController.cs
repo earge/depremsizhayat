@@ -34,7 +34,12 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-
+        public ActionResult NameSurname()
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
+        }
         public ActionResult SendAnalyzeRequest()
         {
             if (Request.Files.Count > 0)
@@ -83,6 +88,10 @@ namespace DepremsizHayat.App.Controllers
             return View();
         }
         public ActionResult PageNotFound()
+        {
+            return View();
+        }
+        public ActionResult EditProfile()
         {
             return View();
         }

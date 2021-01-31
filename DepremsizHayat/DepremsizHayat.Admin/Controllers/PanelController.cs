@@ -44,7 +44,7 @@ namespace DepremsizHayat.Admin.Controllers
                     AVAILABLEROLES = roles
                 });
             }
-            ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
+            ViewBag.RoleResponse = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
             return View(request);
         }
         public ActionResult EditRoles(int USER_ACCOUNT_ID, int ROLE_ID)
