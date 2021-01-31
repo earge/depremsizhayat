@@ -18,12 +18,12 @@
             <a class="link active" href="Login">Yeni Talep Gönder</a>
             <a class="link" href="Register">Taleplerim</a>
             <div class="mobile-profile">
-                <div class="b">@{Html.RenderAction("NameSurname", "Account");}</div>
+                <div class="b">@{Html.RenderAction("Name", "Home");} @{Html.RenderAction("Surname", "Home");}</div>
                 <div><a class="link bg-red tx-white b fs-11 p5" href="/Account/LogOut">Çıkış Yap</a></div>
             </div>
         </div>
         <div class="profile">
-            <div>@{Html.RenderAction("NameSurname", "Home");} <i class="fas fa-chevron-down fs-10"></i></div>
+            <div>@{Html.RenderAction("Name", "Home");} @{Html.RenderAction("Surname", "Home");} <i class="fas fa-chevron-down fs-10"></i></div>
         </div>
         <div class="profil-box-open">
             <a class="link tx-red b fs-11 p5 m5" href="/Account/LogOut">Çıkış Yap</a>

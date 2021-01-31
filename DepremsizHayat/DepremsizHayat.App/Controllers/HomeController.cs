@@ -41,20 +41,13 @@ namespace DepremsizHayat.App.Controllers
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
             return FormsAuthentication.Decrypt(authCookie.Value);
         }
-        public ActionResult NameSurname()
+        public ActionResult Name()
         {
-            var ticket = GetTicket();
-            return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
+            return Content(_userService.GetByMail(GetTicket().Name).FIRST_NAME);
         }
-        public JsonResult NameSurnameJson()
+        public ActionResult Surname()
         {
-            var ticket = GetTicket();
-            var user = _userService.GetByMail(ticket.Name);
-            NameSurnameResponse response = new NameSurnameResponse() { 
-            Name= user.FIRST_NAME,
-            Surname =  user.LAST_NAME
-            };
-            return Json(response,JsonRequestBehavior.AllowGet);
+            return Content(_userService.GetByMail(GetTicket().Name).LAST_NAME);
         }
         public ActionResult SendAnalyzeRequest()
         {
