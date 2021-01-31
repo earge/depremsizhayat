@@ -197,6 +197,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\editprofile.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\mailactivation.css" />
     <Content Include="Content\css\main.css" />
