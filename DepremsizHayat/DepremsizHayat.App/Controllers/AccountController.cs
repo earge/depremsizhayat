@@ -114,12 +114,12 @@ namespace DepremsizHayat.App.Controllers
             }
             return RedirectToAction("Login");
         }
-        public ActionResult NameSurname()
-        {
-            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
-            return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
-        }
+        //public ActionResult NameSurname()
+        //{
+        //    HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+        //    FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+        //    return Content(string.Concat(_userService.GetByMail(ticket.Name).FIRST_NAME, " ", _userService.GetByMail(ticket.Name).LAST_NAME));
+        //}
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
