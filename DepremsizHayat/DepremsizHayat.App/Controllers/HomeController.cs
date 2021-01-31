@@ -54,7 +54,7 @@ namespace DepremsizHayat.App.Controllers
             Name= user.FIRST_NAME,
             Surname =  user.LAST_NAME
             };
-            return Json(user,JsonRequestBehavior.AllowGet);
+            return Json(response,JsonRequestBehavior.AllowGet);
         }
         public ActionResult SendAnalyzeRequest()
         {
