@@ -1,4 +1,6 @@
 ﻿using DepremsizHayat.Business.IService;
+using DepremsizHayat.DTO;
+using DepremsizHayat.DTO.User;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +11,7 @@ using System.Web.Security;
 
 namespace DepremsizHayat.App.Controllers
 {
-
+    [Authorize(Roles = "SystemAdmin, User, Expert")]
     public class HomeController : Controller
     {
         private IUserService _userService;
@@ -91,9 +93,17 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-        public ActionResult EditProfile()
+
+        public ActionResult EditProfile(EditNameSurnameRequest request)
         {
-            return View();
+            BaseResponse response = new BaseResponse();
+            if (ModelState.IsValid && (request.Name != null || request.Surname != null))
+            {
+                request.USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID;
+                response = _userService.EditNameSurname(request);
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            return View(response);
         }
     }
 }

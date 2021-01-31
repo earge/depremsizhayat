@@ -79,6 +79,40 @@ namespace DepremsizHayat.Business.Service
             _unitOfWork.Commit();
             return rUser;
         }
+
+        public BaseResponse EditNameSurname(EditNameSurnameRequest request)
+        {
+            BaseResponse response = new BaseResponse();
+            USER_ACCOUNT user = _userRepository.GetById(request.USER_ACCOUNT_ID);
+            if (request.Name != null && user.FIRST_NAME != request.Name)
+            {
+                user.FIRST_NAME = request.Name;
+                _userRepository.Update(user);
+                _unitOfWork.Commit();
+                response.Status = true;
+            }
+            else
+            {
+                response.Message = "Adınız aynı olamaz.";
+            }
+            if (request.Surname != null && user.LAST_NAME != request.Surname)
+            {
+                user.LAST_NAME = request.Surname;
+                _userRepository.Update(user);
+                _unitOfWork.Commit();
+                response.Status = true;
+            }
+            else
+            {
+                response.Message = "Soyadınız aynı olamaz.";
+            }
+            if (response.Status)
+            {
+                response.Message = "Güncelleme başarılı";
+            }
+            return response;
+        }
+
         public List<USER_ACCOUNT> GetAll()
         {
             return _userRepository.GetAll();
@@ -157,17 +191,17 @@ namespace DepremsizHayat.Business.Service
         public bool UpdateUserRole(EditRoleRequest request)
         {
             USER_ACCOUNT updating = GetById(request.USER_ACCOUNT_ID);
-            updating.ROLE_ID=request.NEW_ROLE_ID;
+            updating.ROLE_ID = request.NEW_ROLE_ID;
             try
             {
                 _userRepository.Update(updating);
                 _unitOfWork.Commit();
                 return true;
-        }
+            }
             catch (Exception)
             {
                 return false;
             }
-}
+        }
     }
 }
