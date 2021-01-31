@@ -197,6 +197,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\analyserequest.css" />
     <Content Include="Content\css\editprofile.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\mailactivation.css" />
@@ -206,6 +207,7 @@
     <Content Include="Content\css\setandforgotpassword.css" />
     <Content Include="Content\js\activationControl.js" />
     <Content Include="Content\js\activationDigit.js" />
+    <Content Include="Content\js\analyseRequestControl.js" />
     <Content Include="Content\js\editProfile.js" />
     <Content Include="Content\js\forgotPasswordControl.js" />
     <Content Include="Content\js\forgottenPasswordControl.js" />
@@ -219,6 +221,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\js\cities.json" />
     <None Include="Properties\PublishProfiles\App.DepremsizHayat .pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
