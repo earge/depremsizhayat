@@ -10,5 +10,6 @@ namespace DepremsizHayat.Business.IService
     public interface IAnalyseRequestService
     {
         List<DataAccess.ANALYSE_REQUEST> GetAllRequests();
+        List<DataAccess.ANALYSE_REQUEST> GetRequestsByUserId(int ID);
     }
 }
