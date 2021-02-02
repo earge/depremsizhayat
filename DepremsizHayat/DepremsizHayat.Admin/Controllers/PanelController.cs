@@ -16,11 +16,14 @@ namespace DepremsizHayat.Admin.Controllers
     {
         private IUserService _userService;
         private IRoleService _roleService;
+        private IAnalyseRequestService _analyseRequestService;
         public PanelController(IUserService userService,
-            IRoleService roleService)
+            IRoleService roleService,
+            IAnalyseRequestService analyseRequestService)
         {
             this._userService = userService;
             this._roleService = roleService;
+            this._analyseRequestService = analyseRequestService;
         }
 
         public ActionResult Dashboard()
@@ -66,6 +69,11 @@ namespace DepremsizHayat.Admin.Controllers
             }
             TempData["Carrier"] = response;
             return RedirectToAction("ListUserRoles", "Panel");
+        }
+        public ActionResult Requests()
+        {
+            List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetAllRequests();
+            return View(request);
         }
     }
 }
