@@ -1,4 +1,6 @@
 ﻿using DepremsizHayat.Business.IService;
+using DepremsizHayat.DTO;
+using DepremsizHayat.DTO.User;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +11,7 @@ using System.Web.Security;
 
 namespace DepremsizHayat.App.Controllers
 {
-
+    [Authorize(Roles = "SystemAdmin, User, Expert")]
     public class HomeController : Controller
     {
         private IUserService _userService;
@@ -34,7 +36,19 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-
+        FormsAuthenticationTicket GetTicket()
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            return FormsAuthentication.Decrypt(authCookie.Value);
+        }
+        public ActionResult Name()
+        {
+            return Content(_userService.GetByMail(GetTicket().Name).FIRST_NAME);
+        }
+        public ActionResult Surname()
+        {
+            return Content(_userService.GetByMail(GetTicket().Name).LAST_NAME);
+        }
         public ActionResult SendAnalyzeRequest()
         {
             if (Request.Files.Count > 0)
@@ -85,6 +99,18 @@ namespace DepremsizHayat.App.Controllers
         public ActionResult PageNotFound()
         {
             return View();
+        }
+
+        public ActionResult EditProfile(EditNameSurnameRequest request)
+        {
+            BaseResponse response = new BaseResponse();
+            if (ModelState.IsValid && (request.Name != null || request.Surname != null))
+            {
+                request.USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID;
+                response = _userService.EditNameSurname(request);
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            return View(response);
         }
     }
 }

@@ -520,18 +520,25 @@ a.inline {
 }
 
 /* INPUTS */
-.input.one {
+.input {
     border: 1px solid var(--color-border-gray);
-    height: 40px;
+    outline: none;
+    width: 100%;
     border-radius: 5px;
     background-color: var(--color-input-gray);
+}
+.input.one {
+    height: 40px;
     padding: 0px 10px;
-    width: 100%;
-    outline: none;
 }
 
-    .input.one::placeholder {
+    .input::placeholder {
         color: var(--color-placeholder-gray);
+    }
+
+    .input.textarea{
+        resize:none;
+        padding:10px;
     }
 
 /* NAVBAR */
@@ -729,8 +736,13 @@ a.inline {
     display: none;
 }
 
+
+/* SIZES */
 .full-page {
     height: 100%;
     width: 100%;
     position: absolute;
+}
+.w-100{
+    width:100%;
 }

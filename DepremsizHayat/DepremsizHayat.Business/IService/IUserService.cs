@@ -24,6 +24,7 @@ namespace DepremsizHayat.Business.IService
         USER_ACCOUNT GetByResetAuth(string authCode);
         bool UpdateUserRole(EditRoleRequest request);
         USER_ACCOUNT GetById(int id);
+        BaseResponse EditNameSurname(EditNameSurnameRequest request);
 
     }
 }

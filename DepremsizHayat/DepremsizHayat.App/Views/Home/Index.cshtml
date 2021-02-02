@@ -4,3 +4,12 @@
 @{
     ViewBag.Title = "Home Page";
 }
+@section styles{
+    <link href="~/Content/css/analyserequest.css" rel="stylesheet" />
+    <link href="~/Content/css/contact.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Content/js/analyseRequestControl.js"></script>
+}
+@Html.Partial("Shared/PartialPages/_AnalyseRequest")
+@Html.Partial("Shared/PartialPages/_Contact")

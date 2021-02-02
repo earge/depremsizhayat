@@ -18,3 +18,13 @@ C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHay
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.csproj.CopyComplete
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.dll
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.pdb
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Release\EntityFramework.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.pdb
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.dll.config
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.DTO\bin\Release\EntityFramework.xml
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\EntityFramework.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.pdb
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.dll.config
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\EntityFramework.xml

@@ -1,0 +1,338 @@
+[
+  {
+    "id": "15",
+    "name": "BURDUR"
+  },
+  {
+    "id": "26",
+    "name": "ESKÝÞEHÝR"
+  },
+  {
+    "id": "18",
+    "name": "ÇANKIRI"
+  },
+  {
+    "id": "80",
+    "name": "OSMANÝYE"
+  },
+  {
+    "id": "41",
+    "name": "KOCAELÝ"
+  },
+  {
+    "id": "27",
+    "name": "GAZÝANTEP"
+  },
+  {
+    "id": "31",
+    "name": "HATAY"
+  },
+  {
+    "id": "38",
+    "name": "KAYSERÝ"
+  },
+  {
+    "id": "29",
+    "name": "GÜMÜÞHANE"
+  },
+  {
+    "id": "54",
+    "name": "SAKARYA"
+  },
+  {
+    "id": "16",
+    "name": "BURSA"
+  },
+  {
+    "id": "69",
+    "name": "BAYBURT"
+  },
+  {
+    "id": "17",
+    "name": "ÇANAKKALE"
+  },
+  {
+    "id": "57",
+    "name": "SÝNOP"
+  },
+  {
+    "id": "74",
+    "name": "BARTIN"
+  },
+  {
+    "id": "503",
+    "name": "MAÐUSA (KIBRIS)"
+  },
+  {
+    "id": "33",
+    "name": "MERSÝN"
+  },
+  {
+    "id": "51",
+    "name": "NÝÐDE"
+  },
+  {
+    "id": "42",
+    "name": "KONYA"
+  },
+  {
+    "id": "60",
+    "name": "TOKAT"
+  },
+  {
+    "id": "2",
+    "name": "ADIYAMAN"
+  },
+  {
+    "id": "6",
+    "name": "ANKARA"
+  },
+  {
+    "id": "66",
+    "name": "YOZGAT"
+  },
+  {
+    "id": "52",
+    "name": "ORDU"
+  },
+  {
+    "id": "53",
+    "name": "RÝZE"
+  },
+  {
+    "id": "1",
+    "name": "ADANA"
+  },
+  {
+    "id": "40",
+    "name": "KIRÞEHÝR"
+  },
+  {
+    "id": "76",
+    "name": "IÐDIR"
+  },
+  {
+    "id": "45",
+    "name": "MANÝSA"
+  },
+  {
+    "id": "21",
+    "name": "DÝYARBAKIR"
+  },
+  {
+    "id": "64",
+    "name": "UÞAK"
+  },
+  {
+    "id": "501",
+    "name": "LEFKOÞE (KIBRIS)"
+  },
+  {
+    "id": "5",
+    "name": "AMASYA"
+  },
+  {
+    "id": "24",
+    "name": "ERZÝNCAN"
+  },
+  {
+    "id": "32",
+    "name": "ISPARTA"
+  },
+  {
+    "id": "502",
+    "name": "GÝRNE (KIBRIS)"
+  },
+  {
+    "id": "23",
+    "name": "ELAZIÐ"
+  },
+  {
+    "id": "78",
+    "name": "KARABÜK"
+  },
+  {
+    "id": "30",
+    "name": "HAKKARÝ"
+  },
+  {
+    "id": "36",
+    "name": "KARS"
+  },
+  {
+    "id": "67",
+    "name": "ZONGULDAK"
+  },
+  {
+    "id": "68",
+    "name": "AKSARAY"
+  },
+  {
+    "id": "44",
+    "name": "MALATYA"
+  },
+  {
+    "id": "10",
+    "name": "BALIKESÝR"
+  },
+  {
+    "id": "20",
+    "name": "DENÝZLÝ"
+  },
+  {
+    "id": "49",
+    "name": "MUÞ"
+  },
+  {
+    "id": "73",
+    "name": "ÞIRNAK"
+  },
+  {
+    "id": "48",
+    "name": "MUÐLA"
+  },
+  {
+    "id": "59",
+    "name": "TEKÝRDAÐ"
+  },
+  {
+    "id": "39",
+    "name": "KIRKLARELÝ"
+  },
+  {
+    "id": "56",
+    "name": "SÝÝRT"
+  },
+  {
+    "id": "28",
+    "name": "GÝRESUN"
+  },
+  {
+    "id": "63",
+    "name": "ÞANLIURFA"
+  },
+  {
+    "id": "9",
+    "name": "AYDIN"
+  },
+  {
+    "id": "72",
+    "name": "BATMAN"
+  },
+  {
+    "id": "13",
+    "name": "BÝTLÝS"
+  },
+  {
+    "id": "3",
+    "name": "AFYONKARAHÝSAR"
+  },
+  {
+    "id": "8",
+    "name": "ARTVÝN"
+  },
+  {
+    "id": "4",
+    "name": "AÐRI"
+  },
+  {
+    "id": "77",
+    "name": "YALOVA"
+  },
+  {
+    "id": "50",
+    "name": "NEVÞEHÝR"
+  },
+  {
+    "id": "61",
+    "name": "TRABZON"
+  },
+  {
+    "id": "58",
+    "name": "SÝVAS"
+  },
+  {
+    "id": "7",
+    "name": "ANTALYA"
+  },
+  {
+    "id": "37",
+    "name": "KASTAMONU"
+  },
+  {
+    "id": "47",
+    "name": "MARDÝN"
+  },
+  {
+    "id": "46",
+    "name": "KAHRAMANMARAÞ"
+  },
+  {
+    "id": "25",
+    "name": "ERZURUM"
+  },
+  {
+    "id": "75",
+    "name": "ARDAHAN"
+  },
+  {
+    "id": "81",
+    "name": "DÜZCE"
+  },
+  {
+    "id": "55",
+    "name": "SAMSUN"
+  },
+  {
+    "id": "19",
+    "name": "ÇORUM"
+  },
+  {
+    "id": "65",
+    "name": "VAN"
+  },
+  {
+    "id": "14",
+    "name": "BOLU"
+  },
+  {
+    "id": "43",
+    "name": "KÜTAHYA"
+  },
+  {
+    "id": "11",
+    "name": "BÝLECÝK"
+  },
+  {
+    "id": "34",
+    "name": "ÝSTANBUL"
+  },
+  {
+    "id": "79",
+    "name": "KÝLÝS"
+  },
+  {
+    "id": "62",
+    "name": "TUNCELÝ"
+  },
+  {
+    "id": "12",
+    "name": "BÝNGÖL"
+  },
+  {
+    "id": "22",
+    "name": "EDÝRNE"
+  },
+  {
+    "id": "71",
+    "name": "KIRIKKALE"
+  },
+  {
+    "id": "70",
+    "name": "KARAMAN"
+  },
+  {
+    "id": "35",
+    "name": "ÝZMÝR"
+  }
+]
