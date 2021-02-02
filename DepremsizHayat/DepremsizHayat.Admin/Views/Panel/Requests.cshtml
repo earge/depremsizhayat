@@ -1,0 +1,42 @@
+﻿@using DepremsizHayat.DataAccess;
+@model List<ANALYSE_REQUEST>
+@{
+    ViewBag.Title = "Requests";
+    Layout = "~/Views/Panel/Shared/Layout_.cshtml";
+}
+
+<h2>Requests</h2>
+<div class="card-body">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ülke</th>
+                <th>İl</th>
+                <th>Talep Tarihi</th>
+                <th>Adres</th>
+                <th>Kat Sayısı</th>
+                <th>Yapım Yılı</th>
+                <th>Telefon No 1</th>
+                <th>Telefon No 2</th>
+                <th>Kullanıcı Notu</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ANALYSE_REQUEST request in Model)
+            {
+            <tr>
+                <td>@request.COUNTRY</td>
+                <td>@request.DISTRICT</td>
+                <td>@request.CREATED_DATE</td>
+                <td>@request.ADDRESS</td>
+                <td>@request.NUMBER_OF_FLOORS</td>
+                <td>@request.YEAR_OF_CONSTRUCTION</td>
+                <td>@request.PHONE_NUMBER_1</td>
+                <td>@request.PHONE_NUMBER_2</td>
+                <td>@request.USER_NOTE</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    @Html.Partial("Shared/_StatusPartial")
+</div>
