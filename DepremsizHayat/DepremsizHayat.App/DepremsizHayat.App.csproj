@@ -197,6 +197,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\contact.css" />
     <Content Include="Content\css\analyserequest.css" />
     <Content Include="Content\css\editprofile.css" />
     <Content Include="Content\css\login.css" />
@@ -254,6 +255,8 @@
     <Content Include="Views\Home\PageNotFound.cshtml" />
     <Content Include="Views\Home\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\EditProfile.cshtml" />
+    <Content Include="Views\Home\Shared\PartialPages\_Contact.cshtml" />
+    <Content Include="Views\Home\Shared\PartialPages\_AnalyseRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
