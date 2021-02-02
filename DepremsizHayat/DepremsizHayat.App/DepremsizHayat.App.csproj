@@ -257,6 +257,7 @@
     <Content Include="Views\Home\EditProfile.cshtml" />
     <Content Include="Views\Home\Shared\PartialPages\_Contact.cshtml" />
     <Content Include="Views\Home\Shared\PartialPages\_AnalyseRequest.cshtml" />
+    <Content Include="Views\Home\Shared\PartialPages\_MyRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

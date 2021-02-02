@@ -18,11 +18,11 @@ namespace DepremsizHayat.App.Controllers
         private IAnalyseRequestService _analyseRequestService;
         private IStatusService _statusService;
         public HomeController(IUserService userService,
-            //IAnalyseRequestService analyseRequestService,
+            IAnalyseRequestService analyseRequestService,
             IStatusService statusService)
         {
             this._userService = userService;
-            //this._analyseRequestService = /*analyseRequestService*/;
+            this._analyseRequestService = analyseRequestService;
             this._statusService = statusService;
         }
         private DataAccess.USER_ACCOUNT CurrentUser()
@@ -111,6 +111,12 @@ namespace DepremsizHayat.App.Controllers
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
             return View(response);
+        }
+        [ChildActionOnly]
+        public ActionResult MyRequests()
+        {
+          List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
+            return PartialView("_MyRequests",request);
         }
     }
 }

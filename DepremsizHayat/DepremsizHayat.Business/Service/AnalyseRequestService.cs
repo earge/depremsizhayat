@@ -1,5 +1,6 @@
 ﻿using DepremsizHayat.Business.IService;
 using DepremsizHayat.Business.IServiceRepository;
+using DepremsizHayat.DataAccess;
 using DepremsizHayat.DTO.Admin;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace DepremsizHayat.Business.Service
         {
             return _analyseRequestRepository.GetAll();
             
+        }
+
+        public List<ANALYSE_REQUEST> GetRequestsByUserId(int ID)
+        {
+            return _analyseRequestRepository.GetAll().Where(T => T.USER_ACCOUNT_ID == ID).ToList();
         }
     }
 }
