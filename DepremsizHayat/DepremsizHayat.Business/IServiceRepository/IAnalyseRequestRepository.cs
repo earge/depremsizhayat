@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DepremsizHayat.Business.IServiceRepository
 {
-    public interface IAnalyseRequestRepository:IRepository<ANALYSE_REQUEST>
+    public interface IAnalyseRequestRepository : IRepository<ANALYSE_REQUEST>
     {
     }
 }

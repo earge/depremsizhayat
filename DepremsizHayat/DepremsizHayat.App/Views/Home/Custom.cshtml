@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Custom";
+    Layout = "~/Views/Home/Shared/_Layout.cshtml";
+}
+@using DepremsizHayat.DataAccess;
+@model List<ANALYSE_REQUEST>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table border="1">
+    @if (Model != null)
+    {
+        foreach (ANALYSE_REQUEST aNALYSE in Model)
+        {
+            <tr>
+                <td>@aNALYSE.COUNTRY</td>
+                <td>@aNALYSE.DISTRICT</td>
+                <td>
+                    @aNALYSE.ADDRESS
+                </td>
+                <td>
+                    @aNALYSE.NUMBER_OF_FLOORS
+                </td>
+                <td>
+                    @aNALYSE.PHONE_NUMBER_1
+                </td>
+                <td>
+                    @aNALYSE.PHONE_NUMBER_2
+                </td>
+
+            </tr>
+        }
+    }
+    else
+    {
+        <h1>Model null</h1>
+    }
+</table>

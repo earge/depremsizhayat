@@ -112,11 +112,11 @@ namespace DepremsizHayat.App.Controllers
             }
             return View(response);
         }
-        [ChildActionOnly]
-        public ActionResult MyRequests()
+        //[ChildActionOnly]
+        public ActionResult Custom()
         {
-          List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
-            return PartialView("_MyRequests",request);
+            List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
+            return View(request);
         }
     }
 }
