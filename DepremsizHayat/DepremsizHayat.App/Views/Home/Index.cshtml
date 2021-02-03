@@ -68,6 +68,7 @@
 
     let images = []
 
+
     function imageGet(event) {
         if (window.File && window.FileList && window.FileReader) {
             if (event.target.files) {
@@ -118,9 +119,10 @@
 
 
         $.ajax({
-            url: "/Home/SendAnalyzeRequest",
+            url: "/Home/SendAnalyseRequest",
             type: "POST",
             processData: false,
+            contentType:false,
             data: sendingFiles,
             success: function () {
                 debugger;

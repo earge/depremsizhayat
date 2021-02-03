@@ -49,8 +49,16 @@ namespace DepremsizHayat.App.Controllers
         {
             return Content(_userService.GetByMail(GetTicket().Name).LAST_NAME);
         }
-        public ActionResult SendAnalyzeRequest()
+        public ActionResult SendAnalyseRequest()
         {
+            if (Request.Form["images"].Length>0)
+            {
+                foreach (var item in Request.Form["images"])
+                {
+                    item.ToString();
+
+                }
+            }
             if (Request.Files.Count > 0)
             {
                 try
@@ -118,8 +126,8 @@ namespace DepremsizHayat.App.Controllers
         //[ChildActionOnly]
         public ActionResult MyRequests()
         {
-            List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
-            return View(request);
+            //List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
+            return View(/*request*/);
         }
     }
 }
