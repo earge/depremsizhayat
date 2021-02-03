@@ -1,42 +1,51 @@
-﻿@using DepremsizHayat.DataAccess;
-@model List<ANALYSE_REQUEST>
+﻿@using DepremsizHayat.DTO.Admin;
+@model List<AnalyseRequest>
 @{
     ViewBag.Title = "Requests";
     Layout = "~/Views/Panel/Shared/Layout_.cshtml";
 }
-
-<h2>Requests</h2>
-<div class="card-body">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Ülke</th>
-                <th>İl</th>
-                <th>Talep Tarihi</th>
-                <th>Adres</th>
-                <th>Kat Sayısı</th>
-                <th>Yapım Yılı</th>
-                <th>Telefon No 1</th>
-                <th>Telefon No 2</th>
-                <th>Kullanıcı Notu</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (ANALYSE_REQUEST request in Model)
-            {
-            <tr>
-                <td>@request.COUNTRY</td>
-                <td>@request.DISTRICT</td>
-                <td>@request.CREATED_DATE</td>
-                <td>@request.ADDRESS</td>
-                <td>@request.NUMBER_OF_FLOORS</td>
-                <td>@request.YEAR_OF_CONSTRUCTION</td>
-                <td>@request.PHONE_NUMBER_1</td>
-                <td>@request.PHONE_NUMBER_2</td>
-                <td>@request.USER_NOTE</td>
-            </tr>
-            }
-        </tbody>
-    </table>
-    @Html.Partial("Shared/_StatusPartial")
-</div>
+<br><br>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Seç</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Ülke</th>
+                    <th>İl</th>
+                    <th>Talep Tarihi</th>
+                    <th>Adres</th>
+                    <th>Kat Sayısı</th>
+                    <th>Yapım Yılı</th>
+                    <th>Telefon No 1</th>
+                    <th>Telefon No 2</th>
+                    <th>Kullanıcı Notu</th>
+                    <th>Durum</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (AnalyseRequest request in Model)
+                {
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>@request.FIRST_NAME</td>
+                        <td>@request.LAST_NAME</td>
+                        <td>@request.COUNTRY</td>
+                        <td>@request.DISTRICT</td>
+                        <td>@request.CREATED_DATE</td>
+                        <td>@request.ADDRESS</td>
+                        <td>@request.NUMBER_OF_FLOORS</td>
+                        <td>@request.YEAR_OF_CONSTRUCTION</td>
+                        <td>@request.PHONE_NUMBER_1</td>
+                        <td>@request.PHONE_NUMBER_2</td>
+                        <td>@request.USER_NOTE</td>
+                        <td>@request.STATUS</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="button">Onayla</button>
+        <button type="button">Reddet</button>
+        @Html.Partial("Shared/_StatusPartial")
+    </div>
