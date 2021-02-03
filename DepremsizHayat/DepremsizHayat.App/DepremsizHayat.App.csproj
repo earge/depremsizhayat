@@ -207,6 +207,7 @@
     <Content Include="Content\css\pagenotfound.css" />
     <Content Include="Content\css\register.css" />
     <Content Include="Content\css\setandforgotpassword.css" />
+    <Content Include="Content\css\welcome.css" />
     <Content Include="Content\js\activationControl.js" />
     <Content Include="Content\js\activationDigit.js" />
     <Content Include="Content\js\analyseRequestControl.js" />

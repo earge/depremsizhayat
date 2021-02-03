@@ -11,3 +11,26 @@
     -moz-appearance: none;
     outline: none;
 }
+
+.imagesBox{
+    border-radius:10px;
+    background-color:rgb(230,230,230);
+    height:150px;
+    width:100%;
+}
+.imagesBox > div {
+    height:100%;
+    width:100%;
+    border-radius:5px;
+    overflow-x:scroll;
+    overflow-y:auto;
+    display:flex
+}
+.imagesBox > div img{
+    max-height:100%;
+    width:auto;
+    border:1px solid rgb(100,100,100);
+}
+    .imagesBox > div img:not(:last-child) {
+        margin-right:5px;
+    }
