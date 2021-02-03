@@ -191,6 +191,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\WelcomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -255,9 +256,9 @@
     <Content Include="Views\Home\PageNotFound.cshtml" />
     <Content Include="Views\Home\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\EditProfile.cshtml" />
-    <Content Include="Views\Home\Shared\PartialPages\_Contact.cshtml" />
-    <Content Include="Views\Home\Shared\PartialPages\_AnalyseRequest.cshtml" />
-    <Content Include="Views\Home\Shared\PartialPages\_MyRequests.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\MyRequests.cshtml" />
+    <Content Include="Views\Welcome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
