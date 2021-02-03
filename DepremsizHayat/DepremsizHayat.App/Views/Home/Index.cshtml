@@ -20,8 +20,8 @@
         <div class="white-box">
             <div class="top-header align-left p15">Talep Oluştur</div>
             <div class="p15">
-                <div class="align-center mb15"><button id="addImageButton" class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
-                <div class="imagesBox mb15 p5 hidden">
+                <div id="addImageButton" class="align-center mb15"><button class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
+                <div class="imagesBox mb15 p5">
                     <div></div>
                 </div>
                 <div class="mb15"><input type="text" class="input one" id="phone1" placeholder="Telefon Numaranız" /></div>
@@ -62,39 +62,31 @@
     let imgButton = document.querySelector("#addImageButton")
     let imageInput = document.querySelector("#imageInput")
 
-    imgButton.addEventListener("click", function () { imageInput.click() })
+    imgButton.addEventListener("click", function () {
+        imageInput.click()
+    })
+
+    let images = []
 
     function imageGet(event) {
         if (window.File && window.FileList && window.FileReader) {
             if (event.target.files) {
                 let files = Array.from(event.target.files)
                 let imageFiles = files.filter(images => images.type.match("image"))
-                if (files.filter(images => !images.type.match("image")).length == 0) {
-                    if (imageFiles.length <= 10) {
-                        if (imageFiles.length == 0) {
-                            document.querySelector(".imagesBox").classList.add("hidden")
-                            imgButton.innerHTML = `<i class="fas fa-plus-circle mr7"></i> Resim Ekleyin`
+                if (images.length + imageFiles.length <= 10) {
+                    imageFiles.forEach(image => {
+                        images.push(image)
+                        let reader = new FileReader()
+                        reader.onload = function (event) {
+                            let imageElement = document.createElement("img")
+                            imageElement.src = reader.result
+                            document.querySelector(".imagesBox>div").appendChild(imageElement)
                         }
-                        else {
-                            document.querySelector(".imagesBox").classList.remove("hidden")
-                            imgButton.innerHTML = `<i class="fas fa-sync-alt mr7"></i> Resimleri Değiştir`
-                        }
-                        document.querySelector(".imagesBox>div").innerHTML = ""
-                        imageFiles.forEach(image => {
-                            let reader = new FileReader()
-                            reader.onload = function (event) {
-                                let imageElement = document.createElement("img")
-                                imageElement.src = reader.result
-                                document.querySelector(".imagesBox>div").appendChild(imageElement)
-                            }
-                            reader.readAsDataURL(image);
-                        })
-                    } else {
-                        alert("Maksimum 10 resim seçebilirsiniz.")
-                    }
-                } else {
-                    alert("Sadece Resim seçebilirsiniz.")
-                    event.target.value = null
+                        reader.readAsDataURL(image);
+                    })
+                }
+                else {
+                    imgButton.disabled = true
                 }
             }
         }
@@ -113,17 +105,20 @@
         let country = document.querySelector("#year").value
         let district = document.querySelector("#district").value
         let address = document.querySelector("#address").value
-        let images = document.querySelector("#imageInput")
 
         let sendingFiles = new FormData()
+
         sendingFiles.append("phone1",phone1)
         sendingFiles.append("phone2",phone2)
         sendingFiles.append("year",year)
         sendingFiles.append("floor",floor)
         sendingFiles.append("country",country)
         sendingFiles.append("district",district)
-        sendingFiles.append("images", images)
         sendingFiles.append("address", address)
+
+        for (i = 0; i < images.length; i++) {
+            sendingFiles.append(images[i].name,images[i])
+        }
 
 
         $.ajax({
