@@ -100,7 +100,10 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-
+        public ActionResult Contact()
+        {
+            return View();
+        }
         public ActionResult EditProfile(EditNameSurnameRequest request)
         {
             BaseResponse response = new BaseResponse();
@@ -113,7 +116,7 @@ namespace DepremsizHayat.App.Controllers
             return View(response);
         }
         //[ChildActionOnly]
-        public ActionResult Custom()
+        public ActionResult MyRequests()
         {
             List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
             return View(request);

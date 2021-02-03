@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap</title>
+    <title>@ViewBag.Title</title>
     <link href="~/Content/css/main.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/052e4ba982.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -15,8 +15,10 @@
     <div class="navbar">
         <div class="flex v-center"><a class="brand">DEPREMSİZ HAYAT</a></div>
         <div class="menu">
-            <a class="link" href="#sendnewrequest">Yeni Talep Gönder</a>
-            <a class="link" href="#contact">İletişim</a>
+            <a class="link" href="Index">Yeni Talep Gönder</a>
+            <a class="link" href="MyRequests">Taleplerim</a>
+            <a class="link" href="EditProfile">Profili Düzenle</a>
+            <a class="link" href="Contact">İletişim</a>
             <div class="mobile-profile">
                 <div class="b">@{Html.RenderAction("Name", "Home");} @{Html.RenderAction("Surname", "Home");}</div>
                 <div><a class="link bg-red tx-white b fs-11 p5" href="/Account/LogOut">Çıkış Yap</a></div>
