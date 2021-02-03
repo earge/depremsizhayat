@@ -7,6 +7,8 @@ using DepremsizHayat.Business.IService;
 using DepremsizHayat.Business.Service;
 using DepremsizHayat.Business.UnitOfWork;
 using DepremsizHayat.Job;
+using DepremsizHayat.Job.Job;
+using DepremsizHayat.Job.Scheduler;
 using DepremsizHayat.Security;
 using DepremsizHayat.Utility;
 using Quartz;
@@ -25,7 +27,7 @@ namespace DepremsizHayat.App.App_Start
         public static void Run()
         {
             ContainerBuilder builder = new ContainerBuilder();
-            builder.RegisterType<TestJob>().InstancePerLifetimeScope();
+            builder.RegisterType<AnalyseRequestJob>().InstancePerLifetimeScope();
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerLifetimeScope();
@@ -48,12 +50,12 @@ namespace DepremsizHayat.App.App_Start
             {
                 ConfigurationProvider = c => schedulerConfig
             });
-            builder.RegisterModule(new QuartzAutofacJobsModule(typeof(TestJob).Assembly));
-            builder.RegisterType<TestJobScheduler>().AsSelf();
+            builder.RegisterModule(new QuartzAutofacJobsModule(typeof(AnalyseRequestJob).Assembly));
+            builder.RegisterType<AnalyseRequestJobScheduler>().AsSelf();
         }
         private static void ConfigureScheduler(IContainer container)
         {
-            var scheduler = container.Resolve<TestJobScheduler>();
+            var scheduler = container.Resolve<AnalyseRequestJobScheduler>();
             scheduler.Start();
         }
     }

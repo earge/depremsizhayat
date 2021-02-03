@@ -51,14 +51,6 @@ namespace DepremsizHayat.App.Controllers
         }
         public ActionResult SendAnalyseRequest()
         {
-            if (Request.Form["images"].Length>0)
-            {
-                foreach (var item in Request.Form["images"])
-                {
-                    item.ToString();
-
-                }
-            }
             if (Request.Files.Count > 0)
             {
                 try
@@ -68,31 +60,30 @@ namespace DepremsizHayat.App.Controllers
                     {
                         HttpPostedFileBase file = files[i];
                         string fname = file.FileName;
-                        if (!(Directory.Exists(Server.MapPath("~//Sources/" + "someValue"))))
+                        if (!Directory.Exists(Server.MapPath("~//Sources/")))
                         {
-                            Directory.CreateDirectory(Server.MapPath("~/Sources/" + "someValue"));
+                            Directory.CreateDirectory(Server.MapPath("~/Sources/"));
                         }
-                        fname = Path.Combine(Server.MapPath("~/Sources/" + "someValue"),
+                        fname = Path.Combine(Server.MapPath("~/Sources/"),
                                        fname);
                         file.SaveAs(fname);
                     }
                     DataAccess.ANALYSE_REQUEST request = new DataAccess.ANALYSE_REQUEST()
                     {
-                        ADDRESS = Request.Form[0],
-                        COUNTRY = Request.Form[1],
-                        CREATED_DATE = Convert.ToDateTime(Request.Form[2]),
+                        ADDRESS = Request.Form["address"],
+                        COUNTRY = Request.Form["country"],
+                        CREATED_DATE = DateTime.Now,
                         DELETED = false,
-                        DISTRICT = Request.Form[3],
-                        NUMBER_OF_FLOORS = Convert.ToInt32(Request.Form[4]),
-                        PHONE_NUMBER_1 = Request.Form[5],
-                        PHONE_NUMBER_2 = Request.Form[6],
-                        STATUS_ID = _statusService.GetIdByName("Bekliyor"),
+                        DISTRICT = Request.Form["district"],
+                        NUMBER_OF_FLOORS = Convert.ToInt32(Request.Form["floor"]),
+                        PHONE_NUMBER_1 = Request.Form["phone1"],
+                        PHONE_NUMBER_2 = Request.Form["phone2"],
+                        STATUS_ID = _statusService.GetIdByCode("pendingconf"),
                         USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID,
-                        USER_NOTE = Request.Form[8],
-                        YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form[9])
-
+                        //USER_NOTE = Request.Form[""],
+                        YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form["year"])
                     };
-                    return Json(null, JsonRequestBehavior.AllowGet);
+                    return Json(_analyseRequestService.SendNewRequest(request), JsonRequestBehavior.AllowGet);
                 }
                 catch (Exception)
                 {
@@ -126,8 +117,8 @@ namespace DepremsizHayat.App.Controllers
         //[ChildActionOnly]
         public ActionResult MyRequests()
         {
-            //List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
-            return View(/*request*/);
+            List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
+            return View(request);
         }
     }
 }

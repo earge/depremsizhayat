@@ -16,9 +16,9 @@ namespace DepremsizHayat.Business.ServiceRepository
         {
         }
 
-        public STATUS GetByName(string name)
+        public STATUS GetByCode(string code)
         {
-            return _dbContext.STATUS.FirstOrDefault(p => p.NAME == name);
+            return _dbContext.STATUS.FirstOrDefault(p => p.STATUS_CODE == code);
         }
     }
 }

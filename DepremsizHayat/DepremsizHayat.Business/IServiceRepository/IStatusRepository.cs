@@ -10,6 +10,6 @@ namespace DepremsizHayat.Business.IServiceRepository
 {
     public interface IStatusRepository:IRepository<STATUS>
     {
-        STATUS GetByName(string name);
+        STATUS GetByCode(string code);
     }
 }
