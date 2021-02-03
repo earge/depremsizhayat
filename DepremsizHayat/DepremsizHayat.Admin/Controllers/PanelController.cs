@@ -72,7 +72,7 @@ namespace DepremsizHayat.Admin.Controllers
         }
         public ActionResult Requests()
         {
-            List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetAllRequests();
+            List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
             return View(request);
         }
     }

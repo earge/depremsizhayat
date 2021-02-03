@@ -19,6 +19,7 @@ namespace DepremsizHayat.DataAccess
         public string DESCRIPTION { get; set; }
         [MaxLength(50)]
         public string STATUS_CODE { get; set; }
+        public virtual List<ANALYSE_REQUEST> ANALYSE_REQUEST { get; set; }
 
     }
 }
