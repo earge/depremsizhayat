@@ -17,13 +17,16 @@ namespace DepremsizHayat.Admin.Controllers
         private IUserService _userService;
         private IRoleService _roleService;
         private IAnalyseRequestService _analyseRequestService;
+        private IStatusService _statusService;
         public PanelController(IUserService userService,
             IRoleService roleService,
-            IAnalyseRequestService analyseRequestService)
+            IAnalyseRequestService analyseRequestService,
+            IStatusService statusService)
         {
             this._userService = userService;
             this._roleService = roleService;
             this._analyseRequestService = analyseRequestService;
+            this._statusService = statusService;
         }
 
         public ActionResult Dashboard()
@@ -74,6 +77,30 @@ namespace DepremsizHayat.Admin.Controllers
         {
             List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
             return View(request);
+        }
+        public ActionResult DenyRequests(List<DataAccess.ANALYSE_REQUEST> request)
+        {
+            BaseResponse response = new BaseResponse();
+            if (_analyseRequestService.DenyRequests(request))
+            {
+                response.Status = true;
+                response.Message = "Seçili talepler reddedildi.";
+            }
+            else
+                response.Message = "İşlem başarısız. Lütfen tekrar deneyin.";
+            return Json(response, JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult AllowRequests(List<DataAccess.ANALYSE_REQUEST> request)
+        {
+            BaseResponse response = new BaseResponse();
+            if (_analyseRequestService.AllowRequests(request))
+            {
+                response.Status = true;
+                response.Message = "Seçili talepler onaylandı.";
+            }
+            else
+                response.Message = "İşlem başarısız. Lütfen tekrar deneyin.";
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
     }
 }

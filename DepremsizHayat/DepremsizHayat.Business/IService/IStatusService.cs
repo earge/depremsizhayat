@@ -8,6 +8,6 @@ namespace DepremsizHayat.Business.IService
 {
     public interface IStatusService
     {
-        int GetIdByName(string name);
+        int GetIdByCode(string code);
     }
 }

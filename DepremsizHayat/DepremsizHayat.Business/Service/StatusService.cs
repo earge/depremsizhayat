@@ -15,9 +15,9 @@ namespace DepremsizHayat.Business.Service
         {
             this._statusRepository = statusRepository;
         }
-        public int GetIdByName(string name)
+        public int GetIdByCode(string code)
         {
-            return _statusRepository.GetByName(name).STATUS_ID;
+            return _statusRepository.GetByCode(code).STATUS_ID;
         }
     }
 }
