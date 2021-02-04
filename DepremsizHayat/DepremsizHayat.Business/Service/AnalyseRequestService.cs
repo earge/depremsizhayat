@@ -17,16 +17,19 @@ namespace DepremsizHayat.Business.Service
         private IAnalyseRequestRepository _analyseRequestRepository;
         private IUserRepository _userRepository;
         private IStatusRepository _statusRepository;
+        private IAnalyseRequestAnswerRepository _analyseRequestAnswerRepository;
         private IUnitOfWork _unitOfWork;
         public AnalyseRequestService(IAnalyseRequestRepository analyseRequestRepository,
             IUserRepository userRepository,
             IUnitOfWork unitOfWork,
-            IStatusRepository statusRepository)
+            IStatusRepository statusRepository,
+            IAnalyseRequestAnswerRepository analyseRequestAnswerRepository)
         {
             this._analyseRequestRepository = analyseRequestRepository;
             this._userRepository = userRepository;
-            this._unitOfWork = unitOfWork;
             this._statusRepository = statusRepository;
+            this._analyseRequestAnswerRepository = analyseRequestAnswerRepository;
+            this._unitOfWork = unitOfWork;
         }
 
 
@@ -88,6 +91,16 @@ namespace DepremsizHayat.Business.Service
         {
             ANALYSE_REQUEST current = _analyseRequestRepository.GetById(request.ANALYSIS_REQUEST_ID);
             current.STATUS_ID = _statusRepository.GetByCode("accepted").STATUS_ID;
+            ANALYSE_REQUEST_ANSWER answerRecord = new ANALYSE_REQUEST_ANSWER()
+            {
+                CREATED_DATE = DateTime.Now,
+                DELETED = false,
+                DETAIL = "",
+                RISK_SCORE = 0,
+                ANALYSIS_REQUEST_ID = request.ANALYSIS_REQUEST_ID,
+                USER_ACCOUNT_ID = _userRepository.GetRandomExpertForAnalyse().USER_ACCOUNT_ID
+            };
+            _analyseRequestAnswerRepository.Add(answerRecord);
             _unitOfWork.Commit();
         }
         public bool DenyRequests(List<ANALYSE_REQUEST> requests)
