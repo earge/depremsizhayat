@@ -26,6 +26,25 @@
     overflow-y:auto;
     display:flex
 }
+
+.imagesBox > div > div{
+    position:relative;
+    height:100%;
+}
+
+    .imagesBox > div > div > i{
+        background-color:var(--color-red);
+        color:white;
+        border-radius:5px;
+        position:absolute;
+        top:5px;
+        left:5px;
+        padding:5px;
+        border-radius:5px;
+        font-size:11px;
+        cursor:pointer;
+    }
+
 .imagesBox > div img{
     max-height:100%;
     width:auto;

@@ -78,12 +78,21 @@
                         images.push(image)
                         let reader = new FileReader()
                         reader.onload = function (event) {
+                            let divElement = document.createElement("div")
                             let imageElement = document.createElement("img")
+                            let iElement = document.createElement("i")
+                            iElement.classList.add("fas", "fa-trash", "deleteImage")
+                            iElement.onclick = function (event) { deleteImage(divElement,event.target.dataset.index) }
                             imageElement.src = reader.result
-                            document.querySelector(".imagesBox>div").appendChild(imageElement)
+                            divElement.appendChild(imageElement)
+                            divElement.appendChild(iElement)
+                            document.querySelector(".imagesBox>div").appendChild(divElement)
+                            setDataList()
                         }
                         reader.readAsDataURL(image);
+                        
                     })
+                    
                 }
                 else {
                     imgButton.disabled = true
@@ -92,6 +101,18 @@
         }
     }
     imageInput.addEventListener("change", imageGet)
+
+    function setDataList() {
+        Array.from(document.querySelectorAll(".deleteImage")).forEach((item,index) => {
+            item.setAttribute("data-index", index)
+        })
+    }
+
+    function deleteImage(item,index) {
+        item.remove()
+        images.splice(index, 1);
+        setDataList()
+    }
 
 </script>
 
@@ -119,7 +140,6 @@
         for (i = 0; i < images.length; i++) {
             sendingFiles.append(images[i].name,images[i])
         }
-
 
         $.ajax({
             url: "/Home/SendAnalyzeRequest",
