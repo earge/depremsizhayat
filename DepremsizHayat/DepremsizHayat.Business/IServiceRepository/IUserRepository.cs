@@ -19,5 +19,6 @@ namespace DepremsizHayat.Business.IServiceRepository
         bool CreateForgottenPwdResetRequest(string mail);
         bool ResetForgottenPassword(ResetPasswordRequest request);
         USER_ACCOUNT GetByResetAuth(string authCode);
+        USER_ACCOUNT GetRandomExpertForAnalyse();
     }
 }

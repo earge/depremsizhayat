@@ -11,6 +11,7 @@ using System.Net;
 using DepremsizHayat.DTO.Models;
 using DepremsizHayat.DTO.User;
 using DepremsizHayat.Security;
+using System.Collections.Generic;
 
 namespace DepremsizHayat.Business.ServiceRepository
 {
@@ -125,6 +126,24 @@ namespace DepremsizHayat.Business.ServiceRepository
                 return true;
             }
             return false;
+        }
+
+        public USER_ACCOUNT GetRandomExpertForAnalyse()
+        {
+            var random = new Random();
+            int id;
+            int roleId = _dbContext.ROLE.FirstOrDefault(p => p.NAME == "Expert").ROLE_ID;
+            List<USER_ACCOUNT> list = _dbContext.USER_ACCOUNT.Where(p => p.ROLE_ID == roleId).ToList();
+            foreach (USER_ACCOUNT user in list)
+            {
+                id = random.Next(0, list.Max(p => p.USER_ACCOUNT_ID));
+                var expert = GetById(id);
+                if (expert != null && expert.LAST_ANSWER_DATE != null && ((DateTime)expert.LAST_ANSWER_DATE).AddDays(1) < DateTime.Now)
+                {
+                    return expert;
+                }
+            }
+            return null;
         }
     }
 }
