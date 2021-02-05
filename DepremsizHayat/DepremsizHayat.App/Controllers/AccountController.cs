@@ -41,8 +41,8 @@ namespace DepremsizHayat.App.Controllers
                     {
                         string activationCode = Encryptor.Encrypt(new Random().Next(100000, 999999).ToString());
                         RegisterResponse response = new RegisterResponse() { Status = false };
-                        //try
-                        //{
+                        try
+                        {
                             _userService.CreateUser(new UserModel()
                             {
                                 ACTIVE = false,
@@ -57,11 +57,11 @@ namespace DepremsizHayat.App.Controllers
                             });
                             response.Status = true;
                             response.Url = "?actCode=&mail=" + Encryptor.Encrypt(request.E_MAIL);
-                        //}
-                        //catch (Exception)
-                        //{
-                        //}
-                        return Json(response, JsonRequestBehavior.AllowGet);
+                    }
+                        catch (Exception)
+                    {
+                    }
+                    return Json(response, JsonRequestBehavior.AllowGet);
                     }
                     else
                     {
@@ -188,7 +188,7 @@ namespace DepremsizHayat.App.Controllers
             };
             return _userService.ResetForgottenPassword(request);
         }
-        public ActionResult Login(UserLoginRequest request)
+        public ActionResult Login(UserLoginRequest request,string returnUrl)
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
@@ -221,6 +221,14 @@ namespace DepremsizHayat.App.Controllers
                     else
                     {
                         response.Message = "E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.";
+                    }
+                    if (response.Status)
+                    {
+                        if (returnUrl != null)
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        return RedirectToAction("Index", "Panel");
                     }
                     return Json(response, JsonRequestBehavior.AllowGet);
                 }

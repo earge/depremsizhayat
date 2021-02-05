@@ -51,7 +51,7 @@ namespace DepremsizHayat.Business.Service
                     PHONE_NUMBER_2 = analyse.PHONE_NUMBER_2,
                     USER_ACCOUNT_ID = analyse.USER_ACCOUNT_ID,
                     USER_NOTE = analyse.USER_NOTE,
-                    STATUS = analyse.STATUS.NAME,
+                    STATUS = analyse.STATUS,
                     YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION
                 };
                 var userCache = _userRepository.GetById(analyse.USER_ACCOUNT_ID);
@@ -103,12 +103,14 @@ namespace DepremsizHayat.Business.Service
             _analyseRequestAnswerRepository.Add(answerRecord);
             _unitOfWork.Commit();
         }
-        public bool DenyRequests(List<ANALYSE_REQUEST> requests)
+        public bool DenyRequests(List<string> requests)
         {
             try
             {
-                foreach (ANALYSE_REQUEST analyse in requests)
+                foreach (string id in requests)
                 {
+                    int dummy = Convert.ToInt32(id);
+                    ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(dummy);
                     analyse.STATUS_ID = _statusRepository.GetByCode("denied").STATUS_ID;
                     _unitOfWork.Commit();
                 }
@@ -120,12 +122,14 @@ namespace DepremsizHayat.Business.Service
             }
         }
 
-        public bool AllowRequests(List<ANALYSE_REQUEST> requests)
+        public bool AllowRequests(List<string> requests)
         {
             try
             {
-                foreach (ANALYSE_REQUEST analyse in requests)
+                foreach (string id in requests)
                 {
+                    int dummy = Convert.ToInt32(id);
+                    ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(dummy);
                     analyse.STATUS_ID = _statusRepository.GetByCode("accepted").STATUS_ID;
                     _unitOfWork.Commit();
                 }

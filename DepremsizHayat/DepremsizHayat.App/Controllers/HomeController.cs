@@ -60,7 +60,7 @@ namespace DepremsizHayat.App.Controllers
                     {
                         HttpPostedFileBase file = files[i];
                         string fname = file.FileName;
-                        if (!Directory.Exists(Server.MapPath("~//Sources/")))
+                        if (!Directory.Exists(Server.MapPath("~/Sources/")))
                         {
                             Directory.CreateDirectory(Server.MapPath("~/Sources/"));
                         }
