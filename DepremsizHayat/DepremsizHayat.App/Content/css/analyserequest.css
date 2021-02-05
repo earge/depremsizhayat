@@ -18,14 +18,14 @@
     height:150px;
     width:100%;
 }
-.imagesBox > div {
-    height:100%;
-    width:100%;
-    border-radius:5px;
-    overflow-x:scroll;
-    overflow-y:auto;
-    display:flex
-}
+    .imagesBox > div {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        overflow-x: scroll;
+        overflow-y: auto;
+        display: flex;
+    }
 
 .imagesBox > div > div{
     position:relative;

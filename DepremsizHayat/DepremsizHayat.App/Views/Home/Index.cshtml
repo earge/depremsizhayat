@@ -1,27 +1,22 @@
 ﻿@{
     Layout = "~/Views/Home/Shared/_Layout.cshtml";
-}
-@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Yeni Talep Gönder";
 }
 @section styles{
     <link href="~/Content/css/analyserequest.css" rel="stylesheet" />
 }
 @section scripts{
+    <script src="~/Content/js/analyseRequestInputs.js"></script>
     <script src="~/Content/js/analyseRequestControl.js"></script>
 }
 
-@{
-    ViewBag.Title = "SendAnalyseRequest";
-    Layout = "~/Views/Home/Shared/_Layout.cshtml";
-}
 <div class="flex h-center" id="sendnewrequest">
     <div class="container">
         <div class="white-box">
             <div class="top-header align-left p15">Talep Oluştur</div>
             <div class="p15">
                 <div id="addImageButton" class="align-center mb15"><button class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
-                <div class="imagesBox mb15 p5">
+                <div class="imagesBox mb15 p5 hidden">
                     <div></div>
                 </div>
                 <div class="mb15"><input type="text" class="input one" id="phone1" placeholder="Telefon Numaranız" /></div>
@@ -56,104 +51,3 @@
         </div>
     </div>
 </div>
-
-
-<script>
-    let imgButton = document.querySelector("#addImageButton")
-    let imageInput = document.querySelector("#imageInput")
-
-    imgButton.addEventListener("click", function () {
-        imageInput.click()
-    })
-
-    let images = []
-
-
-    function imageGet(event) {
-        if (window.File && window.FileList && window.FileReader) {
-            if (event.target.files) {
-                let files = Array.from(event.target.files)
-                let imageFiles = files.filter(images => images.type.match("image"))
-                if (images.length + imageFiles.length <= 10) {
-                    imageFiles.forEach(image => {
-                        images.push(image)
-                        let reader = new FileReader()
-                        reader.onload = function (event) {
-                            let divElement = document.createElement("div")
-                            let imageElement = document.createElement("img")
-                            let iElement = document.createElement("i")
-                            iElement.classList.add("fas", "fa-trash", "deleteImage")
-                            iElement.onclick = function (event) { deleteImage(divElement,event.target.dataset.index) }
-                            imageElement.src = reader.result
-                            divElement.appendChild(imageElement)
-                            divElement.appendChild(iElement)
-                            document.querySelector(".imagesBox>div").appendChild(divElement)
-                            setDataList()
-                        }
-                        reader.readAsDataURL(image);
-                        
-                    })
-                    
-                }
-                else {
-                    imgButton.disabled = true
-                }
-            }
-        }
-    }
-    imageInput.addEventListener("change", imageGet)
-
-    function setDataList() {
-        Array.from(document.querySelectorAll(".deleteImage")).forEach((item,index) => {
-            item.setAttribute("data-index", index)
-        })
-    }
-
-    function deleteImage(item,index) {
-        item.remove()
-        images.splice(index, 1);
-        setDataList()
-    }
-
-</script>
-
-<script>
-    let requestButton = document.querySelector("#request")
-    requestButton.addEventListener("click", function (event) {
-        let phone1 = document.querySelector("#phone1").value
-        let phone2 = document.querySelector("#phone2").value
-        let year = document.querySelector("#year").value
-        let floor = document.querySelector("#floor").value
-        let country = document.querySelector("#year").value
-        let district = document.querySelector("#district").value
-        let address = document.querySelector("#address").value
-
-        let sendingFiles = new FormData()
-
-        sendingFiles.append("phone1",phone1)
-        sendingFiles.append("phone2",phone2)
-        sendingFiles.append("year",year)
-        sendingFiles.append("floor",floor)
-        sendingFiles.append("country",country)
-        sendingFiles.append("district",district)
-        sendingFiles.append("address", address)
-
-        for (i = 0; i < images.length; i++) {
-            sendingFiles.append(images[i].name,images[i])
-        }
-
-        $.ajax({
-            url: "/Home/SendAnalyseRequest",
-            type: "POST",
-            processData: false,
-            contentType:false,
-            data: sendingFiles,
-            success: function () {
-                debugger;
-            },
-            error: function () {
-                debugger;
-            }
-        })
-    })
-</script>
