@@ -31,7 +31,7 @@
             @foreach (AnalyseRequest request in Model)
             {
                 <tr>
-                    <td><ro-checkbox group="request" value="@request.ANALYSIS_REQUEST_ID" data-status="@request.STATUS.STATUS_ID"></td>
+                    <td><ro-checkbox group="request" value="@request.ANALYSIS_REQUEST_ID" data-status="@request.STATUS_ID"></td>
                     <td>@request.FIRST_NAME</td>
                     <td>@request.LAST_NAME</td>
                     <td>@request.COUNTRY</td>
@@ -43,7 +43,7 @@
                     <td><input type="text" value="@request.PHONE_NUMBER_1" disabled /></td>
                     <td><input type="text" value="@request.PHONE_NUMBER_2" disabled></td>
                     <td><input type="text" value="@request.USER_NOTE" disabled></td>
-                    <td>@request.STATUS.NAME</td>
+                    <td>@request.STATUS_NAME</td>
                 </tr>
             }
         </tbody>

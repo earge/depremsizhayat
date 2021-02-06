@@ -14,7 +14,8 @@ namespace DepremsizHayat.DTO.Admin
         public string LAST_NAME { get; set; }
         public int ANALYSIS_REQUEST_ID { get; set; }
         public DateTime CREATED_DATE { get; set; }
-        public STATUS STATUS { get; set; }
+        public string STATUS_NAME { get; set; }
+        public int STATUS_ID { get; set; }
         public string ADDRESS { get; set; }
         public string PHONE_NUMBER_1 { get; set; }
         public string PHONE_NUMBER_2 { get; set; }
