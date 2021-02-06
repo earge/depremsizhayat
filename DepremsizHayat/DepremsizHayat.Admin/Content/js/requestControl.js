@@ -37,22 +37,70 @@ $.ajax({
 `
 <tr>
 <td><ro-checkbox group="request" value="${items.ANALYSIS_REQUEST_ID}" data-status="${items.STATUS_ID}"></td>
-<td>${items.FIRST_NAME}</td>
-<td>${items.LAST_NAME}</td>
-<td>${items.COUNTRY}</td>
-<td>${items.DISTRICT}</td>
-<td>${ConvertDate(items.CREATED_DATE)}</td>
-<td><textarea disabled>${items.ADDRESS}</textarea></td>
-<td>${items.NUMBER_OF_FLOORS}</td>
-<td>${items.YEAR_OF_CONSTRUCTION}</td>
-<td><input type="text" value="${items.PHONE_NUMBER_1}" disabled /></td>
-<td><input type="text" value="${items.PHONE_NUMBER_2}" disabled /></td>
-<td><input type="text" value="${items.USER_NOTE}" disabled /></td>
+<td>${items.FIRST_NAME} ${items.LAST_NAME}</td>
+<td>
+<div>
+    <b>Ülke : </b>
+    ${items.COUNTRY}<br>
+    <b>Şehir : </b>
+    ${items.DISTRICT}<br>
+</div>
+</td>
+<td>
+<div>
+    <b>Kat Sayısı : </b>
+    ${items.NUMBER_OF_FLOORS}<br>
+    <b>Yapım Yılı : </b>
+    ${items.YEAR_OF_CONSTRUCTION}<br>
+</div>
+</td>
 <td>${items.STATUS_NAME}</td>
+<td><button data-analyseid="${items.ANALYSIS_REQUEST_ID}" class="detailButton">Detay</button></td>
 </tr>
 `
             document.querySelector("#requestsTable").innerHTML += row
         })
         
+    }
+})
+
+Array.from(document.querySelectorAll(".detailButton")).forEach(item => {
+    item.addEventListener("click", function () { editRequest(item.dataset.analyseid) })
+})
+
+
+function editRequest(id) {
+    let request = document.createElement("template")
+    $.ajax({
+        url: "RequestDetail",
+        type: "POST",
+        contentType: false,
+        data:id,
+        dataType: "json",
+        success: function (data) {
+            request.innerHTML =
+                `
+                <button data-case="0" id="reques-detail-edit">Düzenle</button>
+                Telefon 1: <input type="text" value=${data.PHONE_NUMBER_1} class="request-detail-input" disabled>
+                Telefon 2: <input type="text" value=${data.PHONE_NUMBER_2} class="request-detail-input" disabled>
+                Adres: <textarea class="request-detail-input" disabled>${data.ADDRESS}</textarea>
+                Açıklama : <textarea class="request-detail-input" disabled>${data.USER_NOTE}</textarea>
+                ${convertDate(data.USER_NOTE)}
+                `
+            Prompt.show(request)
+        }
+    })
+}
+
+let requestEditButton = document.querySelector("#reques-detail-edit")
+requestEditButton.addEventListener("click", function (event) {
+    if (event.target.dataset.case == "0") {
+        Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = false)
+        event.target.innerHTML = "Güncelle"
+        event.target.dataset.case == "1"
+    } else if (event.target.dataset.case == "1") {
+        Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = true)
+        event.target.innerHTML = "Düzenle"
+        event.target.dataset.case == "0"
     }
 })

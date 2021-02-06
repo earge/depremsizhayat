@@ -187,6 +187,7 @@
     <Content Include="Content\js\forgottenPasswordControl.js" />
     <Content Include="Content\js\loginControl.js" />
     <Content Include="Content\js\main.js" />
+    <Content Include="Content\js\prompt.js" />
     <Content Include="Content\js\registerComponents.js" />
     <Content Include="Content\js\registerControl.js" />
     <Content Include="Content\js\requestControl.js" />

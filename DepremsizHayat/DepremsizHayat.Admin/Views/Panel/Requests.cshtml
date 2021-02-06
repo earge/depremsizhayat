@@ -7,47 +7,28 @@
 <br>
 <br>
 <script src="~/Content/js/CheckBox.js"></script>
+<script src="~/Content/js/prompt.js"></script>
 <div class="card-body">
-    @*<ro-checkbox group="request" toggle></ro-checkbox>Tümünü Seç
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Seç</th>
-                <th>Ad</th>
-                <th>Soyad</th>
-                <th>Ülke</th>
-                <th>İl</th>
-                <th>Talep Tarihi</th>
-                <th>Adres</th>
-                <th>Kat Sayısı</th>
-                <th>Yapım Yılı</th>
-                <th>Telefon No 1</th>
-                <th>Telefon No 2</th>
-                <th>Kullanıcı Notu</th>
-                <th>Durum</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (AnalyseRequest request in Model)
-            {
+    <ro-checkbox group="request" toggle></ro-checkbox>Tümünü Seç
+    <div style="width:auto; overflow-x:scroll">
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <td><ro-checkbox group="request" value="@request.ANALYSIS_REQUEST_ID" data-status="@request.STATUS_ID"></td>
-                    <td>@request.FIRST_NAME</td>
-                    <td>@request.LAST_NAME</td>
-                    <td>@request.COUNTRY</td>
-                    <td>@request.DISTRICT</td>
-                    <td>@request.CREATED_DATE</td>
-                    <td><form action="" method="post"><textarea name="address" disabled>@request.ADDRESS</textarea><button type="button" data-edit="0"><i class="fas fa-pen"></i></button></form></td>
-                    <td>@request.NUMBER_OF_FLOORS</td>
-                    <td>@request.YEAR_OF_CONSTRUCTION</td>
-                    <td><input type="text" value="@request.PHONE_NUMBER_1" disabled /></td>
-                    <td><input type="text" value="@request.PHONE_NUMBER_2" disabled></td>
-                    <td><input type="text" value="@request.USER_NOTE" disabled></td>
-                    <td>@request.STATUS_NAME</td>
+                    <th>Seç</th>
+                    <th>Ad Soyad</th>
+                    <th>Adres</th>
+                    <th>Bina</th>                   
+                    <th>Durum</th>
+                    <th>Detay</th>
                 </tr>
-            }
-        </tbody>
-    </table>*@
+            </thead>
+            <tbody id="requestsTable">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="~/Content/js/requestControl.js"></script>
+
     <button type="button" id="allow">Onayla</button>
     <button type="button" id="deny">Reddet</button>
     <script>
@@ -70,33 +51,7 @@
         }
     </script>
     @Html.Partial("Shared/_StatusPartial")
+
 </div>
 
 
-
-<div style="width:auto; overflow-x:scroll">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Seç</th>
-                <th>Ad</th>
-                <th>Soyad</th>
-                <th>Ülke</th>
-                <th>İl</th>
-                <th>Talep Tarihi</th>
-                <th>Adres</th>
-                <th>Kat Sayısı</th>
-                <th>Yapım Yılı</th>
-                <th>Telefon No 1</th>
-                <th>Telefon No 2</th>
-                <th>Kullanıcı Notu</th>
-                <th>Durum</th>
-            </tr>
-        </thead>
-        <tbody id="requestsTable">
-
-        </tbody>
-        </table>
-</div>
-
-<script src="~/Content/js/requestControl.js"></script>
