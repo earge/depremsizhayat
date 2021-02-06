@@ -6,7 +6,7 @@ const promptTemplate = document.createElement("template")
             position:absolute;
             top:0px;
             left:0px;
-            z-index:999;
+            z-index:10000;
             width:100%;
             height:100%;
             background-color:rgba(0,0,0,0.1);
@@ -15,7 +15,7 @@ const promptTemplate = document.createElement("template")
             backdrop-filter:blur(5px);    
         }
         :host > div {
-            margin:10px ;
+            margin:50px 10px 10px 10px ;
             flex: 1 1 auto;
             max-width:600px;
             height:200px;
