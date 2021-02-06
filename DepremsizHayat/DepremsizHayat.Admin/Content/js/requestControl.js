@@ -38,3 +38,7 @@ $("#requestGrid").jsGrid({
         { type: "control" }
     ]
 });
+
+$.ajax({
+    
+})
