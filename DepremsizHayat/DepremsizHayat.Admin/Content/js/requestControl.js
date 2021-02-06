@@ -16,22 +16,18 @@ $.ajax({
                 <td>${items.FIRST_NAME} ${items.LAST_NAME}</td>
                 <td>
                 <div>
-                    <b>Ülke : </b>
-                    ${items.COUNTRY}<br>
-                    <b>Şehir : </b>
-                    ${items.DISTRICT}<br>
+                    <b>Ülke: </b>${items.COUNTRY}<br>
+                    <b>Şehir: </b>${items.DISTRICT}<br>
                 </div>
                 </td>
                 <td>
                 <div>
-                    <b>Kat Sayısı : </b>
-                    ${items.NUMBER_OF_FLOORS}<br>
-                    <b>Yapım Yılı : </b>
-                    ${items.YEAR_OF_CONSTRUCTION}<br>
+                    <b>Kat Sayısı: </b>${items.NUMBER_OF_FLOORS}<br>
+                    <b>Yapım Yılı: </b>${items.YEAR_OF_CONSTRUCTION}<br>
                 </div>
                 </td>
                 <td>${items.STATUS_NAME}</td>
-                <td><button data-analyseid="${items.ANALYSIS_REQUEST_ID}" class="detailButton">Detay</button></td>
+                <td><button class="btn btn-primary detailButton" data-analyseid="${items.ANALYSIS_REQUEST_ID}">Detay</button></td>
                 </tr>
                 `
             document.querySelector("#requestsTable").innerHTML += row
@@ -52,13 +48,18 @@ function editRequest(id) {
         success: function (data) {
             request.innerHTML =
                 `
-                <div><button data-case="0" id="reques-detail-edit">Düzenle</button></div>
-                <div>Telefon 1: <input type="text" id="newPhone1" value=${data.PHONE_NUMBER_1} class="request-detail-input" disabled></div>
-                <div>Telefon 2: <input type="text" id="newPhone2" value=${data.PHONE_NUMBER_2} class="request-detail-input" disabled></div>
-                <div>Adres: <textarea id="newAddress" class="request-detail-input" disabled>${data.ADDRESS}</textarea></div>
-                <div>Açıklama : <textarea id="newNote" class="request-detail-input" disabled>${data.USER_NOTE}</textarea></div>
-                <div>${ConvertDate(data.CREATED_DATE)}</div>
+                <style>
+                    .mb15{margin-bottom:15px}
+                    .mt5{margin-top:5px}
+                    .resize-none{resize:none}
+                </style>
+                <div class="mb15"><b>Telefon 1:</b> <input type="text" class="form-control request-detail-input mt5" id="newPhone1" value=${data.PHONE_NUMBER_1} disabled></div>
+                <div class="mb15"><b>Telefon 2:</b> <input type="text" class="form-control request-detail-input mt5" id="newPhone2" value=${data.PHONE_NUMBER_2} disabled></div>
+                <div class="mb15"><b>Adres:</b> <textarea id="newAddress" class="form-control resize-none request-detail-input mt5" disabled>${data.ADDRESS}</textarea></div>
+                <div class="mb15"><b>Açıklama:</b> <textarea id="newNote" class="form-control resize-none request-detail-input mt5" disabled>${data.USER_NOTE}</textarea></div>
+                <div class="mb15"><b>Oluşturulma Tarihi: </b>${ConvertDate(data.CREATED_DATE)}</div>
                 <input type="hidden" value="${data.ANALYSIS_REQUEST_ID}">
+                <div><button data-case="0" id="reques-detail-edit" class="btn btn-primary">Düzenle</button></div>
                 `
             Prompt.show(request)
             addEventToButton()

@@ -5,64 +5,62 @@
     ViewBag.Title = "ListUserRoles";
     Layout = "~/Views/Panel/Shared/Layout_.cshtml";
 }
-
-
-
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Kullanıcı Listesi</h3>
-        </div>
-        <div class="card-body">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Mevcut Rol</th>
-                        <th>Ad</th>
-                        <th>Soyad</th>
-                        <th>E-Posta</th>
-                        <th>Kullanılabilir Roller</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (RoleRequest user in Model)
-                    {
-                        <tr>
-                            <form method="POST" action="EditRoles">
-                                @Html.Hidden("USER_ACCOUNT_ID",user.USER_ACCOUNT_ID)
-                                <td>@user.CURRENTROLE.NAME</td>
-                                <td>@user.FIRST_NAME</td>
-                                <td>@user.LAST_NAME</td>
-                                <td>@user.E_MAIL</td>
-                                <td>
-                                    <span class="badge bg-danger">
-                                        <select class="roles" name="ROLE_ID">
-                                            @foreach (ROLE role in user.AVAILABLEROLES)
+<section class="content mt-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Kullanıcı Listesi</h3>
+                </div>
+                <div class="card-body">
+                    <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Mevcut Rol</th>
+                                                <th>Ad</th>
+                                                <th>Soyad</th>
+                                                <th>E-Posta</th>
+                                                <th>Kullanılabilir Roller</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (RoleRequest user in Model)
                                             {
-                                                <option value="@role.ROLE_ID">
-                                                    @role.NAME
-                                                </option>
+                                                <tr>       
+                                                        <td>@user.CURRENTROLE.NAME</td>
+                                                        <td>@user.FIRST_NAME</td>
+                                                        <td>@user.LAST_NAME</td>
+                                                        <td>@user.E_MAIL</td>
+                                                        <td>
+                                                            <form method="POST" action="EditRoles">
+                                                                <div class="d-flex">
+                                                                    @Html.Hidden("USER_ACCOUNT_ID", user.USER_ACCOUNT_ID)
+                                                                    <select class="roles form-control" name="ROLE_ID">
+                                                                        @foreach (ROLE role in user.AVAILABLEROLES)
+                                                                        {
+                                                                            <option value="@role.ROLE_ID">
+                                                                                @role.NAME
+                                                                            </option>
+                                                                        }
+                                                                    </select>
+                                                                    <button class="btn btn-secondary ml-2"><i class="fas fa-check"></i></button>
+                                                                </div>
+                                                            </form>
+                                                        </td>
+                                                </tr>
                                             }
-                                        </select>
-                                    </span>
-                                    <button><i class="fas fa-check" style="margin-left:5px;color:green;"></i></button>
-                                </td>
-                            </form>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            @Html.Partial("Shared/_StatusPartial")
-        </div>
-   
-        <div class="card-footer clearfix">
-            <ul class="pagination pagination-sm m-0 float-right">
-                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-            </ul>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example2_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
