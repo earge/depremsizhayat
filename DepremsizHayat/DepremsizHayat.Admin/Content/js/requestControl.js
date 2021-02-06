@@ -40,5 +40,11 @@ $("#requestGrid").jsGrid({
 });
 
 $.ajax({
-    
+    url: "GetRequests",
+    type: "POST",
+    contentType: false,
+    dataType:"json",
+    success: function (data) {
+        console.log(data)
+    }
 })
