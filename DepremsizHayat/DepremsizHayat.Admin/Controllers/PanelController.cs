@@ -76,7 +76,12 @@ namespace DepremsizHayat.Admin.Controllers
         public ActionResult Requests()
         {
             List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
-            return Json(request,JsonRequestBehavior.AllowGet);
+            return View(request);
+        }
+        public ActionResult GetRequests()
+        {
+            List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
+            return Json(request, JsonRequestBehavior.AllowGet);
         }
         public ActionResult DenyRequests(List<string> idList)
         {
