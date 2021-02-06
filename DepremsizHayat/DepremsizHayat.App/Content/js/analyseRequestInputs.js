@@ -93,7 +93,7 @@ let year = document.querySelector("#year")
 
 cities.forEach(city => {
     let option = document.createElement("option")
-    option.value = city.name[0]
+    option.value = city.name[0].toLocaleUpperCase() + city.name.slice(1).toLocaleLowerCase()
     option.innerHTML = city.name[0].toLocaleUpperCase() + city.name.slice(1).toLocaleLowerCase()
     district.appendChild(option)
 })
