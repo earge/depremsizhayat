@@ -22,15 +22,21 @@ namespace DepremsizHayat.Admin.Controllers
         }
         public ActionResult Login(UserLoginRequest request,string returnUrl)
         {
+            BaseResponse response = new BaseResponse() { Status = false };
             if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
             {
+                if (returnUrl!=null)
+                {
+                    response.Status = true;
+                    response.Message = returnUrl;
+                }
                 return RedirectToAction("ListUserRoles", "Panel");
             }
             else
             {
                 if (ModelState.IsValid)
                 {
-                    BaseResponse response = new BaseResponse() { Status = false };
+                    
                     if (_userService.Login(request.E_MAIL, request.PASSWORD))
                     {
                         try
@@ -58,9 +64,8 @@ namespace DepremsizHayat.Admin.Controllers
                     {
                         if (returnUrl!=null)
                         {
-                            return Redirect(returnUrl);
+                            response.Message = returnUrl;
                         }
-                        return RedirectToAction("Index", "Panel");
                     }
                     return Json(response, JsonRequestBehavior.AllowGet);
                 }
