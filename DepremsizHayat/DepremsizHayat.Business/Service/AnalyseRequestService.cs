@@ -51,7 +51,8 @@ namespace DepremsizHayat.Business.Service
                     PHONE_NUMBER_2 = analyse.PHONE_NUMBER_2,
                     USER_ACCOUNT_ID = analyse.USER_ACCOUNT_ID,
                     USER_NOTE = analyse.USER_NOTE,
-                    STATUS = analyse.STATUS,
+                    STATUS_ID = analyse.STATUS.STATUS_ID,
+                    STATUS_NAME = analyse.STATUS.NAME,
                     YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION
                 };
                 var userCache = _userRepository.GetById(analyse.USER_ACCOUNT_ID);
