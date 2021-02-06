@@ -192,6 +192,7 @@ namespace DepremsizHayat.App.Controllers
         {
             if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
             {
+                returnUrl = (returnUrl != "undefined") ? returnUrl : null;
                 if (returnUrl != null)
                 {
                     return Redirect(returnUrl);
