@@ -8,7 +8,7 @@
 <br>
 <script src="~/Content/js/CheckBox.js"></script>
 <div class="card-body">
-    <ro-checkbox group="request" toggle></ro-checkbox>Tümünü Seç
+    @*<ro-checkbox group="request" toggle></ro-checkbox>Tümünü Seç
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -47,7 +47,7 @@
                 </tr>
             }
         </tbody>
-    </table>
+    </table>*@
     <button type="button" id="allow">Onayla</button>
     <button type="button" id="deny">Reddet</button>
     <script>
@@ -69,35 +69,34 @@
             })
         }
     </script>
-    <script>
-        (function () {
-            Array.from(document.querySelectorAll("[data-edit]")).forEach(item => {
-                item.addEventListener("click", function () {
-                    editAndSave(item)
-                })
-            })
-        })()
-
-
-
-
-
-        function editAndSave(item) {
-            if (item.dataset.edit == "0") {
-                item.innerHTML = '<i class="fas fa-check"></i>'
-                item.dataset.edit = "1"
-            }
-            else if (item.dataset.edit == "1") {
-                item.innerHTML = '<i class="fas fa-pen"></i>'
-                item.dataset.edit = "0"
-            }
-        }
-    </script>
     @Html.Partial("Shared/_StatusPartial")
 </div>
 
 
 
-<div id="requestGrid"></div>
+<div style="width:auto; overflow-x:scroll">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Seç</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Ülke</th>
+                <th>İl</th>
+                <th>Talep Tarihi</th>
+                <th>Adres</th>
+                <th>Kat Sayısı</th>
+                <th>Yapım Yılı</th>
+                <th>Telefon No 1</th>
+                <th>Telefon No 2</th>
+                <th>Kullanıcı Notu</th>
+                <th>Durum</th>
+            </tr>
+        </thead>
+        <tbody id="requestsTable">
+
+        </tbody>
+        </table>
+</div>
 
 <script src="~/Content/js/requestControl.js"></script>
