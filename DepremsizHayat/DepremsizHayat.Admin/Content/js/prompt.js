@@ -6,7 +6,7 @@ const promptTemplate = document.createElement("template")
             position:absolute;
             top:0px;
             left:0px;
-            z-index:1000;
+            z-index:1500;
             width:100%;
             height:100%;
             background-color:rgba(0,0,0,0.1);
@@ -22,7 +22,18 @@ const promptTemplate = document.createElement("template")
             width:100%;
             background-color:white;
             border-radius:10px;
-            box-shadow:0px 0px 15px -5px rgba(0,0,0,0.1)
+            box-shadow:0px 0px 15px -5px rgba(0,0,0,0.1);
+            box-sizing:border-box;
+            padding:15px;
+        }
+        :host > div > div{
+            text-align:right
+        }
+        :host > div > div > button {
+            border-radius:10px;
+            background-color:rgb(255,59,48);
+            color:white;
+            font-weight:bold;
         }
         </style>
         <div>
@@ -55,7 +66,7 @@ const promptTemplate = document.createElement("template")
                 document.body.appendChild(prompt)
             }
             connectedCallback(){
-                this.shadow.querySelector(":host>div>div:nth-of-type(1)").addEventListener("click",this.close.bind(this))
+                this.shadow.querySelector(":host>div>div>button").addEventListener("click",this.close.bind(this))
             }
         }
         customElements.define("ro-prompt",Prompt)
