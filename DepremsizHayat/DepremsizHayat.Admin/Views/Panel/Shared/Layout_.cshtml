@@ -1,6 +1,14 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        function ConvertDate(value) {
+            var pattern = /Date\(([^)]+)/
+            var results = pattern.exec(value);
+            var dt = new Date(parseFloat(results[1]));
+            return (dt.getDate() < 10 ? '0' : '') + dt.getDate() + "/" + (dt.getMonth() + 1 < 10 ? '0' : '') + (dt.getMonth() + 1) + "/" + dt.getFullYear() + " " + (dt.getHours() + 1 < 10 ? '0' : '') + dt.getHours() + ":" + (dt.getMinutes() + 1 < 10 ? '0' : '') + dt.getMinutes();
+        }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title</title>
@@ -99,11 +107,4 @@
             }
         })
     })()
-
-    function ConvertDate(value) {
-        var pattern = /Date\(([^)]+)/
-        var results = pattern.exec(value);
-        var dt = new Date(parseFloat(results[1]));
-        return (dt.getDate() < 10 ? '0' : '') + dt.getDate() + "/" + (dt.getMonth() + 1 < 10 ? '0' : '') + (dt.getMonth() + 1) + "/" + dt.getFullYear() + " " + (dt.getHours() + 1 < 10 ? '0' : '') + dt.getHours() + ":" + (dt.getMinutes() + 1 < 10 ? '0' : '') + dt.getMinutes();
-    }
 </script>

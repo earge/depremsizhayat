@@ -60,23 +60,21 @@ $.ajax({
 `
             document.querySelector("#requestsTable").innerHTML += row
         })
-        
+        Array.from(document.querySelectorAll(".detailButton")).forEach(item => {
+    item.addEventListener("click", function () { editRequest(item.dataset.analyseid) })
+})
     }
 })
 
-Array.from(document.querySelectorAll(".detailButton")).forEach(item => {
-    item.addEventListener("click", function () { editRequest(item.dataset.analyseid) })
-})
+
 
 
 function editRequest(id) {
     let request = document.createElement("template")
     $.ajax({
-        url: "RequestDetail",
+        url: "RequestDetail?id="+id,
         type: "POST",
         contentType: false,
-        data:id,
-        dataType: "json",
         success: function (data) {
             request.innerHTML =
                 `
@@ -85,7 +83,7 @@ function editRequest(id) {
                 Telefon 2: <input type="text" value=${data.PHONE_NUMBER_2} class="request-detail-input" disabled>
                 Adres: <textarea class="request-detail-input" disabled>${data.ADDRESS}</textarea>
                 Açıklama : <textarea class="request-detail-input" disabled>${data.USER_NOTE}</textarea>
-                ${convertDate(data.USER_NOTE)}
+                ${ConvertDate(data.CREATED_DATE)}
                 `
             Prompt.show(request)
         }
@@ -93,14 +91,14 @@ function editRequest(id) {
 }
 
 let requestEditButton = document.querySelector("#reques-detail-edit")
-requestEditButton.addEventListener("click", function (event) {
-    if (event.target.dataset.case == "0") {
-        Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = false)
-        event.target.innerHTML = "Güncelle"
-        event.target.dataset.case == "1"
-    } else if (event.target.dataset.case == "1") {
-        Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = true)
-        event.target.innerHTML = "Düzenle"
-        event.target.dataset.case == "0"
-    }
-})
+//requestEditButton.addEventListener("click", function (event) {
+//    if (event.target.dataset.case == "0") {
+//        Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = false)
+//        event.target.innerHTML = "Güncelle"
+//        event.target.dataset.case == "1"
+//    } else if (event.target.dataset.case == "1") {
+//        Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = true)
+//        event.target.innerHTML = "Düzenle"
+//        event.target.dataset.case == "0"
+//    }
+//})
