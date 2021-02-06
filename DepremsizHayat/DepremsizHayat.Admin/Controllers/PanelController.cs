@@ -82,7 +82,7 @@ namespace DepremsizHayat.Admin.Controllers
         public ActionResult RequestDetail(string id)
         {
             AnalyseDetailRequest request = _analyseRequestService.GetDetailRequest(id);
-            return View(request);
+            return Json(request);
         }
         public ActionResult GetRequests()
         {

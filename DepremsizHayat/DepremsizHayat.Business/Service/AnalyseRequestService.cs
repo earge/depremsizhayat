@@ -106,7 +106,7 @@ namespace DepremsizHayat.Business.Service
             {
                 foreach (string id in requests)
                 {
-                    int dummy = Convert.ToInt32(id);
+                    int dummy = Decryptor.DecryptInt(id);
                     ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(dummy);
                     analyse.STATUS_ID = _statusRepository.GetByCode("denied").STATUS_ID;
                     _unitOfWork.Commit();
