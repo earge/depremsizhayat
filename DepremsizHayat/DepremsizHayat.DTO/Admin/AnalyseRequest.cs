@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DepremsizHayat.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace DepremsizHayat.DTO.Admin
         public string LAST_NAME { get; set; }
         public int ANALYSIS_REQUEST_ID { get; set; }
         public DateTime CREATED_DATE { get; set; }
-        public string STATUS { get; set; }
+        public STATUS STATUS { get; set; }
         public string ADDRESS { get; set; }
         public string PHONE_NUMBER_1 { get; set; }
         public string PHONE_NUMBER_2 { get; set; }

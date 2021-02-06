@@ -1,0 +1,56 @@
+﻿#sendnewrequest .container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.select.one {
+    height: 40px;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+}
+
+.imagesBox{
+    border-radius:10px;
+    background-color:rgb(230,230,230);
+    height:150px;
+    width:100%;
+}
+    .imagesBox > div {
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+        overflow-x: scroll;
+        overflow-y: auto;
+        display: flex;
+    }
+
+.imagesBox > div > div{
+    position:relative;
+    height:100%;
+}
+
+    .imagesBox > div > div > i{
+        background-color:var(--color-red);
+        color:white;
+        border-radius:5px;
+        position:absolute;
+        top:5px;
+        left:5px;
+        padding:5px;
+        border-radius:5px;
+        font-size:11px;
+        cursor:pointer;
+    }
+
+.imagesBox > div img{
+    max-height:100%;
+    width:auto;
+    border:1px solid rgb(150,150,150);
+    border-radius:5px;
+}
+    .imagesBox > div img:not(:last-child) {
+        margin-right:5px;
+    }

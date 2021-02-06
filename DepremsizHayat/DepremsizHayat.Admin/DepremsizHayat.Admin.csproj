@@ -182,6 +182,7 @@
     <Content Include="Content\dist\js\pages\dashboard3.js" />
     <Content Include="Content\js\activationControl.js" />
     <Content Include="Content\js\activationDigit.js" />
+    <Content Include="Content\js\CheckBox.js" />
     <Content Include="Content\js\forgotPasswordControl.js" />
     <Content Include="Content\js\forgottenPasswordControl.js" />
     <Content Include="Content\js\loginControl.js" />

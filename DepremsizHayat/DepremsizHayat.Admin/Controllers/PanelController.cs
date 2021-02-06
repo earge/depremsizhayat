@@ -78,10 +78,10 @@ namespace DepremsizHayat.Admin.Controllers
             List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
             return View(request);
         }
-        public ActionResult DenyRequests(List<DataAccess.ANALYSE_REQUEST> request)
+        public ActionResult DenyRequests(List<string> idList)
         {
             BaseResponse response = new BaseResponse();
-            if (_analyseRequestService.DenyRequests(request))
+            if (_analyseRequestService.DenyRequests(idList))
             {
                 response.Status = true;
                 response.Message = "Seçili talepler reddedildi.";
@@ -90,10 +90,10 @@ namespace DepremsizHayat.Admin.Controllers
                 response.Message = "İşlem başarısız. Lütfen tekrar deneyin.";
             return Json(response, JsonRequestBehavior.AllowGet);
         }
-        public ActionResult AllowRequests(List<DataAccess.ANALYSE_REQUEST> request)
+        public ActionResult AllowRequests(List<string> idList)
         {
             BaseResponse response = new BaseResponse();
-            if (_analyseRequestService.AllowRequests(request))
+            if (_analyseRequestService.AllowRequests(idList))
             {
                 response.Status = true;
                 response.Message = "Seçili talepler onaylandı.";

@@ -20,11 +20,11 @@ namespace DepremsizHayat.Admin.Controllers
         {
             this._userService = userService;
         }
-        public ActionResult Login(UserLoginRequest request)
+        public ActionResult Login(UserLoginRequest request,string returnUrl)
         {
             if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
             {
-                return RedirectToAction("Dashboard", "Panel");
+                return RedirectToAction("ListUserRoles", "Panel");
             }
             else
             {
@@ -53,6 +53,14 @@ namespace DepremsizHayat.Admin.Controllers
                     else
                     {
                         response.Message = "E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.";
+                    }
+                    if (response.Status)
+                    {
+                        if (returnUrl!=null)
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        return RedirectToAction("Index", "Panel");
                     }
                     return Json(response, JsonRequestBehavior.AllowGet);
                 }

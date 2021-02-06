@@ -1,6 +1,53 @@
 ﻿@{
     Layout = "~/Views/Home/Shared/_Layout.cshtml";
+    ViewBag.Title = "Yeni Talep Gönder";
 }
-@{
-    ViewBag.Title = "Home Page";
+@section styles{
+    <link href="~/Content/css/analyserequest.css" rel="stylesheet" />
 }
+@section scripts{
+    <script src="~/Content/js/analyseRequestInputs.js"></script>
+    <script src="~/Content/js/analyseRequestControl.js"></script>
+}
+
+<div class="flex h-center" id="sendnewrequest">
+    <div class="container">
+        <div class="white-box">
+            <div class="top-header align-left p15">Talep Oluştur</div>
+            <div class="p15">
+                <div id="addImageButton" class="align-center mb15"><button class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
+                <div class="imagesBox mb15 p5 hidden">
+                    <div></div>
+                </div>
+                <div class="mb15"><input type="text" class="input one" id="phone1" placeholder="Telefon Numaranız" /></div>
+                <div class="mb15"><input type="text" class="input one" id="phone2" placeholder="Diğer Telefon Numaranız" /></div>
+                <div class="flex h-stretch-100 mb15">
+                    <div class="mr7">
+                        <div class="mb10 ml10 fs-14 tx-gray">Yapım Yılı</div>
+                        <select id="year" class="select one w-100 pl10"><option>Seçiniz</option></select>
+                    </div>
+                    <div class="ml7">
+                        <div class="mb10 ml10 fs-14 tx-gray">Kat Sayısı</div>
+                        <select id="floor" class="select one w-100 pl10"><option>Seçiniz</option></select>
+                    </div>
+                </div>
+                <div class="flex h-stretch-100 mb15">
+                    <div class="mr7">
+                        <div class="mb10 ml10 fs-14 tx-gray">Ülke</div>
+                        <select id="country" class="select one w-100 pl10"><option>Türkiye</option></select>
+                    </div>
+                    <div class="ml7">
+                        <div class="mb10 ml10 fs-14 tx-gray">Şehir</div>
+                        <select id="district" class="select one w-100 pl10"><option>Seçiniz</option></select>
+                    </div>
+                </div>
+                <div><textarea class="input textarea" id="address" placeholder="Adres"></textarea></div>
+            </div>
+            <div class="align-center pb15 pl15 pr15">
+                <button id="request" class="btn btn-main btn-blue spinner">
+                    <span class="spinner"></span>Talebi Gönder
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

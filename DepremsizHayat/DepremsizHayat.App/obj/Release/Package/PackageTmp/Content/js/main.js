@@ -28,3 +28,15 @@ function close() {
 }
 
 
+(function () {
+    Array.from(document.querySelectorAll(".menu-link")).forEach(link => {
+        if (window.location.toString().includes(link.href)) {
+            link.classList.add("active")
+        } else {
+            link.classList.remove("active")
+        }
+    })
+})();
+
+    
+
