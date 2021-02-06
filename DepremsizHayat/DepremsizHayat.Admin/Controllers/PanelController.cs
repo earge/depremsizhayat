@@ -29,7 +29,11 @@ namespace DepremsizHayat.Admin.Controllers
             this._analyseRequestService = analyseRequestService;
             this._statusService = statusService;
         }
-
+        public ActionResult EditRequest(AnalyseDetailRequest request)
+        {
+            BaseResponse response = _analyseRequestService.UpdateRequestDetail(request);
+            return Json(response,JsonRequestBehavior.AllowGet);
+        }
         public ActionResult Dashboard()
         {
             return View();
@@ -65,11 +69,11 @@ namespace DepremsizHayat.Admin.Controllers
             if (_userService.UpdateUserRole(request))
             {
                 response.Status = true;
-                response.Message = "Değişiklikler uygulandı.";
+                response.Message.Add("Değişiklikler uygulandı.");
             }
             else
             {
-                response.Message = "Değişiklikler uygulanamadı.";
+                response.Message.Add("Değişiklikler uygulanamadı.");
             }
             TempData["Carrier"] = response;
             return RedirectToAction("ListUserRoles", "Panel");
@@ -95,10 +99,10 @@ namespace DepremsizHayat.Admin.Controllers
             if (_analyseRequestService.DenyRequests(idList))
             {
                 response.Status = true;
-                response.Message = "Seçili talepler reddedildi.";
+                response.Message.Add("Seçili talepler reddedildi.");
             }
             else
-                response.Message = "İşlem başarısız. Lütfen tekrar deneyin.";
+                response.Message.Add("İşlem başarısız. Lütfen tekrar deneyin.");
             return Json(response, JsonRequestBehavior.AllowGet);
         }
         public ActionResult AllowRequests(List<string> idList)
@@ -107,10 +111,10 @@ namespace DepremsizHayat.Admin.Controllers
             if (_analyseRequestService.AllowRequests(idList))
             {
                 response.Status = true;
-                response.Message = "Seçili talepler onaylandı.";
+                response.Message.Add("Seçili talepler onaylandı.");
             }
             else
-                response.Message = "İşlem başarısız. Lütfen tekrar deneyin.";
+                response.Message.Add("İşlem başarısız. Lütfen tekrar deneyin.");
             return Json(response, JsonRequestBehavior.AllowGet);
         }
     }

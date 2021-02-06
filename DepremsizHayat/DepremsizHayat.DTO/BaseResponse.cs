@@ -9,6 +9,6 @@ namespace DepremsizHayat.DTO
     public class BaseResponse
     {
         public bool Status { get; set; }
-        public string Message { get; set; }
+        public List<string> Message { get; set; }
     }
 }

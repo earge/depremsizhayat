@@ -32,8 +32,6 @@ namespace DepremsizHayat.Business.Service
             this._analyseRequestAnswerRepository = analyseRequestAnswerRepository;
             this._unitOfWork = unitOfWork;
         }
-
-
         public List<AnalyseRequest> GetAllRequests()
         {
             List<AnalyseRequest> list = new List<AnalyseRequest>();
@@ -58,23 +56,21 @@ namespace DepremsizHayat.Business.Service
             }
             return list;
         }
-
         public List<ANALYSE_REQUEST> GetRequestsByUserId(int ID)
         {
             return _analyseRequestRepository.GetAll().Where(T => T.USER_ACCOUNT_ID == ID).ToList();
         }
-
         public BaseResponse SendNewRequest(ANALYSE_REQUEST request)
         {
             BaseResponse response = new BaseResponse();
             if (_analyseRequestRepository.Add(request) != null)
             {
                 response.Status = true;
-                response.Message = "Analiz talebi gönderildi.";
+                response.Message.Add("Analiz talebi gönderildi.");
             }
             else
             {
-                response.Message = "Analiz talebi gönderilemedi.";
+                response.Message.Add("Analiz talebi gönderilemedi.");
             }
             _unitOfWork.Commit();
             return response;
@@ -118,7 +114,6 @@ namespace DepremsizHayat.Business.Service
                 return false;
             }
         }
-
         public bool AllowRequests(List<string> requests)
         {
             try
@@ -137,13 +132,13 @@ namespace DepremsizHayat.Business.Service
                 return false;
             }
         }
-
         public AnalyseDetailRequest GetDetailRequest(string id)
         {
             int decryptedId = Decryptor.DecryptInt(id);
             DataAccess.ANALYSE_REQUEST thatRequest = _analyseRequestRepository.GetById(decryptedId);
             AnalyseDetailRequest detail = new AnalyseDetailRequest()
             {
+                ANALYSIS_REQUEST_ID=Convert.ToString(thatRequest.ANALYSIS_REQUEST_ID),
                 ADDRESS=thatRequest.ADDRESS,
                 CREATED_DATE=thatRequest.CREATED_DATE,
                 PHONE_NUMBER_1=thatRequest.PHONE_NUMBER_1,
@@ -151,6 +146,46 @@ namespace DepremsizHayat.Business.Service
                 USER_NOTE=thatRequest.USER_NOTE
             };
             return detail;
+        }
+        public BaseResponse UpdateRequestDetail(AnalyseDetailRequest request)
+        {
+            BaseResponse response = new BaseResponse();
+            ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(Decryptor.DecryptInt(request.ANALYSIS_REQUEST_ID));
+            if (request.ADDRESS==analyse.ADDRESS)
+            {
+                response.Message.Add("Adresler aynı.");
+            }
+            else
+            {
+                analyse.ADDRESS = request.ADDRESS;
+            }
+            if (request.PHONE_NUMBER_1 == analyse.PHONE_NUMBER_1)
+            {
+                response.Message.Add("Birincil telefon numaraları aynı.");
+            }
+            else
+            {
+                analyse.PHONE_NUMBER_1 = request.PHONE_NUMBER_1;
+            }
+            if (request.PHONE_NUMBER_2 == analyse.PHONE_NUMBER_2)
+            {
+                response.Message.Add("İkincil telefon numaraları aynı.");
+            }
+            else
+            {
+                analyse.PHONE_NUMBER_2 = request.PHONE_NUMBER_2;
+            }
+            if (request.USER_NOTE == analyse.USER_NOTE)
+            {
+                response.Message.Add("Açıklamalar aynı.");
+            }
+            else
+            {
+                analyse.USER_NOTE = request.USER_NOTE;
+            }
+            response.Status = (response.Message.Count == 0) ? true : false;
+            _unitOfWork.Commit();
+            return response;
         }
     }
 }

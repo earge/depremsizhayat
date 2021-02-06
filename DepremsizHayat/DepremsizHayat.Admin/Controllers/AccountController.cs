@@ -29,7 +29,7 @@ namespace DepremsizHayat.Admin.Controllers
                 if (returnUrl!=null)
                 {
                     response.Status = true;
-                    response.Message = returnUrl;
+                    response.Message.Add(returnUrl);
                 }
                 return RedirectToAction("ListUserRoles", "Panel");
             }
@@ -54,18 +54,18 @@ namespace DepremsizHayat.Admin.Controllers
                         }
                         catch (Exception ex)
                         {
-                            response.Message = ex.Message;
+                            response.Message.Add(ex.Message);
                         }
                     }
                     else
                     {
-                        response.Message = "E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.";
+                        response.Message.Add("E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.");
                     }
                     if (response.Status)
                     {
                         if (returnUrl!=null)
                         {
-                            response.Message = returnUrl;
+                            response.Message.Add(returnUrl);
                         }
                     }
                     return Json(response, JsonRequestBehavior.AllowGet);
@@ -104,10 +104,8 @@ namespace DepremsizHayat.Admin.Controllers
             }
             else
             {
-                response = new BaseResponse()
-                {
-                    Message = "Mail adresi boş olamaz"
-                };
+                response = new BaseResponse();
+                response.Message.Add("Mail adresi boş olamaz");
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
         }

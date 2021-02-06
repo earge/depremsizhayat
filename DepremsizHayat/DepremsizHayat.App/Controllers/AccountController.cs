@@ -65,7 +65,9 @@ namespace DepremsizHayat.App.Controllers
                     }
                     else
                     {
-                        return Json(new BaseResponse() { Status = false, Message = "Bu e-posta adresi zaten sistemimizde kayıtlı." }, JsonRequestBehavior.AllowGet);
+                        BaseResponse response = new BaseResponse();
+                        response.Message.Add("Bu e-posta adresi zaten sistemimizde kayıtlı.");
+                        return Json(response, JsonRequestBehavior.AllowGet);
                     }
                 }
                 else
@@ -83,7 +85,7 @@ namespace DepremsizHayat.App.Controllers
             {
                 if (_userService.GetByMail(email).ACTIVE == true)
                 {
-                    response.Message = "Hesabınız zaten aktifleştirilmiş.";
+                    response.Message.Add("Hesabınız zaten aktifleştirilmiş.");
                     TempData["Carrier"] = response;
                     return RedirectToAction("Login");
                 }
@@ -95,13 +97,13 @@ namespace DepremsizHayat.App.Controllers
                         if (_userService.Activate(actCode, email))
                         {
                             response.Status = true;
-                            response.Message = "Hesabınız başarıyla aktifleştirildi.";
+                            response.Message.Add("Hesabınız başarıyla aktifleştirildi.");
                             TempData["Carrier"] = response;
                             return RedirectToAction("Login");
                         }
                         else
                         {
-                            response.Message = "Hesabınız aktifleştirilemedi, lütfen tekrar deneyin.";
+                            response.Message.Add("Hesabınız aktifleştirilemedi, lütfen tekrar deneyin.");
                         }
                     }
                     else
@@ -140,10 +142,8 @@ namespace DepremsizHayat.App.Controllers
             }
             else
             {
-                response = new BaseResponse()
-                {
-                    Message = "Mail adresi boş olamaz"
-                };
+                response = new BaseResponse();
+                response.Message.Add("Mail adresi boş olamaz");
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
         }
@@ -197,7 +197,7 @@ namespace DepremsizHayat.App.Controllers
                 if (returnUrl != null)
                 {
                     response.Status = true;
-                    response.Message = returnUrl;
+                    response.Message.Add(returnUrl);
                 }
                 return RedirectToAction("Dashboard", "Panel");
             }
@@ -221,18 +221,18 @@ namespace DepremsizHayat.App.Controllers
                         }
                         catch (Exception ex)
                         {
-                            response.Message = ex.Message;
+                            response.Message.Add(ex.Message);
                         }
                     }
                     else
                     {
-                        response.Message = "E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.";
+                        response.Message.Add("E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.");
                     }
                     if (response.Status)
                     {
                         if (returnUrl != null)
                         {
-                            response.Message = returnUrl;
+                            response.Message.Add(returnUrl);
                         }
                     }
                     return Json(response, JsonRequestBehavior.AllowGet);

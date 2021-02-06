@@ -19,5 +19,6 @@ namespace DepremsizHayat.Business.IService
         void ConfirmPendingRequest(DataAccess.ANALYSE_REQUEST request);
         bool DenyRequests(List<string> requests);
         bool AllowRequests(List<string> requests);
+        BaseResponse UpdateRequestDetail(AnalyseDetailRequest request);
     }
 }
