@@ -97,11 +97,11 @@ function addEventToButton() {
         if (event.target.dataset.case == "0") {
             Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = false)
             event.target.innerHTML = "Güncelle"
-            event.target.dataset.case == "1"
+            event.target.dataset.case = 1
         } else if (event.target.dataset.case == "1") {
             Array.from(document.querySelectorAll(".request-detail-input")).forEach(item => item.disabled = true)
             event.target.innerHTML = "Düzenle"
-            event.target.dataset.case == "0"
+            event.target.dataset.case = 0
         }
     })
 }

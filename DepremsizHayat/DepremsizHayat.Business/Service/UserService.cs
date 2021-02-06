@@ -61,14 +61,14 @@ namespace DepremsizHayat.Business.Service
                     {
                         result.USER = null;
                         result.Status = false;
-                        result.Message = "Bu şifre sıfırlama bağlantısı, daha önce kullanılmış.";
+                        result.Message.Add("Bu şifre sıfırlama bağlantısı, daha önce kullanılmış.");
                     }
                 }
                 else
                 {
                     result.USER = null;
                     result.Status = false;
-                    result.Message = "Bu şifre sıfırlama bağlantısının süresi geçmiş.";
+                    result.Message.Add("Bu şifre sıfırlama bağlantısının süresi geçmiş.");
                 }
             }
             return result;
@@ -93,7 +93,7 @@ namespace DepremsizHayat.Business.Service
             }
             else
             {
-                response.Message = "Adınız aynı olamaz.";
+                response.Message.Add("Adınız aynı olamaz.");
             }
             if (request.Surname != null && user.LAST_NAME != request.Surname)
             {
@@ -104,11 +104,11 @@ namespace DepremsizHayat.Business.Service
             }
             else
             {
-                response.Message = "Soyadınız aynı olamaz.";
+                response.Message.Add("Soyadınız aynı olamaz.");
             }
             if (response.Status)
             {
-                response.Message = "Güncelleme başarılı";
+                response.Message.Add("Güncelleme başarılı");
             }
             return response;
         }
@@ -146,12 +146,12 @@ namespace DepremsizHayat.Business.Service
             BaseResponse response = new BaseResponse();
             if (_userRepository.ResetForgottenPassword(request))
             {
-                response.Message = "Şifreniz başarıyla sıfırlandı.";
+                response.Message.Add("Şifreniz başarıyla sıfırlandı.");
                 response.Status = true;
             }
             else
             {
-                response.Message = "Bir hata oluştu. Lütfen tekrar deneyin ya da yeni bir şifre sıfırlama talebi oluşturun.";
+                response.Message.Add("Bir hata oluştu. Lütfen tekrar deneyin ya da yeni bir şifre sıfırlama talebi oluşturun.");
             }
             return response;
         }
@@ -169,21 +169,21 @@ namespace DepremsizHayat.Business.Service
                     if (_mailRepository.SendMail("app", mail, subject, body))
                     {
                         result.Status = true;
-                        result.Message = "Şifre sıfırlama linki mail adresinize gönderildi.";
+                        result.Message.Add("Şifre sıfırlama linki mail adresinize gönderildi.");
                     }
                     else
                     {
-                        result.Message = "Bir hata oluştu! Lütfen tekrar deneyin.";
+                        result.Message.Add("Bir hata oluştu! Lütfen tekrar deneyin.");
                     }
                 }
                 else
                 {
-                    result.Message = "Bir hata oluştu. Lütfen mail adresinizi doğru girdiğinizden emin olunuz.";
+                    result.Message.Add("Bir hata oluştu. Lütfen mail adresinizi doğru girdiğinizden emin olunuz.");
                 }
             }
             else
             {
-                result.Message = "Bir hata oluştu. Lütfen mail adresinizi doğru girdiğinizden emin olunuz.";
+                result.Message.Add("Bir hata oluştu. Lütfen mail adresinizi doğru girdiğinizden emin olunuz.");
             }
             return result;
         }

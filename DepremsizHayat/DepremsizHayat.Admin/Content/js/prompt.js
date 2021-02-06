@@ -6,7 +6,7 @@ const promptTemplate = document.createElement("template")
             position:absolute;
             top:0px;
             left:0px;
-            z-index:1000;
+            z-index:1500;
             width:100%;
             height:100%;
             background-color:rgba(0,0,0,0.1);
