@@ -16,7 +16,7 @@ using System.Web.Security;
 
 namespace DepremsizHayat.App.Controllers
 {
-    public class AccountController:Controller
+    public class AccountController : Controller
     {
         private IUserService _userService;
         public AccountController(IUserService userService)
@@ -57,11 +57,11 @@ namespace DepremsizHayat.App.Controllers
                             });
                             response.Status = true;
                             response.Url = "?actCode=&mail=" + Encryptor.Encrypt(request.E_MAIL);
-                    }
+                        }
                         catch (Exception)
-                    {
-                    }
-                    return Json(response, JsonRequestBehavior.AllowGet);
+                        {
+                        }
+                        return Json(response, JsonRequestBehavior.AllowGet);
                     }
                     else
                     {
@@ -188,21 +188,26 @@ namespace DepremsizHayat.App.Controllers
             };
             return _userService.ResetForgottenPassword(request);
         }
-        public ActionResult Login(UserLoginRequest request,string returnUrl)
+        public ActionResult Login(string returnUrl)
         {
-            returnUrl = (returnUrl != "undefined") ? returnUrl : null;
-            BaseResponse response = new BaseResponse() { Status = false };
-            if (HttpContext.User.Identity.IsAuthenticated)
+            if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
             {
                 if (returnUrl != null)
                 {
-                    response.Status = true;
-                    response.Message.Add(returnUrl);
+                    return Redirect(returnUrl);
                 }
-                return RedirectToAction("Dashboard", "Panel");
+                return RedirectToAction("ListUserRoles", "Panel");
             }
-            else
+            ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
+            return View();
+
+        }
+        public JsonResult SignIn(UserLoginRequest request, string returnUrl)
+        {
+            LoginResponse response = new LoginResponse();
+            if (!(HttpContext.User.Identity.IsAuthenticated && (HttpContext.User.IsInRole("User") || HttpContext.User.IsInRole("Expert"))))
             {
+                returnUrl = (returnUrl != "undefined") ? returnUrl : null;
                 if (ModelState.IsValid)
                 {
                     if (_userService.Login(request.E_MAIL, request.PASSWORD))
@@ -219,30 +224,25 @@ namespace DepremsizHayat.App.Controllers
                             ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                             response.Status = true;
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            response.Message.Add(ex.Message);
                         }
                     }
                     else
                     {
                         response.Message.Add("E-posta veya şifreniz kayıtlarımızdakilerle uyuşmadı.");
                     }
-                    if (response.Status)
-                    {
-                        if (returnUrl != null)
-                        {
-                            response.Message.Add(returnUrl);
-                        }
-                    }
-                    return Json(response, JsonRequestBehavior.AllowGet);
+                    response.ReturnUrl = (response.Status && returnUrl != null) ? returnUrl : null;
                 }
                 else
                 {
-                    ModelState.AddModelError("", "E-mail veya şifre hatalı girildi.");
+                    response.Message.Add("E-posta veya şifre hatalı girildi.");
                 }
-                ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
-                return View();
+                return Json(response, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return null;
             }
         }
     }

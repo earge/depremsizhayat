@@ -10,16 +10,16 @@
         event.target.classList.add("loading")
         event.target.disabled = true
         $.ajax({
-            url: "Login?returnUrl="+window.location.href.split("?ReturnUrl=")[1],
+            url: "SignIn?returnUrl="+window.location.href.split("?ReturnUrl=")[1],
             data: loginModel,
             type: "post",
             success: function (data) {
                 if (data.Status) {
-                    if (data.Message) {
-                        window.location = data.Message
+                    if (data.ReturnUrl) {
+                        window.location = data.ReturnUrl
                     }
                     else {
-                        window.location = "/Home/Index"
+                        window.location = "/Panel/ListUserRoles"
                     }
                 }
                 else {
