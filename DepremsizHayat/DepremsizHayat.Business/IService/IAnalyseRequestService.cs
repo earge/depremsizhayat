@@ -13,6 +13,7 @@ namespace DepremsizHayat.Business.IService
     {
         List<DataAccess.ANALYSE_REQUEST> GetPendingRequests();
         List<AnalyseRequest> GetAllRequests();
+        AnalyseDetailRequest GetDetailRequest(string id);
         List<DataAccess.ANALYSE_REQUEST> GetRequestsByUserId(int ID);
         BaseResponse SendNewRequest(DataAccess.ANALYSE_REQUEST request);
         void ConfirmPendingRequest(DataAccess.ANALYSE_REQUEST request);

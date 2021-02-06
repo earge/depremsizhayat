@@ -22,6 +22,7 @@ namespace DepremsizHayat.Admin.Controllers
         }
         public ActionResult Login(UserLoginRequest request,string returnUrl)
         {
+            returnUrl = (returnUrl != "undefined") ? returnUrl : null;
             BaseResponse response = new BaseResponse() { Status = false };
             if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
             {

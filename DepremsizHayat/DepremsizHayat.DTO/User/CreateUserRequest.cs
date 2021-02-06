@@ -23,6 +23,5 @@ namespace DepremsizHayat.DTO.User
             get { return password; }
             set { password = Encryptor.Encrypt(value); }
         }
-        public string PROFILE_IMAGE { get; set; }
     }
 }

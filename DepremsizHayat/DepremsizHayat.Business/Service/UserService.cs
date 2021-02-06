@@ -83,7 +83,7 @@ namespace DepremsizHayat.Business.Service
         public BaseResponse EditNameSurname(EditNameSurnameRequest request)
         {
             BaseResponse response = new BaseResponse();
-            USER_ACCOUNT user = _userRepository.GetById(request.USER_ACCOUNT_ID);
+            USER_ACCOUNT user = _userRepository.GetById(Decryptor.DecryptInt(request.USER_ACCOUNT_ID));
             if (request.Name != null && user.FIRST_NAME != request.Name)
             {
                 user.FIRST_NAME = request.Name;
@@ -190,7 +190,7 @@ namespace DepremsizHayat.Business.Service
 
         public bool UpdateUserRole(EditRoleRequest request)
         {
-            USER_ACCOUNT updating = GetById(request.USER_ACCOUNT_ID);
+            USER_ACCOUNT updating = GetById(Decryptor.DecryptInt(request.USER_ACCOUNT_ID));
             updating.ROLE_ID = request.NEW_ROLE_ID;
             try
             {

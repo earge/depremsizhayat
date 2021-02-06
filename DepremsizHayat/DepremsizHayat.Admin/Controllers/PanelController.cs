@@ -2,6 +2,7 @@
 using DepremsizHayat.DataAccess;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
+using DepremsizHayat.Security;
 using DepremsizHayat.Utility;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,7 @@ namespace DepremsizHayat.Admin.Controllers
                     E_MAIL = user.E_MAIL,
                     FIRST_NAME = user.FIRST_NAME,
                     LAST_NAME = user.LAST_NAME,
-                    USER_ACCOUNT_ID = user.USER_ACCOUNT_ID,
+                    USER_ACCOUNT_ID = Convert.ToString(user.USER_ACCOUNT_ID),
                     CURRENTROLE = user.ROLE,
                     AVAILABLEROLES = roles
                 });
@@ -53,12 +54,12 @@ namespace DepremsizHayat.Admin.Controllers
             ViewBag.RoleResponse = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
             return View(request);
         }
-        public ActionResult EditRoles(int USER_ACCOUNT_ID, int ROLE_ID)
+        public ActionResult EditRoles(string USER_ACCOUNT_ID, int ROLE_ID)
         {
             EditRoleRequest request = new EditRoleRequest()
             {
                 NEW_ROLE_ID = ROLE_ID,
-                USER_ACCOUNT_ID = USER_ACCOUNT_ID
+                USER_ACCOUNT_ID = Convert.ToString(Decryptor.Decrypt(USER_ACCOUNT_ID))
             };
             BaseResponse response = new BaseResponse();
             if (_userService.UpdateUserRole(request))
@@ -76,6 +77,11 @@ namespace DepremsizHayat.Admin.Controllers
         public ActionResult Requests()
         {
             List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
+            return View(request);
+        }
+        public ActionResult RequestDetail(string id)
+        {
+            AnalyseDetailRequest request = _analyseRequestService.GetDetailRequest(id);
             return View(request);
         }
         public ActionResult GetRequests()

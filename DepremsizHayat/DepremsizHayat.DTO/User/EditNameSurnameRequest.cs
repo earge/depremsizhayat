@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DepremsizHayat.Security;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,11 @@ namespace DepremsizHayat.DTO.User
 {
     public class EditNameSurnameRequest
     {
-        public int USER_ACCOUNT_ID { get; set; }
+        private string user_account_id { get; set; }
+        public string USER_ACCOUNT_ID {
+            get { return user_account_id; } 
+            set { user_account_id = Encryptor.Encrypt(value); }
+        }
 
         public string Name { get; set; }
 

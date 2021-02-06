@@ -1,6 +1,7 @@
 ﻿using DepremsizHayat.Business.IService;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.User;
+using DepremsizHayat.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,6 +52,7 @@ namespace DepremsizHayat.App.Controllers
         }
         public ActionResult SendAnalyseRequest()
         {
+            var encryptedId = Encryptor.Encrypt(CurrentUser().USER_ACCOUNT_ID.ToString());
             if (Request.Files.Count > 0)
             {
                 try
@@ -60,11 +62,11 @@ namespace DepremsizHayat.App.Controllers
                     {
                         HttpPostedFileBase file = files[i];
                         string fname = file.FileName;
-                        if (!Directory.Exists(Server.MapPath("~/Sources/")))
+                        if (!Directory.Exists(Server.MapPath("~/Sources/" + encryptedId + "/")))
                         {
-                            Directory.CreateDirectory(Server.MapPath("~/Sources/"));
+                            Directory.CreateDirectory(Server.MapPath("~/Sources/" + encryptedId + "/"));
                         }
-                        fname = Path.Combine(Server.MapPath("~/Sources/"),
+                        fname = Path.Combine(Server.MapPath("~/Sources/" + encryptedId + "/"),
                                        fname);
                         file.SaveAs(fname);
                     }
@@ -91,7 +93,22 @@ namespace DepremsizHayat.App.Controllers
             }
             else
             {
-                //tek resim
+                DataAccess.ANALYSE_REQUEST request = new DataAccess.ANALYSE_REQUEST()
+                {
+                    ADDRESS = Request.Form["address"],
+                    COUNTRY = Request.Form["country"],
+                    CREATED_DATE = DateTime.Now,
+                    DELETED = false,
+                    DISTRICT = Request.Form["district"],
+                    NUMBER_OF_FLOORS = Convert.ToInt32(Request.Form["floor"]),
+                    PHONE_NUMBER_1 = Request.Form["phone1"],
+                    PHONE_NUMBER_2 = Request.Form["phone2"],
+                    STATUS_ID = _statusService.GetIdByCode("pendingconf"),
+                    USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID,
+                    USER_NOTE = Request.Form["note"],
+                    YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form["year"])
+                };
+                return Json(_analyseRequestService.SendNewRequest(request), JsonRequestBehavior.AllowGet);
             }
             return View();
         }
@@ -108,13 +125,12 @@ namespace DepremsizHayat.App.Controllers
             BaseResponse response = new BaseResponse();
             if (ModelState.IsValid && (request.Name != null || request.Surname != null))
             {
-                request.USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID;
+                request.USER_ACCOUNT_ID = Convert.ToString(CurrentUser().USER_ACCOUNT_ID);
                 response = _userService.EditNameSurname(request);
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
             return View(response);
         }
-        //[ChildActionOnly]
         public ActionResult MyRequests()
         {
             List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);

@@ -1,4 +1,5 @@
 ﻿using DepremsizHayat.DataAccess;
+using DepremsizHayat.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,12 @@ namespace DepremsizHayat.DTO.Admin
 {
     public class RoleRequest
     {
-        public int USER_ACCOUNT_ID { get; set; }
+        private string user_account_id { get; set; }
+        public string USER_ACCOUNT_ID
+        {
+            get { return user_account_id; }
+            set { user_account_id = Encryptor.Encrypt(value); }
+        }
         public string FIRST_NAME { get; set; }
         public string LAST_NAME { get; set; }
         public string E_MAIL { get; set; }
