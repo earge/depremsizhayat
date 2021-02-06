@@ -37,7 +37,7 @@ const promptTemplate = document.createElement("template")
         }
         </style>
         <div>
-            <div>Kapat</div>
+            <div><button>Kapat<button></div>
             <div>
                 <slot></slot>
             </div>
