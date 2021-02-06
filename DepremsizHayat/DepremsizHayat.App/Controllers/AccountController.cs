@@ -190,15 +190,20 @@ namespace DepremsizHayat.App.Controllers
         }
         public ActionResult Login(UserLoginRequest request,string returnUrl)
         {
+            BaseResponse response = new BaseResponse() { Status = false };
             if (HttpContext.User.Identity.IsAuthenticated)
             {
+                if (returnUrl != null)
+                {
+                    response.Status = true;
+                    response.Message = returnUrl;
+                }
                 return RedirectToAction("Dashboard", "Panel");
             }
             else
             {
                 if (ModelState.IsValid)
                 {
-                    BaseResponse response = new BaseResponse() { Status = false };
                     if (_userService.Login(request.E_MAIL, request.PASSWORD))
                     {
                         try
@@ -226,9 +231,8 @@ namespace DepremsizHayat.App.Controllers
                     {
                         if (returnUrl != null)
                         {
-                            return Redirect(returnUrl);
+                            response.Message = returnUrl;
                         }
-                        return RedirectToAction("Index", "Panel");
                     }
                     return Json(response, JsonRequestBehavior.AllowGet);
                 }

@@ -1,4 +1,4 @@
-﻿document.querySelector("#loginButton").addEventListener("click", function (event) {
+﻿    document.querySelector("#loginButton").addEventListener("click", function (event) {
     let email = document.querySelector("#email").value
     let password = document.querySelector("#password").value
     let loginModel = {
@@ -10,12 +10,17 @@
         event.target.classList.add("loading")
         event.target.disabled = true
         $.ajax({
-            url: "Login?returnUrl="+window.location.href.split("?returnUrl=")[1],
+            url: "Login?returnUrl="+window.location.href.split("?ReturnUrl=")[1],
             data: loginModel,
             type: "post",
             success: function (data) {
                 if (data.Status) {
-                    window.location = "/Home/Index"
+                    if (data.Message) {
+                        window.location = data.Message
+                    }
+                    else {
+                        window.location = "/Home/Index"
+                    }
                 }
                 else {
                     event.target.classList.remove("loading")
