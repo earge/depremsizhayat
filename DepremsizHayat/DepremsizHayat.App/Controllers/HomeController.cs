@@ -80,7 +80,7 @@ namespace DepremsizHayat.App.Controllers
                         PHONE_NUMBER_2 = Request.Form["phone2"],
                         STATUS_ID = _statusService.GetIdByCode("pendingconf"),
                         USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID,
-                        //USER_NOTE = Request.Form[""],
+                        USER_NOTE = Request.Form["note"],
                         YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form["year"])
                     };
                     return Json(_analyseRequestService.SendNewRequest(request), JsonRequestBehavior.AllowGet);
