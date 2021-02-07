@@ -1,12 +1,11 @@
 ﻿@using DepremsizHayat.DTO.Admin;
 @model List<AnalyseRequest>
 @{
-    ViewBag.Title = "Requests";
+    ViewBag.Title = "Talepler";
     Layout = "~/Views/Panel/Shared/Layout_.cshtml";
 }
 <script src="~/Content/js/CheckBox.js"></script>
 <script src="~/Content/js/prompt.js"></script>
-
 <section class="content mt-2">
     <div class="row">
         <div class="col-12">
@@ -47,26 +46,5 @@
 </section>
 
 <script src="~/Content/js/requestControl.js"></script>
-
-
-<script>
-    document.querySelector("#allow").addEventListener("click", function () { execute("AllowRequests") })
-    document.querySelector("#deny").addEventListener("click", function () { execute("DenyRequests") })
-    function execute(action) {
-        var model = { idList: checkBoxProperties.getAllValue("request") }
-        $.ajax({
-            url: action,
-            type: 'POST',
-            data: model,
-            dataType: 'json',
-            success: function (data) {
-                location.reload()
-            },
-            error: function (error) {
-
-            }
-        })
-    }
-</script>
 @Html.Partial("Shared/_StatusPartial")
 

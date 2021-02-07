@@ -3,6 +3,7 @@ using DepremsizHayat.Business.IService;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Models;
 using DepremsizHayat.DTO.User;
+using DepremsizHayat.Resources;
 using DepremsizHayat.Security;
 using DepremsizHayat.Utility;
 using System;
@@ -19,9 +20,12 @@ namespace DepremsizHayat.App.Controllers
     public class AccountController : Controller
     {
         private IUserService _userService;
-        public AccountController(IUserService userService)
+        private IRoleService _roleService;
+        public AccountController(IUserService userService,
+            IRoleService roleService)
         {
             this._userService = userService;
+            this._roleService = roleService;
         }
         public ActionResult Index()
         {
@@ -52,7 +56,7 @@ namespace DepremsizHayat.App.Controllers
                                 CREATED_DATE = DateTime.Now,
                                 LAST_NAME = request.LAST_NAME,
                                 PASSWORD = request.PASSWORD,
-                                ROLE_ID = 1,
+                                ROLE_ID = _roleService.GetIdByName(RoleCodes.User),
                                 ACTIVATION_CODE = activationCode
                             });
                             response.Status = true;
@@ -190,14 +194,14 @@ namespace DepremsizHayat.App.Controllers
         }
         public ActionResult Login(string returnUrl)
         {
-            if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
+            if (HttpContext.User.Identity.IsAuthenticated)
             {
-                returnUrl = (returnUrl != "undefined") ? returnUrl : null;
-                if (returnUrl != null)
-                {
-                    return Redirect(returnUrl);
-                }
-                return RedirectToAction("ListUserRoles", "Panel");
+                    returnUrl = (returnUrl != "undefined") ? returnUrl : null;
+                    if (returnUrl != null)
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    return RedirectToAction("Index", "Home");
             }
             ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
             return View();
@@ -206,7 +210,7 @@ namespace DepremsizHayat.App.Controllers
         public JsonResult SignIn(UserLoginRequest request, string returnUrl)
         {
             LoginResponse response = new LoginResponse();
-            if (!(HttpContext.User.Identity.IsAuthenticated && (HttpContext.User.IsInRole("User") || HttpContext.User.IsInRole("Expert"))))
+            if (!(HttpContext.User.Identity.IsAuthenticated && (HttpContext.User.IsInRole(RoleCodes.User) || HttpContext.User.IsInRole(RoleCodes.Expert))))
             {
                 returnUrl = (returnUrl != "undefined") ? returnUrl : null;
                 if (ModelState.IsValid)

@@ -10,8 +10,24 @@ namespace DepremsizHayat.Security
     public class Encryptor
     {
         private const string Key = "048827a1-62e9-4943-9e28-ccfa4e7ece41";
+        private static bool IsEncrypted(string value) 
+        {
+            try
+            {
+                Decryptor.Decrypt(value);
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
         public static string Encrypt(string clearString)
         {
+            if (IsEncrypted(clearString))
+                return clearString;
+            else
             return EncryptCore(clearString, Encryptor.Key);
         }
         private static string EncryptCore(string clearString, string key)

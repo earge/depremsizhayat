@@ -11,5 +11,6 @@ namespace DepremsizHayat.Business.IService
     public interface IRoleService
     {
         List<ROLE> GetAll();
+        int GetIdByName(string name);
     }
 }

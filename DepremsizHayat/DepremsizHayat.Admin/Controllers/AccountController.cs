@@ -1,6 +1,7 @@
 ﻿using DepremsizHayat.Business.IService;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.User;
+using DepremsizHayat.Resources;
 using DepremsizHayat.Security;
 using DepremsizHayat.Utility;
 using System;
@@ -22,14 +23,23 @@ namespace DepremsizHayat.Admin.Controllers
         }
         public ActionResult Login(string returnUrl)
         {
-            if (HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin"))
+            if (HttpContext.User.Identity.IsAuthenticated)
             {
-                returnUrl = (returnUrl != "undefined") ? returnUrl : null;
-                if (returnUrl != null)
+                if (HttpContext.User.IsInRole(RoleCodes.Admin))
                 {
-                    return Redirect(returnUrl);
+                    returnUrl = (returnUrl != "undefined") ? returnUrl : null;
+                    if (returnUrl != null)
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    return RedirectToAction("ListUserRoles", "Panel");
                 }
-                return RedirectToAction("ListUserRoles", "Panel");
+                else
+                {
+                    BaseResponse response = new BaseResponse() { Status = false };
+                    response.Message.Add("Bu sayfayı görüntüleme yetkiniz bulunmamaktadır.");
+                    TempData["Carrier"] = response;
+                }
             }
             ViewBag.Response = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
             return View();
@@ -38,7 +48,7 @@ namespace DepremsizHayat.Admin.Controllers
         public JsonResult SignIn(UserLoginRequest request, string returnUrl)
         {
             LoginResponse response = new LoginResponse();
-            if (!(HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole("SystemAdmin")))
+            if (!(HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole(RoleCodes.Admin)))
             {
                 returnUrl = (returnUrl != "undefined") ? returnUrl : null;
                 if (ModelState.IsValid)
