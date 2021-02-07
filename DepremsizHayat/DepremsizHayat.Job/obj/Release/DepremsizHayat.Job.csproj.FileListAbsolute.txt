@@ -100,3 +100,5 @@ C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHay
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Release\DepremsizHayat.Job.csproj.CopyComplete
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Release\DepremsizHayat.Job.dll
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Release\DepremsizHayat.Job.pdb
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Job\bin\Release\DepremsizHayat.Resources.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Job\bin\Release\DepremsizHayat.Resources.pdb

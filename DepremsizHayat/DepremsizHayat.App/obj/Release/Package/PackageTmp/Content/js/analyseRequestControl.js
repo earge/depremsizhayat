@@ -4,9 +4,10 @@ requestButton.addEventListener("click", function (event) {
     let phone2 = document.querySelector("#phone2").value
     let year = document.querySelector("#year").value
     let floor = document.querySelector("#floor").value
-    let country = document.querySelector("#year").value
+    let country = document.querySelector("#country").value
     let district = document.querySelector("#district").value
     let address = document.querySelector("#address").value
+    let note = document.querySelector("#note").value
 
     let sendingFiles = new FormData()
 
@@ -17,6 +18,7 @@ requestButton.addEventListener("click", function (event) {
     sendingFiles.append("country", country)
     sendingFiles.append("district", district)
     sendingFiles.append("address", address)
+    sendingFiles.append("note", note)
 
     for (i = 0; i < images.length; i++) {
         sendingFiles.append(images[i].name, images[i])
