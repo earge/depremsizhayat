@@ -41,6 +41,7 @@ document.querySelector("#edit").addEventListener("click", function (event) {
             url: "EditProfile",
             type: "POST",
             success: function (data) {
+                debugger;
                 event.target.classList.remove("loading")
                 if (data.Status) {
                     event.target.disabled = true

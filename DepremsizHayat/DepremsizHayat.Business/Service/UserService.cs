@@ -93,6 +93,7 @@ namespace DepremsizHayat.Business.Service
                 if (request.Password != null && request.Password != "") _userRepository.ResetPassword(user.E_MAIL, request.Password);
                 _userRepository.Update(user);
                 _unitOfWork.Commit();
+                response.Status = true;
             }
             else
             {

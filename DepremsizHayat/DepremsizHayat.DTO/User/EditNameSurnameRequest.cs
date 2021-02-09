@@ -13,7 +13,7 @@ namespace DepremsizHayat.DTO.User
         public string USER_ACCOUNT_ID
         {
             get { return user_account_id; }
-            set { user_account_id = Encryptor.Encrypt(value); }
+            set { user_account_id = (value != null) ? Encryptor.Encrypt(value) : null; }
         }
 
         public string Name { get; set; }
@@ -23,7 +23,7 @@ namespace DepremsizHayat.DTO.User
         public string Password
         {
             get { return password; }
-            set { password = Encryptor.Encrypt(Password); }
+            set { password = (value != null) ? Encryptor.Encrypt(Password) : null; }
         }
     }
 }
