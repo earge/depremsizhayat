@@ -23,12 +23,8 @@
                 </div>
                 <div class="align-center fs-14 pb15 pr15 pl15">Şifrenizi düzenleyin</div>
                 <div class="flex h-stretch-100 pb15 pl15 pr15">
-                    <div class="ml7"><form-input valid-type="password" name="newPassword" placeholder="Yeni Şifreniz"></form-input></div>
-                    
-                </div>
-                <div class="align-center fs-14 pb15 pr15 pl15">E-mail adresinizi düzenleyin</div>
-                <div class="flex h-stretch-100 pb15 pl15 pr15">
-                    <input type="text" class="input one ml7" name="newMail" value="@{Html.RenderAction("Mail", "Home");}" placeholder="Yeni mail adresiniz" readonly />
+                    <div class="mr7"><form-input valid-type="password" name="newPassword" placeholder="Yeni Şifreniz"></form-input></div>
+                    <div class="ml7"><input type="text" class="input one" name="newPasswordAgain" placeholder="Yeni Şifrenizin Tekrarı"  /><span class="extraSpan hidden">Şifre Eşleşmiyor</span></div>
                 </div>
                 <div class="info-boxes error mr15 ml15 mb15 none json" id="editJsonInfo"></div>
                 <div class="align-center pb15 pl15 pr15">
