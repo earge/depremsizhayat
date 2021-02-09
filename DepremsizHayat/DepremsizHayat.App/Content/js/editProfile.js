@@ -17,6 +17,7 @@ document.querySelector("#edit").addEventListener("click", function (event) {
             document.querySelector(".extraSpan").classList.add("hidden")
             passwordBox = newPassword.value
             ajaxValid = true
+            debugger;
         } else {
             document.querySelector(".extraSpan").classList.remove("hidden")
             ajaxValid = false
