@@ -22,7 +22,7 @@ namespace DepremsizHayat.Job.Scheduler
             ITrigger trigger = TriggerBuilder.Create().WithSimpleSchedule(
                 s =>
                 s
-                .WithIntervalInHours(24).RepeatForever()
+                .WithIntervalInSeconds(5).RepeatForever()
                 ).StartNow().Build();
             _scheduler.ScheduleJob(job, trigger);
         }

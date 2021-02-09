@@ -70,6 +70,8 @@ namespace DepremsizHayat.Admin.Controllers
             {
                 response.Status = true;
                 response.Message.Add("Değişiklikler uygulandı.");
+                response.Message.Add("1Değişiklikler uygulandı.");
+                response.Message.Add("2Değişiklikler uygulandı.");
             }
             else
             {

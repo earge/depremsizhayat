@@ -50,6 +50,10 @@ namespace DepremsizHayat.App.Controllers
         {
             return Content(_userService.GetByMail(GetTicket().Name).LAST_NAME);
         }
+        public ActionResult Mail()
+        {
+            return Content(_userService.GetByMail(GetTicket().Name).E_MAIL);
+        }
         public ActionResult SendAnalyseRequest()
         {
             var encryptedId = Encryptor.Encrypt(CurrentUser().USER_ACCOUNT_ID.ToString());
@@ -120,13 +124,13 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-        public ActionResult EditProfile(EditNameSurnameRequest request)
+        public ActionResult EditProfile(EditProfileRequest request)
         {
             BaseResponse response = new BaseResponse();
             if (ModelState.IsValid && (request.Name != null || request.Surname != null))
             {
                 request.USER_ACCOUNT_ID = Convert.ToString(CurrentUser().USER_ACCOUNT_ID);
-                response = _userService.EditNameSurname(request);
+                response = _userService.EditProfile(request);
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
             return View(response);

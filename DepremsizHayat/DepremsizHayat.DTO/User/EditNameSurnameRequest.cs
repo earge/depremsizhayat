@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DepremsizHayat.DTO.User
 {
-    public class EditNameSurnameRequest
+    public class EditProfileRequest
     {
         private string user_account_id { get; set; }
         public string USER_ACCOUNT_ID {
@@ -18,5 +18,6 @@ namespace DepremsizHayat.DTO.User
         public string Name { get; set; }
 
         public string Surname { get; set; }
+        public string Mail { get; set; }
     }
 }
