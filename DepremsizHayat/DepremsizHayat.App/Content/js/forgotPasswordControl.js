@@ -13,22 +13,9 @@
             data: model,
             type: "POST",
             success: function (data) {
-                if (data.Status) {
-                    event.target.classList.remove("loading")
-                    event.target.disabled = false
-
-                    document.querySelector("#forgotJsonInfo").classList.remove("none","error","success")
-                    document.querySelector("#forgotJsonInfo").classList.add("success")
-                    document.querySelector("#forgotJsonInfo").innerHTML = data.Message      
-                }
-                else {
-                    event.target.classList.remove("loading")
-                    event.target.disabled = false
-
-                    document.querySelector("#forgotJsonInfo").classList.remove("none", "error", "success")
-                    document.querySelector("#forgotJsonInfo").classList.add("error")
-                    document.querySelector("#forgotJsonInfo").innerHTML = data.Message 
-                }
+                event.target.classList.remove("loading")
+                event.target.disabled = false
+                ResponseMessage("forgotJsonInfo",data)
             },
             error: function (error) {
 

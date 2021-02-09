@@ -7,3 +7,12 @@ C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.R
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csproj.CoreCompileInputs.cache
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.dll
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.pdb
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\bin\Debug\DepremsizHayat.Resources.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\bin\Debug\DepremsizHayat.Resources.pdb
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csprojAssemblyReference.cache
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.RoleCodes.resources
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.StatusCodes.resources
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csproj.GenerateResource.cache
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csproj.CoreCompileInputs.cache
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.pdb

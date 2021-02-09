@@ -21,24 +21,14 @@ document.querySelector("#edit").addEventListener("click", function (event) {
         url: "EditProfile",
         type: "POST",
         success: function (data) {
+            event.target.classList.remove("loading")
             if (data.Status) {
                 event.target.disabled = true
                 setTimeout(function () { location.reload() }, 1000)
-
-                event.target.classList.remove("loading")
-              
-
-                document.querySelector("#editJsonInfo").classList.remove("none", "error", "success")
-                document.querySelector("#editJsonInfo").classList.add("success")
-                document.querySelector("#editJsonInfo").innerHTML = data.Message
             }
-            else {
-                event.target.classList.remove("loading")
-                event.target.disabled = false
-                document.querySelector("#editJsonInfo").classList.remove("none", "error", "success")
-                document.querySelector("#editJsonInfo").classList.add("error")
-                document.querySelector("#editJsonInfo").innerHTML = data.Message
-            }
+            else { event.target.disabled = false }
+            ResponseMessage("editJsonInfo",data)
         }
     })
 })
+

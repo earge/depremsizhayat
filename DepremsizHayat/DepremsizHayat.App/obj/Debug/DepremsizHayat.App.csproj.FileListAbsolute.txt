@@ -764,3 +764,5 @@ C:\Users\Rıdvan Windows\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHay
 C:\Users\Rıdvan Windows\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.pdb
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Resources.dll
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Resources.pdb
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Resources.dll
+C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\DepremsizHayat.Resources.pdb
