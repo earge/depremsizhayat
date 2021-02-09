@@ -36,6 +36,9 @@ class formInput extends HTMLElement{
   get placeholder(){return this.getAttribute("placeholder")}
   set placeholder(string){this.setAttribute("placeholder",string)}
 
+    get value() { return this.getAttribute("value") }
+    set value(text) { this.setAttribute("value",text) }
+
   get invalid(){return this.hasAttribute("invalid")}
 
   set invalid(bool){
@@ -145,6 +148,7 @@ class formInput extends HTMLElement{
     this.inputBox = document.createElement("input")
     this.inputBox.placeholder = this.placeholder
     this.inputBox.name = this.name
+    this.inputBox.value = this.value
     this.appendChild(this.inputBox)
   }
 
