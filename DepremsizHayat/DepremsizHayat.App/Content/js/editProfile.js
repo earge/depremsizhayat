@@ -30,6 +30,18 @@ function checkAgain() {
 
 newPasswordAgain.addEventListener("keyup", checkAgain)
 newPassword.addEventListener("keyup", checkAgain)
+newPassword.addEventListener("focusout", function () {
+    if (newPassword.value.trim().length == 0) {
+        newFIPassword.invalid = false
+        newFIPassword.valid = true
+    }
+})
+newPasswordAgain.addEventListener("focusout", function () {
+    if (newPassword.value.trim().length == 0 && newPasswordAgain.value.trim().length == 0) {
+        document.querySelector(".extraSpan").classList.add("hidden")
+        newPasswordAgain.classList.remove("border-red")
+    }
+})
 
 
 document.querySelector("#edit").addEventListener("click", function (event) {
@@ -37,7 +49,12 @@ document.querySelector("#edit").addEventListener("click", function (event) {
         if (checkAgain()) {
             if (newFIName.valid) {
                 if (newFISurname.valid) {
-                    ajaxForEditProfile(event) //Burası Şifreli
+                    if (newFIPassword.valid) {
+                        ajaxForEditProfile(event) //Burası Şifreli
+                    }
+                    else {
+                        newFIPassword.Check()
+                    }
                 } else {
                     newFISurname.Check()
                 }
@@ -55,7 +72,7 @@ document.querySelector("#edit").addEventListener("click", function (event) {
         } else {
             newFIName.Check()
         }
-    }    
+    }
 })
 
 function ajaxForEditProfile(event) {
@@ -74,7 +91,7 @@ function ajaxForEditProfile(event) {
         success: function (data) {
             event.target.classList.remove("loading")
             event.target.disabled = false
-            //Array.from(document.querySelectorAll(".nameSurnameJson")).forEach(item=>item.innerHTML = )
+            Array.from(document.querySelectorAll(".nameSurnameJson")).forEach(item => item.innerHTML = data.NewNameSurname)
             ResponseMessage("editJsonInfo", data)
         }
     })

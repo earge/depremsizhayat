@@ -23,7 +23,7 @@ namespace DepremsizHayat.DTO.User
         public string Password
         {
             get { return password; }
-            set { password = (value != null) ? Encryptor.Encrypt(Password) : null; }
+            set { password = (value != null) ? Encryptor.Encrypt(value) : null; }
         }
     }
 }
