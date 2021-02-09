@@ -17,12 +17,13 @@
                 <div class="top-header align-left p15">Profilimi Düzenle</div>
                 <div class="align-center fs-14 p15">Adınızı soyadınızı düzenleyin</div>
                 <div class="flex h-stretch-100 pb15 pl15 pr15">
-                    <input type="text" class="input one mr7" name="newName" value="@{Html.RenderAction("Name", "Home");}" placeholder="Yeni Adınız" readonly />
-                    <input type="text" class="input one ml7" name="newSurname" value=" @{Html.RenderAction("Surname", "Home");}" placeholder="Yeni Soyadınız" readonly />
+                    <div class="mr7"><form-input valid-type="name" name="newName" value="@{Html.RenderAction("Name", "Home");}" id="newName" placeholder="Yeni Adınız"></form-input></div>
+                    <div class="ml7"><form-input valid-type="surname" name="newSurname" value="@{Html.RenderAction("Surname", "Home");}" id="newSurname" placeholder="Yeni Soyadınız"></form-input></div>
+                    
                 </div>
                 <div class="align-center fs-14 pb15 pr15 pl15">Şifrenizi düzenleyin</div>
                 <div class="flex h-stretch-100 pb15 pl15 pr15">
-                    <div class="mr7"><form-input valid-type="password" name="newPassword" placeholder="Yeni Şifreniz"></form-input></div>
+                    <div class="mr7"><form-input valid-type="password" name="newPassword" id="newPassword" placeholder="Yeni Şifreniz"></form-input></div>
                     <div class="ml7"><input type="text" class="input one" name="newPasswordAgain" placeholder="Yeni Şifrenizin Tekrarı"  /><span class="extraSpan hidden">Şifre Eşleşmiyor</span></div>
                 </div>
                 <div class="info-boxes error mr15 ml15 mb15 none json" id="editJsonInfo"></div>
