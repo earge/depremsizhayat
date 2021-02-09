@@ -84,33 +84,45 @@ namespace DepremsizHayat.Business.Service
 
         public BaseResponse EditProfile(EditProfileRequest request)
         {
-            BaseResponse response = new BaseResponse();
+            EditProfileResponse response = new EditProfileResponse();
             USER_ACCOUNT user = _userRepository.GetById(Decryptor.DecryptInt(request.USER_ACCOUNT_ID));
+            response.NewNameSurname = string.Concat(user.FIRST_NAME, "*", user.LAST_NAME);
             if ((request.Name != null && request.Name != "") || (request.Surname != null && request.Surname != "") || (request.Password != null && request.Password != ""))
             {
                 if (request.Name != null && request.Name != "")
                 {
-                    user.FIRST_NAME = request.Name;
-                    response.Message.Add("İsim güncellendi.");
+                    if (request.Name != user.FIRST_NAME)
+                    {
+                        user.FIRST_NAME = request.Name;
+                        response.NewNameSurname = response.NewNameSurname.Replace(response.NewNameSurname.Split('*')[0], request.Name);
+                        response.Message.Add("İsim güncellendi.");
+                        response.Status = true;
+                    }
                 }
                 if (request.Surname != null && request.Surname != "")
                 {
-                    user.LAST_NAME = request.Surname;
-                    response.Message.Add("Soyisim güncellendi.");
+                    if (request.Surname != user.LAST_NAME)
+                    {
+                        user.LAST_NAME = request.Surname;
+                        response.NewNameSurname = response.NewNameSurname.Replace(response.NewNameSurname.Split('*')[1], request.Surname);
+                        response.Message.Add("Soyisim güncellendi.");
+                        response.Status = true;
+                    }
                 }
                 if (request.Password != null && request.Password != "")
                 {
                     _userRepository.ResetPassword(user.E_MAIL, request.Password);
                     response.Message.Add("Şifre güncellendi.");
+                    response.Status = true;
                 }
                 _userRepository.Update(user);
                 _unitOfWork.Commit();
-                response.Status = true;
             }
             else
             {
                 response.Message.Add("Güncelleme yapmak için lütfen en az bir alanı dolu girin.");
             }
+            response.NewNameSurname = response.NewNameSurname.Replace("*", " ");
             return response;
         }
 

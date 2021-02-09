@@ -39,13 +39,15 @@ function close() {
 })();
 
 function ResponseMessage(elementId, data) {
-    let responseElement = document.querySelector(`#${elementId}`)
-    responseElement.classList.remove("none", "error", "success")
-    if (data.Status) responseElement.classList.add("success")
-    else responseElement.classList.add("error")
-    let string = ""
-    Array.from(data.Message).forEach(item => { string += `<div>${item}</div>` })
-    responseElement.innerHTML = string
+    if (data.Message.length>0) {
+        let responseElement = document.querySelector(`#${elementId}`)
+        responseElement.classList.remove("none", "error", "success")
+        if (data.Status) responseElement.classList.add("success")
+        else responseElement.classList.add("error")
+        let string = ""
+        Array.from(data.Message).forEach(item => { string += `<div>${item}</div>` })
+        responseElement.innerHTML = string
+    }
 }
 
     

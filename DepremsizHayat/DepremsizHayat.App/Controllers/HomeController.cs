@@ -127,7 +127,7 @@ namespace DepremsizHayat.App.Controllers
         public ActionResult EditProfile(EditProfileRequest request)
         {
             BaseResponse response = new BaseResponse();
-            if (request.Name != null || request.Surname != null)
+            if (request.Name != null || request.Surname != null || request.Password != null)
             {
                 request.USER_ACCOUNT_ID = Convert.ToString(CurrentUser().USER_ACCOUNT_ID);
                 response = _userService.EditProfile(request);
