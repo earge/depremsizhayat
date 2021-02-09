@@ -1,13 +1,20 @@
-﻿let requestButton = document.querySelector("#request")
+﻿let requestErrorImage = document.querySelector("#requestErrorImage")
+let requestErrorYear = document.querySelector("#requestErrorYear")
+let requestErrorFloor = document.querySelector("#requestErrorFloor")
+let requestErrorCountry = document.querySelector("#requestErrorCountry")
+let requestErrorDistrict = document.querySelector("#requestErrorDistrict")
+let requestErrorAddress = document.querySelector("#requestErrorAddress")
+let requestErrorNote = document.querySelector("#requestErrorNote")
+
+let phone1 = document.querySelector("#phone1")
+let phone2 = document.querySelector("#phone2")
+
+let address = document.querySelector("#address")
+let note = document.querySelector("#note")
+
+
+let requestButton = document.querySelector("#request")
 requestButton.addEventListener("click", function (event) {
-    let phone1 = document.querySelector("#phone1")
-    let phone2 = document.querySelector("#phone2")
-    let year = document.querySelector("#year")
-    let floor = document.querySelector("#floor")
-    let country = document.querySelector("#country")
-    let district = document.querySelector("#district")
-    let address = document.querySelector("#address")
-    let note = document.querySelector("#note")
 
     let sendingFiles = new FormData()
 
@@ -24,13 +31,15 @@ requestButton.addEventListener("click", function (event) {
         sendingFiles.append(images[i].name, images[i])
     }
 
-    if (images.length == 0) { console.log("En az bir resim yüklemelisiniz") }
-    else if (year.value == -1) { console.log("Yapım Yılı Seçiniz") }
-    else if (floor.value == -1) { console.log("Kat Sayısını Seçiniz") }
-    else if (country.value == -1) { console.log("Ülke Seçiniz") }
-    else if (district.value == -1) { console.log("Şehir Seçiniz") }
-    else if (address.value.trim().length == 0) { console.log("Adres Giriniz") }
-    else if (note.value.trim().length == 0) { console.log("Açıklama Giriniz") }
+    console.log(sendingFiles)
+
+    if (images.length == 0) { requestErrorImage.classList.remove("hidden")}
+    else if (year.value == -1) { requestErrorYear.classList.remove("hidden")  }
+    else if (floor.value == -1) { requestErrorFloor.classList.remove("hidden") }
+    else if (country.value == -1) { requestErrorCountry.classList.remove("hidden") }
+    else if (district.value == -1) { requestErrorDistrict.classList.remove("hidden") }
+    else if (address.value.trim().length == 0) { requestErrorAddress.classList.remove("hidden") }
+    else if (note.value.trim().length == 0) { requestErrorNote.classList.remove("hidden") }
     else {
         $.ajax({
             url: "/Home/SendAnalyseRequest",
@@ -42,18 +51,18 @@ requestButton.addEventListener("click", function (event) {
             processData: false,
             contentType: false,
             data: sendingFiles,
-            xhr: function () {
-                var xhr = new window.XMLHttpRequest();
-                //Download progress
-                xhr.addEventListener("progress", function (evt) {
-                    console.log(evt.lengthComputable);
-                    if (evt.lengthComputable) {
-                        var percentComplete = evt.loaded / evt.total;
-                        console.log(Math.round(percentComplete * 100) + "%")
-                    }
-                }, false);
-                return xhr;
-            },
+            //xhr: function () {
+            //    var xhr = new window.XMLHttpRequest();
+            //    //Download progress
+            //    xhr.addEventListener("progress", function (evt) {
+            //        console.log(evt.lengthComputable);
+            //        if (evt.lengthComputable) {
+            //            var percentComplete = evt.loaded / evt.total;
+            //            console.log(Math.round(percentComplete * 100) + "%")
+            //        }
+            //    }, false);
+            //    return xhr;
+            //},
             success: function (data) {
                 event.target.classList.remove("loading")
                 event.target.disabled = false
@@ -66,17 +75,25 @@ requestButton.addEventListener("click", function (event) {
 })
 
 function resetForm() {
-    document.querySelector("#phone1").value = ""
-    document.querySelector("#phone2").value = ""
-    document.querySelector("#year").value = -1
-    document.querySelector("#floor").value = -1
-    document.querySelector("#country").value = -1
-    document.querySelector("#district").value=-1
-    document.querySelector("#address").value=""
-    document.querySelector("#note").value = ""
+    phone1.value = ""
+    phone2.value = ""
+    year.value = -1
+    floor.value = -1
+    country.value = -1
+    district.value=-1
+    address.value=""
+    note.value = ""
     images = []
     document.querySelectorAll(".imagesBox>div>div").forEach(item=>item.remove())
     document.querySelector(".imagesBox").classList.add("hidden")
+    imgButton.disabled = false
+    document.querySelector("#remaining").classList.add("hidden")
 }
 
-
+year.addEventListener("change", function () { requestErrorYear.classList.add("hidden") })
+floor.addEventListener("change", function () { requestErrorFloor.classList.add("hidden") })
+country.addEventListener("change", function () { requestErrorCountry.classList.add("hidden") })
+district.addEventListener("change", function () { requestErrorDistrict.classList.add("hidden") })
+address.addEventListener("keyup", function () { requestErrorAddress.classList.add("hidden") })
+note.addEventListener("keyup", function () { requestErrorNote.classList.add("hidden") })
+imageInput.addEventListener("change", function () { requestErrorImage.classList.add("hidden") })
