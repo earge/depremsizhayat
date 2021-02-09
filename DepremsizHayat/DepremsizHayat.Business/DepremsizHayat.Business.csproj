@@ -87,6 +87,10 @@
       <Project>{27cdf5e9-804b-4a43-b089-f0c4ad7038dc}</Project>
       <Name>DepremsizHayat.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DepremsizHayat.Resources\DepremsizHayat.Resources.csproj">
+      <Project>{fbc6d39a-2f2b-44d5-a863-5d15783dfca7}</Project>
+      <Name>DepremsizHayat.Resources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DepremsizHayat.Security\DepremsizHayat.Security.csproj">
       <Project>{2a7d843b-695d-4dcd-8801-37595c881ddb}</Project>
       <Name>DepremsizHayat.Security</Name>

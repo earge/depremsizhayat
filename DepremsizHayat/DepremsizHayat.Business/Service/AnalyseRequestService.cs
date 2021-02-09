@@ -4,6 +4,7 @@ using DepremsizHayat.Business.UnitOfWork;
 using DepremsizHayat.DataAccess;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
+using DepremsizHayat.Resources;
 using DepremsizHayat.Security;
 using System;
 using System.Collections.Generic;
@@ -78,12 +79,12 @@ namespace DepremsizHayat.Business.Service
         }
         public List<ANALYSE_REQUEST> GetPendingRequests()
         {
-            return _analyseRequestRepository.GetAll().Where(p => p.STATUS.STATUS_CODE == "pendingconf").ToList();
+            return _analyseRequestRepository.GetAll().Where(p => p.STATUS.STATUS_CODE == StatusCodes.Pending).ToList();
         }
         public void ConfirmPendingRequest(DataAccess.ANALYSE_REQUEST request)
         {
             ANALYSE_REQUEST current = _analyseRequestRepository.GetById(request.ANALYSIS_REQUEST_ID);
-            current.STATUS_ID = _statusRepository.GetByCode("accepted").STATUS_ID;
+            current.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Accepted).STATUS_ID;
             ANALYSE_REQUEST_ANSWER answerRecord = new ANALYSE_REQUEST_ANSWER()
             {
                 CREATED_DATE = DateTime.Now,
@@ -104,7 +105,7 @@ namespace DepremsizHayat.Business.Service
                 {
                     int dummy = Decryptor.DecryptInt(id);
                     ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(dummy);
-                    analyse.STATUS_ID = _statusRepository.GetByCode("denied").STATUS_ID;
+                    analyse.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Denied).STATUS_ID;
                     _unitOfWork.Commit();
                 }
                 return true;
@@ -122,7 +123,7 @@ namespace DepremsizHayat.Business.Service
                 {
                     int dummy = Decryptor.DecryptInt(id);
                     ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(dummy);
-                    analyse.STATUS_ID = _statusRepository.GetByCode("accepted").STATUS_ID;
+                    analyse.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Accepted).STATUS_ID;
                     _unitOfWork.Commit();
                 }
                 return true;
@@ -157,6 +158,7 @@ namespace DepremsizHayat.Business.Service
             }
             else
             {
+                response.Message.Add("Adres güncellendi.");
                 analyse.ADDRESS = request.ADDRESS;
             }
             if (request.PHONE_NUMBER_1 == analyse.PHONE_NUMBER_1)
@@ -165,6 +167,7 @@ namespace DepremsizHayat.Business.Service
             }
             else
             {
+                response.Message.Add("Birincil telefon numarası güncellendi.");
                 analyse.PHONE_NUMBER_1 = request.PHONE_NUMBER_1;
             }
             if (request.PHONE_NUMBER_2 == analyse.PHONE_NUMBER_2)
@@ -173,6 +176,7 @@ namespace DepremsizHayat.Business.Service
             }
             else
             {
+                response.Message.Add("İkincil telefon numarası güncellendi.");
                 analyse.PHONE_NUMBER_2 = request.PHONE_NUMBER_2;
             }
             if (request.USER_NOTE == analyse.USER_NOTE)
@@ -181,9 +185,10 @@ namespace DepremsizHayat.Business.Service
             }
             else
             {
+                response.Message.Add("Açıklama güncellendi.");
                 analyse.USER_NOTE = request.USER_NOTE;
             }
-            response.Status = (response.Message.Count == 0) ? true : false;
+            response.Status = (response.Message.Count == 0) ? true : false;   
             _unitOfWork.Commit();
             return response;
         }

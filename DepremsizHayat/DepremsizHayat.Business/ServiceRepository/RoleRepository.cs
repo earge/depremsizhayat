@@ -15,5 +15,10 @@ namespace DepremsizHayat.Business.ServiceRepository
         public RoleRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
+
+        public ROLE GetByName(string name)
+        {
+            return _dbContext.ROLE.FirstOrDefault(p => p.NAME == name);
+        }
     }
 }

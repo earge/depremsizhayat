@@ -10,5 +10,6 @@ namespace DepremsizHayat.Business.IServiceRepository
 {
     public interface IRoleRepository:IRepository<ROLE>
     {
+        ROLE GetByName(string name);
     }
 }

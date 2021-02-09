@@ -38,3 +38,5 @@ C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHay
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.csproj.CopyComplete
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.dll
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.pdb
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Resources.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Resources.pdb

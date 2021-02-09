@@ -1,18 +1,26 @@
-﻿@if (ViewBag.Response != null)
-{
-    if (ViewBag.Response.Message != null && ViewBag.Response.Message != "")
+﻿@{ var response = ViewBag.Response;
+    if (response != null)
     {
-        if (ViewBag.Response.Status)
+        if (response.Message != null && response.Message.Count > 0)
         {
-            <div class="info-boxes success ml15 mr15 mb15">
-                @ViewBag.Response.Message
-            </div>
-        }
-        else
-        {
-            <div class="info-boxes error ml15 mr15 mb15">
-                @ViewBag.Response.Message
-            </div>
+            if (response.Status)
+            {
+                <div class="info-boxes success ml15 mr15 mb15">
+                    @for (int i = 0; i < response.Message.Count; i++)
+                    {
+                        <div>@response.Message[i]</div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="info-boxes error ml15 mr15 mb15">
+                    @for (int i = 0; i < response.Message.Count; i++)
+                    {
+                        <div>@response.Message[i]</div>
+                    }
+                </div>
+            }
         }
     }
 }

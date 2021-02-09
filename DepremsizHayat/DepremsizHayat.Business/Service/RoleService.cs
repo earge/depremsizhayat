@@ -22,5 +22,9 @@ namespace DepremsizHayat.Business.Service
         {
             return _roleRepository.GetAll();
         }
+        public int GetIdByName(string name)
+        {
+            return _roleRepository.GetByName(name).ROLE_ID;
+        }
     }
 }

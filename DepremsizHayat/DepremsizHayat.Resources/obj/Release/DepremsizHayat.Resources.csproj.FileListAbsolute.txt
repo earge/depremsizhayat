@@ -1,0 +1,8 @@
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\bin\Release\DepremsizHayat.Resources.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\bin\Release\DepremsizHayat.Resources.pdb
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.RoleCodes.resources
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.StatusCodes.resources
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.csproj.GenerateResource.cache
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.csproj.CoreCompileInputs.cache
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.dll
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.pdb
