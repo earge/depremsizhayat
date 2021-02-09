@@ -3,7 +3,7 @@ const promptTemplate = document.createElement("template")
         `
         <style>
         :host{
-            position:absolute;
+            position:fixed;
             top:0px;
             left:0px;
             z-index:1500;

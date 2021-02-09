@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <script>
+        function ArrayToString(array) {
+            let string = ""
+            Array.from(array).forEach(item => { string += `<div>${item}</div>` })
+            return string
+        }
         function ConvertDate(value) {
             var pattern = /Date\(([^)]+)/
             var results = pattern.exec(value);
@@ -110,9 +115,4 @@
             }
         })
     })()
-    function ArrayToString(array) {
-        let string = ""
-        Array.from(array).forEach(item => { string += `<div>${item}</div>` })
-        return string
-    }
 </script>

@@ -1,26 +1,23 @@
-﻿@{ var response = ViewBag.Response;
+﻿@{ var response = ViewBag.RoleResponse;
     if (response != null)
     {
         if (response.Message != null && response.Message.Count > 0)
         {
+            <script>var array = []</script>
+            for (int i = 0; i < response.Message.Count; i++)
+            {
+                <script>array.push("@response.Message[i]")</script>
+            }
             if (response.Status)
             {
-                <div class="info-boxes success ml15 mr15 mb15">
-                    @for (int i = 0; i < response.Message.Count; i++)
-                    {
-                        <div>@response.Message[i]</div>
-                    }
-                </div>
+
+                <script>Notification.push("success", ArrayToString(array))</script>
             }
             else
             {
-                <div class="info-boxes error ml15 mr15 mb15">
-                    @for (int i = 0; i < response.Message.Count; i++)
-                    {
-                        <div>@response.Message[i]</div>
-                    }
-                </div>
+                <script>Notification.push("error", ArrayToString(array))</script>
             }
+
         }
     }
 }

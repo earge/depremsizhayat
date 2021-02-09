@@ -64,8 +64,8 @@ function editRequest(id) {
                     .mt5{margin-top:5px}
                     .resize-none{resize:none}
                 </style>
-                <div class="mb15"><b>Telefon 1:</b> <input type="text" class="form-control request-detail-input mt5" id="newPhone1" value=${data.PHONE_NUMBER_1} disabled></div>
-                <div class="mb15"><b>Telefon 2:</b> <input type="text" class="form-control request-detail-input mt5" id="newPhone2" value=${data.PHONE_NUMBER_2} disabled></div>
+                <div class="mb15"><b>Telefon 1:</b> <input type="text" class="form-control request-detail-input mt5" id="newPhone1" value="${data.PHONE_NUMBER_1}" disabled></div>
+                <div class="mb15"><b>Telefon 2:</b> <input type="text" class="form-control request-detail-input mt5" id="newPhone2" value="${data.PHONE_NUMBER_2}" disabled></div>
                 <div class="mb15"><b>Adres:</b> <textarea id="newAddress" class="form-control resize-none request-detail-input mt5" disabled>${data.ADDRESS}</textarea></div>
                 <div class="mb15"><b>Açıklama:</b> <textarea id="newNote" class="form-control resize-none request-detail-input mt5" disabled>${data.USER_NOTE}</textarea></div>
                 <div class="mb15"><b>Oluşturulma Tarihi: </b>${ConvertDate(data.CREATED_DATE)}</div>
@@ -138,6 +138,12 @@ function execute(action) {
                 document.querySelector("#deny").disabled = true
             },
             success: function (data) {
+                if (data.Status) {
+                    Notification.push("success", ArrayToString(data.Message))
+                }
+                else {
+                    Notification.push("error", ArrayToString(data.Message))
+                }
                 FillRequestsTable()
                 document.querySelector("#allow").disabled = false
                 document.querySelector("#deny").disabled = false

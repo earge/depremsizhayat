@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
+using System.Web.Security;
+using System.Security.Claims;
 
 namespace DepremsizHayat.Business.Service
 {
@@ -80,7 +82,7 @@ namespace DepremsizHayat.Business.Service
             return rUser;
         }
 
-        public BaseResponse EditNameSurname(EditNameSurnameRequest request)
+        public BaseResponse EditProfile(EditProfileRequest request)
         {
             BaseResponse response = new BaseResponse();
             USER_ACCOUNT user = _userRepository.GetById(Decryptor.DecryptInt(request.USER_ACCOUNT_ID));
@@ -105,6 +107,26 @@ namespace DepremsizHayat.Business.Service
             else
             {
                 response.Message.Add("Soyadınız aynı olamaz.");
+            }
+            if (request.Mail != null && user.E_MAIL != request.Mail)
+            {
+                user.E_MAIL = request.Mail;
+                _userRepository.Update(user);
+                _unitOfWork.Commit();
+                response.Status = true;
+                FormsAuthentication.SignOut();
+                FormsAuthentication.SetAuthCookie(user.E_MAIL, true);
+                var claims = new List<Claim>
+                            {
+                                new Claim(ClaimTypes.NameIdentifier, user.E_MAIL),
+                                new Claim(ClaimTypes.Role,GetByMail(user.E_MAIL).ROLE.NAME)
+                            };
+                var userIdentity = new ClaimsIdentity(claims, "Login");
+                ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
+            }
+            else
+            {
+                response.Message.Add("E-mail adresiniz aynı olamaz.");
             }
             if (response.Status)
             {
