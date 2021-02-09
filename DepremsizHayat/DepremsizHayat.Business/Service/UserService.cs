@@ -86,47 +86,17 @@ namespace DepremsizHayat.Business.Service
         {
             BaseResponse response = new BaseResponse();
             USER_ACCOUNT user = _userRepository.GetById(Decryptor.DecryptInt(request.USER_ACCOUNT_ID));
-            if (request.Name != null && user.FIRST_NAME != request.Name)
+            if ((request.Name != null && request.Name != "") || (request.Surname != null && request.Surname != "") || (request.Password != null && request.Password != ""))
             {
-                user.FIRST_NAME = request.Name;
+                user.FIRST_NAME = (request.Name != null && request.Name != "") ? request.Name : user.FIRST_NAME;
+                user.LAST_NAME = (request.Surname != null && request.Surname != "") ? request.Surname : user.LAST_NAME;
+                if (request.Password != null && request.Password != "") _userRepository.ResetPassword(user.E_MAIL, request.Password);
                 _userRepository.Update(user);
                 _unitOfWork.Commit();
-                response.Status = true;
             }
             else
             {
-                response.Message.Add("Adınız aynı olamaz.");
-            }
-            if (request.Surname != null && user.LAST_NAME != request.Surname)
-            {
-                user.LAST_NAME = request.Surname;
-                _userRepository.Update(user);
-                _unitOfWork.Commit();
-                response.Status = true;
-            }
-            else
-            {
-                response.Message.Add("Soyadınız aynı olamaz.");
-            }
-            if (request.Mail != null && user.E_MAIL != request.Mail)
-            {
-                user.E_MAIL = request.Mail;
-                _userRepository.Update(user);
-                _unitOfWork.Commit();
-                response.Status = true;
-                FormsAuthentication.SignOut();
-                FormsAuthentication.SetAuthCookie(user.E_MAIL, true);
-                var claims = new List<Claim>
-                            {
-                                new Claim(ClaimTypes.NameIdentifier, user.E_MAIL),
-                                new Claim(ClaimTypes.Role,GetByMail(user.E_MAIL).ROLE.NAME)
-                            };
-                var userIdentity = new ClaimsIdentity(claims, "Login");
-                ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
-            }
-            else
-            {
-                response.Message.Add("E-mail adresiniz aynı olamaz.");
+                response.Message.Add("Güncelleme yapmak için lütfen en az bir alanı dolu girin.");
             }
             if (response.Status)
             {
