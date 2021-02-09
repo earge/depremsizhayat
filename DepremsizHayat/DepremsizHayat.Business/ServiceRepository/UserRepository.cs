@@ -150,11 +150,11 @@ namespace DepremsizHayat.Business.ServiceRepository
             SqlParameter[] @params =
             {
                 new SqlParameter("@E_MAIL", mail),
-                 new SqlParameter("@PASSWORD_NEW", mail),
+                 new SqlParameter("@PASSWORD_NEW", pwd),
                 new SqlParameter("@RETURN",SqlDbType.Int){ Direction=ParameterDirection.Output}
             };
-            _dbContext.Database.ExecuteSqlCommand("exec @RETURN=SP_PASSWORD_RESET @E_MAIL, @PASSWORD_NEW", @params);
-            if ((int)@params[1].Value == 1)
+            _dbContext.Database.ExecuteSqlCommand("exec @RETURN = SP_PASSWORD_RESET @E_MAIL, @PASSWORD_NEW", @params);
+            if ((int)@params[2].Value == 1)
             {
                 return true;
             }

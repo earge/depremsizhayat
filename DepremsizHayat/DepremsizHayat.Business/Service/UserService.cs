@@ -88,9 +88,21 @@ namespace DepremsizHayat.Business.Service
             USER_ACCOUNT user = _userRepository.GetById(Decryptor.DecryptInt(request.USER_ACCOUNT_ID));
             if ((request.Name != null && request.Name != "") || (request.Surname != null && request.Surname != "") || (request.Password != null && request.Password != ""))
             {
-                user.FIRST_NAME = (request.Name != null && request.Name != "") ? request.Name : user.FIRST_NAME;
-                user.LAST_NAME = (request.Surname != null && request.Surname != "") ? request.Surname : user.LAST_NAME;
-                if (request.Password != null && request.Password != "") _userRepository.ResetPassword(user.E_MAIL, request.Password);
+                if (request.Name != null && request.Name != "")
+                {
+                    user.FIRST_NAME = request.Name;
+                    response.Message.Add("İsim güncellendi.");
+                }
+                if (request.Surname != null && request.Surname != "")
+                {
+                    user.LAST_NAME = request.Surname;
+                    response.Message.Add("Soyisim güncellendi.");
+                }
+                if (request.Password != null && request.Password != "")
+                {
+                    _userRepository.ResetPassword(user.E_MAIL, request.Password);
+                    response.Message.Add("Şifre güncellendi.");
+                }
                 _userRepository.Update(user);
                 _unitOfWork.Commit();
                 response.Status = true;
@@ -98,10 +110,6 @@ namespace DepremsizHayat.Business.Service
             else
             {
                 response.Message.Add("Güncelleme yapmak için lütfen en az bir alanı dolu girin.");
-            }
-            if (response.Status)
-            {
-                response.Message.Add("Güncelleme başarılı");
             }
             return response;
         }
