@@ -90,10 +90,7 @@ namespace DepremsizHayat.Business.Service
             {
                 user.FIRST_NAME = (request.Name != null && request.Name != "") ? request.Name : user.FIRST_NAME;
                 user.LAST_NAME = (request.Surname != null && request.Surname != "") ? request.Surname : user.LAST_NAME;
-                if (request.Password != null && request.Password != "")
-                {
-                    _userRepository.ResetPassword(user.E_MAIL, request.Password);
-                }
+                if (request.Password != null && request.Password != "") _userRepository.ResetPassword(user.E_MAIL, request.Password);
                 _userRepository.Update(user);
                 _unitOfWork.Commit();
             }
