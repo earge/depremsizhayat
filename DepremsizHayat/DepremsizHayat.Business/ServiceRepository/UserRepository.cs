@@ -145,5 +145,20 @@ namespace DepremsizHayat.Business.ServiceRepository
             }
             return null;
         }
+        public bool ResetPassword(string mail,string pwd)
+        {
+            SqlParameter[] @params =
+            {
+                new SqlParameter("@E_MAIL", mail),
+                 new SqlParameter("@PASSWORD_NEW", mail),
+                new SqlParameter("@RETURN",SqlDbType.Int){ Direction=ParameterDirection.Output}
+            };
+            _dbContext.Database.ExecuteSqlCommand("exec @RETURN=SP_PASSWORD_RESET @E_MAIL, @PASSWORD_NEW", @params);
+            if ((int)@params[1].Value == 1)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
