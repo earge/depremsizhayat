@@ -1,4 +1,5 @@
-﻿let requestErrorImage = document.querySelector("#requestErrorImage")
+﻿
+let requestErrorImage = document.querySelector("#requestErrorImage")
 let requestErrorYear = document.querySelector("#requestErrorYear")
 let requestErrorFloor = document.querySelector("#requestErrorFloor")
 let requestErrorCountry = document.querySelector("#requestErrorCountry")
@@ -12,6 +13,9 @@ let phone2 = document.querySelector("#phone2")
 let address = document.querySelector("#address")
 let note = document.querySelector("#note")
 
+let loadProgress = document.querySelector("#loadProgress")
+let uploadInfo = document.querySelector("#uploadInfo")
+let progressLine = document.querySelector("#progressLine")
 
 let requestButton = document.querySelector("#request")
 requestButton.addEventListener("click", function (event) {
@@ -31,8 +35,6 @@ requestButton.addEventListener("click", function (event) {
         sendingFiles.append(images[i].name, images[i])
     }
 
-    console.log(sendingFiles)
-
     if (images.length == 0) { requestErrorImage.classList.remove("hidden")}
     else if (year.value == -1) { requestErrorYear.classList.remove("hidden")  }
     else if (floor.value == -1) { requestErrorFloor.classList.remove("hidden") }
@@ -47,27 +49,28 @@ requestButton.addEventListener("click", function (event) {
             beforeSend: function () {
                 event.target.classList.add("loading")
                 event.target.disabled = true
+                progressLine.classList.remove("hidden")
             },
             processData: false,
             contentType: false,
             data: sendingFiles,
             xhr: function () {
                 var xhr = new window.XMLHttpRequest();
-                //Download progress
-                xhr.addEventListener("progress", function (evt) {
-                    console.log(evt.lengthComputable);
-                    if (evt.lengthComputable) {
-                        var percentComplete = evt.loaded / evt.total;
-                        console.log(Math.round(percentComplete * 100) + "%")
+                xhr.upload.onprogress = function (event) {
+                    if (event.lengthComputable) {
+                        var percentComplete = event.loaded / event.total;
+                        loadProgress.value = Math.round(percentComplete * 100)
+                        uploadInfo.innerHTML = Math.round(percentComplete * 100) + "%"
                     }
-                }, false);
-                return xhr;
+                }
+                return xhr
             },
             success: function (data) {
                 event.target.classList.remove("loading")
                 event.target.disabled = false
                 ResponseMessage("analyseJsonInfo", data)
                 resetForm()
+                
             },
             
         })
@@ -88,6 +91,8 @@ function resetForm() {
     document.querySelector(".imagesBox").classList.add("hidden")
     imgButton.disabled = false
     document.querySelector("#remaining").classList.add("hidden")
+    progressLine.classList.add("hidden")
+    setTimeout(function () { document.querySelector("#analyseJsonInfo").classList.add("hidden") },6000)
 }
 
 year.addEventListener("change", function () { requestErrorYear.classList.add("hidden") })

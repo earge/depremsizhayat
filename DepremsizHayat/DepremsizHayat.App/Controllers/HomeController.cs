@@ -76,6 +76,7 @@ namespace DepremsizHayat.App.Controllers
                         file.SaveAs(fname);
                         totalContentLength = totalContentLength + file.ContentLength;
                     }
+                    //Response.AddHeader("Content-Length", totalContentLength.ToString());
                     DataAccess.ANALYSE_REQUEST request = new DataAccess.ANALYSE_REQUEST()
                     {
                         ADDRESS = Request.Form["address"],
