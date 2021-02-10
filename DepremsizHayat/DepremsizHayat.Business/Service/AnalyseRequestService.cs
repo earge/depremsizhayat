@@ -86,16 +86,17 @@ namespace DepremsizHayat.Business.Service
         {
             ANALYSE_REQUEST current = _analyseRequestRepository.GetById(request.ANALYSIS_REQUEST_ID);
             current.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Accepted).STATUS_ID;
-            ANALYSE_REQUEST_ANSWER answerRecord = new ANALYSE_REQUEST_ANSWER()
-            {
-                CREATED_DATE = DateTime.Now,
-                DELETED = false,
-                DETAIL = "",
-                RISK_SCORE = 0,
-                ANALYSIS_REQUEST_ID = request.ANALYSIS_REQUEST_ID,
-                USER_ACCOUNT_ID = _userRepository.GetRandomExpertForAnalyse().USER_ACCOUNT_ID
-            };
-            _analyseRequestAnswerRepository.Add(answerRecord);
+            _analyseRequestRepository.Update(current);
+            //ANALYSE_REQUEST_ANSWER answerRecord = new ANALYSE_REQUEST_ANSWER()
+            //{
+            //    CREATED_DATE = DateTime.Now,
+            //    DELETED = false,
+            //    DETAIL = "",
+            //    RISK_SCORE = 0,
+            //    ANALYSIS_REQUEST_ID = request.ANALYSIS_REQUEST_ID,
+            //    USER_ACCOUNT_ID = _userRepository.GetRandomExpertForAnalyse().USER_ACCOUNT_ID
+            //};
+            //_analyseRequestAnswerRepository.Add(answerRecord);
             _unitOfWork.Commit();
         }
         public bool DenyRequests(List<string> requests)
