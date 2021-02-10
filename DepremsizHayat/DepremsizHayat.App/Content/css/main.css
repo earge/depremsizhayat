@@ -715,6 +715,10 @@ body {
     background-color:var(--color-hover-gray)
 }
 
+.white-space-now{
+    white-space:nowrap;
+}
+
 .br5{
     border-radius:5px;
 }
