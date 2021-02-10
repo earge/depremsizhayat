@@ -115,6 +115,10 @@ namespace DepremsizHayat.Business.Service
                     resp.Message.Add("Şifre güncellendi.");
                     resp.Status = true;
                 }
+                if (resp.Message.Count==0)
+                {
+                    resp.Message.Add("Kaydedildi.");
+                }
                 _userRepository.Update(user);
                 _unitOfWork.Commit();
             }
