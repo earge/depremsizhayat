@@ -51,18 +51,18 @@ requestButton.addEventListener("click", function (event) {
             processData: false,
             contentType: false,
             data: sendingFiles,
-            //xhr: function () {
-            //    var xhr = new window.XMLHttpRequest();
-            //    //Download progress
-            //    xhr.addEventListener("progress", function (evt) {
-            //        console.log(evt.lengthComputable);
-            //        if (evt.lengthComputable) {
-            //            var percentComplete = evt.loaded / evt.total;
-            //            console.log(Math.round(percentComplete * 100) + "%")
-            //        }
-            //    }, false);
-            //    return xhr;
-            //},
+            xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                //Download progress
+                xhr.addEventListener("progress", function (evt) {
+                    console.log(evt.lengthComputable);
+                    if (evt.lengthComputable) {
+                        var percentComplete = evt.loaded / evt.total;
+                        console.log(Math.round(percentComplete * 100) + "%")
+                    }
+                }, false);
+                return xhr;
+            },
             success: function (data) {
                 event.target.classList.remove("loading")
                 event.target.disabled = false

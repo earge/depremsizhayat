@@ -61,6 +61,7 @@ namespace DepremsizHayat.App.Controllers
             {
                 try
                 {
+                    int totalContentLength=0;
                     System.Web.HttpFileCollectionBase files = Request.Files;
                     for (int i = 0; i < files.Count; i++)
                     {
@@ -73,7 +74,9 @@ namespace DepremsizHayat.App.Controllers
                         fname = Path.Combine(Server.MapPath("~/Sources/" + encryptedId + "/"),
                                        fname);
                         file.SaveAs(fname);
+                        totalContentLength = totalContentLength + file.ContentLength;
                     }
+                    Response.AddHeader("Content-Length", totalContentLength.ToString());
                     DataAccess.ANALYSE_REQUEST request = new DataAccess.ANALYSE_REQUEST()
                     {
                         ADDRESS = Request.Form["address"],

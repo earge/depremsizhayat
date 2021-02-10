@@ -84,9 +84,9 @@ namespace DepremsizHayat.Business.Service
 
         public BaseResponse EditProfile(EditProfileRequest request)
         {
-            EditProfileResponse response = new EditProfileResponse();
+            EditProfileResponse resp = new EditProfileResponse();
             USER_ACCOUNT user = _userRepository.GetById(Decryptor.DecryptInt(request.USER_ACCOUNT_ID));
-            response.NewNameSurname = string.Concat(user.FIRST_NAME, "*", user.LAST_NAME);
+            resp.NewNameSurname = string.Concat(user.FIRST_NAME, "*", user.LAST_NAME);
             if ((request.Name != null && request.Name != "") || (request.Surname != null && request.Surname != "") || (request.Password != null && request.Password != ""))
             {
                 if (request.Name != null && request.Name != "")
@@ -94,9 +94,9 @@ namespace DepremsizHayat.Business.Service
                     if (request.Name != user.FIRST_NAME)
                     {
                         user.FIRST_NAME = request.Name;
-                        response.NewNameSurname = response.NewNameSurname.Replace(response.NewNameSurname.Split('*')[0], request.Name);
-                        response.Message.Add("İsim güncellendi.");
-                        response.Status = true;
+                        resp.NewNameSurname = resp.NewNameSurname.Replace(resp.NewNameSurname.Split('*')[0], request.Name);
+                        resp.Message.Add("İsim güncellendi.");
+                        resp.Status = true;
                     }
                 }
                 if (request.Surname != null && request.Surname != "")
@@ -104,26 +104,26 @@ namespace DepremsizHayat.Business.Service
                     if (request.Surname != user.LAST_NAME)
                     {
                         user.LAST_NAME = request.Surname;
-                        response.NewNameSurname = response.NewNameSurname.Replace(response.NewNameSurname.Split('*')[1], request.Surname);
-                        response.Message.Add("Soyisim güncellendi.");
-                        response.Status = true;
+                        resp.NewNameSurname = resp.NewNameSurname.Replace(resp.NewNameSurname.Split('*')[1], request.Surname);
+                        resp.Message.Add("Soyisim güncellendi.");
+                        resp.Status = true;
                     }
                 }
                 if (request.Password != null && request.Password != "")
                 {
                     _userRepository.ResetPassword(user.E_MAIL, request.Password);
-                    response.Message.Add("Şifre güncellendi.");
-                    response.Status = true;
+                    resp.Message.Add("Şifre güncellendi.");
+                    resp.Status = true;
                 }
                 _userRepository.Update(user);
                 _unitOfWork.Commit();
             }
             else
             {
-                response.Message.Add("Güncelleme yapmak için lütfen en az bir alanı dolu girin.");
+                resp.Message.Add("Güncelleme yapmak için lütfen en az bir alanı dolu girin.");
             }
-            response.NewNameSurname = response.NewNameSurname.Replace("*", " ");
-            return response;
+            resp.NewNameSurname = resp.NewNameSurname.Replace("*", " ");
+            return resp;
         }
 
         public List<USER_ACCOUNT> GetAll()
