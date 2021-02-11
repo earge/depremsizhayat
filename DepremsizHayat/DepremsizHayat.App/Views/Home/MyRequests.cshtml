@@ -143,3 +143,14 @@
 
 </style>
 
+<script>
+    $.ajax({
+        url: "/Home/MyRequests_",
+        contentType: false,
+        type: "POST",
+        success: function (data) {
+           console.log(data)     
+        }
+    })
+</script>
+
