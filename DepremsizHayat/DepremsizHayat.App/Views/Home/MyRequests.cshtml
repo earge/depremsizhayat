@@ -7,10 +7,32 @@
 @using DepremsizHayat.DataAccess;
 @model List<ANALYSE_REQUEST>
 <div class="flex h-center">
-    <div class="full-page flex h-center v-center">
+    <div class="full-page flex h-center v-center hidden">
         <div class="free-spinner"></div>
     </div>
     <div class="container">
+        <div class="request-box">
+            <div>Durum</div>
+            <div>Adres Bilgileri</div>
+            <ul>
+                <li><b>Ülke: </b></li>
+                <li><b>Şehir: </b></li>
+                <li><b>Adres: </b></li>
+            </ul>
+            <div>Bina Bilgileri</div>
+            <ul>
+                <li><b>Kat Sayısı: </b></li>
+                <li><b>Yapım Yılı: </b></li>
+            </ul>
+            <div>İletişim Bilgileri</div>
+            <ul>
+                <li><b>Telefon 1:</b></li>
+                <li><b>Telefon 2:</b></li>
+            </ul>
+            <div>Açıklama</div>
+            <div>Açıklama Metni</div>
+            <div>Tarih</div>
+        </div>
         @*<div class="white-box">
                 <div class="top-header p15">Taleplerim</div>
                 <div class="p15">
@@ -149,7 +171,34 @@
         contentType: false,
         type: "POST",
         success: function (data) {
-           console.log(data)     
+            data.forEach(data => {
+                var requestBox = 
+                 `
+                <div class="request-box">
+                    <div>${data.STATUS_NAME}</div>
+                    <div>Adres Bilgileri</div>
+                    <ul>
+                        <li><b>Ülke: </b>${data.COUNTRY}</li>
+                        <li><b>Şehir: </b>${data.DISTRICT}</li>
+                        <li><b>Adres: </b>${data.ADDRESS}</li>
+                    </ul>
+                    <div>Bina Bilgileri</div>
+                    <ul>
+                        <li><b>Kat Sayısı: </b>${data.NUMBER_OF_FLOORS}</li>
+                        <li><b>Yapım Yılı: </b>${data.YEAR_OF_CONSTRUCTION}</li>
+                    </ul>
+                    <div>İletişim Bilgileri</div>
+                    <ul>
+                        <li><b>Telefon 1:</b>${data.PHONE_NUMBER_1}</li>
+                        <li><b>Telefon 2:</b>${data.PHONE_NUMBER_2}</li>
+                    </ul>
+                    <div>Açıklama</div>
+                    <div>${data.USER_NOTE}</div>
+                    <div>${data.CREATED_DATE}</div>
+                </div>
+                `
+                document.querySelector(".container").innerHTML += requestBox
+            })    
         }
     })
 </script>
