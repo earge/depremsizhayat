@@ -1,18 +1,86 @@
-﻿let newName = document.querySelector("[name='newName']")
-let newSurname = document.querySelector("[name='newSurname']")
-let oldPassword = document.querySelector("[name='oldPassword']")
-let newPassword = document.querySelector("[name='newPassword']")
+﻿
 
-newName.onfocus = function () { newName.removeAttribute("readonly") }
-newSurname.onfocus = function () { newSurname.removeAttribute("readonly") }
+let newName = document.querySelector("input[name='newName']")
+let newSurname = document.querySelector("input[name='newSurname']")
+let newPassword = document.querySelector("input[name='newPassword']")
+let newPasswordAgain = document.querySelector("input[name='newPasswordAgain']")
+let newFIPassword = document.querySelector("#newPassword")
+let newFIName = document.querySelector("#newName")
+let newFISurname = document.querySelector("#newSurname")
+newFIName.valid = true
+newFISurname.valid = true
+
 newPassword.onfocus = function () { newPassword.removeAttribute("readonly") }
-oldPassword.onfocus = function () { oldPassword.removeAttribute("readonly") }
+newPasswordAgain.onfocus = function () { newPasswordAgain.removeAttribute("readonly") }
+
+function checkAgain() {
+    if (newPasswordAgain.value.trim().length != 0) {
+        if (newPassword.value == newPasswordAgain.value) {
+            document.querySelector(".extraSpan").classList.add("hidden")
+            newPasswordAgain.classList.remove("border-red")
+            return true
+
+        } else {
+            document.querySelector(".extraSpan").classList.remove("hidden")
+            newPasswordAgain.classList.add("border-red")
+            return false
+        }
+    }
+}
+
+newPasswordAgain.addEventListener("keyup", checkAgain)
+newPassword.addEventListener("keyup", checkAgain)
+newPassword.addEventListener("focusout", function () {
+    if (newPassword.value.trim().length == 0) {
+        newFIPassword.invalid = false
+        newFIPassword.valid = true
+    }
+})
+newPasswordAgain.addEventListener("focusout", function () {
+    if (newPassword.value.trim().length == 0 && newPasswordAgain.value.trim().length == 0) {
+        document.querySelector(".extraSpan").classList.add("hidden")
+        newPasswordAgain.classList.remove("border-red")
+    }
+})
+
 
 document.querySelector("#edit").addEventListener("click", function (event) {
+    if (newPassword.value.trim().length != 0) {
+        if (checkAgain()) {
+            if (newFIName.valid) {
+                if (newFISurname.valid) {
+                    if (newFIPassword.valid) {
+                        ajaxForEditProfile(event) //Burası Şifreli
+                    }
+                    else {
+                        newFIPassword.Check()
+                    }
+                } else {
+                    newFISurname.Check()
+                }
+            } else {
+                newFIName.Check()
+            }
+        }
+    } else {
+        if (newFIName.valid) {
+            if (newFISurname.valid) {
+                ajaxForEditProfile(event) //Burası Şifresiz
+            } else {
+                newFISurname.Check()
+            }
+        } else {
+            newFIName.Check()
+        }
+    }
+})
+
+function ajaxForEditProfile(event) {
     var data =
     {
         Name: newName.value,
-        Surname: newSurname.value
+        Surname: newSurname.value,
+        Password: newPassword.value,
     }
     event.target.classList.add("loading")
     event.target.disabled = true
@@ -21,24 +89,10 @@ document.querySelector("#edit").addEventListener("click", function (event) {
         url: "EditProfile",
         type: "POST",
         success: function (data) {
-            if (data.Status) {
-                event.target.disabled = true
-                setTimeout(function () { location.reload() }, 1000)
-
-                event.target.classList.remove("loading")
-              
-
-                document.querySelector("#editJsonInfo").classList.remove("none", "error", "success")
-                document.querySelector("#editJsonInfo").classList.add("success")
-                document.querySelector("#editJsonInfo").innerHTML = data.Message
-            }
-            else {
-                event.target.classList.remove("loading")
-                event.target.disabled = false
-                document.querySelector("#editJsonInfo").classList.remove("none", "error", "success")
-                document.querySelector("#editJsonInfo").classList.add("error")
-                document.querySelector("#editJsonInfo").innerHTML = data.Message
-            }
+            event.target.classList.remove("loading")
+            event.target.disabled = false
+            Array.from(document.querySelectorAll(".nameSurnameJson")).forEach(item => item.innerHTML = data.NewNameSurname)
+            ResponseMessage("editJsonInfo", data)
         }
     })
-})
+}

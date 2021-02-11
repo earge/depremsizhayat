@@ -164,11 +164,26 @@ imageInput.addEventListener("change", imageGet)
 
 
 function boxShowHide() {
+    if (images.length == 10) {
+        imgButton.disabled = true
+    }
+    else {
+        imgButton.disabled = false
+    }
     if (images.length == 0) {
+        document.querySelector("#remaining").classList.add("hidden")
         document.querySelector(".imagesBox").classList.add("hidden")
     } else {
         document.querySelector(".imagesBox").classList.remove("hidden")
+        document.querySelector("#remaining").classList.remove("hidden")
     }
+    if (10 - images.length > 0) {
+        document.querySelector("#remaining").innerHTML = 10 - images.length + " Adet Resim Seçebilirsiniz"
+    } else {
+        document.querySelector("#remaining").innerHTML = "Daha Fazla Resim Yükleyemezsiniz"
+    }
+    
+
 }
 
 function setDataList() {

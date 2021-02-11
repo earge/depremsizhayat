@@ -19,7 +19,7 @@ namespace DepremsizHayat.Job.Job
         {
             foreach (DataAccess.ANALYSE_REQUEST request in _analyseRequestService.GetPendingRequests())
             {
-                if (request.CREATED_DATE.AddDays(1)<DateTime.Now)
+                if (DateTime.Now>request.CREATED_DATE.AddDays(1))
                 {
                     _analyseRequestService.ConfirmPendingRequest(request);
                 }

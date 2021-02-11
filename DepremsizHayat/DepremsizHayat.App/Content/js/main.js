@@ -1,11 +1,11 @@
-document.querySelector(".navbar .toggle").addEventListener("click",()=>{
-  let navMenu = document.querySelector(".navbar .menu")
-  if(!navMenu.classList.contains("block")){
-    navMenu.classList.add("block")
-  }
-  else{
-    navMenu.classList.remove("block")
-  }
+document.querySelector(".navbar .toggle").addEventListener("click", () => {
+    let navMenu = document.querySelector(".navbar .menu")
+    if (!navMenu.classList.contains("block")) {
+        navMenu.classList.add("block")
+    }
+    else {
+        navMenu.classList.remove("block")
+    }
 })
 
 function infoBoxesCleaner() {
@@ -13,13 +13,13 @@ function infoBoxesCleaner() {
 }
 
 if (document.querySelector(".profile") !== null) {
-    document.querySelector(".profile").addEventListener("click",open,false)
+    document.querySelector(".profile").addEventListener("click", open, false)
 }
 
 function open(event) {
     event.stopPropagation()
     document.querySelector(".profil-box-open").classList.add("block")
-    document.addEventListener("click",close,false)
+    document.addEventListener("click", close, false)
 }
 
 function close() {
@@ -38,8 +38,8 @@ function close() {
     })
 })();
 
-function ResponseMessage(elementId, data) {
-    if (data.Message.length>0) {
+function ResponseMessage(elementId, data, singleData) {
+    if (data!=null && data.Message.length > 0) {
         let responseElement = document.querySelector(`#${elementId}`)
         responseElement.classList.remove("none", "error", "success")
         if (data.Status) responseElement.classList.add("success")
@@ -48,7 +48,14 @@ function ResponseMessage(elementId, data) {
         Array.from(data.Message).forEach(item => { string += `<div>${item}</div>` })
         responseElement.innerHTML = string
     }
+    else if (singleData!=null && singleData.Message) {
+        let responseElement = document.querySelector(`#${elementId}`)
+        responseElement.classList.remove("none", "error", "success")
+        responseElement.innerHTML = singleData.Message
+        if (singleData.Status) responseElement.classList.add("success")
+        else responseElement.classList.add("error")
+    }
 }
 
-    
+
 

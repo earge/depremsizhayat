@@ -8,6 +8,7 @@
 @section scripts{
     <script src="~/Content/js/analyseRequestInputs.js"></script>
     <script src="~/Content/js/analyseRequestControl.js"></script>
+    <script src="~/Content/js/progress.js"></script>
 }
 
 <div class="flex h-center" id="sendnewrequest">
@@ -15,35 +16,49 @@
         <div class="white-box">
             <div class="top-header align-left p15">Talep Oluştur</div>
             <div class="p15">
-                <div id="addImageButton" class="align-center mb15"><button class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
+                <div class="align-center mb15"><button id="addImageButton" class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
+                <div id="remaining" class="align-center fs-12 mb15 hidden">10 Adet Resim Seçebilirsiniz</div>
                 <div class="imagesBox mb15 p5 hidden">
                     <div></div>
                 </div>
-                <div class="mb15"><input type="text" class="input one" id="phone1" placeholder="Telefon Numaranız" /></div>
-                <div class="mb15"><input type="text" class="input one" id="phone2" placeholder="Diğer Telefon Numaranız" /></div>
+                <div id="requestErrorImage" class="requestErrorSpan fs-12 b tx-red mb10 align-center hidden">En az bir resim seçmelisiniz.</div>
+                <div class="mb15 flex hidden" id="progressLine"><div class="white-space-now fs-12 mr10">Resimler Yükleniyor</div><ro-progressbar class="w-100" id="loadProgress" value="0"></ro-progressbar><div class="white-space-now ml5 fs-12" id="uploadInfo">0%</div></div>
+                <div class="mb15"><input type="text" class="input one" id="phone1" placeholder="Telefon Numaranız (İsteğe Bağlı)" /></div>
+                <div class="mb15"><input type="text" class="input one" id="phone2" placeholder="Diğer Telefon Numaranız (İsteğe Bağlı)" /></div>
                 <div class="flex h-stretch-100 mb15">
                     <div class="mr7">
                         <div class="mb10 ml10 fs-14 tx-gray">Yapım Yılı</div>
-                        <select id="year" class="select one w-100 pl10"><option>Seçiniz</option></select>
+                        <select id="year" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option></select>
+                        <span id="requestErrorYear" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Yapım yılını seçiniz.</span>
                     </div>
                     <div class="ml7">
                         <div class="mb10 ml10 fs-14 tx-gray">Kat Sayısı</div>
-                        <select id="floor" class="select one w-100 pl10"><option>Seçiniz</option></select>
+                        <select id="floor" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option></select>
+                        <span id="requestErrorFloor" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Kat sayısını seçiniz.</span>
                     </div>
                 </div>
                 <div class="flex h-stretch-100 mb15">
                     <div class="mr7">
                         <div class="mb10 ml10 fs-14 tx-gray">Ülke</div>
-                        <select id="country" class="select one w-100 pl10"><option>Türkiye</option></select>
+                        <select id="country" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option><option value="Türkiye">Türkiye</option></select>
+                        <span id="requestErrorCountry" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Ülke seçiniz.</span>
                     </div>
                     <div class="ml7">
                         <div class="mb10 ml10 fs-14 tx-gray">Şehir</div>
-                        <select id="district" class="select one w-100 pl10"><option>Seçiniz</option></select>
+                        <select id="district" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option></select>
+                        <span id="requestErrorDistrict" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Şehir seçiniz.</span>
                     </div>
                 </div>
-                <div><textarea class="input textarea" id="address" placeholder="Adres"></textarea></div>
-                <div><textarea class="input textarea mt15" id="note" placeholder="Açıklama"></textarea></div>
+                <div>
+                    <textarea class="input textarea mb5" id="address" placeholder="Adres"></textarea>
+                    <span id="requestErrorAddress" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Adres alanı boş bırakılamaz.</span>
+                </div>
+                <div>
+                    <textarea class="input textarea mt15 mb5" id="note" placeholder="Açıklama"></textarea>
+                    <span id="requestErrorNote" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Yapım yılını seçiniz.</span>
+                </div>
             </div>
+            <div class="info-boxes error mr15 ml15 mb15 none json" id="analyseJsonInfo"></div>
             <div class="align-center pb15 pl15 pr15">
                 <button id="request" class="btn btn-main btn-blue spinner">
                     <span class="spinner"></span>Talebi Gönder
