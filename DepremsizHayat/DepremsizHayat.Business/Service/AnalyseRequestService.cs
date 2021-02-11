@@ -73,7 +73,10 @@ namespace DepremsizHayat.Business.Service
                     STATUS_ID = Convert.ToString(analyse.STATUS_ID),
                     STATUS_NAME = _statusRepository.GetById(analyse.STATUS.STATUS_ID).NAME,
                     USER_ACCOUNT_ID = analyse.USER_ACCOUNT_ID.ToString(),
-                    YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION
+                    YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION,
+                    CREATED_DATE=analyse.CREATED_DATE.ToLocalTime(),
+                    PHONE_NUMBER_1=analyse.PHONE_NUMBER_1,
+                    PHONE_NUMBER_2=analyse.PHONE_NUMBER_2
                 };
                 request.Add(dummy);
             }
