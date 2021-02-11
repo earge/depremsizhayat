@@ -4,49 +4,54 @@
     Layout = "~/Views/Home/Shared/_Layout.cshtml";
 }
 
-@*@using DepremsizHayat.DataAccess;
-@model List<ANALYSE_REQUEST>*@
+@using DepremsizHayat.DataAccess;
+@model List<ANALYSE_REQUEST>
 <div class="flex h-center">
+    <div class="full-page flex h-center v-center">
+        <div class="free-spinner"></div>
+    </div>
     <div class="container">
-        <div class="white-box">
-            <div class="top-header p15">Taleplerim</div>
-            <div class="p15">
-                <div class="table-scroll">
-                    <table class="table one">
-                        <tr>
-                            <th>Ülke</th>
-                            <th>Bölge</th>
-                            <th>Adres</th>
-                            <th>Yapım Yılı</th>
-                            <th>Kat Sayısı</th>
-                            <th>Telefon 1</th>
-                            <th>Telefon 2</th>
-                            <th>Açıklama</th>
-                            <th>Oluşturulma Tarihi</th>
-                            <th>Durum</th>
-                        </tr>
-                        @*@if (Model != null)
-                        {
-                            foreach (ANALYSE_REQUEST Analyse in Model)
+        @*<div class="white-box">
+                <div class="top-header p15">Taleplerim</div>
+                <div class="p15">
+                    <div class="table-scroll">
+                        <table class="table one">
+                            <tr>
+                                <th>Ülke</th>
+                                <th>Bölge</th>
+                                <th>Adres</th>
+                                <th>Yapım Yılı</th>
+                                <th>Kat Sayısı</th>
+                                <th>Telefon 1</th>
+                                <th>Telefon 2</th>
+                                <th>Açıklama</th>
+                                <th>Oluşturulma Tarihi</th>
+                                <th>Durum</th>
+                            </tr>
+                            @if (Model != null)
                             {
-                                <tr>
-                                    <td>@Analyse.COUNTRY</td>
-                                    <td>@Analyse.DISTRICT</td>
-                                    <td>@Analyse.ADDRESS</td>
-                                    <td>@Analyse.YEAR_OF_CONSTRUCTION</td>
-                                    <td>@Analyse.NUMBER_OF_FLOORS</td>
-                                    <td>@Analyse.PHONE_NUMBER_1</td>
-                                    <td>@Analyse.PHONE_NUMBER_2</td>
-                                    <td>@Analyse.USER_NOTE</td>
-                                    <td>@Analyse.CREATED_DATE</td>
-                                    <td>@Analyse.STATUS.NAME</td>
-                                </tr>
+                                foreach (ANALYSE_REQUEST Analyse in Model)
+                                {
+                                    <tr>
+                                        <td>@Analyse.COUNTRY</td>
+                                        <td>@Analyse.DISTRICT</td>
+                                        <td>@Analyse.ADDRESS</td>
+                                        <td>@Analyse.YEAR_OF_CONSTRUCTION</td>
+                                        <td>@Analyse.NUMBER_OF_FLOORS</td>
+                                        <td>@Analyse.PHONE_NUMBER_1</td>
+                                        <td>@Analyse.PHONE_NUMBER_2</td>
+                                        <td>@Analyse.USER_NOTE</td>
+                                        <td>@Analyse.CREATED_DATE</td>
+                                        <td>@Analyse.STATUS.NAME</td>
+                                    </tr>
+                                }
                             }
-                        }*@
-                    </table>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </div>*@
+
+
     </div>
 </div>
 
@@ -121,4 +126,31 @@
         overflow-x: scroll;
         overflow-y: hidden;
     }
+
+    .free-spinner {
+        border-width: 3px;
+        border-style: solid;
+        border-color: var(--color-blue) var(--color-blue) var(--color-blue) transparent;
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        -webkit-animation: spin .7s linear infinite;
+        -moz-animation: spin .7s linear infinite;
+        -ms-animation: spin .7s linear infinite;
+        -o-animation: spin .7s linear infinite;
+        animation: spin .7s linear infinite;
+    }
+
 </style>
+
+<script>
+    $.ajax({
+        url: "/Home/MyRequests_",
+        contentType: false,
+        type: "POST",
+        success: function (data) {
+           console.log(data)     
+        }
+    })
+</script>
+
