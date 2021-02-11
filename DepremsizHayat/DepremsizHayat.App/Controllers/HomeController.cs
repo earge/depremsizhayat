@@ -144,7 +144,7 @@ namespace DepremsizHayat.App.Controllers
         }
         public JsonResult MyRequests_()
         {
-            List<DataAccess.ANALYSE_REQUEST> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
+            List<MyAnalyseRequest> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
             return Json(request, JsonRequestBehavior.AllowGet);
         }
     }

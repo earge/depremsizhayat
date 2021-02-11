@@ -4,8 +4,8 @@
     Layout = "~/Views/Home/Shared/_Layout.cshtml";
 }
 
-@using DepremsizHayat.DataAccess;
-@model List<ANALYSE_REQUEST>
+@*@using DepremsizHayat.DataAccess;
+@model List<ANALYSE_REQUEST>*@
 <div class="flex h-center">
     <div class="container">
         <div class="white-box">
@@ -25,7 +25,7 @@
                             <th>Oluşturulma Tarihi</th>
                             <th>Durum</th>
                         </tr>
-                        @if (Model != null)
+                        @*@if (Model != null)
                         {
                             foreach (ANALYSE_REQUEST Analyse in Model)
                             {
@@ -42,7 +42,7 @@
                                     <td>@Analyse.STATUS.NAME</td>
                                 </tr>
                             }
-                        }
+                        }*@
                     </table>
                 </div>
             </div>

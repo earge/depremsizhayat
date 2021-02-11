@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DepremsizHayat.Business;
+using DepremsizHayat.DTO.User;
 
 namespace DepremsizHayat.Business.Service
 {
@@ -58,9 +59,25 @@ namespace DepremsizHayat.Business.Service
             }
             return list;
         }
-        public List<ANALYSE_REQUEST> GetRequestsByUserId(int ID)
+        public List<MyAnalyseRequest> GetRequestsByUserId(int ID)
         {
-            return _analyseRequestRepository.GetAll().Where(T => T.USER_ACCOUNT_ID == ID).ToList();
+            var request = new List<MyAnalyseRequest>();
+            foreach (DataAccess.ANALYSE_REQUEST analyse in _analyseRequestRepository.GetAll().Where(T => T.USER_ACCOUNT_ID == ID))
+            {
+                var dummy = new MyAnalyseRequest()
+                {
+                    ANALYSIS_REQUEST_ID = analyse.ANALYSIS_REQUEST_ID.ToString(),
+                    COUNTRY = analyse.COUNTRY,
+                    DISTRICT = analyse.DISTRICT,
+                    NUMBER_OF_FLOORS = analyse.NUMBER_OF_FLOORS,
+                    STATUS_ID = Convert.ToString(analyse.STATUS_ID),
+                    STATUS_NAME = _statusRepository.GetById(analyse.STATUS.STATUS_ID).NAME,
+                    USER_ACCOUNT_ID = analyse.USER_ACCOUNT_ID.ToString(),
+                    YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION
+                };
+                request.Add(dummy);
+            }
+            return request;
         }
         public BaseResponse SendNewRequest(ANALYSE_REQUEST request)
         {
