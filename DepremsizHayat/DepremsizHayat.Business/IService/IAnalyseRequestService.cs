@@ -1,6 +1,7 @@
 ﻿using DepremsizHayat.DataAccess;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
+using DepremsizHayat.DTO.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace DepremsizHayat.Business.IService
         List<DataAccess.ANALYSE_REQUEST> GetPendingRequests();
         List<AnalyseRequest> GetAllRequests();
         AnalyseDetailRequest GetDetailRequest(string id);
-        List<DataAccess.ANALYSE_REQUEST> GetRequestsByUserId(int ID);
+        List<MyAnalyseRequest> GetRequestsByUserId(int ID);
         BaseResponse SendNewRequest(DataAccess.ANALYSE_REQUEST request);
         void ConfirmPendingRequest(DataAccess.ANALYSE_REQUEST request);
         bool DenyRequests(List<string> requests);

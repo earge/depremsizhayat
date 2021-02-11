@@ -54,6 +54,7 @@
     <Compile Include="User\EditNameSurnameRequest.cs" />
     <Compile Include="User\EditProfileResponse.cs" />
     <Compile Include="User\ForgotPasswordRequest.cs" />
+    <Compile Include="User\MyAnalyseRequest.cs" />
     <Compile Include="User\NameSurnameResponse.cs" />
     <Compile Include="User\RegisterResponse.cs" />
     <Compile Include="User\ResetForgottenPaswordResponse.cs" />
