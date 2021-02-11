@@ -35,8 +35,8 @@ requestButton.addEventListener("click", function (event) {
         sendingFiles.append(images[i].name, images[i])
     }
 
-    if (images.length == 0) { requestErrorImage.classList.remove("hidden")}
-    else if (year.value == -1) { requestErrorYear.classList.remove("hidden")  }
+    if (images.length == 0) { requestErrorImage.classList.remove("hidden") }
+    else if (year.value == -1) { requestErrorYear.classList.remove("hidden") }
     else if (floor.value == -1) { requestErrorFloor.classList.remove("hidden") }
     else if (country.value == -1) { requestErrorCountry.classList.remove("hidden") }
     else if (district.value == -1) { requestErrorDistrict.classList.remove("hidden") }
@@ -70,9 +70,17 @@ requestButton.addEventListener("click", function (event) {
                 event.target.disabled = false
                 ResponseMessage("analyseJsonInfo", data)
                 resetForm()
-                
+
             },
-            
+            error: function (err) {
+                event.target.classList.remove("loading")
+                event.target.disabled = false
+                var singleData = {
+                    Message: "Bir hata oluştu. Lütfen tekrar deneyin.",
+                    Status: false
+                }
+                ResponseMessage("analyseJsonInfo", null, singleData)
+            }
         })
     }
 })
@@ -83,16 +91,16 @@ function resetForm() {
     year.value = -1
     floor.value = -1
     country.value = -1
-    district.value=-1
-    address.value=""
+    district.value = -1
+    address.value = ""
     note.value = ""
     images = []
-    document.querySelectorAll(".imagesBox>div>div").forEach(item=>item.remove())
+    document.querySelectorAll(".imagesBox>div>div").forEach(item => item.remove())
     document.querySelector(".imagesBox").classList.add("hidden")
     imgButton.disabled = false
     document.querySelector("#remaining").classList.add("hidden")
     progressLine.classList.add("hidden")
-    setTimeout(function () { document.querySelector("#analyseJsonInfo").classList.add("hidden") },6000)
+    setTimeout(function () { document.querySelector("#analyseJsonInfo").classList.add("hidden") }, 6000)
 }
 
 year.addEventListener("change", function () { requestErrorYear.classList.add("hidden") })

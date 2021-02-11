@@ -566,7 +566,7 @@ body {
     }
 
         .navbar .brand {
-            grid-area: "brand";
+            grid-area: brand;
             display: block;
             letter-spacing: 3px;
             color: var(--color-blue);
@@ -583,6 +583,7 @@ body {
             right: 20px;
             font-size: 14px;
             font-weight: bold;
+            cursor:pointer;
         }
 
         .navbar .profil-box-open {
@@ -712,6 +713,10 @@ body {
 }
 .hover:hover{
     background-color:var(--color-hover-gray)
+}
+
+.white-space-now{
+    white-space:nowrap;
 }
 
 .br5{

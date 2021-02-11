@@ -56,7 +56,7 @@ namespace DepremsizHayat.App.App_Start
         private static void ConfigureScheduler(IContainer container)
         {
             var scheduler = container.Resolve<AnalyseRequestJobScheduler>();
-            //scheduler.Start();
+            scheduler.Start();
         }
     }
 }
