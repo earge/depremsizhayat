@@ -1,6 +1,7 @@
 ﻿@using DepremsizHayat.DTO.Admin;
+@using DepremsizHayat.DTO;
 @using DepremsizHayat.DataAccess;
-@model List<RoleRequest>
+@model PaginationModel<RoleRequest>
 @{
     ViewBag.Title = "Kullanıcı Yetkilendirme";
     Layout = "~/Views/Panel/Shared/Layout_.cshtml";
@@ -28,29 +29,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (RoleRequest user in Model)
+                                            @foreach (RoleRequest user in Model.DataList)
                                             {
-                                                <tr>       
-                                                        <td>@user.CURRENTROLE.NAME</td>
-                                                        <td>@user.FIRST_NAME</td>
-                                                        <td>@user.LAST_NAME</td>
-                                                        <td>@user.E_MAIL</td>
-                                                        <td>
-                                                            <form method="POST" action="EditRoles">
-                                                                <div class="d-flex">
-                                                                    @Html.Hidden("USER_ACCOUNT_ID", user.USER_ACCOUNT_ID)
-                                                                    <select class="roles form-control" name="ROLE_ID">
-                                                                        @foreach (ROLE role in user.AVAILABLEROLES)
-                                                                        {
-                                                                            <option value="@role.ROLE_ID">
-                                                                                @role.NAME
-                                                                            </option>
-                                                                        }
-                                                                    </select>
-                                                                    <button class="btn btn-secondary ml-2"><i class="fas fa-check"></i></button>
-                                                                </div>
-                                                            </form>
-                                                        </td>
+                                                <tr>
+                                                    <td>@user.CURRENTROLE.NAME</td>
+                                                    <td>@user.FIRST_NAME</td>
+                                                    <td>@user.LAST_NAME</td>
+                                                    <td>@user.E_MAIL</td>
+                                                    <td>
+                                                        <form method="POST" action="EditRoles">
+                                                            <div class="d-flex">
+                                                                @Html.Hidden("USER_ACCOUNT_ID", user.USER_ACCOUNT_ID)
+                                                                <select class="roles form-control" name="ROLE_ID">
+                                                                    @foreach (ROLE role in user.AVAILABLEROLES)
+                                                                    {
+                                                                        <option value="@role.ROLE_ID">
+                                                                            @role.NAME
+                                                                        </option>
+                                                                    }
+                                                                </select>
+                                                                <button class="btn btn-secondary ml-2"><i class="fas fa-check"></i></button>
+                                                            </div>
+                                                        </form>
+                                                    </td>
                                                 </tr>
                                             }
                                         </tbody>

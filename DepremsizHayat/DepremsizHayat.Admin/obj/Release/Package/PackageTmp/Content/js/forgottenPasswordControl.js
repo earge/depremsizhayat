@@ -1,0 +1,1 @@
+﻿document.querySelector("input[name='authCode']").value = window.location.search.split('=')[1] ? window.location.search.split('=')[1] : null

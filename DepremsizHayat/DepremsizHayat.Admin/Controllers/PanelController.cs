@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace DepremsizHayat.Admin.Controllers
 {
@@ -32,19 +33,21 @@ namespace DepremsizHayat.Admin.Controllers
         public ActionResult EditRequest(AnalyseDetailRequest request)
         {
             BaseResponse response = _analyseRequestService.UpdateRequestDetail(request);
-            return Json(response,JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Dashboard()
         {
             return View();
         }
-        public ActionResult ListUserRoles()
+        public ActionResult ListUserRoles(int? p)
         {
+            p = (p != null) ? (int)p : 1;
             List<RoleRequest> request = new List<RoleRequest>();
-            foreach (USER_ACCOUNT user in _userService.GetAll())
+            decimal totalPages = _userService.GetAll().Count / 5;
+            foreach (USER_ACCOUNT user in _userService.GetAll().ToList().ToPagedList(p ?? 1, 5))
             {
                 List<ROLE> roles = new List<ROLE>();
-                roles.AddRange(_roleService.GetAll().Where(p => p.NAME != user.ROLE.NAME));
+                roles.AddRange(_roleService.GetAll().Where(prmtr => prmtr.NAME != user.ROLE.NAME));
                 request.Add(new RoleRequest()
                 {
                     E_MAIL = user.E_MAIL,
@@ -55,8 +58,14 @@ namespace DepremsizHayat.Admin.Controllers
                     AVAILABLEROLES = roles
                 });
             }
+            PaginationModel<RoleRequest> pagination = new PaginationModel<RoleRequest>()
+            {
+                CurrentPage = (int)p,
+                TotalPages = (int)Math.Ceiling(totalPages),
+                DataList = request
+            };
             ViewBag.RoleResponse = (TempData["Carrier"] != null) ? TempData["Carrier"] : null;
-            return View(request);
+            return View(pagination);
         }
         public ActionResult EditRoles(string USER_ACCOUNT_ID, int ROLE_ID)
         {
