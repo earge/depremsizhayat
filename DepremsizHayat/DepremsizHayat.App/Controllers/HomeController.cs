@@ -52,10 +52,6 @@ namespace DepremsizHayat.App.Controllers
         {
             return Content(CurrentUser().E_MAIL);
         }
-        public ActionResult Role()
-        {
-            return Content(CurrentUser().ROLE.NAME);
-        }
         public ActionResult SendAnalyseRequest()
         {
             var encryptedId = Encryptor.Encrypt(CurrentUser().USER_ACCOUNT_ID.ToString());

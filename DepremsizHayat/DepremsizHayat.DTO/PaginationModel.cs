@@ -9,8 +9,7 @@ namespace DepremsizHayat.DTO
     public class PaginationModel<T>
     {
         public List<T> DataList { get; set; }
-        public int CurrentPage { get; set; }
-        public int TotalPages { get; set; }
+        public int DataCount { get; set; }
         public int DataPerPage { get; set; }
     }
 }
