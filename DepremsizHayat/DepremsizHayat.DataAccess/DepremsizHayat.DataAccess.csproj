@@ -60,6 +60,8 @@
     <Compile Include="ROLE.cs" />
     <Compile Include="STATUS.cs" />
     <Compile Include="USER_ACCOUNT.cs" />
+    <Compile Include="USER_ANALYSE_REQUEST.cs" />
+    <Compile Include="USER_ANALYSE_REQUEST_STATUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -37,6 +37,10 @@ namespace DepremsizHayat.DataAccess
         public int NUMBER_OF_FLOORS { get; set; }
         [MaxLength(500)]
         public string USER_NOTE { get; set; }
+        [MaxLength(200)]
+        public string UNIQUE_KEY { get; set; }
+        public int VIEW_COUNTER { get; set; }
+        public DateTime LAST_UPDATED_DATE { get; set; }
         public virtual STATUS STATUS { get; set; }
     }
 }
