@@ -84,7 +84,7 @@ namespace DepremsizHayat.App.Controllers
                         NUMBER_OF_FLOORS = Convert.ToInt32(Request.Form["floor"]),
                         PHONE_NUMBER_1 = Request.Form["phone1"],
                         PHONE_NUMBER_2 = Request.Form["phone2"],
-                        STATUS_ID = _statusService.GetIdByCode("pendingconf"),
+                        STATUS_ID = _statusService.GetIdByCode(Resources.StatusCodes.WaitingAdminConfirmation),
                         USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID,
                         USER_NOTE = Request.Form["note"],
                         YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form["year"])

@@ -147,8 +147,8 @@ namespace DepremsizHayat.Business.Service
         }
         public bool AllowRequests(List<string> requests)
         {
-            try
-            {
+            //try
+            //{
                 foreach (string id in requests)
                 {
                     int dummy = Decryptor.DecryptInt(id);
@@ -156,11 +156,11 @@ namespace DepremsizHayat.Business.Service
                     ConfirmPendingRequest(analyse);
                 }
                 return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            //}
+            //catch (Exception)
+            //{
+            //    return false;
+            //}
         }
         public AnalyseDetailRequest GetDetailRequest(string id)
         {

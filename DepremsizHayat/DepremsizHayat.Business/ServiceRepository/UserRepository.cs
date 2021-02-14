@@ -134,33 +134,47 @@ namespace DepremsizHayat.Business.ServiceRepository
 
         public USER_ACCOUNT GetRandomExpertForAnalyse(int? alreadyAssigned)
         {
-            //Random random = new Random();
-            //int id;
+            Random random = new Random();
+            int id;
             int roleId = _dbContext.ROLE.FirstOrDefault(p => p.NAME == "Expert").ROLE_ID;
             List<USER_ACCOUNT> list = _dbContext.USER_ACCOUNT
                 .Where(p => p.ROLE_ID == roleId)
-                .OrderBy(p=>p.LAST_ANSWER_DATE)
+                //.OrderBy(p=>p.LAST_ANSWER_DATE)
                 .ToList();
-            foreach (USER_ACCOUNT user in list)
+
+            var availableCount = list.Sum(p => p.MAX_COUNT_REQUEST);
+            var busyCount = _userAnalyseRequestRepository
+                .GetAll()
+                .Where(p =>
+                p.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Accepted ||
+                p.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Waiting)
+                .Count();
+            FindAvailable:
+            USER_ACCOUNT expert = null;
+            do
             {
-                //id = random.Next(0, list.Max(p => p.USER_ACCOUNT_ID));
-                var expert = GetById(user.USER_ACCOUNT_ID);
-                if (expert != null)
+                id = random.Next(0, list.Count);
+                expert = GetById(list[id].USER_ACCOUNT_ID);
+            } while (expert == null);
+
+            var maxAnswerCount = expert.MAX_COUNT_REQUEST;
+            int totalAssignmentsCount = _userAnalyseRequestRepository.GetExpertsActiveRequests(expert.USER_ACCOUNT_ID).Count();
+
+            if (busyCount <= availableCount)
+            {
+                if (totalAssignmentsCount < expert.MAX_COUNT_REQUEST)
                 {
-                    var maxAnswerCount = expert.MAX_COUNT_REQUEST;
-                    int totalAssignmentsCount = _userAnalyseRequestRepository.GetExpertsActiveRequests(expert.USER_ACCOUNT_ID).Count();
-                    if (totalAssignmentsCount<expert.MAX_COUNT_REQUEST)
-                    {
-                        if (alreadyAssigned!=null && alreadyAssigned==expert.USER_ACCOUNT_ID)
-                        {
-                            return expert;
-                        }
-                    }
+                    return expert;
+                }
+                else
+                {
+                    goto FindAvailable;
                 }
             }
+
             return null;
         }
-        public bool ResetPassword(string mail,string pwd)
+        public bool ResetPassword(string mail, string pwd)
         {
             SqlParameter[] @params =
             {
