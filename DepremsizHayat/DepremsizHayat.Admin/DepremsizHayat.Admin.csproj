@@ -2137,6 +2137,7 @@
     <Content Include="Views\Account\SetForgottenPassword.cshtml" />
     <Content Include="Views\Panel\Dashboard.cshtml" />
     <Content Include="Views\Panel\ExpertRequests.cshtml" />
+    <Content Include="Views\Panel\PageNotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

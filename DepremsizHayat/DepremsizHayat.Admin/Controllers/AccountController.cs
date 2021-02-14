@@ -25,14 +25,26 @@ namespace DepremsizHayat.Admin.Controllers
         {
             if (HttpContext.User.Identity.IsAuthenticated)
             {
-                if (HttpContext.User.IsInRole(RoleCodes.Admin))
+                if (HttpContext.User.IsInRole(RoleCodes.Admin) || HttpContext.User.IsInRole(RoleCodes.Expert))
                 {
                     returnUrl = (returnUrl != "undefined") ? returnUrl : null;
                     if (returnUrl != null)
                     {
+                        if (HttpContext.User.IsInRole(RoleCodes.Admin) && returnUrl.Contains("Expert"))
+                        {
+                            return RedirectToAction("ListUserRoles", "Panel");
+                        }
                         return Redirect(returnUrl);
                     }
-                    return RedirectToAction("ListUserRoles", "Panel");
+                    if (HttpContext.User.IsInRole(RoleCodes.Admin))
+                    {
+                        return RedirectToAction("ListUserRoles", "Panel");
+                    }
+                    else
+                    {
+                        return RedirectToAction("**", "**");//aaaa
+                    }
+                    
                 }
                 else
                 {
@@ -48,7 +60,7 @@ namespace DepremsizHayat.Admin.Controllers
         public JsonResult SignIn(UserLoginRequest request, string returnUrl)
         {
             LoginResponse response = new LoginResponse();
-            if (!(HttpContext.User.Identity.IsAuthenticated && HttpContext.User.IsInRole(RoleCodes.Admin)))
+            if (!(HttpContext.User.Identity.IsAuthenticated && (HttpContext.User.IsInRole(RoleCodes.Admin) || HttpContext.User.IsInRole(RoleCodes.Expert))))
             {
                 returnUrl = (returnUrl != "undefined") ? returnUrl : null;
                 if (ModelState.IsValid)
@@ -145,8 +157,7 @@ namespace DepremsizHayat.Admin.Controllers
             }
             else
             {
-                //404
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("PageNotFound", "Panel");
             }
         }
         private BaseResponse ResetForgottenPassword(string authCode, string newPassword)

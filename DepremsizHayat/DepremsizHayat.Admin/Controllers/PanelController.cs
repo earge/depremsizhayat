@@ -34,7 +34,7 @@ namespace DepremsizHayat.Admin.Controllers
         [Authorize(Roles = "SystemAdmin")]
         public ActionResult ListUserRoles(int? p)
         {
-            int dataPerPage = 15;
+            int dataPerPage = 9;
             decimal count = _userService.GetAll().Count;
             decimal totalPages = Math.Ceiling(count / (decimal)dataPerPage);
             p = (p != null) ? (int)p : 1;
@@ -87,28 +87,23 @@ namespace DepremsizHayat.Admin.Controllers
             TempData["Carrier"] = response;
             return RedirectToAction("ListUserRoles", "Panel");
         }
-        //int dataPerPage = 15;
-        //decimal count = _analyseRequestService.GetAllRequests().Count;
-        //decimal totalPages = Math.Ceiling(count / (decimal)dataPerPage);
-        //p = (p != null) ? (int) p : 1;
-        //p = (p >= totalPages) ? (int?) totalPages : p;
-        //    p = (p <= 0) ? 1 : p;
-        //    List<AnalyseRequest> list = new List<AnalyseRequest>();
-        //list.AddRange(_analyseRequestService.GetAllRequests().ToPagedList(p ?? 1, dataPerPage));
-        //    //foreach (var item in _analyseRequestService.GetAllRequests().ToPagedList(p ?? 1, dataPerPage))
-        //    //{
-        //    //    list.Add(item);
-        //    //}
-        //    PaginationModel<AnalyseRequest> request = new PaginationModel<AnalyseRequest>()
-        //    {
-        //        DataList = list,
-        //        DataCount = (int)count,
-        //        DataPerPage = dataPerPage
-        //    };
         [Authorize(Roles = "SystemAdmin")]
-        public ActionResult Requests()
+        public ActionResult Requests(int? p)
         {
-            List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
+            int dataPerPage = 7;
+            decimal count = _analyseRequestService.GetAllRequests().Count;
+            decimal totalPages = Math.Ceiling(count / (decimal)dataPerPage);
+            p = (p != null) ? (int)p : 1;
+            p = (p >= totalPages) ? (int?)totalPages : p;
+            p = (p <= 0) ? 1 : p;
+            List<AnalyseRequest> list = new List<AnalyseRequest>();
+            list.AddRange(_analyseRequestService.GetAllRequests().ToPagedList(p ?? 1, dataPerPage));
+            PaginationModel<AnalyseRequest> request = new PaginationModel<AnalyseRequest>()
+            {
+                DataList = list,
+                DataCount = (int)count,
+                DataPerPage = dataPerPage
+            };
             return View(request);
         }
         [Authorize(Roles = "SystemAdmin")]
@@ -117,12 +112,12 @@ namespace DepremsizHayat.Admin.Controllers
             AnalyseDetailRequest request = _analyseRequestService.GetDetailRequest(id);
             return Json(request);
         }
-        [Authorize(Roles = "SystemAdmin")]
-        public ActionResult GetRequests()
-        {
-            List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
-            return Json(request, JsonRequestBehavior.AllowGet);
-        }
+        //[Authorize(Roles = "SystemAdmin")]
+        //public ActionResult GetRequests()
+        //{
+        //    List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
+        //    return Json(request, JsonRequestBehavior.AllowGet);
+        //}
         [Authorize(Roles = "SystemAdmin")]
         public ActionResult DenyRequests(List<string> idList)
         {
@@ -149,6 +144,7 @@ namespace DepremsizHayat.Admin.Controllers
                 response.Message.Add("İşlem başarısız. Lütfen tekrar deneyin.");
             return Json(response, JsonRequestBehavior.AllowGet);
         }
+        [Authorize(Roles = "Expert")]
         public ActionResult ExpertRequests(int? p)
         {
             int dataPerPage = 15;
@@ -166,6 +162,10 @@ namespace DepremsizHayat.Admin.Controllers
                 DataPerPage = dataPerPage
             };
             return View(request);
+        }
+        public ActionResult PageNotFound()
+        {
+            return View();
         }
     }
 }

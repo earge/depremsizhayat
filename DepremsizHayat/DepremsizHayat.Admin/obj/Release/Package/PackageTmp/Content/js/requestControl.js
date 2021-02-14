@@ -1,52 +1,9 @@
-﻿/* GET REQUEST */
-FillRequestsTable()
-function FillRequestsTable() {
-    $.ajax({
-        url: "GetRequests",
-        type: "POST",
-        contentType: false,
-        dataType: "json",
-        beforeSend: function () {
-            $.blockUI({ message: '<img src="/Content/svg/loading.svg">' })
-            document.querySelector("#requestsTable").innerHTML = ""
-        },
-        success: function (data) {
-            let table = document.createElement("table")
-            table.classList.add("table", "table-bordered")
-            data.forEach(items => {
-                let row =
-                    `
-                <tr>
-                <td><ro-checkbox group="request" value="${items.ANALYSIS_REQUEST_ID}" data-status="${items.STATUS_ID}"></td>
-                <td>${items.FIRST_NAME} ${items.LAST_NAME}</td>
-                <td>
-                <div>
-                    <b>Ülke: </b>${items.COUNTRY}<br>
-                    <b>Şehir: </b>${items.DISTRICT}<br>
-                </div>
-                </td>
-                <td>
-                <div>
-                    <b>Kat Sayısı: </b>${items.NUMBER_OF_FLOORS}<br>
-                    <b>Yapım Yılı: </b>${items.YEAR_OF_CONSTRUCTION}<br>
-                </div>
-                </td>
-                <td>${items.STATUS_NAME}</td>
-                <td><button class="btn btn-primary detailButton" data-analyseid="${items.ANALYSIS_REQUEST_ID}">Detay</button></td>
-                </tr>
-                `
-                document.querySelector("#requestsTable").innerHTML += row
+﻿/* ADD DETAIL CLICK EVENT */
+Array.from(document.querySelectorAll(".detailButton")).forEach(item => {
+                item.addEventListener("click", function () { editRequest(item.dataset.analyseId) })
             })
-            Array.from(document.querySelectorAll(".detailButton")).forEach(item => {
-                item.addEventListener("click", function () { editRequest(item.dataset.analyseid) })
-            })
-            $.unblockUI();
-        }
-    })
-}
 
-
-/* EDIT REQUEST */
+/* REQUEST DETAIL */
 function editRequest(id) {
     let request = document.createElement("template")
     $.ajax({
@@ -79,7 +36,7 @@ function editRequest(id) {
     })
 }
 
-/* UPDATE REQUEST */
+/* EDIT REQUEST */
 function addEventToButton() {
     let requestEditButton = document.querySelector("#reques-detail-edit")
     requestEditButton.addEventListener("click", function (event) {
@@ -121,7 +78,7 @@ function addEventToButton() {
     })
 }
 
-/* ALLOW-DENY */
+/* ALLOW-DENY REQUEST */
 document.querySelector("#allow").addEventListener("click", function () { execute("AllowRequests") })
 document.querySelector("#deny").addEventListener("click", function () { execute("DenyRequests") })
 function execute(action) {
@@ -144,7 +101,7 @@ function execute(action) {
                 else {
                     Notification.push("error", ArrayToString(data.Message))
                 }
-                FillRequestsTable()
+                //FillRequestsTable()
                 document.querySelector("#allow").disabled = false
                 document.querySelector("#deny").disabled = false
                 $.unblockUI();
