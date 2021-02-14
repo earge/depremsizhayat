@@ -1,4 +1,4 @@
-﻿<html lang="en">
+﻿<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,14 @@
     @RenderSection("styles", required: false)
 </head>
 <body>
+    <script>
+        function ConvertDate(value) {
+            var pattern = /Date\(([^)]+)/
+            var results = pattern.exec(value);
+            var dt = new Date(parseFloat(results[1]));
+            return (dt.getDate() < 10 ? '0' : '') + dt.getDate() + "/" + (dt.getMonth() + 1 < 10 ? '0' : '') + (dt.getMonth() + 1) + "/" + dt.getFullYear() + " " + (dt.getHours() + 1 < 10 ? '0' : '') + dt.getHours() + ":" + (dt.getMinutes() + 1 < 10 ? '0' : '') + dt.getMinutes();
+        }
+    </script>
 
     <div class="navbar">
         <div class="flex v-center"><a class="brand">DEPREMSİZ HAYAT</a></div>
@@ -35,7 +43,7 @@
     </div>
     @RenderBody()
     <script src="~/Content/js/main.js"></script>
-    
+
     @RenderSection("scripts", required: false)
 
 </body>
