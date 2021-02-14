@@ -138,8 +138,10 @@ namespace DepremsizHayat.Business.ServiceRepository
             {
                 id = random.Next(0, list.Max(p => p.USER_ACCOUNT_ID));
                 var expert = GetById(id);
-                if (expert != null && expert.LAST_ANSWER_DATE != null && ((DateTime)expert.LAST_ANSWER_DATE).AddDays(1) < DateTime.Now)
+                if (expert != null /*&& expert.LAST_ANSWER_DATE != null && ((DateTime)expert.LAST_ANSWER_DATE).AddDays(1) < DateTime.Now*/)
                 {
+                    var maxAnswerCount = expert.MAX_COUNT_REQUEST;
+
                     return expert;
                 }
             }

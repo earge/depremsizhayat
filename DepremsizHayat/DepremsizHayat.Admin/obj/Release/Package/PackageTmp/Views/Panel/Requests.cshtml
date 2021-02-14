@@ -22,7 +22,7 @@
                         <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
                             <div class="col-sm-12">
                                 <div style="display:flex;margin-bottom:10px;"><ro-checkbox group="request" toggle></ro-checkbox>Tümünü Seç</div>
-                                <div>
+                                <div style="overflow-x:scroll;overflow-y:hidden">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -37,27 +37,27 @@
                                         <tbody @*id="requestsTable"*@>
                                             @foreach (AnalyseRequest analyse in Model.DataList)
                                             {
-                                            <tr>
-                                                <td><ro-checkbox group="request" value="@analyse.ANALYSIS_REQUEST_ID" data-status="@analyse.STATUS_ID"></td>
-                                                <td>@analyse.FIRST_NAME @analyse.LAST_NAME</td>
-                                                <td>
-                                                    <div>
-                                                        <b>Ülke: </b>@analyse.COUNTRY<br>
-                                                        <b>Şehir: </b>@analyse.DISTRICT<br>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <b>Kat Sayısı: </b>@analyse.NUMBER_OF_FLOORS<br>
-                                                        <b>Yapım Yılı: </b>@analyse.YEAR_OF_CONSTRUCTION<br>
-                                                    </div>
-                                                </td>
-                                                <td>@analyse.STATUS_NAME</td>
-                                                <td><button class="btn btn-primary detailButton" data-analyse-id="@analyse.ANALYSIS_REQUEST_ID">Detay</button></td>
-                                            </tr>
-                                        }
-                                            </tbody>
-                                        </table>
+                                                <tr>
+                                                    <td><ro-checkbox group="request" value="@analyse.ANALYSIS_REQUEST_ID" data-status="@analyse.STATUS_ID"></td>
+                                                    <td>@analyse.FIRST_NAME @analyse.LAST_NAME</td>
+                                                    <td>
+                                                        <div>
+                                                            <b>Ülke: </b>@analyse.COUNTRY<br>
+                                                            <b>Şehir: </b>@analyse.DISTRICT<br>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <b>Kat Sayısı: </b>@analyse.NUMBER_OF_FLOORS<br>
+                                                            <b>Yapım Yılı: </b>@analyse.YEAR_OF_CONSTRUCTION<br>
+                                                        </div>
+                                                    </td>
+                                                    <td>@analyse.STATUS_NAME</td>
+                                                    <td><button class="btn btn-primary detailButton" data-analyse-id="@analyse.ANALYSIS_REQUEST_ID">Detay</button></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -39,8 +40,9 @@ namespace DepremsizHayat.DataAccess
         public string USER_NOTE { get; set; }
         [MaxLength(200)]
         public string UNIQUE_KEY { get; set; }
-        public int VIEW_COUNTER { get; set; }
-        public DateTime LAST_UPDATED_DATE { get; set; }
+        [DefaultValue(0)]
+        public Nullable<int> VIEW_COUNTER { get; set; }
+        public Nullable<DateTime> LAST_UPDATED_DATE { get; set; }
         public virtual STATUS STATUS { get; set; }
     }
 }
