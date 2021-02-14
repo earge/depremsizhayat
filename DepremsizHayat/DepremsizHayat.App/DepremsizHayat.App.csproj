@@ -227,7 +227,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\js\cities.json" />
-    <None Include="Properties\PublishProfiles\App.DepremsizHayat .pubxml" />
+    <None Include="Properties\PublishProfiles\App Publish.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

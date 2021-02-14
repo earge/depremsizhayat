@@ -34,6 +34,10 @@ namespace DepremsizHayat.Admin.Controllers
                         {
                             return RedirectToAction("ListUserRoles", "Panel");
                         }
+                        if (HttpContext.User.IsInRole(RoleCodes.Expert) && !returnUrl.Contains("Expert"))
+                        {
+                            return RedirectToAction("ExpertNotAnsweredRequests", "Panel");
+                        }
                         return Redirect(returnUrl);
                     }
                     if (HttpContext.User.IsInRole(RoleCodes.Admin))

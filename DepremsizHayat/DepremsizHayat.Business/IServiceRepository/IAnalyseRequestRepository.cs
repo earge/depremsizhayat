@@ -10,5 +10,6 @@ namespace DepremsizHayat.Business.IServiceRepository
 {
     public interface IAnalyseRequestRepository : IRepository<ANALYSE_REQUEST>
     {
+        void OfferAssignment(int analyseRequestId, USER_ACCOUNT expert);
     }
 }

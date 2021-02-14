@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnalyseRequestStatusCodes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalyseRequestStatusCodes.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleCodes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -54,6 +59,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AnalyseRequestStatusCodes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AnalyseRequestStatusCodes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoleCodes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RoleCodes.Designer.cs</LastGenOutput>

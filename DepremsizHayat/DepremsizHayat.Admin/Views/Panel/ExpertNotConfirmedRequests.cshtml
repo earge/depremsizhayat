@@ -1,0 +1,42 @@
+﻿@using DepremsizHayat.DTO.Admin;
+@model List<ExpertWaitingAnalyseRequest>
+@{
+    ViewBag.Title = "ExpertNotConfirmedRequests";
+    Layout = "~/Views/Panel/Shared/Layout_.cshtml";
+}
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>Talebi Gönderen</td>
+            <td>Talep Tarihi</td>
+            <td>Talep Detayı</td>
+            <td>İşlem</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ExpertWaitingAnalyseRequest waitingRequest in Model)
+        {
+            <tr>
+                @using (Html.BeginForm("ProcessTheRequest", "Panel", FormMethod.Post, new { id = "processForm" }))
+                {
+                    <td><input type="hidden" name="type" id="type">@waitingRequest.REQUESTER_USER.FIRST_NAME @waitingRequest.REQUESTER_USER.LAST_NAME</td>
+                    <td>@Html.Hidden("requestId", waitingRequest.USER_ANALYSE_REQUEST_ID)@waitingRequest.ANALYSE_REQUEST.CREATED_DATE</td>
+                    <td>@waitingRequest.ANALYSE_REQUEST.USER_NOTE</td>
+                    <td><button id="accept" type="button">Kabul et</button><button id="deny" type="button">Reddet</button></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    document.querySelector("#accept").addEventListener("click", function () {
+        document.querySelector("#type").value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Accepted"
+        document.querySelector("#processForm").submit()
+    })
+    document.querySelector("#deny").addEventListener("click", function () {
+        document.querySelector("#type").value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Denied"
+        document.querySelector("#processForm").submit()
+    })
+</script>

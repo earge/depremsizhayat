@@ -1,6 +1,6 @@
 ﻿@using DepremsizHayat.DTO.Admin;
 @using DepremsizHayat.DTO;
-@model PaginationModel<AnalyseRequest>
+@model PaginationModel<ExpertNotAnsweredRequest>
 @{
     ViewBag.Title = "ExpertRequests";
     Layout = "~/Views/Panel/Shared/Layout_.cshtml";
@@ -29,13 +29,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (AnalyseRequest analyse in Model.DataList)
+                                            @foreach (ExpertNotAnsweredRequest analyse in Model.DataList)
                                             {
                                                 <tr>
-                                                    <td>@analyse.FIRST_NAME @analyse.LAST_NAME</td>
-                                                    <td>@analyse.COUNTRY @analyse.DISTRICT</td>
-                                                    <td>@analyse.NUMBER_OF_FLOORS @analyse.YEAR_OF_CONSTRUCTION</td>
-                                                    <td>@analyse.STATUS_NAME</td>
+                                                    <td>@analyse.REQUESTER_USER.FIRST_NAME @analyse.REQUESTER_USER.LAST_NAME</td>
+                                                    <td>@analyse.ANALYSE_REQUEST.COUNTRY @analyse.ANALYSE_REQUEST.DISTRICT</td>
+                                                    <td>@analyse.ANALYSE_REQUEST.NUMBER_OF_FLOORS @analyse.ANALYSE_REQUEST.YEAR_OF_CONSTRUCTION</td>
+                                                    <td>@analyse.STATUS.NAME</td>
                                                     <td>BURAYA USER NOTE GELECEK</td>
                                                 </tr>
                                             }

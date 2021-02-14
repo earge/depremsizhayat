@@ -18,9 +18,13 @@ namespace DepremsizHayat.Business.ServiceRepository
     public class UserRepository : Repository<USER_ACCOUNT>, IUserRepository
     {
         private IMailRepository _mailRepository;
-        public UserRepository(IDbFactory dbFactory, IMailRepository mailRepository) : base(dbFactory)
+        private IUserAnalyseRequestRepository _userAnalyseRequestRepository;
+        public UserRepository(IDbFactory dbFactory,
+            IMailRepository mailRepository,
+            IUserAnalyseRequestRepository userAnalyseRequestRepository) : base(dbFactory)
         {
             this._mailRepository = mailRepository;
+            this._userAnalyseRequestRepository = userAnalyseRequestRepository;
         }
         public USER_ACCOUNT GetByResetAuth(string authCode)
         {
@@ -128,21 +132,30 @@ namespace DepremsizHayat.Business.ServiceRepository
             return false;
         }
 
-        public USER_ACCOUNT GetRandomExpertForAnalyse()
+        public USER_ACCOUNT GetRandomExpertForAnalyse(int? alreadyAssigned)
         {
-            var random = new Random();
-            int id;
+            //Random random = new Random();
+            //int id;
             int roleId = _dbContext.ROLE.FirstOrDefault(p => p.NAME == "Expert").ROLE_ID;
-            List<USER_ACCOUNT> list = _dbContext.USER_ACCOUNT.Where(p => p.ROLE_ID == roleId).ToList();
+            List<USER_ACCOUNT> list = _dbContext.USER_ACCOUNT
+                .Where(p => p.ROLE_ID == roleId)
+                .OrderBy(p=>p.LAST_ANSWER_DATE)
+                .ToList();
             foreach (USER_ACCOUNT user in list)
             {
-                id = random.Next(0, list.Max(p => p.USER_ACCOUNT_ID));
-                var expert = GetById(id);
-                if (expert != null /*&& expert.LAST_ANSWER_DATE != null && ((DateTime)expert.LAST_ANSWER_DATE).AddDays(1) < DateTime.Now*/)
+                //id = random.Next(0, list.Max(p => p.USER_ACCOUNT_ID));
+                var expert = GetById(user.USER_ACCOUNT_ID);
+                if (expert != null)
                 {
                     var maxAnswerCount = expert.MAX_COUNT_REQUEST;
-
-                    return expert;
+                    int totalAssignmentsCount = _userAnalyseRequestRepository.GetExpertsActiveRequests(expert.USER_ACCOUNT_ID).Count();
+                    if (totalAssignmentsCount<expert.MAX_COUNT_REQUEST)
+                    {
+                        if (alreadyAssigned!=null && alreadyAssigned==expert.USER_ACCOUNT_ID)
+                        {
+                            return expert;
+                        }
+                    }
                 }
             }
             return null;
