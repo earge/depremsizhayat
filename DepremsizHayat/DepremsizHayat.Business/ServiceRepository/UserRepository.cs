@@ -134,17 +134,17 @@ namespace DepremsizHayat.Business.ServiceRepository
 
         public USER_ACCOUNT GetRandomExpertForAnalyse(int? alreadyAssigned)
         {
-            //Random random = new Random();
-            //int id;
+            Random random = new Random();
+            int id;
             int roleId = _dbContext.ROLE.FirstOrDefault(p => p.NAME == "Expert").ROLE_ID;
             List<USER_ACCOUNT> list = _dbContext.USER_ACCOUNT
                 .Where(p => p.ROLE_ID == roleId)
-                .OrderBy(p=>p.LAST_ANSWER_DATE)
+                //.OrderBy(p=>p.LAST_ANSWER_DATE)
                 .ToList();
             foreach (USER_ACCOUNT user in list)
             {
-                //id = random.Next(0, list.Max(p => p.USER_ACCOUNT_ID));
-                var expert = GetById(user.USER_ACCOUNT_ID);
+                id = random.Next(0, list.Max(p => p.USER_ACCOUNT_ID));
+                var expert = GetById(id);
                 if (expert != null)
                 {
                     var maxAnswerCount = expert.MAX_COUNT_REQUEST;
