@@ -17,10 +17,20 @@ namespace DepremsizHayat.Admin.Controllers
     [Authorize(Roles = "SystemAdmin,Expert")]
     public class PanelController : BaseController
     {
-        public PanelController(IUserService userService, IRoleService roleService, IAnalyseRequestService analyseRequestService, IStatusService statusService) : base(userService, roleService, analyseRequestService, statusService)
+        public PanelController(IUserService userService,
+            IRoleService roleService,
+            IAnalyseRequestService analyseRequestService,
+            IStatusService statusService,
+            IUserAnalyseRequestService userAnalyseRequestService)
+            : base(userService, roleService, analyseRequestService, statusService, userAnalyseRequestService)
         {
         }
-
+        private DataAccess.USER_ACCOUNT CurrentUser()
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            return _userService.GetByMail(ticket.Name);
+        }
         [Authorize(Roles = "SystemAdmin")]
         public ActionResult EditRequest(AnalyseDetailRequest request)
         {
@@ -145,7 +155,7 @@ namespace DepremsizHayat.Admin.Controllers
             return Json(response, JsonRequestBehavior.AllowGet);
         }
         [Authorize(Roles = "Expert")]
-        public ActionResult ExpertRequests(int? p)
+        public ActionResult ExpertNotAnsweredRequests(int? p)
         {
             int dataPerPage = 15;
             decimal count = _analyseRequestService.GetAllRequests().Count;
@@ -153,9 +163,9 @@ namespace DepremsizHayat.Admin.Controllers
             p = (p != null) ? (int)p : 1;
             p = (p >= totalPages) ? (int?)totalPages : p;
             p = (p <= 0) ? 1 : p;
-            List<AnalyseRequest> list = new List<AnalyseRequest>();
-            list.AddRange(_analyseRequestService.GetAllRequests().ToPagedList(p ?? 1, dataPerPage));
-            PaginationModel<AnalyseRequest> request = new PaginationModel<AnalyseRequest>()
+            List<ExpertNotAnsweredRequest> list = new List<ExpertNotAnsweredRequest>();
+            list.AddRange(_userAnalyseRequestService.ExpertNotAnsweredRequests(CurrentUser().USER_ACCOUNT_ID).ToPagedList(p ?? 1, dataPerPage));
+            PaginationModel<ExpertNotAnsweredRequest> request = new PaginationModel<ExpertNotAnsweredRequest>()
             {
                 DataList = list,
                 DataCount = (int)count,
@@ -166,6 +176,16 @@ namespace DepremsizHayat.Admin.Controllers
         public ActionResult PageNotFound()
         {
             return View();
+        }
+        [Authorize(Roles = "Expert")]
+        public ActionResult ExpertNotConfirmedRequests()
+        {
+            return View(_userAnalyseRequestService.ExpertNotConfirmedRequests(CurrentUser().USER_ACCOUNT_ID));
+        }
+        public ActionResult ProcessTheRequest(string requestId, string type)
+        {
+            TempData["Carrier"] = _userAnalyseRequestService.ProcessTheRequest(Decryptor.DecryptInt(requestId), type);
+            return RedirectToAction("ExpertNotConfirmedRequests", "Panel");
         }
     }
 }

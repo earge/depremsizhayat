@@ -123,7 +123,10 @@
   <data name="Denied" xml:space="preserve">
     <value>denied</value>
   </data>
-  <data name="Pending" xml:space="preserve">
-    <value>pendingconf</value>
+  <data name="WaitingAdminConfirmation" xml:space="preserve">
+    <value>waitingadmconf</value>
+  </data>
+  <data name="WaitingExpertConfirmation" xml:space="preserve">
+    <value>waitingexpconf</value>
   </data>
 </root>

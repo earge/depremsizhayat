@@ -1,23 +1,13 @@
 ﻿using Autofac;
 using Autofac.Extras.Quartz;
 using Autofac.Integration.Mvc;
-using Autofac.Integration.Web;
 using DepremsizHayat.Business.Factory;
-using DepremsizHayat.Business.IService;
-using DepremsizHayat.Business.Service;
 using DepremsizHayat.Business.UnitOfWork;
-using DepremsizHayat.Job;
 using DepremsizHayat.Job.Job;
 using DepremsizHayat.Job.Scheduler;
-using DepremsizHayat.Security;
-using DepremsizHayat.Utility;
-using Quartz;
-using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Reflection;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DepremsizHayat.App.App_Start
@@ -28,19 +18,20 @@ namespace DepremsizHayat.App.App_Start
         {
             ContainerBuilder builder = new ContainerBuilder();
             builder.RegisterType<AnalyseRequestJob>().InstancePerLifetimeScope();
+            builder.RegisterType<UserAnalyseRequestJob>().InstancePerLifetimeScope();
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(Assembly.Load("DepremsizHayat.Business")).Where(p => p.Name.EndsWith("Service")).AsImplementedInterfaces().InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(Assembly.Load("DepremsizHayat.Business")).Where(p => p.Name.EndsWith("Repository")).AsImplementedInterfaces().InstancePerLifetimeScope();
-            RegisterScheduler(builder);
+            RegisterSchedulers(builder);
             IContainer container = builder.Build();
-            ConfigureScheduler(container);
+            ConfigureSchedulers(container);
             AutofacDependencyResolver resolver = new AutofacDependencyResolver(container);
             DependencyResolver.SetResolver(resolver);
         }
 
-        private static void RegisterScheduler(ContainerBuilder builder)
+        private static void RegisterSchedulers(ContainerBuilder builder)
         {
             var schedulerConfig = new NameValueCollection {
               {"quartz.threadPool.threadCount", "3"},
@@ -52,11 +43,15 @@ namespace DepremsizHayat.App.App_Start
             });
             builder.RegisterModule(new QuartzAutofacJobsModule(typeof(AnalyseRequestJob).Assembly));
             builder.RegisterType<AnalyseRequestJobScheduler>().AsSelf();
+            builder.RegisterModule(new QuartzAutofacJobsModule(typeof(UserAnalyseRequestJob).Assembly));
+            builder.RegisterType<UserAnalyseRequestJobScheduler>().AsSelf();
         }
-        private static void ConfigureScheduler(IContainer container)
+        private static void ConfigureSchedulers(IContainer container)
         {
-            var scheduler = container.Resolve<AnalyseRequestJobScheduler>();
-            scheduler.Start();
+            var arjScheduler = container.Resolve<AnalyseRequestJobScheduler>();
+            arjScheduler.Start();
+            var uarjScheduler = container.Resolve<UserAnalyseRequestJobScheduler>();
+            uarjScheduler.Start();
         }
     }
 }

@@ -19,6 +19,7 @@ namespace DepremsizHayat.Business.Service
         private IUserRepository _userRepository;
         private IStatusRepository _statusRepository;
         private IAnalyseRequestAnswerRepository _analyseRequestAnswerRepository;
+        private IUserAnalyseRequestRepository _userAnalyseRequestRepository;
         private IUnitOfWork _unitOfWork;
         private IMailRepository _mailRepository;
         public AnalyseRequestService(IAnalyseRequestRepository analyseRequestRepository,
@@ -26,7 +27,8 @@ namespace DepremsizHayat.Business.Service
             IUnitOfWork unitOfWork,
             IStatusRepository statusRepository,
             IAnalyseRequestAnswerRepository analyseRequestAnswerRepository,
-            IMailRepository mailRepository)
+            IMailRepository mailRepository,
+            IUserAnalyseRequestRepository userAnalyseRequestRepository)
         {
             this._analyseRequestRepository = analyseRequestRepository;
             this._userRepository = userRepository;
@@ -34,6 +36,7 @@ namespace DepremsizHayat.Business.Service
             this._analyseRequestAnswerRepository = analyseRequestAnswerRepository;
             this._unitOfWork = unitOfWork;
             this._mailRepository = mailRepository;
+            this._userAnalyseRequestRepository = userAnalyseRequestRepository;
         }
         public List<AnalyseRequest> GetAllRequests()
         {
@@ -106,35 +109,24 @@ namespace DepremsizHayat.Business.Service
         }
         public List<ANALYSE_REQUEST> GetPendingRequests()
         {
-            return _analyseRequestRepository.GetAll().Where(p => p.STATUS.STATUS_CODE == StatusCodes.Pending).ToList();
+            return _analyseRequestRepository
+                .GetAll()
+                .Where(p => p.STATUS.STATUS_CODE == StatusCodes.WaitingAdminConfirmation)
+                .ToList();
         }
         public void ConfirmPendingRequest(DataAccess.ANALYSE_REQUEST request)
         {
             ANALYSE_REQUEST current = _analyseRequestRepository.GetById(request.ANALYSIS_REQUEST_ID);
-            current.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Accepted).STATUS_ID;
+            current.STATUS_ID = _statusRepository.GetByCode(StatusCodes.WaitingExpertConfirmation).STATUS_ID;
             _analyseRequestRepository.Update(current);
-            List<USER_ACCOUNT> availableExperts = new List<USER_ACCOUNT>();
-            USER_ANALYSE_REQUEST requestAssignmentOffer = new USER_ANALYSE_REQUEST()
-            {
-                ANALYSE_REQUEST_ID=request.ANALYSIS_REQUEST_ID,
-                CREATED_DATE=DateTime.Now,
-                DELETED=false,
-                ACTIVE=true,
-                USER_ANALYSE_REQ_STATUS_CODE="",
-                USER_ACCOUNT_ID=""
-            };
-            //ANALYSE_REQUEST_ANSWER answerRecord = new ANALYSE_REQUEST_ANSWER()
-            //{
-            //    CREATED_DATE = DateTime.Now,
-            //    DELETED = false,
-            //    DETAIL = "",
-            //    RISK_SCORE = 0,
-            //    ANALYSIS_REQUEST_ID = request.ANALYSIS_REQUEST_ID,
-            //    USER_ACCOUNT_ID = _userRepository.GetRandomExpertForAnalyse().USER_ACCOUNT_ID
-            //};
-            //_analyseRequestAnswerRepository.Add(answerRecord);
+            var expert = _userRepository.GetRandomExpertForAnalyse(null);
+            _analyseRequestRepository.OfferAssignment(request.ANALYSIS_REQUEST_ID, expert);
+            var requester = _userRepository.GetById(request.USER_ACCOUNT_ID);
+            string body = requester.FIRST_NAME + " " + requester.LAST_NAME + " tarafından gönderilmiş yeni bir talebiniz var. Onaylamak ya da reddetmek için tıklayın:" + "Bir yanıt vermemeniz durumunda talep 24 saat içinde otomatik olarak başka bir uzmana atanacaktır.";
+            _mailRepository.SendMail("app", expert.E_MAIL, "Bir yeni analiz talebiniz var.", body);
             _unitOfWork.Commit();
         }
+        
         public bool DenyRequests(List<string> requests)
         {
             try
@@ -161,8 +153,7 @@ namespace DepremsizHayat.Business.Service
                 {
                     int dummy = Decryptor.DecryptInt(id);
                     ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(dummy);
-                    analyse.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Accepted).STATUS_ID;
-                    _unitOfWork.Commit();
+                    ConfirmPendingRequest(analyse);
                 }
                 return true;
             }

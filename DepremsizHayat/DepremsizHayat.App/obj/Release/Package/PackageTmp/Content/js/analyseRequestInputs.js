@@ -98,19 +98,6 @@ cities.forEach(city => {
     district.appendChild(option)
 })
 
-for (var i = 1; i <= 20; i++) {
-    let option = document.createElement("option")
-    option.value = i
-    option.innerHTML = i
-    floor.appendChild(option)
-}
-
-for (var i = 0; i <= 70; i++) {
-    let option = document.createElement("option")
-    option.value = (new Date).getFullYear() - i
-    option.innerHTML = (new Date).getFullYear() - i
-    year.appendChild(option)
-}
 
 let imgButton = document.querySelector("#addImageButton")
 let imageInput = document.querySelector("#imageInput")
@@ -191,3 +178,25 @@ function setDataList() {
         item.setAttribute("data-index", index)
     })
 }
+
+function setInputFilter(textbox, inputFilter) {
+    ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
+        textbox.addEventListener(event, function () {
+            if (inputFilter(this.value)) {
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            } else {
+                this.value = "";
+            }
+        });
+    });
+}
+
+setInputFilter(document.getElementById("year"), function (value) {
+    return /^-?\d*$/.test(value);
+});
+

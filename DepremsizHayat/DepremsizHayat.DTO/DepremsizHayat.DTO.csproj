@@ -45,6 +45,8 @@
     <Compile Include="Admin\AnalyseDetailRequest.cs" />
     <Compile Include="Admin\AnalyseRequest.cs" />
     <Compile Include="Admin\EditRoleRequest.cs" />
+    <Compile Include="Admin\ExpertNotAnsweredRequest.cs" />
+    <Compile Include="Admin\ExpertWaitingAnalyseRequest.cs" />
     <Compile Include="Admin\RoleRequest.cs" />
     <Compile Include="BaseResponse.cs" />
     <Compile Include="LoginResponse.cs" />

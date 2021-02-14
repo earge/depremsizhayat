@@ -59,11 +59,13 @@
     <Compile Include="IServiceRepository\IMailRepository.cs" />
     <Compile Include="IServiceRepository\IRoleRepository.cs" />
     <Compile Include="IServiceRepository\IStatusRepository.cs" />
+    <Compile Include="IServiceRepository\IUserAnalyseRequestRepository.cs" />
     <Compile Include="IServiceRepository\IUserRepository.cs" />
     <Compile Include="IService\IAnalyseRequestService.cs" />
     <Compile Include="IService\IMailService.cs" />
     <Compile Include="IService\IRoleService.cs" />
     <Compile Include="IService\IStatusService.cs" />
+    <Compile Include="IService\IUserAnalyseRequestService.cs" />
     <Compile Include="IService\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceRepository\AnalyseRequestAnswerRepository.cs" />
@@ -71,11 +73,13 @@
     <Compile Include="ServiceRepository\MailRepository.cs" />
     <Compile Include="ServiceRepository\RoleRepository.cs" />
     <Compile Include="ServiceRepository\StatusRepository.cs" />
+    <Compile Include="ServiceRepository\UserAnalyseRequestRepository.cs" />
     <Compile Include="ServiceRepository\UserRepository.cs" />
     <Compile Include="Service\AnalyseRequestService.cs" />
     <Compile Include="Service\MailService.cs" />
     <Compile Include="Service\RoleService.cs" />
     <Compile Include="Service\StatusService.cs" />
+    <Compile Include="Service\UserAnalyseRequestService.cs" />
     <Compile Include="Service\UserService.cs" />
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />

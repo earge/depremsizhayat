@@ -10,7 +10,7 @@
         event.target.classList.add("loading")
         event.target.disabled = true
         $.ajax({
-            url: "SignIn?returnUrl=" + window.location.href.split("?ReturnUrl=")[1],
+            url: "/Account/SignIn?returnUrl=" + window.location.href.split("?ReturnUrl=")[1],
             data: loginModel,
             type: "post",
             success: function (data) {

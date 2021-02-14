@@ -27,14 +27,14 @@
                 <div class="mb15"><input type="text" class="input one" id="phone2" placeholder="Diğer Telefon Numaranız (İsteğe Bağlı)" /></div>
                 <div class="flex h-stretch-100 mb15">
                     <div class="mr7">
-                        <div class="mb10 ml10 fs-14 tx-gray">Yapım Yılı</div>
-                        <select id="year" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option></select>
-                        <span id="requestErrorYear" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Yapım yılını seçiniz.</span>
+                        <div class="mb10 ml10 fs-14 tx-gray">Binanın Yapım Yılı</div>
+                        <input id="year" class="input one mb5" placeholder="YYYY"/>
+                        <span id="requestErrorYear" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Lütfen geçerli bir yıl giriniz.</span>
                     </div>
                     <div class="ml7">
-                        <div class="mb10 ml10 fs-14 tx-gray">Kat Sayısı</div>
-                        <select id="floor" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option></select>
-                        <span id="requestErrorFloor" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Kat sayısını seçiniz.</span>
+                        <div class="mb10 ml10 fs-14 tx-gray">Binanın Kat Sayısı</div>
+                        <input class="input one mb5" id="floor" type="number" min="0" placeholder="0"/>
+                        <span id="requestErrorFloor" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Kat sayısını giriniz.</span>
                     </div>
                 </div>
                 <div class="flex h-stretch-100 mb15">
@@ -55,7 +55,7 @@
                 </div>
                 <div>
                     <textarea class="input textarea mt15 mb5" id="note" placeholder="Açıklama"></textarea>
-                    <span id="requestErrorNote" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Yapım yılını seçiniz.</span>
+                    <span id="requestErrorNote" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Açıklama alanı boş bırakılamaz.</span>
                 </div>
             </div>
             <div class="info-boxes error mr15 ml15 mb15 none json" id="analyseJsonInfo"></div>

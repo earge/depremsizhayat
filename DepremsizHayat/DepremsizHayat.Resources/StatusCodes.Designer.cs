@@ -79,11 +79,20 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to pendingconf.
+        ///   Looks up a localized string similar to waitingadmconf.
         /// </summary>
-        public static string Pending {
+        public static string WaitingAdminConfirmation {
             get {
-                return ResourceManager.GetString("Pending", resourceCulture);
+                return ResourceManager.GetString("WaitingAdminConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to waitingexpconf.
+        /// </summary>
+        public static string WaitingExpertConfirmation {
+            get {
+                return ResourceManager.GetString("WaitingExpertConfirmation", resourceCulture);
             }
         }
     }
