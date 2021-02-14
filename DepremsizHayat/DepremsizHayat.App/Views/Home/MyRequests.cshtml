@@ -7,53 +7,10 @@
 @using DepremsizHayat.DataAccess;
 @model List<ANALYSE_REQUEST>
 <div class="flex h-center">
-    <div class="full-page flex h-center v-center hidden">
+    <div id="my-request-loading" class="full-page flex h-center v-center hidden">
         <div class="free-spinner"></div>
     </div>
-    <div class="container">
-        
-        @*<div class="white-box">
-                <div class="top-header p15">Taleplerim</div>
-                <div class="p15">
-                    <div class="table-scroll">
-                        <table class="table one">
-                            <tr>
-                                <th>Ülke</th>
-                                <th>Bölge</th>
-                                <th>Adres</th>
-                                <th>Yapım Yılı</th>
-                                <th>Kat Sayısı</th>
-                                <th>Telefon 1</th>
-                                <th>Telefon 2</th>
-                                <th>Açıklama</th>
-                                <th>Oluşturulma Tarihi</th>
-                                <th>Durum</th>
-                            </tr>
-                            @if (Model != null)
-                            {
-                                foreach (ANALYSE_REQUEST Analyse in Model)
-                                {
-                                    <tr>
-                                        <td>@Analyse.COUNTRY</td>
-                                        <td>@Analyse.DISTRICT</td>
-                                        <td>@Analyse.ADDRESS</td>
-                                        <td>@Analyse.YEAR_OF_CONSTRUCTION</td>
-                                        <td>@Analyse.NUMBER_OF_FLOORS</td>
-                                        <td>@Analyse.PHONE_NUMBER_1</td>
-                                        <td>@Analyse.PHONE_NUMBER_2</td>
-                                        <td>@Analyse.USER_NOTE</td>
-                                        <td>@Analyse.CREATED_DATE</td>
-                                        <td>@Analyse.STATUS.NAME</td>
-                                    </tr>
-                                }
-                            }
-                        </table>
-                    </div>
-                </div>
-            </div>*@
-
-
-    </div>
+    <div class="container"></div>
 </div>
 
 
@@ -61,71 +18,7 @@
 <style>
     .container {
         width: 100%;
-        max-width: 500px;
-    }
-
-    .table {
-    }
-
-        .table.one {
-            border-spacing: 0px;
-        }
-
-            .table.one tr:first-child td:first-child,
-            .table.one tr:first-child th:first-child {
-                border-top-left-radius: 5px;
-            }
-
-            .table.one tr:first-child td:last-child,
-            .table.one tr:first-child th:last-child {
-                border-top-right-radius: 5px;
-            }
-
-            .table.one tr:last-child td:first-child {
-                border-bottom-left-radius: 5px;
-            }
-
-            .table.one tr:last-child td:last-child {
-                border-bottom-right-radius: 5px;
-            }
-
-            .table.one td {
-                border-left: 1px solid var(--color-placeholder-gray);
-                border-top: 1px solid var(--color-placeholder-gray);
-                height: 26px;
-                line-height: 26px;
-                padding: 5px;
-                min-width: 100px;
-                white-space:nowrap;
-            }
-
-            .table.one tr:nth-child(2n+1) {
-                background-color: var(--color-border-gray);
-            }
-
-            .table.one tr:last-child td {
-                border-bottom: 1px solid var(--color-placeholder-gray);
-            }
-
-            .table.one td:last-child {
-                border-right: 1px solid var(--color-placeholder-gray);
-            }
-
-            .table.one th {
-                padding: 5px;
-                background-color: var(--color-placeholder-gray);
-                color: white;
-                height: 26px;
-                line-height: 26px;
-            }
-
-                .table.one th:not(:first-child) {
-                    border-left: 1px solid white;
-                }
-
-    .table-scroll {
-        overflow-x: scroll;
-        overflow-y: hidden;
+        max-width: 750px;
     }
 
     .free-spinner {
@@ -142,92 +35,150 @@
         animation: spin .7s linear infinite;
     }
 
-    .container{
-        padding-top:50px !important;
+    .container {
+        padding-top: 40px !important;
     }
 
-    .request-box{
-        margin:0px !important;
-        padding:5px;
+    .request-box {
+        margin: 0px !important;
+        padding: 5px;
     }
 
-    .request-box:not(:last-child) {
-       margin-bottom:10px !important;
-    }
+        .request-box:not(:last-child) {
+            margin-bottom: 10px !important;
+        }
 
-    .request-box .status{
+        .request-box .status {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: right;
+            padding: 3px 10px;
+            color: white;
+            border-radius: 5px;
+        }
+
+            .request-box .status.green {
+                background-color: var(--color-green)
+            }
+
+            .request-box .status.yellow {
+                background-color: var(--color-yellow)
+            }
+
+            .request-box .status.red {
+                background-color: rgb(255, 245, 245);
+                color: var(--color-red)
+            }
+
+        .request-box .line {
+            background-color: rgb(250,250,250);
+            border-radius: 5px;
+            border: 1px solid var(--color-hover-gray)
+        }
+
+            .request-box .line > div:not(:last-of-type) {
+                border-bottom: 1px solid var(--color-hover-gray)
+            }
+
+            .request-box .line > div > div:not(:first-child) {
+                border-left: 1px solid var(--color-hover-gray)
+            }
+
+    .request-btn {
+        border-radius: 5px;
+        background-color: rgb(225, 225, 225);
+        font-size: 14px;
+        border: 0px;
+        padding: 5px 10px;
         font-size:12px;
         font-weight:bold;
-        text-align:right;
-        padding:3px 10px;
-        color:white;
-        border-radius:10px;
     }
 
-    .request-box .status.green{
-        background-color:var(--color-green)
+    .request-button-container{
+        text-align:right;
     }
-        .request-box .status.yellow {
-            background-color: var(--color-yellow)
+
+    .seperator{
+        height:5px;
+        background-color:rgb(230,230,230);
+        border-radius:5px;
+        width:calc(100% - 40px);
+        margin:20px;
+    }
+
+    @@media only screen and (max-width:500px){
+        .request-button-container {
+            text-align: right;
         }
-        .request-box .status.red {
-            background-color: var(--color-red)
-        }
+            .request-button-container button {
+                width: 100%;
+            }
+    }
 </style>
 
 <script>
 
-    $.ajax({
-        url: "/Home/MyRequests_",
-        contentType: false,
-        type: "POST",
-        success: function (data) {
-            data.forEach(data => {
-                let color = ""
-                if (data.STATUS_NAME == "Onaylandı") {
-                    color = "green"
-                } else if (data.STATUS_NAME == "Reddedildi") {
-                    color = "red"
-                }
-                else if (data.STATUS_NAME == "Onay Bekliyor") {
-                    color = "yellow"
-                }
-                var requestBox =
-                 `
-                <div class="request-box white-box">
-                    <div class="status ${color}">${data.STATUS_NAME}</div>
-                    <div class="pl5 b fs-14">Adres Bilgileri</div>
-                    <ul>
-                        <li><b>Ülke: </b>${data.COUNTRY}</li>
-                        <li><b>Şehir: </b>${data.DISTRICT}</li>
-                        <li><b>Adres: </b>${data.ADDRESS}</li>
-                    </ul>
-                    <div>Bina Bilgileri</div>
-                    <ul>
-                        <li><b>Kat Sayısı: </b>${data.NUMBER_OF_FLOORS}</li>
-                        <li><b>Yapım Yılı: </b>${data.YEAR_OF_CONSTRUCTION}</li>
-                    </ul>
-                    `
-                    if (data.PHONE_NUMBER_1 || data.PHONE_NUMBER_2) {
-                        requestBox +=
-                            `
-                            <div>İletişim Bilgileri</div>
-                            <ul>
-                                ${data.PHONE_NUMBER_1 ? `<li><b>Telefon 1:</b>${data.PHONE_NUMBER_1}</li>` : ""}
-                                ${data.PHONE_NUMBER_2 ? `<li><b>Telefon 2:</b>${data.PHONE_NUMBER_2}</li>` : ""}
-                            </ul>
-                            `
-                    }
-                    requestBox +=
-                    `
-                    <div>Açıklama</div>
-                    <div>${data.USER_NOTE}</div>
-                    <div>${ConvertDate(data.CREATED_DATE)}</div>
-                </div>
-                `
-                document.querySelector(".container").innerHTML += requestBox
-            })
-        }
-    })
-</script>
+    getMyRequest(1)
 
+    function getMyRequest(page) {
+        $.ajax({
+            url: "/Home/MyRequests_",
+            contentType: false,
+            type: "POST",
+            beforeSend: function () {
+                document.querySelector("#my-request-loading").classList.remove("hidden")
+            },
+            success: function (data) {
+                document.querySelector("#my-request-loading").classList.add("hidden")
+                if (data.length == 0) {
+                    document.querySelector(".container").innerHTML =
+                        `
+                        <div class="align-center b fs-14 mb10">Henüz bir talepte bulunmamışsınız.</div>
+                        <div class="align-center"><button id="go-to-request" class="btn btn-main btn-blue">Talep Oluştur</button></div>
+                    `
+                    document.querySelector("#go-to-request").addEventListener("click", function () {
+                        window.location = "/Home/Index"
+                    })
+                }
+                data.forEach(data => {
+                    let color = ""
+                    if (data.STATUS_NAME == "Onaylandı") {
+                        color = "green"
+                    } else if (data.STATUS_NAME == "Reddedildi") {
+                        color = "red"
+                    }
+                    else if (data.STATUS_NAME == "Onay Bekliyor") {
+                        color = "yellow"
+                    }
+                    var requestBox =
+                        `
+                    <div class="request-box fs-14 white-box">
+                        <div class="p5">
+                            <div class="status ${color}">${data.STATUS_NAME}</div>
+                            
+                            <div class="line mt10">
+                                <div class="flex h-stretch-100"><div class="p7"><b>Ülke: </b>${data.COUNTRY}</div> <div class="p7"><b> Şehir: </b>${data.DISTRICT}</div></div>
+                                <div class="p7"><b>Adres: </b>${data.ADDRESS}</div>
+                            </div>
+                            
+                            <div class="line mt10">
+                                <div class="flex h-stretch-100"><div class="p7"><b>Ülke: </b>${data.NUMBER_OF_FLOORS}</div> <div class="p7"><b> Şehir: </b>${data.YEAR_OF_CONSTRUCTION}</div></div>
+                            </div>
+                            <div class="request-button-container mt10"><button class="request-btn">Daha Fazla Bilgi</button></div>
+                        </div>
+                    </div>
+                    <div class="seperator"></div>
+                    `
+                    document.querySelector(".container").innerHTML += requestBox
+                })
+            },
+            error: function () {
+                document.querySelector(".container").innerHTML = `<div class="align-center tx-red">Talebleriniz gösterilirken bir hata oluştu.<div>`
+            }
+        })
+    }
+
+    
+
+    
+</script>

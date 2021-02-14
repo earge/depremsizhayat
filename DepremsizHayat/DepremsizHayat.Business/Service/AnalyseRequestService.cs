@@ -121,7 +121,7 @@ namespace DepremsizHayat.Business.Service
                 DELETED=false,
                 ACTIVE=true,
                 USER_ANALYSE_REQ_STATUS_CODE="",
-                USER_ACCOUNT_ID=""
+                //USER_ACCOUNT_ID=""
             };
             //ANALYSE_REQUEST_ANSWER answerRecord = new ANALYSE_REQUEST_ANSWER()
             //{
