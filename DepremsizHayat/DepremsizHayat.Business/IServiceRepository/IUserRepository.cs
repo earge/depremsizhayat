@@ -22,5 +22,6 @@ namespace DepremsizHayat.Business.IServiceRepository
         USER_ACCOUNT GetRandomExpertForAnalyse();
         bool ResetPassword(string mail, string pwd);
         List<USER_ACCOUNT> GetAdmins();
+
     }
 }

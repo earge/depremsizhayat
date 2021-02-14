@@ -113,6 +113,16 @@ namespace DepremsizHayat.Business.Service
             ANALYSE_REQUEST current = _analyseRequestRepository.GetById(request.ANALYSIS_REQUEST_ID);
             current.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Accepted).STATUS_ID;
             _analyseRequestRepository.Update(current);
+            List<USER_ACCOUNT> availableExperts = new List<USER_ACCOUNT>();
+            USER_ANALYSE_REQUEST requestAssignmentOffer = new USER_ANALYSE_REQUEST()
+            {
+                ANALYSE_REQUEST_ID=request.ANALYSIS_REQUEST_ID,
+                CREATED_DATE=DateTime.Now,
+                DELETED=false,
+                ACTIVE=true,
+                USER_ANALYSE_REQ_STATUS_CODE="",
+                USER_ACCOUNT_ID=""
+            };
             //ANALYSE_REQUEST_ANSWER answerRecord = new ANALYSE_REQUEST_ANSWER()
             //{
             //    CREATED_DATE = DateTime.Now,
