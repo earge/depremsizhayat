@@ -160,5 +160,10 @@ namespace DepremsizHayat.Business.ServiceRepository
             }
             return false;
         }
+
+        public List<USER_ACCOUNT> GetAdmins()
+        {
+            return _dbContext.USER_ACCOUNT.Where(p => p.ROLE.NAME == Resources.RoleCodes.Admin).ToList();
+        }
     }
 }

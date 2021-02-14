@@ -9,9 +9,6 @@ using DepremsizHayat.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DepremsizHayat.Business;
 using DepremsizHayat.DTO.User;
 
 namespace DepremsizHayat.Business.Service
@@ -23,17 +20,20 @@ namespace DepremsizHayat.Business.Service
         private IStatusRepository _statusRepository;
         private IAnalyseRequestAnswerRepository _analyseRequestAnswerRepository;
         private IUnitOfWork _unitOfWork;
+        private IMailRepository _mailRepository;
         public AnalyseRequestService(IAnalyseRequestRepository analyseRequestRepository,
             IUserRepository userRepository,
             IUnitOfWork unitOfWork,
             IStatusRepository statusRepository,
-            IAnalyseRequestAnswerRepository analyseRequestAnswerRepository)
+            IAnalyseRequestAnswerRepository analyseRequestAnswerRepository,
+            IMailRepository mailRepository)
         {
             this._analyseRequestRepository = analyseRequestRepository;
             this._userRepository = userRepository;
             this._statusRepository = statusRepository;
             this._analyseRequestAnswerRepository = analyseRequestAnswerRepository;
             this._unitOfWork = unitOfWork;
+            this._mailRepository = mailRepository;
         }
         public List<AnalyseRequest> GetAllRequests()
         {
@@ -74,9 +74,9 @@ namespace DepremsizHayat.Business.Service
                     STATUS_NAME = _statusRepository.GetById(analyse.STATUS.STATUS_ID).NAME,
                     USER_ACCOUNT_ID = analyse.USER_ACCOUNT_ID.ToString(),
                     YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION,
-                    CREATED_DATE=analyse.CREATED_DATE.ToLocalTime(),
-                    PHONE_NUMBER_1=analyse.PHONE_NUMBER_1,
-                    PHONE_NUMBER_2=analyse.PHONE_NUMBER_2
+                    CREATED_DATE = analyse.CREATED_DATE.ToLocalTime(),
+                    PHONE_NUMBER_1 = analyse.PHONE_NUMBER_1,
+                    PHONE_NUMBER_2 = analyse.PHONE_NUMBER_2
                 };
                 request.Add(dummy);
             }
@@ -87,6 +87,12 @@ namespace DepremsizHayat.Business.Service
             BaseResponse response = new BaseResponse();
             if (_analyseRequestRepository.Add(request) != null)
             {
+                var requester = _userRepository.GetById(request.USER_ACCOUNT_ID);
+                var body = request.CREATED_DATE.ToShortDateString() + " tarihli yeni bir analiz talebi var. Talep sahibi: " + requester.FIRST_NAME + " " + requester.LAST_NAME + "(" + requester.E_MAIL + ")";
+                foreach (USER_ACCOUNT admin in _userRepository.GetAdmins())
+                {
+                    _mailRepository.SendMail("app", admin.E_MAIL, "Bir yeni analiz talebi var", body);
+                }
                 response.Status = true;
                 response.Message.Add("Analiz talebi gönderildi.");
             }
@@ -161,12 +167,12 @@ namespace DepremsizHayat.Business.Service
             DataAccess.ANALYSE_REQUEST thatRequest = _analyseRequestRepository.GetById(decryptedId);
             AnalyseDetailRequest detail = new AnalyseDetailRequest()
             {
-                ANALYSIS_REQUEST_ID=Convert.ToString(thatRequest.ANALYSIS_REQUEST_ID),
-                ADDRESS=thatRequest.ADDRESS,
-                CREATED_DATE=thatRequest.CREATED_DATE.ToLocalTime(),
-                PHONE_NUMBER_1=thatRequest.PHONE_NUMBER_1,
-                PHONE_NUMBER_2=thatRequest.PHONE_NUMBER_2,
-                USER_NOTE=thatRequest.USER_NOTE
+                ANALYSIS_REQUEST_ID = Convert.ToString(thatRequest.ANALYSIS_REQUEST_ID),
+                ADDRESS = thatRequest.ADDRESS,
+                CREATED_DATE = thatRequest.CREATED_DATE.ToLocalTime(),
+                PHONE_NUMBER_1 = thatRequest.PHONE_NUMBER_1,
+                PHONE_NUMBER_2 = thatRequest.PHONE_NUMBER_2,
+                USER_NOTE = thatRequest.USER_NOTE
             };
             return detail;
         }
@@ -174,7 +180,7 @@ namespace DepremsizHayat.Business.Service
         {
             BaseResponse response = new BaseResponse();
             ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(Decryptor.DecryptInt(request.ANALYSIS_REQUEST_ID));
-            if (request.ADDRESS==analyse.ADDRESS)
+            if (request.ADDRESS == analyse.ADDRESS)
             {
                 response.Message.Add("Adresler aynı.");
             }
@@ -210,7 +216,7 @@ namespace DepremsizHayat.Business.Service
                 response.Message.Add("Açıklama güncellendi.");
                 analyse.USER_NOTE = request.USER_NOTE;
             }
-            response.Status = (response.Message.Count == 0) ? true : false;   
+            response.Status = (response.Message.Count == 0) ? true : false;
             _unitOfWork.Commit();
             return response;
         }

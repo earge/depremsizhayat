@@ -1,0 +1,79 @@
+﻿@using DepremsizHayat.DTO.Admin;
+@using DepremsizHayat.DTO;
+@model PaginationModel<AnalyseRequest>
+@{
+    ViewBag.Title = "Talepler";
+    Layout = "~/Views/Panel/Shared/Layout_.cshtml";
+}
+<input type="hidden" id="totalCount" value="@Model.DataCount">
+<input type="hidden" id="dataPerPage" value="@Model.DataPerPage">
+<script src="~/Content/js/pagination.js"></script>
+<script src="~/Content/js/CheckBox.js"></script>
+<script src="~/Content/js/prompt.js"></script>
+<section class="content mt-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Talep Listesi</h3>
+                </div>
+                <div class="card-body">
+                    <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
+                            <div class="col-sm-12">
+                                <div style="display:flex;margin-bottom:10px;"><ro-checkbox group="request" toggle></ro-checkbox>Tümünü Seç</div>
+                                <div>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Seç</th>
+                                                <th>Ad Soyad</th>
+                                                <th>Adres</th>
+                                                <th>Bina</th>
+                                                <th>Durum</th>
+                                                <th>Detay</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody @*id="requestsTable"*@>
+                                            @foreach (AnalyseRequest analyse in Model.DataList)
+                                            {
+                                            <tr>
+                                                <td><ro-checkbox group="request" value="@analyse.ANALYSIS_REQUEST_ID" data-status="@analyse.STATUS_ID"></td>
+                                                <td>@analyse.FIRST_NAME @analyse.LAST_NAME</td>
+                                                <td>
+                                                    <div>
+                                                        <b>Ülke: </b>@analyse.COUNTRY<br>
+                                                        <b>Şehir: </b>@analyse.DISTRICT<br>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <b>Kat Sayısı: </b>@analyse.NUMBER_OF_FLOORS<br>
+                                                        <b>Yapım Yılı: </b>@analyse.YEAR_OF_CONSTRUCTION<br>
+                                                    </div>
+                                                </td>
+                                                <td>@analyse.STATUS_NAME</td>
+                                                <td><button class="btn btn-primary detailButton" data-analyse-id="@analyse.ANALYSIS_REQUEST_ID">Detay</button></td>
+                                            </tr>
+                                        }
+                                            </tbody>
+                                        </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="pagination" data-content-perpage="@Model.DataPerPage" data-content-count="@Model.DataCount"></div>
+                        <button type="button" id="allow" class="btn btn-success">Seçilenleri Onayla</button>
+                        <button type="button" id="deny" class="btn btn-danger">Seçilenleri Reddet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Content/js/requestControl.js"></script>
+@Html.Partial("Shared/_StatusPartial")
+<script>
+    pagination("pagination", "/Panel/Requests")
+</script>
+

@@ -5,7 +5,6 @@ using DepremsizHayat.Security;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -32,27 +31,26 @@ namespace DepremsizHayat.App.Controllers
             FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
             return _userService.GetByMail(ticket.Name);
         }
-        [Authorize(Roles = "SystemAdmin,User,Expert")]
         public ActionResult Index()
         {
             return View();
         }
-        FormsAuthenticationTicket GetTicket()
-        {
-            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-            return FormsAuthentication.Decrypt(authCookie.Value);
-        }
+        //private FormsAuthenticationTicket GetTicket()
+        //{
+        //    HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+        //    return FormsAuthentication.Decrypt(authCookie.Value);
+        //}
         public ActionResult Name()
         {
-            return Content(_userService.GetByMail(GetTicket().Name).FIRST_NAME);
+            return Content(CurrentUser().FIRST_NAME);
         }
         public ActionResult Surname()
         {
-            return Content(_userService.GetByMail(GetTicket().Name).LAST_NAME);
+            return Content(CurrentUser().LAST_NAME);
         }
         public ActionResult Mail()
         {
-            return Content(_userService.GetByMail(GetTicket().Name).E_MAIL);
+            return Content(CurrentUser().E_MAIL);
         }
         public ActionResult SendAnalyseRequest()
         {
@@ -62,7 +60,7 @@ namespace DepremsizHayat.App.Controllers
                 try
                 {
                     int totalContentLength=0;
-                    System.Web.HttpFileCollectionBase files = Request.Files;
+                    HttpFileCollectionBase files = Request.Files;
                     for (int i = 0; i < files.Count; i++)
                     {
                         HttpPostedFileBase file = files[i];
@@ -76,7 +74,6 @@ namespace DepremsizHayat.App.Controllers
                         file.SaveAs(fname);
                         totalContentLength = totalContentLength + file.ContentLength;
                     }
-                    //Response.AddHeader("Content-Length", totalContentLength.ToString());
                     DataAccess.ANALYSE_REQUEST request = new DataAccess.ANALYSE_REQUEST()
                     {
                         ADDRESS = Request.Form["address"],

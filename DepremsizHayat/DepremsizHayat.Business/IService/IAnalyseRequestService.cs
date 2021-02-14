@@ -1,12 +1,7 @@
-﻿using DepremsizHayat.DataAccess;
-using DepremsizHayat.DTO;
+﻿using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
 using DepremsizHayat.DTO.User;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DepremsizHayat.Business.IService
 {

@@ -1,0 +1,62 @@
+﻿@using DepremsizHayat.DTO.Admin;
+@using DepremsizHayat.DTO;
+@model PaginationModel<AnalyseRequest>
+@{
+    ViewBag.Title = "ExpertRequests";
+    Layout = "~/Views/Panel/Shared/Layout_.cshtml";
+}
+<script src="~/Content/js/pagination.js"></script>
+<section class="content mt-2">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Talep Listesi</h3>
+                </div>
+                <div class="card-body">
+                    <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
+                            <div class="col-sm-12">
+                                <div>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Ad Soyad</th>
+                                                <th>Adres</th>
+                                                <th>Bina</th>
+                                                <th>Durum</th>
+                                                <th>Detay</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (AnalyseRequest analyse in Model.DataList)
+                                            {
+                                                <tr>
+                                                    <td>@analyse.FIRST_NAME @analyse.LAST_NAME</td>
+                                                    <td>@analyse.COUNTRY @analyse.DISTRICT</td>
+                                                    <td>@analyse.NUMBER_OF_FLOORS @analyse.YEAR_OF_CONSTRUCTION</td>
+                                                    <td>@analyse.STATUS_NAME</td>
+                                                    <td>BURAYA USER NOTE GELECEK</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="pagination" data-content-count="@Model.DataCount" data-content-perpage="@Model.DataPerPage"></div>
+                        <button type="button" id="allow" class="btn btn-success">Seçilenleri Onayla</button>
+                        <button type="button" id="deny" class="btn btn-danger">Seçilenleri Reddet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@Html.Partial("Shared/_StatusPartial")
+<script>
+    pagination("pagination", "/Panel/ExpertRequests")
+</script>
+
+
+
