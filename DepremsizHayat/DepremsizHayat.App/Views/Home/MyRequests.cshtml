@@ -11,28 +11,7 @@
         <div class="free-spinner"></div>
     </div>
     <div class="container">
-        <div class="request-box">
-            <div>Durum</div>
-            <div>Adres Bilgileri</div>
-            <ul>
-                <li><b>Ülke: </b></li>
-                <li><b>Şehir: </b></li>
-                <li><b>Adres: </b></li>
-            </ul>
-            <div>Bina Bilgileri</div>
-            <ul>
-                <li><b>Kat Sayısı: </b></li>
-                <li><b>Yapım Yılı: </b></li>
-            </ul>
-            <div>İletişim Bilgileri</div>
-            <ul>
-                <li><b>Telefon 1:</b></li>
-                <li><b>Telefon 2:</b></li>
-            </ul>
-            <div>Açıklama</div>
-            <div>Açıklama Metni</div>
-            <div>Tarih</div>
-        </div>
+        
         @*<div class="white-box">
                 <div class="top-header p15">Taleplerim</div>
                 <div class="p15">
@@ -163,20 +142,61 @@
         animation: spin .7s linear infinite;
     }
 
+    .container{
+        padding-top:50px !important;
+    }
+
+    .request-box{
+        margin:0px !important;
+        padding:5px;
+    }
+
+    .request-box:not(:last-child) {
+       margin-bottom:10px !important;
+    }
+
+    .request-box .status{
+        font-size:12px;
+        font-weight:bold;
+        text-align:right;
+        padding:3px 10px;
+        color:white;
+        border-radius:10px;
+    }
+
+    .request-box .status.green{
+        background-color:var(--color-green)
+    }
+        .request-box .status.yellow {
+            background-color: var(--color-yellow)
+        }
+        .request-box .status.red {
+            background-color: var(--color-red)
+        }
 </style>
 
 <script>
+
     $.ajax({
         url: "/Home/MyRequests_",
         contentType: false,
         type: "POST",
         success: function (data) {
             data.forEach(data => {
-                var requestBox = 
+                let color = ""
+                if (data.STATUS_NAME == "Onaylandı") {
+                    color = "green"
+                } else if (data.STATUS_NAME == "Reddedildi") {
+                    color = "red"
+                }
+                else if (data.STATUS_NAME == "Onay Bekliyor") {
+                    color = "yellow"
+                }
+                var requestBox =
                  `
-                <div class="request-box">
-                    <div>${data.STATUS_NAME}</div>
-                    <div>Adres Bilgileri</div>
+                <div class="request-box white-box">
+                    <div class="status ${color}">${data.STATUS_NAME}</div>
+                    <div class="pl5 b fs-14">Adres Bilgileri</div>
                     <ul>
                         <li><b>Ülke: </b>${data.COUNTRY}</li>
                         <li><b>Şehir: </b>${data.DISTRICT}</li>
@@ -187,18 +207,26 @@
                         <li><b>Kat Sayısı: </b>${data.NUMBER_OF_FLOORS}</li>
                         <li><b>Yapım Yılı: </b>${data.YEAR_OF_CONSTRUCTION}</li>
                     </ul>
-                    <div>İletişim Bilgileri</div>
-                    <ul>
-                        <li><b>Telefon 1:</b>${data.PHONE_NUMBER_1}</li>
-                        <li><b>Telefon 2:</b>${data.PHONE_NUMBER_2}</li>
-                    </ul>
+                    `
+                    if (data.PHONE_NUMBER_1 || data.PHONE_NUMBER_2) {
+                        requestBox +=
+                            `
+                            <div>İletişim Bilgileri</div>
+                            <ul>
+                                ${data.PHONE_NUMBER_1 ? `<li><b>Telefon 1:</b>${data.PHONE_NUMBER_1}</li>` : ""}
+                                ${data.PHONE_NUMBER_2 ? `<li><b>Telefon 2:</b>${data.PHONE_NUMBER_2}</li>` : ""}
+                            </ul>
+                            `
+                    }
+                    requestBox +=
+                    `
                     <div>Açıklama</div>
                     <div>${data.USER_NOTE}</div>
-                    <div>${data.CREATED_DATE}</div>
+                    <div>${ConvertDate(data.CREATED_DATE)}</div>
                 </div>
                 `
                 document.querySelector(".container").innerHTML += requestBox
-            })    
+            })
         }
     })
 </script>

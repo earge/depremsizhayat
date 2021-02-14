@@ -36,8 +36,8 @@ requestButton.addEventListener("click", function (event) {
     }
 
     if (images.length == 0) { requestErrorImage.classList.remove("hidden") }
-    else if (year.value == -1) { requestErrorYear.classList.remove("hidden") }
-    else if (floor.value == -1) { requestErrorFloor.classList.remove("hidden") }
+    else if (year.value == "" || parseInt(year.value) < 1500 || parseInt(year.value) > (new Date).getFullYear()) { requestErrorYear.classList.remove("hidden") }
+    else if (floor.value == "" || parseInt(floor.value) < 0) { requestErrorFloor.classList.remove("hidden") }
     else if (country.value == -1) { requestErrorCountry.classList.remove("hidden") }
     else if (district.value == -1) { requestErrorDistrict.classList.remove("hidden") }
     else if (address.value.trim().length == 0) { requestErrorAddress.classList.remove("hidden") }
@@ -88,8 +88,8 @@ requestButton.addEventListener("click", function (event) {
 function resetForm() {
     phone1.value = ""
     phone2.value = ""
-    year.value = -1
-    floor.value = -1
+    year.value = ""
+    floor.value = ""
     country.value = -1
     district.value = -1
     address.value = ""
@@ -103,7 +103,7 @@ function resetForm() {
     setTimeout(function () { document.querySelector("#analyseJsonInfo").classList.add("hidden") }, 6000)
 }
 
-year.addEventListener("change", function () { requestErrorYear.classList.add("hidden") })
+year.addEventListener("keypress", function () { requestErrorYear.classList.add("hidden") })
 floor.addEventListener("change", function () { requestErrorFloor.classList.add("hidden") })
 country.addEventListener("change", function () { requestErrorCountry.classList.add("hidden") })
 district.addEventListener("change", function () { requestErrorDistrict.classList.add("hidden") })
