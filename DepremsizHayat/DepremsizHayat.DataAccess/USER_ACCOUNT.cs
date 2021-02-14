@@ -34,7 +34,7 @@ namespace DepremsizHayat.DataAccess
         [DefaultValue(null)]
         public Nullable<DateTime> LAST_ANSWER_DATE { get; set; }
         public Nullable<int> MAX_COUNT_REQUEST { get; set; }
-        public Nullable<int> COUNT_ANSWER { get; set; }
+        public Nullable<int> TOTAL_COUNT_ANSWER { get; set; }
         [MaxLength(50)]
         public string HASH_HELPER { get; set; }
         [MaxLength(100)]
@@ -42,6 +42,8 @@ namespace DepremsizHayat.DataAccess
         [DefaultValue(null)]
         public Nullable<DateTime> PASSWORD_RESET_REQUEST_TIME { get; set; }
         public Nullable<bool> PASSWORD_RESET_IS_USED { get; set; }
+        [MaxLength(20)]
+        public string PHONE_NUMBER { get; set; }
         public virtual ROLE ROLE { get; set; }
 
     }

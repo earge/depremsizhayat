@@ -29,5 +29,7 @@ namespace DepremsizHayat.DataAccess
         public virtual DbSet<ROLE> ROLE { get; set; }
         public virtual DbSet<STATUS> STATUS { get; set; }
         public virtual DbSet<USER_ACCOUNT> USER_ACCOUNT { get; set; }
+        public virtual DbSet<USER_ANALYSE_REQUEST> USER_ANALYSE_REQUEST { get; set; }
+        public virtual DbSet<USER_ANALYSE_REQUEST_STATUS> USER_ANALYSE_REQUEST_STATUS { get; set; }
     }
 }
