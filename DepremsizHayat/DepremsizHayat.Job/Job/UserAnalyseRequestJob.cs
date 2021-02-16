@@ -12,9 +12,12 @@ namespace DepremsizHayat.Job.Job
     public class UserAnalyseRequestJob : IJob
     {
         private IUserAnalyseRequestService _userAnalyseRequestService;
-        public UserAnalyseRequestJob(IUserAnalyseRequestService userAnalyseRequestService)
+        private IUserService _userService;
+        public UserAnalyseRequestJob(IUserAnalyseRequestService userAnalyseRequestService,
+            IUserService userService)
         {
             this._userAnalyseRequestService = userAnalyseRequestService;
+            this._userService = userService;
         }
         public Task Execute(IJobExecutionContext context)
         {
@@ -23,6 +26,22 @@ namespace DepremsizHayat.Job.Job
                 if (DateTime.Now > ((DateTime)waiting.CREATED_DATE).AddDays(1))
                 {
                     _userAnalyseRequestService.CancelRequest(waiting.USER_ANALYSE_REQUEST_ID);
+                }
+            }
+            foreach (USER_ANALYSE_REQUEST accepted in _userAnalyseRequestService.GetAcceptedRequests())
+            {
+                if (DateTime.Now > ((DateTime)accepted.CREATED_DATE).AddDays(2))
+                {
+                    _userAnalyseRequestService.CancelRequest(accepted.USER_ANALYSE_REQUEST_ID);
+                }
+            }
+            foreach (USER_ANALYSE_REQUEST queue in _userAnalyseRequestService.GetAtQueue())
+            {
+                var expert = _userService.GetRandomExpertForAnalyse(null);
+                if (expert != null)
+                {
+                    _userAnalyseRequestService.OfferAssignment((int)queue.ANALYSE_REQUEST_ID, expert, queue);
+                    //_userAnalyseRequestService.UpdateQueue(queue.USER_ANALYSE_REQUEST_ID);
                 }
             }
             return Task.CompletedTask;

@@ -21,14 +21,17 @@ namespace DepremsizHayat.Business.Service
     {
         private IUserRepository _userRepository;
         private IMailRepository _mailRepository;
+        private IUserAnalyseRequestRepository _userAnalyseRequestRepository;
         private IUnitOfWork _unitOfWork;
         public UserService(IUserRepository userRepository,
             IUnitOfWork unitOfWork,
-            IMailRepository mailRepository)
+            IMailRepository mailRepository,
+            IUserAnalyseRequestRepository userAnalyseRequestRepository)
         {
             this._userRepository = userRepository;
             this._mailRepository = mailRepository;
             this._unitOfWork = unitOfWork;
+            this._userAnalyseRequestRepository = userAnalyseRequestRepository;
         }
         public bool Activate(string actCode, string mail)
         {
@@ -148,6 +151,12 @@ namespace DepremsizHayat.Business.Service
         {
             return _userRepository.GetByResetAuth(authCode);
         }
+
+        public USER_ACCOUNT GetRandomExpertForAnalyse(int? alreadyAssigned)
+        {
+            return _userAnalyseRequestRepository.GetRandomExpertForAnalyse(alreadyAssigned);
+        }
+
         public bool Login(string mail, string pwd)
         {
             bool result = false;

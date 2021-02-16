@@ -14,5 +14,8 @@ namespace DepremsizHayat.Business.IServiceRepository
         List<USER_ANALYSE_REQUEST> GetExpertsWaitingRequests(int expertId);
         List<USER_ANALYSE_REQUEST> GetExpertsNotAnsweredRequests(int expertId);
         List<USER_ANALYSE_REQUEST> GetByAnalyseRequestId(int analyseRequestId);
+        void AddToQueue(ANALYSE_REQUEST analyse);
+        void OfferAssignment(int analyseRequestId, USER_ACCOUNT expert, USER_ANALYSE_REQUEST queue);
+        USER_ACCOUNT GetRandomExpertForAnalyse(int? alreadyAssigned);
     }
 }

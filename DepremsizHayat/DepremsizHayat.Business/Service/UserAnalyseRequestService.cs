@@ -35,7 +35,7 @@ namespace DepremsizHayat.Business.Service
             foreach (USER_ANALYSE_REQUEST expert in list)
             {
                 var userRequest = _analyseRequestRepository.GetById((int)expert.ANALYSE_REQUEST_ID);
-                var dummy = new ExpertWaitingAnalyseRequest()
+                request.Add(new ExpertWaitingAnalyseRequest()
                 {
                     ACTIVE = true,
                     ANALYSE_REQUEST_ID = Convert.ToString(expert.ANALYSE_REQUEST_ID),
@@ -45,8 +45,7 @@ namespace DepremsizHayat.Business.Service
                     ANALYSE_REQUEST = userRequest,
                     REQUESTER_USER = _userRepository.GetById(userRequest.USER_ACCOUNT_ID),
                     USER_ANALYSE_REQUEST_ID = Convert.ToString(expert.USER_ANALYSE_REQUEST_ID)
-                };
-                request.Add(dummy);
+                });
             }
             return request;
         }
@@ -57,7 +56,7 @@ namespace DepremsizHayat.Business.Service
             foreach (USER_ANALYSE_REQUEST expert in list)
             {
                 var userRequest = _analyseRequestRepository.GetById((int)expert.ANALYSE_REQUEST_ID);
-                var dummy = new ExpertNotAnsweredRequest()
+                request.Add(new ExpertNotAnsweredRequest()
                 {
                     ACTIVE = true,
                     ANALYSE_REQUEST_ID = Convert.ToString(expert.ANALYSE_REQUEST_ID),
@@ -66,8 +65,7 @@ namespace DepremsizHayat.Business.Service
                     STATUS = expert.USER_ANALYSE_REQUEST_STATUS,
                     ANALYSE_REQUEST = userRequest,
                     REQUESTER_USER = _userRepository.GetById(userRequest.USER_ACCOUNT_ID)
-                };
-                request.Add(dummy);
+                });
             }
             return request;
         }
@@ -103,10 +101,47 @@ namespace DepremsizHayat.Business.Service
         }
         public void CancelRequest(int id)
         {
-            var req = _userAnalyseRequestRepository.GetById(id);
-            req.USER_ANALYSE_REQ_STATUS_CODE = Resources.AnalyseRequestStatusCodes.Canceled;
-            _userAnalyseRequestRepository.Update(req);
-            _analyseRequestRepository.OfferAssignment((int)req.ANALYSE_REQUEST_ID, _userRepository.GetById((int)req.USER_ACCOUNT_ID));
+            var waitingRequest = _userAnalyseRequestRepository.GetById(id);
+            waitingRequest.USER_ANALYSE_REQ_STATUS_CODE = Resources.AnalyseRequestStatusCodes.Canceled;
+            _userAnalyseRequestRepository.Update(waitingRequest);
+            _userAnalyseRequestRepository.OfferAssignment(
+                (int)waitingRequest.ANALYSE_REQUEST_ID,
+                _userRepository.GetById((int)waitingRequest.USER_ACCOUNT_ID),
+                null
+                );
+            _unitOfWork.Commit();
+        }
+
+        public List<USER_ANALYSE_REQUEST> GetAcceptedRequests()
+        {
+            return _userAnalyseRequestRepository
+                 .GetAll()
+                 .Where(p =>
+                 p.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Accepted
+                 )
+                 .ToList();
+        }
+
+        public List<USER_ANALYSE_REQUEST> GetAtQueue()
+        {
+            return _userAnalyseRequestRepository
+                .GetAll()
+                .Where(p =>
+                p.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Queue
+                )
+                .ToList();
+        }
+
+        public void OfferAssignment(int analyseRequestId, USER_ACCOUNT expert, USER_ANALYSE_REQUEST queue)
+        {
+            _userAnalyseRequestRepository.OfferAssignment(analyseRequestId, expert, queue);
+        }
+
+        public void UpdateQueue(int id)
+        {
+            var outOfQueue = _userAnalyseRequestRepository.GetById(id);
+            outOfQueue.USER_ANALYSE_REQ_STATUS_CODE = Resources.AnalyseRequestStatusCodes.Waiting;
+            _userAnalyseRequestRepository.Update(outOfQueue);
             _unitOfWork.Commit();
         }
     }

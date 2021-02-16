@@ -126,6 +126,9 @@
   <data name="Denied" xml:space="preserve">
     <value>DENIED</value>
   </data>
+  <data name="Queue" xml:space="preserve">
+    <value>QUEUE</value>
+  </data>
   <data name="Waiting" xml:space="preserve">
     <value>WAITING</value>
   </data>

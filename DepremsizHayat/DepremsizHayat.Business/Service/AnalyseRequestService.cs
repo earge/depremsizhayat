@@ -114,19 +114,26 @@ namespace DepremsizHayat.Business.Service
                 .Where(p => p.STATUS.STATUS_CODE == StatusCodes.WaitingAdminConfirmation)
                 .ToList();
         }
-        public void ConfirmPendingRequest(DataAccess.ANALYSE_REQUEST request)
+        public void ConfirmPendingRequest(ANALYSE_REQUEST request)
         {
             ANALYSE_REQUEST current = _analyseRequestRepository.GetById(request.ANALYSIS_REQUEST_ID);
             current.STATUS_ID = _statusRepository.GetByCode(StatusCodes.WaitingExpertConfirmation).STATUS_ID;
             _analyseRequestRepository.Update(current);
-            var expert = _userRepository.GetRandomExpertForAnalyse(null);
-            _analyseRequestRepository.OfferAssignment(request.ANALYSIS_REQUEST_ID, expert);
-            var requester = _userRepository.GetById(request.USER_ACCOUNT_ID);
-            string body = requester.FIRST_NAME + " " + requester.LAST_NAME + " tarafından gönderilmiş yeni bir talebiniz var. Onaylamak ya da reddetmek için tıklayın:" + "Bir yanıt vermemeniz durumunda talep 24 saat içinde otomatik olarak başka bir uzmana atanacaktır.";
-            _mailRepository.SendMail("app", expert.E_MAIL, "Bir yeni analiz talebiniz var.", body);
+            var expert = _userAnalyseRequestRepository.GetRandomExpertForAnalyse(null);
+            if (expert != null)
+            {
+                _userAnalyseRequestRepository.OfferAssignment(request.ANALYSIS_REQUEST_ID, expert, null);
+                var requester = _userRepository.GetById(request.USER_ACCOUNT_ID);
+                string body = requester.FIRST_NAME + " " + requester.LAST_NAME + " tarafından gönderilmiş yeni bir talebiniz var. Onaylamak ya da reddetmek için tıklayın:" + "Bir yanıt vermemeniz durumunda talep 24 saat içinde otomatik olarak başka bir uzmana atanacaktır.";
+                _mailRepository.SendMail("app", expert.E_MAIL, "Bir yeni analiz talebiniz var.", body);
+            }
+            else
+            {
+                _userAnalyseRequestRepository.AddToQueue(request);
+            }
             _unitOfWork.Commit();
         }
-        
+
         public bool DenyRequests(List<string> requests)
         {
             try
@@ -147,8 +154,8 @@ namespace DepremsizHayat.Business.Service
         }
         public bool AllowRequests(List<string> requests)
         {
-            //try
-            //{
+            try
+            {
                 foreach (string id in requests)
                 {
                     int dummy = Decryptor.DecryptInt(id);
@@ -156,11 +163,11 @@ namespace DepremsizHayat.Business.Service
                     ConfirmPendingRequest(analyse);
                 }
                 return true;
-            //}
-            //catch (Exception)
-            //{
-            //    return false;
-            //}
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public AnalyseDetailRequest GetDetailRequest(string id)
         {

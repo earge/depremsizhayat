@@ -25,6 +25,7 @@ namespace DepremsizHayat.Business.IService
         bool UpdateUserRole(EditRoleRequest request);
         USER_ACCOUNT GetById(int id);
         BaseResponse EditProfile(EditProfileRequest request);
+        USER_ACCOUNT GetRandomExpertForAnalyse(int? alreadyAssigned);
 
     }
 }
