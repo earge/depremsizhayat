@@ -123,6 +123,9 @@
   <data name="Denied" xml:space="preserve">
     <value>denied</value>
   </data>
+  <data name="Sent" xml:space="preserve">
+    <value>sent</value>
+  </data>
   <data name="WaitingAdminConfirmation" xml:space="preserve">
     <value>waitingadmconf</value>
   </data>

@@ -79,7 +79,8 @@ namespace DepremsizHayat.Business.Service
                     YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION,
                     CREATED_DATE = analyse.CREATED_DATE.ToLocalTime(),
                     PHONE_NUMBER_1 = analyse.PHONE_NUMBER_1,
-                    PHONE_NUMBER_2 = analyse.PHONE_NUMBER_2
+                    PHONE_NUMBER_2 = analyse.PHONE_NUMBER_2,
+                    STATUS_CODE = analyse.STATUS.STATUS_CODE
                 };
                 request.Add(dummy);
             }

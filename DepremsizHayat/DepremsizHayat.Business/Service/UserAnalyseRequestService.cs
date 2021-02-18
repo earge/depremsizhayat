@@ -18,15 +18,18 @@ namespace DepremsizHayat.Business.Service
         private IUserAnalyseRequestRepository _userAnalyseRequestRepository;
         private IUserRepository _userRepository;
         private IAnalyseRequestRepository _analyseRequestRepository;
+        private IStatusRepository _statusRepository;
         public UserAnalyseRequestService(IUnitOfWork unitOfWork,
             IUserAnalyseRequestRepository userAnalyseRequestRepository,
             IUserRepository userRepository,
-            IAnalyseRequestRepository analyseRequestRepository)
+            IAnalyseRequestRepository analyseRequestRepository,
+            IStatusRepository statusRepository)
         {
             this._unitOfWork = unitOfWork;
             this._userAnalyseRequestRepository = userAnalyseRequestRepository;
             this._userRepository = userRepository;
             this._analyseRequestRepository = analyseRequestRepository;
+            this._statusRepository = statusRepository;
         }
         public List<ExpertWaitingAnalyseRequest> ExpertNotConfirmedRequests(int expertId)
         {
@@ -78,6 +81,16 @@ namespace DepremsizHayat.Business.Service
                 if (assignedRequest.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Waiting)
                 {
                     assignedRequest.USER_ANALYSE_REQ_STATUS_CODE = type;
+                    var update = _analyseRequestRepository.GetById(requestId);
+                    if (type == Resources.AnalyseRequestStatusCodes.Accepted)
+                    {
+                        update.STATUS_ID = _statusRepository.GetByCode(Resources.StatusCodes.Sent).STATUS_ID;
+                    }
+                    else if (type == Resources.AnalyseRequestStatusCodes.Denied)
+                    {
+                        update.STATUS_ID = _statusRepository.GetByCode(Resources.StatusCodes.Denied).STATUS_ID;
+                    }
+                    _analyseRequestRepository.Update(update);
                     _unitOfWork.Commit();
                 }
                 response.Status = true;
