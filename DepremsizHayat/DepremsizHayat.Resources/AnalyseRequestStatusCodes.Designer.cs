@@ -88,6 +88,15 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to QUEUE.
+        /// </summary>
+        public static string Queue {
+            get {
+                return ResourceManager.GetString("Queue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WAITING.
         /// </summary>
         public static string Waiting {

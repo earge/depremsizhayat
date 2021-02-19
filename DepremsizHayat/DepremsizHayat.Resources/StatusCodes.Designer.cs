@@ -79,6 +79,15 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to sent.
+        /// </summary>
+        public static string Sent {
+            get {
+                return ResourceManager.GetString("Sent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to waitingadmconf.
         /// </summary>
         public static string WaitingAdminConfirmation {

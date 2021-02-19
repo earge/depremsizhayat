@@ -29,24 +29,32 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (ExpertNotAnsweredRequest analyse in Model.DataList)
+                                            @if (Model.DataList.Count > 0)
+                                            {
+                                                foreach (ExpertNotAnsweredRequest analyse in Model.DataList)
+                                                {
+                                                    <tr>
+                                                        <td>@analyse.REQUESTER_USER.FIRST_NAME @analyse.REQUESTER_USER.LAST_NAME</td>
+                                                        <td>@analyse.ANALYSE_REQUEST.COUNTRY @analyse.ANALYSE_REQUEST.DISTRICT</td>
+                                                        <td>@analyse.ANALYSE_REQUEST.NUMBER_OF_FLOORS @analyse.ANALYSE_REQUEST.YEAR_OF_CONSTRUCTION</td>
+                                                        <td>@analyse.STATUS.NAME</td>
+                                                        <td>BURAYA USER NOTE GELECEK</td>
+                                                    </tr>
+                                                }
+                                            }
+                                            else
                                             {
                                                 <tr>
-                                                    <td>@analyse.REQUESTER_USER.FIRST_NAME @analyse.REQUESTER_USER.LAST_NAME</td>
-                                                    <td>@analyse.ANALYSE_REQUEST.COUNTRY @analyse.ANALYSE_REQUEST.DISTRICT</td>
-                                                    <td>@analyse.ANALYSE_REQUEST.NUMBER_OF_FLOORS @analyse.ANALYSE_REQUEST.YEAR_OF_CONSTRUCTION</td>
-                                                    <td>@analyse.STATUS.NAME</td>
-                                                    <td>BURAYA USER NOTE GELECEK</td>
+                                                    <td colspan="5" style="text-align:center">Bir kayıt bulunamadı.</td>
                                                 </tr>
                                             }
+
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                         <div class="row" id="pagination" data-content-count="@Model.DataCount" data-content-perpage="@Model.DataPerPage"></div>
-                        <button type="button" id="allow" class="btn btn-success">Seçilenleri Onayla</button>
-                        <button type="button" id="deny" class="btn btn-danger">Seçilenleri Reddet</button>
                     </div>
                 </div>
             </div>

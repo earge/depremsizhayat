@@ -1,0 +1,51 @@
+﻿@using DepremsizHayat.DTO.Admin;
+@model List<ExpertWaitingAnalyseRequest>
+@{
+    ViewBag.Title = "ExpertNotConfirmedRequests";
+    Layout = "~/Views/Panel/Shared/Layout_.cshtml";
+}
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>Talebi Gönderen</td>
+            <td>Talep Tarihi</td>
+            <td>Talep Detayı</td>
+            <td>İşlem</td>
+        </tr>
+    </thead>
+    <tbody>
+        @{int i = 0;
+            foreach (ExpertWaitingAnalyseRequest waitingRequest in Model)
+            {
+                <tr>
+                    @using (Html.BeginForm("ProcessTheRequest", "Panel", FormMethod.Post, new { id = "processForm_" + i }))
+                    {
+                        <td><input type="hidden" name="type" id="type_@i">@waitingRequest.REQUESTER_USER.FIRST_NAME @waitingRequest.REQUESTER_USER.LAST_NAME</td>
+                        <td>@Html.Hidden("requestId", waitingRequest.USER_ANALYSE_REQUEST_ID, new { id = i })@waitingRequest.ANALYSE_REQUEST.CREATED_DATE</td>
+                        <td>@waitingRequest.ANALYSE_REQUEST.USER_NOTE</td>
+                        <td><button class="accept" type="button" data-form-id="@i">Kabul et</button><button data-form-id="@i" class="deny" type="button">Reddet</button></td>
+                    }
+                </tr>
+                i++;
+            }
+        }
+    </tbody>
+</table>
+
+<script>
+    Array.from(document.querySelectorAll(".accept")).forEach(item => {
+        item.addEventListener("click", function () {
+            var id = item.dataset.formId
+            document.querySelector(`#type_${id}`).value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Accepted"
+            document.querySelector(`#processForm_${id}`).submit()
+        })
+    })
+    Array.from(document.querySelectorAll(".deny")).forEach(item => {
+        item.addEventListener("click", function () {
+            var id = item.dataset.formId
+            document.querySelector(`#type_${id}`).value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Denied"
+            document.querySelector(`#processForm_${id}`).submit()
+        })
+    })
+</script>

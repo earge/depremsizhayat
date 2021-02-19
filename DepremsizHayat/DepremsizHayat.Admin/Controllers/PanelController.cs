@@ -178,9 +178,23 @@ namespace DepremsizHayat.Admin.Controllers
             return View();
         }
         [Authorize(Roles = "Expert")]
-        public ActionResult ExpertNotConfirmedRequests()
+        public ActionResult ExpertNotConfirmedRequests(int? p)
         {
-            return View(_userAnalyseRequestService.ExpertNotConfirmedRequests(CurrentUser().USER_ACCOUNT_ID));
+            int dataPerPage = 15;
+            decimal count = _userAnalyseRequestService.ExpertNotConfirmedRequests(CurrentUser().USER_ACCOUNT_ID).Count;
+            decimal totalPages = Math.Ceiling(count / (decimal)dataPerPage);
+            p = (p != null) ? (int)p : 1;
+            p = (p >= totalPages) ? (int?)totalPages : p;
+            p = (p <= 0) ? 1 : p;
+            List<ExpertWaitingAnalyseRequest> list = new List<ExpertWaitingAnalyseRequest>();
+            list.AddRange(_userAnalyseRequestService.ExpertNotConfirmedRequests(CurrentUser().USER_ACCOUNT_ID).ToPagedList(p ?? 1, dataPerPage));
+            PaginationModel<ExpertWaitingAnalyseRequest> request = new PaginationModel<ExpertWaitingAnalyseRequest>()
+            {
+                DataList = list,
+                DataCount = (int)count,
+                DataPerPage = dataPerPage
+            };
+            return View(request);
         }
         public ActionResult ProcessTheRequest(string requestId, string type)
         {

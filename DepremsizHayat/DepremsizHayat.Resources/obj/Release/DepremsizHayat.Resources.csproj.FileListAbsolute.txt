@@ -7,3 +7,4 @@ C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.R
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.dll
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.pdb
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.AnalyseRequestStatusCodes.resources
+C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.csprojAssemblyReference.cache
