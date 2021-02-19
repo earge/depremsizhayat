@@ -35,9 +35,6 @@
         animation: spin .7s linear infinite;
     }
 
-    .container {
-        padding-top: 40px !important;
-    }
 
     .request-box {
         margin: 0px !important;
@@ -86,30 +83,42 @@
 
     .request-btn {
         border-radius: 5px;
-        background-color: rgb(225, 225, 225);
+        background-color: rgb(235,235,235);
+        color: rgb(50,50,50);
         font-size: 14px;
         border: 0px;
         padding: 5px 10px;
-        font-size:12px;
-        font-weight:bold;
+        font-size: 12px;
+        font-weight: bold;
+        cursor: pointer;
+        outline: none
     }
 
-    .request-button-container{
-        text-align:right;
+        .request-btn:hover {
+            background-color: rgb(230,230,230);
+        }
+
+        .request-btn:active {
+            background-color: rgb(225,225,225);
+        }
+
+    .request-button-container {
+        text-align: right;
     }
 
-    .seperator{
-        height:5px;
-        background-color:rgb(230,230,230);
-        border-radius:5px;
-        width:calc(100% - 40px);
-        margin:20px;
+    .seperator {
+        height: 5px;
+        background-color: rgb(230,230,230);
+        border-radius: 5px;
+        width: calc(100% - 40px);
+        margin: 20px;
     }
 
-    @@media only screen and (max-width:500px){
+    @@media only screen and (max-width:500px) {
         .request-button-container {
             text-align: right;
         }
+
             .request-button-container button {
                 width: 100%;
             }
@@ -129,6 +138,7 @@
                 document.querySelector("#my-request-loading").classList.remove("hidden")
             },
             success: function (data) {
+                var length = data.length
                 document.querySelector("#my-request-loading").classList.add("hidden")
                 if (data.length == 0) {
                     document.querySelector(".container").innerHTML =
@@ -140,9 +150,10 @@
                         window.location = "/Home/Index"
                     })
                 }
-                data.forEach(data => {
+                data.forEach((data, index) => {
+
                     let color = ""
-                    if (data.STATUS_NAME == "Onaylandı") {
+                    if (data.STATUS_NAME == "Uzman Onayı Bekliyor") {
                         color = "green"
                     } else if (data.STATUS_NAME == "Reddedildi") {
                         color = "red"
@@ -152,25 +163,29 @@
                     }
                     var requestBox =
                         `
-                    <div class="request-box fs-14 white-box">
-                        <div class="p5">
-                            <div class="status ${color}">${data.STATUS_NAME}</div>
-                            
-                            <div class="line mt10">
-                                <div class="flex h-stretch-100"><div class="p7"><b>Ülke: </b>${data.COUNTRY}</div> <div class="p7"><b> Şehir: </b>${data.DISTRICT}</div></div>
-                                <div class="p7"><b>Adres: </b>${data.ADDRESS}</div>
+                        <div class="request-box fs-14 white-box">
+                            <div class="p5">
+                                <div class="status ${color}">${data.STATUS_NAME}</div>
+
+                                <div class="line mt10">
+                                    <div class="flex h-stretch-100"><div class="p7"><b>Ülke: </b>${data.COUNTRY}</div> <div class="p7"><b> Şehir: </b>${data.DISTRICT}</div></div>
+                                    <div class="p7"><b>Adres: </b>${data.ADDRESS}</div>
+                                </div>
+
+                                <div class="line mt10">
+                                    <div class="flex h-stretch-100"><div class="p7"><b>Bina Kat Sayısı: </b>${data.NUMBER_OF_FLOORS}</div> <div class="p7"><b>Bina Yapım Yılı: </b>${data.YEAR_OF_CONSTRUCTION}</div></div>
+                                </div>
+                                <div class="request-button-container mt10"><button data-request-id="${data.ANALYSIS_REQUEST_ID}" class="request-btn">Daha Fazla Bilgi</button></div>
                             </div>
-                            
-                            <div class="line mt10">
-                                <div class="flex h-stretch-100"><div class="p7"><b>Ülke: </b>${data.NUMBER_OF_FLOORS}</div> <div class="p7"><b> Şehir: </b>${data.YEAR_OF_CONSTRUCTION}</div></div>
-                            </div>
-                            <div class="request-button-container mt10"><button class="request-btn">Daha Fazla Bilgi</button></div>
                         </div>
-                    </div>
-                    <div class="seperator"></div>
                     `
+                    if (length > 1 && index < length - 1) requestBox += `<div class="seperator"></div>`
                     document.querySelector(".container").innerHTML += requestBox
                 })
+                Array.from(document.querySelectorAll(".request-btn")).forEach(item => {
+                    item.addEventListener("click", function () { getMyRequestDetail(item.dataset.requestId) })
+                })
+
             },
             error: function () {
                 document.querySelector(".container").innerHTML = `<div class="align-center tx-red">Talebleriniz gösterilirken bir hata oluştu.<div>`
@@ -178,4 +193,12 @@
         })
     }
 
+    function getMyRequestDetail(dataRequestId) {
+        let template = document.createElement("template")
+        template.innerHTML = dataRequestId
+        Prompt.show(template)
+    }
+
+
 </script>
+<script src="~/Content/js/prompt.js"></script>
