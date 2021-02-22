@@ -19,5 +19,9 @@ namespace DepremsizHayat.Business.Service
         {
             return _mailRepository.SendMail("app",receiver, subject, body);
         }
+        public string GetMailByCode(string code)
+        {
+            return _mailRepository.GetMailByCode(code);
+        }
     }
 }

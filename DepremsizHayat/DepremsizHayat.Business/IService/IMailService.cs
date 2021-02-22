@@ -9,5 +9,6 @@ namespace DepremsizHayat.Business.IService
     public interface IMailService
     {
         bool SendMail(string receiver, string subject, string body);
+        string GetMailByCode(string code);
     }
 }

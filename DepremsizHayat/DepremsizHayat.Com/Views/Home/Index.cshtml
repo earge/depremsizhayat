@@ -699,31 +699,31 @@
 
                         <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
 
-                        <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+                        <form class="nobottommargin" id="template-contactform" name="template-contactform" action="/Home/SendMail" method="post">
 
                             <div class="form-process"></div>
 
                             <div class="col_half">
-                                <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="sm-form-control border-form-control required" placeholder="Ad" />
+                                <input type="text" id="template-contactform-name" name="name" value="" class="sm-form-control border-form-control required" placeholder="Ad" />
                             </div>
                             <div class="col_half col_last">
-                                <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email sm-form-control border-form-control" placeholder="E-Mail Adresiniz" />
+                                <input type="email" id="template-contactform-email" name="mail" value="" class="required email sm-form-control border-form-control" placeholder="E-Mail Adresiniz" />
                             </div>
 
                             <div class="clear"></div>
 
                             <div class="col_one_third">
-                                <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="sm-form-control border-form-control" placeholder="Telefon" />
+                                <input type="text" id="template-contactform-phone" name="phone" value="" class="sm-form-control border-form-control" placeholder="Telefon" />
                             </div>
 
                             <div class="col_two_third col_last">
-                                <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control border-form-control" placeholder="Konu" />
+                                <input type="text" id="template-contactform-subject" name="subject" value="" class="required sm-form-control border-form-control" placeholder="Konu" />
                             </div>
 
                             <div class="clear"></div>
 
                             <div class="col_full">
-                                <textarea class="required sm-form-control border-form-control" id="template-contactform-message" name="template-contactform-message" rows="7" cols="30" placeholder="Mesajınız"></textarea>
+                                <textarea class="required sm-form-control border-form-control" id="message" name="template-contactform-message" rows="7" cols="30" placeholder="Mesajınız"></textarea>
                             </div>
 
                             <div class="col_full center">

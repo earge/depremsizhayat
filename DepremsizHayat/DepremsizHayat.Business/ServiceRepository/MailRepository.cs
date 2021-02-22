@@ -27,7 +27,7 @@ namespace DepremsizHayat.Business.ServiceRepository
             USER_ACCOUNT receiver = _dbContext.USER_ACCOUNT.FirstOrDefault(p => p.E_MAIL == mailAddress);
             return new MailAddress(mailAddress, receiver.FIRST_NAME + " " + receiver.LAST_NAME);
         }
-        public bool SendMail(string senderCode,string receiverMail, string subject, string body)
+        public bool SendMail(string senderCode, string receiverMail, string subject, string body)
         {
             try
             {
@@ -45,17 +45,21 @@ namespace DepremsizHayat.Business.ServiceRepository
                 {
                     Subject = subject,
                     Body = body,
-                    IsBodyHtml=true
+                    IsBodyHtml = true
                 })
                 {
                     smtp.Send(mess);
                 }
                 return true;
-        }
+            }
             catch (Exception)
             {
                 return false;
             }
-}
+        }
+        public string GetMailByCode(string code)
+        {
+            return _dbContext.E_MAIL_ACCOUNT.FirstOrDefault(p => p.E_MAIL_ACCOUNT_CODE == code).USER_NAME;
+        }
     }
 }
