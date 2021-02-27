@@ -32,9 +32,7 @@ namespace DepremsizHayat.DTO.User
         public string COUNTRY { get; set; }
         public string DISTRICT { get; set; }
         public int NUMBER_OF_FLOORS { get; set; }
-        public string PHONE_NUMBER_1 { get; set; }
-        public string PHONE_NUMBER_2 { get; set; }
         public string STATUS_CODE { get; set; }
-        public DateTime CREATED_DATE { get; set; }
+        public string ADDRESS { get; set; }
     }
 }
