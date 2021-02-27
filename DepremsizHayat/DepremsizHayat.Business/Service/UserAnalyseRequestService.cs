@@ -81,7 +81,8 @@ namespace DepremsizHayat.Business.Service
                 if (assignedRequest.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Waiting)
                 {
                     assignedRequest.USER_ANALYSE_REQ_STATUS_CODE = type;
-                    var update = _analyseRequestRepository.GetById(requestId);
+
+                    var update = _analyseRequestRepository.GetById((int)_userAnalyseRequestRepository.GetById(requestId).ANALYSE_REQUEST_ID);
                     if (type == Resources.AnalyseRequestStatusCodes.Accepted)
                     {
                         update.STATUS_ID = _statusRepository.GetByCode(Resources.StatusCodes.Sent).STATUS_ID;
