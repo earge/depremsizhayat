@@ -13,5 +13,6 @@ namespace DepremsizHayat.Business.IServiceRepository
     {
         bool SendMail(string senderCode, string receiverMail, string subject, string body);
         MailAddress GetMailInfo(string mailAddress);
+        string GetMailByCode(string code);
     }
 }

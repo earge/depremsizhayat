@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,300;1,900&display=swap');
+body{
+    background-color: #f6f6f6;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex.h-stretch{
+    justify-content: center;
+}
+
+.spinner{
+    height: 30px;
+    width: 30px;
+    border-style: solid;
+    border-width: 3px;
+    border-top-color: rgb(0,122,255);
+    border-left-color: rgb(0,122,255);
+    border-right-color: rgb(0,122,255);
+    border-bottom-color: transparent;
+    border-radius: 100%;
+    -webkit-animation: spin .7s linear infinite;
+    -moz-animation: spin .7s linear infinite;
+    -ms-animation: spin .7s linear infinite;
+    -o-animation: spin .7s linear infinite;
+    animation: spin .7s linear infinite;
+}
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+#last-earthquakes{
+    height: 420px;
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width:500px){
+    #last-earthquakes{
+        height: 550px;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+#earthquakes-header{
+    width: 100%;
+    max-width: 900px;
+    padding: 10px;
+    display: flex;
+    align-items: center;    
+}
+.point{
+    display: inline-block;
+    height: 20px;
+    min-width: 20px;
+    width: 20px;
+    background-color:rgb(255,59,48);
+    border-radius: 100%;
+    margin-right: 10px;
+    opacity: 1;
+    animation: blink 1s linear infinite alternate forwards;
+}
+
+@keyframes blink{
+    50%{opacity: 0;}
+}
+.earthquakes-table{
+    border-spacing: 0px;
+    box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    font-size: 12px;
+    width: 100%;
+    flex:1 1 auto;
+    max-width: 900px;
+    margin: 10px;
+}
+
+.earthquakes-table tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+}
+
+.earthquakes-table tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+}
+
+.earthquakes-table td {
+    border-top: 1px solid rgb(230,230,230);
+    height: 25px;
+    padding: 10px;
+    white-space: nowrap;
+}
+.earthquakes-table td:nth-child(2) {
+   width: 100%;
+}
+
+.earthquakes-table td:nth-child(2)>div {
+    font-size: 11px;
+    color:rgb(150,150,150)
+ }
+
+.earthquakes-table tr:nth-child(2n+1) {
+    background-color: rgb(250, 250, 250);
+}
+
+.earthquakes-table tr:last-child td {
+    border-bottom: 3px solid rgb(0,122,255)
+}
+
+.earthquakes-table th {
+    padding: 10px;
+    background-color: rgb(0,122,255);
+    color: white;
+    text-align: left;
+}
+
+.earthquakes-table tr td:nth-child(1){
+    font-weight: bold;
+}
+
+        .danger-level{
+            display: inline-flex;
+            align-items: flex-end;
+            margin-right: 10px;
+        }
+        .danger-level div{
+            width: 4px;
+            background-color: rgba(220,220,220);
+            border-radius: 3px;
+            
+        }
+        .danger-level div:nth-child(1){
+           height: 5px;
+        }
+        .danger-level div:nth-child(2){
+           height: 7px;
+        }
+        .danger-level div:nth-child(3){
+           height: 9px;
+        }
+        .danger-level div:nth-child(4){
+           height: 11px;
+        }
+        .danger-level div:nth-child(5){
+            height: 13px;
+         }
+        .danger-level div:not(:last-child){
+            margin-right: 1px;
+        }
+
+        .danger-level.level-1 div:nth-child(1){
+            background-color: rgb(52,199,89) !important;
+        }
+
+        .danger-level.level-2 div:nth-child(1),
+        .danger-level.level-2 div:nth-child(2)
+        {
+            background-color: rgb(255,204,0) !important;
+        }
+
+        .danger-level.level-3 div:nth-child(1),
+        .danger-level.level-3 div:nth-child(2),
+        .danger-level.level-3 div:nth-child(3)
+        {
+            background-color: rgb(255,149,0) !important;
+        }
+
+        .danger-level.level-4 div:nth-child(1),
+        .danger-level.level-4 div:nth-child(2),
+        .danger-level.level-4 div:nth-child(3),
+        .danger-level.level-4 div:nth-child(4)
+        {
+            background-color: rgb(255,59,48) !important;
+        }
+
+        .danger-level.level-5 div:nth-child(1),
+        .danger-level.level-5 div:nth-child(2),
+        .danger-level.level-5 div:nth-child(3),
+        .danger-level.level-5 div:nth-child(4),
+        .danger-level.level-5 div:nth-child(5)
+        {
+            background-color: rgb(194, 10, 0) !important;
+        }
+
