@@ -5,7 +5,7 @@
     }
     else {
         var model = { Mail: document.querySelector("input[name='mailForgot']").value }
-        infoBoxesCleaner()
+        Array.from(document.querySelectorAll(".info-boxes:not(.json)")).forEach(item => { item.remove() })
         event.target.classList.add("loading")
         event.target.disabled = true
         $.ajax({

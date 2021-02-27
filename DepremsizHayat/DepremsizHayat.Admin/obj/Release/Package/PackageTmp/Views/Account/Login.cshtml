@@ -1,33 +1,122 @@
-﻿@{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Account/Shared/_Layout.cshtml";
-}
-@section styles{
-    <link href="~/Content/css/login.css" rel="stylesheet" />
-}
-@section scripts{
-    <script src="~/Content/js/loginControl.js"></script>
-}
-<div class="flex h-center">
-    <div class="container">
-        @*<div id="imageWithText">
-            <div class="tx-gray fs-14">#depremsizhayat</div>
-            <div>HEP BİRLİKTE<br>DEPREMSİZ BİR HAYATA</div>
-        </div>*@
-        <div class="white-box">
-            <div class="top-header align-left p15">Giriş Yap</div>
-            <div class="p15"><input type="text" class="input one" id="email" placeholder="E-Mailiniz"></div>
-            <div class="pr15 pl15 pb15"><input type="password" class="input one" id="password" placeholder="Şifreniz"></div>
-            @Html.Partial("Shared/_StatusPartial")
-            <div class="info-boxes error mr15 ml15 mb15 none json" id="loginJsonError">
+﻿@*@{
+        ViewBag.Title = "Şifremi Unuttum";
+        Layout = "~/Views/Account/Shared/_Layout.cshtml";
+    }
+    @section styles{
+        <link href="~/Content/css/login.css" rel="stylesheet" />
+    }
+    @section scripts{
+        <script src="~/Content/js/loginControl.js"></script>
+    }
+    <div class="flex h-center">
+        <div class="container">
+            <div id="imageWithText">
+                <div class="tx-gray fs-14">#depremsizhayat</div>
+                <div>HEP BİRLİKTE<br>DEPREMSİZ BİR HAYATA</div>
             </div>
-            <div class="align-center pb10">
-                <button id="loginButton" class="btn btn-main btn-blue spinner">
-                    <span class="spinner"></span>Giriş Yap
-                </button>
+            <div class="white-box">
+                <div class="top-header align-left p15">Giriş Yap</div>
+                <div class="p15"><input type="text" class="input one" id="email" placeholder="E-Mailiniz"></div>
+                <div class="pr15 pl15 pb15"><input type="password" class="input one" id="password" placeholder="Şifreniz"></div>
+                @Html.Partial("Shared/_StatusPartial")
+                <div class="info-boxes error mr15 ml15 mb15 none json" id="loginJsonError">
+                </div>
+                <div class="align-center pb10">
+                    <button id="loginButton" class="btn btn-main btn-blue spinner">
+                        <span class="spinner"></span>Giriş Yap
+                    </button>
+                </div>
+                <div class="fs-12 tx-gray b align-center pb10"><a href="ForgotPassword" class="link">Şifremi Unuttum</a></div>
             </div>
-            <div class="fs-12 tx-gray b align-center pb10"><a href="ForgotPassword" class="link">Şifremi Unuttum</a></div>
+            <div class="fs-12 align-center tx-gray mt15">v0.3</div>
         </div>
-        <div class="fs-12 align-center tx-gray mt15">v0.3</div>
+    </div>*@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DepremsizHayat | Yönetici Paneli</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="~/Content/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/dist/css/adminlte.min.css">
+    <style>
+        /* ERROR-BOX */
+        .info-boxes {
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 5px;
+            text-align: center;
+        }
+
+            .info-boxes.error {
+                border: 1px solid rgba(255,59,48,0.2);
+                background-color: rgba(255,59,48,0.05);
+                color: var(--color-red);
+            }
+
+            .info-boxes.success {
+                border: 1px solid rgba(52,199,89,0.2);
+                background-color: rgba(52,199,89,0.05);
+                color: var(--color-green);
+            }
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <span class="h1"><b>Depremsiz</b>Hayat</span>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Oturumunuzu başlatmak için giriş yapın</p>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" id="password" class="form-control" placeholder="Password">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button id="loginButton" class="btn btn-primary btn-block spinner"><span class="spinner"></span>Giriş Yap</button>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12 info-boxes error mr15 ml15 mb15 none json mt-3" id="loginJsonError">
+                        @Html.Partial("Shared/_StatusPartial")
+                    </div>
+                </div>
+                <p class="mt-4 text-center">
+                    <a href="/Account/ForgotPassword" style="color:gray">Şifremi unuttum</a>
+                </p>
+            </div>
+        </div>
     </div>
-</div>
+    <script src="~/Content/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/dist/js/adminlte.min.js"></script>
+    <script src="~/Content/js/loginControl.js"></script>
+</body>
+</html>

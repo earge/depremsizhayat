@@ -144,5 +144,9 @@ namespace DepremsizHayat.App.Controllers
             List<MyAnalyseRequest> request = _analyseRequestService.GetRequestsByUserId(CurrentUser().USER_ACCOUNT_ID);
             return Json(request, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult RequestDetail(string requestId)
+        {
+            return _analyseRequestService.GetDetailRequest(requestId);
+        }
     }
 }

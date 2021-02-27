@@ -3,9 +3,10 @@
     {
         if (response.Message != null && response.Message.Count > 0)
         {
+            <script>alert('@response.Message[0]')</script>
             if (response.Status)
             {
-                <div class="info-boxes success ml15 mr15 mb15">
+                <div class="col-12 info-boxes success ml15 mr15 mb15 mt-3">
                     @for (int i = 0; i < response.Message.Count; i++)
                     {
                         <div>@response.Message[i]</div>
@@ -14,7 +15,7 @@
             }
             else
             {
-                <div class="info-boxes error ml15 mr15 mb15">
+                <div class="col-12 info-boxes error ml15 mr15 mb15 mt-3">
                     @for (int i = 0; i < response.Message.Count; i++)
                     {
                         <div>@response.Message[i]</div>
