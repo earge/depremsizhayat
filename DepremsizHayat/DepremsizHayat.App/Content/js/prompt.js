@@ -71,6 +71,7 @@ const promptTemplate = document.createElement("template")
             connectedCallback(){
                 this.shadow.querySelector(":host>div>div>div>button").addEventListener("click", this.close.bind(this))
                 this.shadow.querySelector(":host>div").addEventListener("click", this.close.bind(this))
+                this.shadow.querySelector(":host>div div").addEventListener("click", (event)=>event.stopPropagation())
             }
         }
         customElements.define("ro-prompt",Prompt)

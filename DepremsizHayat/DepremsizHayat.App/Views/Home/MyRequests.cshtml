@@ -195,8 +195,26 @@
 
     function getMyRequestDetail(dataRequestId) {
         let template = document.createElement("template")
-        template.innerHTML = dataRequestId
-        Prompt.show(template)
+        
+
+        $.ajax({
+            url: "/Home/RequestDetail?requestId=" + dataRequestId,
+            type: "POST",
+            contentType: false,
+            success: function (data) {
+                template.innerHTML = 
+                    `
+                        ${ConvertDate(data.CREATED_DATE)}
+                        ${data.ADDRESS}
+                        ${data.PHONE_NUMBER_1}
+                        ${data.PHONE_NUMBER_2}
+                        ${data.USER_NOTE}
+                    `
+                Prompt.show(template)
+            }
+
+        })
+        
     }
 
 
