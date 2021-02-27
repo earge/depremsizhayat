@@ -65,7 +65,12 @@ namespace DepremsizHayat.Business.Service
         public List<MyAnalyseRequest> GetRequestsByUserId(int ID)
         {
             var request = new List<MyAnalyseRequest>();
-            foreach (DataAccess.ANALYSE_REQUEST analyse in _analyseRequestRepository.GetAll().Where(T => T.USER_ACCOUNT_ID == ID))
+            foreach (
+                DataAccess.ANALYSE_REQUEST analyse in _analyseRequestRepository
+                .GetAll()
+                .Where(T => T.USER_ACCOUNT_ID == ID)
+                .OrderByDescending(P => P.CREATED_DATE)
+                )
             {
                 var dummy = new MyAnalyseRequest()
                 {
