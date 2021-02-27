@@ -77,9 +77,7 @@ namespace DepremsizHayat.Business.Service
                     STATUS_NAME = _statusRepository.GetById(analyse.STATUS.STATUS_ID).NAME,
                     USER_ACCOUNT_ID = analyse.USER_ACCOUNT_ID.ToString(),
                     YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION,
-                    CREATED_DATE = analyse.CREATED_DATE.ToLocalTime(),
-                    PHONE_NUMBER_1 = analyse.PHONE_NUMBER_1,
-                    PHONE_NUMBER_2 = analyse.PHONE_NUMBER_2,
+                    ADDRESS = analyse.ADDRESS,
                     STATUS_CODE = analyse.STATUS.STATUS_CODE
                 };
                 request.Add(dummy);
@@ -173,7 +171,7 @@ namespace DepremsizHayat.Business.Service
         public AnalyseDetailRequest GetDetailRequest(string id)
         {
             int decryptedId = Decryptor.DecryptInt(id);
-            DataAccess.ANALYSE_REQUEST thatRequest = _analyseRequestRepository.GetById(decryptedId);
+            ANALYSE_REQUEST thatRequest = _analyseRequestRepository.GetById(decryptedId);
             AnalyseDetailRequest detail = new AnalyseDetailRequest()
             {
                 ANALYSIS_REQUEST_ID = Convert.ToString(thatRequest.ANALYSIS_REQUEST_ID),
@@ -181,7 +179,7 @@ namespace DepremsizHayat.Business.Service
                 CREATED_DATE = thatRequest.CREATED_DATE.ToLocalTime(),
                 PHONE_NUMBER_1 = thatRequest.PHONE_NUMBER_1,
                 PHONE_NUMBER_2 = thatRequest.PHONE_NUMBER_2,
-                USER_NOTE = thatRequest.USER_NOTE
+                USER_NOTE = thatRequest.USER_NOTE,
             };
             return detail;
         }
