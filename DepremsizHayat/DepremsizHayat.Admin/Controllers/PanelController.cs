@@ -122,12 +122,6 @@ namespace DepremsizHayat.Admin.Controllers
             AnalyseDetailRequest request = _analyseRequestService.GetDetailRequest(id);
             return Json(request);
         }
-        //[Authorize(Roles = "SystemAdmin")]
-        //public ActionResult GetRequests()
-        //{
-        //    List<AnalyseRequest> request = _analyseRequestService.GetAllRequests();
-        //    return Json(request, JsonRequestBehavior.AllowGet);
-        //}
         [Authorize(Roles = "SystemAdmin")]
         public ActionResult DenyRequests(List<string> idList)
         {
