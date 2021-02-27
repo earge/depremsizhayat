@@ -55,7 +55,8 @@
         }
 
             .request-box .status.green {
-                background-color: var(--color-green)
+                background-color: var(--color-green);
+               
             }
 
             .request-box .status.yellow {
@@ -63,8 +64,15 @@
             }
 
             .request-box .status.red {
-                background-color: rgb(255, 245, 245);
-                color: var(--color-red)
+                background-color: var(--color-red)
+                
+            }
+            .request-box .status.blue {
+                background-color: rgb(90,200,250);
+            }
+
+            .request-box .status.orange {
+                background-color: rgb(255, 149, 0);
             }
 
         .request-box .line {
@@ -153,12 +161,19 @@
                 data.forEach((data, index) => {
 
                     let color = ""
-                    if (data.STATUS_NAME == "Uzman Onayı Bekliyor") {
-                        color = "green"
-                    } else if (data.STATUS_NAME == "Reddedildi") {
+                    if (data.STATUS_CODE == "waitingadmconf") {
+                        color = "orange"
+                    }
+                    else if (data.STATUS_CODE == "denied") {
                         color = "red"
                     }
-                    else if (data.STATUS_NAME == "Onay Bekliyor") {
+                    else if (data.STATUS_CODE == "sent") {
+                        color = "blue"
+                    }
+                    else if (data.STATUS_CODE == "completed") {
+                        color = "green"
+                    }
+                    else if (data.STATUS_CODE == "waitingexpconf") {
                         color = "yellow"
                     }
                     var requestBox =

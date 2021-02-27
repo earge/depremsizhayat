@@ -176,7 +176,7 @@ namespace DepremsizHayat.Business.Service
             {
                 ANALYSIS_REQUEST_ID = Convert.ToString(thatRequest.ANALYSIS_REQUEST_ID),
                 ADDRESS = thatRequest.ADDRESS,
-                CREATED_DATE = thatRequest.CREATED_DATE.ToLocalTime(),
+                CREATED_DATE = thatRequest.CREATED_DATE,
                 PHONE_NUMBER_1 = thatRequest.PHONE_NUMBER_1,
                 PHONE_NUMBER_2 = thatRequest.PHONE_NUMBER_2,
                 USER_NOTE = thatRequest.USER_NOTE,

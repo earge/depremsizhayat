@@ -146,7 +146,7 @@ namespace DepremsizHayat.App.Controllers
         }
         public JsonResult RequestDetail(string requestId)
         {
-            return Json(_analyseRequestService.GetDetailRequest(requestId),JsonRequestBehavior.AllowGet);
+            return Json(_analyseRequestService.GetDetailRequest(requestId), JsonRequestBehavior.AllowGet);
         }
     }
 }
