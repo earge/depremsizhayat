@@ -92,10 +92,11 @@ namespace DepremsizHayat.Business.Service
         public BaseResponse SendNewRequest(ANALYSE_REQUEST request)
         {
             BaseResponse response = new BaseResponse();
+            request.UNIQUE_KEY = Guid.NewGuid().ToString();
             if (_analyseRequestRepository.Add(request) != null)
             {
                 var requester = _userRepository.GetById(request.USER_ACCOUNT_ID);
-                var body = request.CREATED_DATE.ToShortDateString() + " tarihli yeni bir analiz talebi var. Talep sahibi: " + requester.FIRST_NAME + " " + requester.LAST_NAME + "(" + requester.E_MAIL + ")";
+                var body = request.CREATED_DATE.ToShortDateString() + " tarihli yeni bir analiz talebi var. Talep sahibi: " + requester.FIRST_NAME + " " + requester.LAST_NAME + "(" + requester.E_MAIL + ") Talep ID: " + request.UNIQUE_KEY;
                 foreach (USER_ACCOUNT admin in _userRepository.GetAdmins())
                 {
                     _mailRepository.SendMail("app", admin.E_MAIL, "Bir yeni analiz talebi var", body);
@@ -115,13 +116,13 @@ namespace DepremsizHayat.Business.Service
         {
             return _analyseRequestRepository
                 .GetAll()
-                .Where(p => p.STATUS.STATUS_CODE == StatusCodes.WaitingAdminConfirmation)
+                .Where(p => p.STATUS.STATUS_CODE == AnalyseRequestStatusCodes.WaitingAdminConfirmation)
                 .ToList();
         }
         public void ConfirmPendingRequest(ANALYSE_REQUEST request)
         {
             ANALYSE_REQUEST current = _analyseRequestRepository.GetById(request.ANALYSIS_REQUEST_ID);
-            current.STATUS_ID = _statusRepository.GetByCode(StatusCodes.WaitingExpertConfirmation).STATUS_ID;
+            current.STATUS_ID = _statusRepository.GetByCode(AnalyseRequestStatusCodes.WaitingExpertConfirmation).STATUS_ID;
             _analyseRequestRepository.Update(current);
             var expert = _userAnalyseRequestRepository.GetRandomExpertForAnalyse(null);
             if (expert != null)
@@ -146,7 +147,7 @@ namespace DepremsizHayat.Business.Service
                 {
                     int dummy = Decryptor.DecryptInt(id);
                     ANALYSE_REQUEST analyse = _analyseRequestRepository.GetById(dummy);
-                    analyse.STATUS_ID = _statusRepository.GetByCode(StatusCodes.Denied).STATUS_ID;
+                    analyse.STATUS_ID = _statusRepository.GetByCode(AnalyseRequestStatusCodes.Denied).STATUS_ID;
                     _unitOfWork.Commit();
                 }
                 return true;

@@ -15,18 +15,20 @@ namespace DepremsizHayat.Admin.Controllers
         public IAnalyseRequestService _analyseRequestService;
         public IStatusService _statusService;
         public IUserAnalyseRequestService _userAnalyseRequestService;
-
-        public BaseController(IUserService userService, 
-            IRoleService roleService, 
-            IAnalyseRequestService analyseRequestService, 
+        public IAnalyseRequestAnswerService _analyseRequestAnswerService;
+        public BaseController(IUserService userService,
+            IRoleService roleService,
+            IAnalyseRequestService analyseRequestService,
             IStatusService statusService,
-            IUserAnalyseRequestService userAnalyseRequestService)
+            IUserAnalyseRequestService userAnalyseRequestService,
+            IAnalyseRequestAnswerService analyseRequestAnswerService)
         {
             this._userService = userService;
             this._roleService = roleService;
             this._analyseRequestService = analyseRequestService;
             this._statusService = statusService;
             this._userAnalyseRequestService = userAnalyseRequestService;
+            this._analyseRequestAnswerService = analyseRequestAnswerService;
         }
         protected override void OnActionExecuting(ActionExecutingContext context)
         {

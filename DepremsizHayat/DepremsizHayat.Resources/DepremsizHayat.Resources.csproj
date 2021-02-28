@@ -41,10 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalyseRequestStatusCodes.Designer.cs">
+    <Compile Include="UserAnalyseRequestStatusCodes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AnalyseRequestStatusCodes.resx</DependentUpon>
+      <DependentUpon>UserAnalyseRequestStatusCodes.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleCodes.Designer.cs">
@@ -52,24 +52,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RoleCodes.resx</DependentUpon>
     </Compile>
-    <Compile Include="StatusCodes.Designer.cs">
+    <Compile Include="AnalyseRequestStatusCodes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StatusCodes.resx</DependentUpon>
+      <DependentUpon>AnalyseRequestStatusCodes.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AnalyseRequestStatusCodes.resx">
+    <EmbeddedResource Include="UserAnalyseRequestStatusCodes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>AnalyseRequestStatusCodes.Designer.cs</LastGenOutput>
+      <LastGenOutput>UserAnalyseRequestStatusCodes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="RoleCodes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RoleCodes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="StatusCodes.resx">
+    <EmbeddedResource Include="AnalyseRequestStatusCodes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>StatusCodes.Designer.cs</LastGenOutput>
+      <LastGenOutput>AnalyseRequestStatusCodes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

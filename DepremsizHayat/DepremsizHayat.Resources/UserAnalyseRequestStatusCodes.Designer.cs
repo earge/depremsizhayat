@@ -22,14 +22,14 @@ namespace DepremsizHayat.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class StatusCodes {
+    public class UserAnalyseRequestStatusCodes {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal StatusCodes() {
+        internal UserAnalyseRequestStatusCodes() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace DepremsizHayat.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DepremsizHayat.Resources.StatusCodes", typeof(StatusCodes).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DepremsizHayat.Resources.UserAnalyseRequestStatusCodes", typeof(UserAnalyseRequestStatusCodes).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to accepted.
+        ///   Looks up a localized string similar to ACCEPTED.
         /// </summary>
         public static string Accepted {
             get {
@@ -70,7 +70,25 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to denied.
+        ///   Looks up a localized string similar to CANCELED.
+        /// </summary>
+        public static string Canceled {
+            get {
+                return ResourceManager.GetString("Canceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to COMPLETED.
+        /// </summary>
+        public static string Completed {
+            get {
+                return ResourceManager.GetString("Completed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DENIED.
         /// </summary>
         public static string Denied {
             get {
@@ -79,29 +97,20 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to sent.
+        ///   Looks up a localized string similar to QUEUE.
         /// </summary>
-        public static string Sent {
+        public static string Queue {
             get {
-                return ResourceManager.GetString("Sent", resourceCulture);
+                return ResourceManager.GetString("Queue", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to waitingadmconf.
+        ///   Looks up a localized string similar to WAITING.
         /// </summary>
-        public static string WaitingAdminConfirmation {
+        public static string Waiting {
             get {
-                return ResourceManager.GetString("WaitingAdminConfirmation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to waitingexpconf.
-        /// </summary>
-        public static string WaitingExpertConfirmation {
-            get {
-                return ResourceManager.GetString("WaitingExpertConfirmation", resourceCulture);
+                return ResourceManager.GetString("Waiting", resourceCulture);
             }
         }
     }

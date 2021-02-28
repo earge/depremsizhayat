@@ -3,7 +3,6 @@ using DepremsizHayat.DataAccess;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
 using DepremsizHayat.Security;
-using DepremsizHayat.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +20,17 @@ namespace DepremsizHayat.Admin.Controllers
             IRoleService roleService,
             IAnalyseRequestService analyseRequestService,
             IStatusService statusService,
-            IUserAnalyseRequestService userAnalyseRequestService)
-            : base(userService, roleService, analyseRequestService, statusService, userAnalyseRequestService)
+            IUserAnalyseRequestService userAnalyseRequestService,
+            IAnalyseRequestAnswerService analyseRequestAnswerService)
+            : base(userService,
+                  roleService,
+                  analyseRequestService,
+                  statusService,
+                  userAnalyseRequestService,
+                  analyseRequestAnswerService)
         {
         }
-        private DataAccess.USER_ACCOUNT CurrentUser()
+        private USER_ACCOUNT CurrentUser()
         {
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
             FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
@@ -165,6 +170,7 @@ namespace DepremsizHayat.Admin.Controllers
                 DataCount = (int)count,
                 DataPerPage = dataPerPage
             };
+            ViewBag.ReplyResponse = (TempData["ReplyResponse"] != null) ? TempData["ReplyResponse"] : null;
             return View(request);
         }
         public ActionResult PageNotFound()
@@ -194,6 +200,12 @@ namespace DepremsizHayat.Admin.Controllers
         {
             TempData["Carrier"] = _userAnalyseRequestService.ProcessTheRequest(Decryptor.DecryptInt(requestId), type);
             return RedirectToAction("ExpertNotConfirmedRequests", "Panel");
+        }
+        [Authorize(Roles = "Expert")]
+        public ActionResult ReplyRequest(string requestId, string answer, int score)
+        {
+            TempData["ReplyResponse"] = _analyseRequestAnswerService.ReplyRequest(requestId, answer, score);
+            return RedirectToAction("ExpertNotAnsweredRequests", "Panel");
         }
     }
 }
