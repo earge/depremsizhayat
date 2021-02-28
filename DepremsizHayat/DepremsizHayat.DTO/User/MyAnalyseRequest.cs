@@ -34,5 +34,8 @@ namespace DepremsizHayat.DTO.User
         public int NUMBER_OF_FLOORS { get; set; }
         public string STATUS_CODE { get; set; }
         public string ADDRESS { get; set; }
+        public bool COMPLETED { get; set; }
+        public string ANSWER { get; set; }
+        public int? RISK_SCORE { get; set; }
     }
 }

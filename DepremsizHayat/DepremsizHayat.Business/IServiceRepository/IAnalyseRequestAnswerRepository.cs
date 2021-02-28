@@ -10,5 +10,6 @@ namespace DepremsizHayat.Business.IServiceRepository
 {
     public interface IAnalyseRequestAnswerRepository:IRepository<ANALYSE_REQUEST_ANSWER>
     {
+        ANALYSE_REQUEST_ANSWER GetByRequestId(int id);
     }
 }

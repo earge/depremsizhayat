@@ -233,5 +233,25 @@ namespace DepremsizHayat.Business.Service
             _unitOfWork.Commit();
             return response;
         }
+
+        public MyAnalyseRequest GetRequestByUniqueCode(string code)
+        {
+            var dbRecord = _analyseRequestRepository.GetByUniqueCode(code);
+            var answer = _analyseRequestAnswerRepository.GetByRequestId(dbRecord.ANALYSIS_REQUEST_ID);
+            MyAnalyseRequest request = new MyAnalyseRequest()
+            {
+                ADDRESS = dbRecord.ADDRESS,
+                ANALYSIS_REQUEST_ID = Convert.ToString(dbRecord.ANALYSIS_REQUEST_ID),
+                COUNTRY = dbRecord.COUNTRY,
+                DISTRICT = dbRecord.DISTRICT,
+                NUMBER_OF_FLOORS = dbRecord.NUMBER_OF_FLOORS,
+                STATUS_CODE = dbRecord.STATUS.STATUS_CODE,
+                USER_ACCOUNT_ID = Convert.ToString(dbRecord.USER_ACCOUNT_ID),
+                YEAR_OF_CONSTRUCTION = dbRecord.YEAR_OF_CONSTRUCTION,
+                ANSWER = (answer != null) ? answer.DETAIL : null,
+                RISK_SCORE = (answer != null) ? (int?)answer.RISK_SCORE : null
+            };
+            return request;
+        }
     }
 }

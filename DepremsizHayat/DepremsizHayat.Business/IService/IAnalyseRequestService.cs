@@ -1,4 +1,5 @@
-﻿using DepremsizHayat.DTO;
+﻿using DepremsizHayat.DataAccess;
+using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
 using DepremsizHayat.DTO.User;
 using System.Collections.Generic;
@@ -16,5 +17,6 @@ namespace DepremsizHayat.Business.IService
         bool DenyRequests(List<string> requests);
         bool AllowRequests(List<string> requests);
         BaseResponse UpdateRequestDetail(AnalyseDetailRequest request);
+        MyAnalyseRequest GetRequestByUniqueCode(string code);
     }
 }
