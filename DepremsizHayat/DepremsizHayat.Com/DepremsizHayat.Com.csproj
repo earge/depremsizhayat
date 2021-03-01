@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap-rtl.css" />
@@ -353,6 +357,10 @@
     <Content Include="Content\css\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\css\fonts\Simple-Line-Icons.woff" />
     <Content Include="Content\images\world-map-png.webp" />
+    <Content Include="Views\Home\CallResult.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\GetResult.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -368,6 +376,10 @@
     <ProjectReference Include="..\DepremsizHayat.Business\DepremsizHayat.Business.csproj">
       <Project>{e50d2179-10a8-40be-aaaf-3872ad0e88a8}</Project>
       <Name>DepremsizHayat.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DepremsizHayat.DTO\DepremsizHayat.DTO.csproj">
+      <Project>{27cdf5e9-804b-4a43-b089-f0c4ad7038dc}</Project>
+      <Name>DepremsizHayat.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

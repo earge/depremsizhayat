@@ -249,7 +249,8 @@ namespace DepremsizHayat.Business.Service
                 USER_ACCOUNT_ID = Convert.ToString(dbRecord.USER_ACCOUNT_ID),
                 YEAR_OF_CONSTRUCTION = dbRecord.YEAR_OF_CONSTRUCTION,
                 ANSWER = (answer != null) ? answer.DETAIL : null,
-                RISK_SCORE = (answer != null) ? (int?)answer.RISK_SCORE : null
+                RISK_SCORE = (answer != null) ? (int?)answer.RISK_SCORE : null,
+                STATUS_ID = (dbRecord != null && dbRecord.STATUS!=null) ? dbRecord.STATUS_ID.ToString() : ""
             };
             return request;
         }
