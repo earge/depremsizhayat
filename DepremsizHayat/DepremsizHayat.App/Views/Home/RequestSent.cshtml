@@ -4,5 +4,24 @@
     Layout = "~/Views/Home/Shared/_Layout.cshtml";
 }
 
+@section styles{
+    <link href="~/Content/css/requestsent.css" rel="stylesheet" />
+}
 <h2>RequestSent</h2>
 
+<div class="flex h-center">
+    <div class="container">
+        <div class="white-box p15 align-center">
+            <div class="flex h-center">
+                <svg id="complete" viewBox="0 0 100 100">
+                    <path d="M25,58 L40,73 L75,28" />
+                </svg>
+            </div>
+            <h2>Talebiniz Gönderildi</h2>
+            <a href="/Home/MyRequests" class="link btn btn-main btn-blue">Taleplerim</a>
+            <div class="mt15 tx-blue fs-14">
+                <a href="/Home/Index" class="link">Yeni Talep Oluştur</a>
+            </div>
+        </div>
+    </div>
+</div>
