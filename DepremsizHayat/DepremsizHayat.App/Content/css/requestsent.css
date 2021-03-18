@@ -1,0 +1,27 @@
+﻿.container {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 0px !important
+}
+
+#complete {
+    height: 15vw;
+    width: 15vw;
+}
+
+    #complete path {
+        stroke: rgb(52,199,89);
+        stroke-width: 10%;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: dash 1s ease-in-out forwards;
+    }
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

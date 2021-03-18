@@ -70,7 +70,7 @@ requestButton.addEventListener("click", function (event) {
                 event.target.disabled = false
                 ResponseMessage("analyseJsonInfo", data)
                 resetForm()
-
+                window.location = "/Home/RequestSent"
             },
             error: function (err) {
                 event.target.classList.remove("loading")
