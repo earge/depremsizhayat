@@ -19,8 +19,8 @@ namespace DepremsizHayat.Business.ServiceRepository
                 .Where(p =>
                 p.USER_ACCOUNT_ID == expertId &&
                 (
-                p.USER_ANALYSE_REQ_STATUS_CODE == AnalyseRequestStatusCodes.Accepted ||
-                p.USER_ANALYSE_REQ_STATUS_CODE == AnalyseRequestStatusCodes.Waiting)
+                p.USER_ANALYSE_REQ_STATUS_CODE == UserAnalyseRequestStatusCodes.Accepted ||
+                p.USER_ANALYSE_REQ_STATUS_CODE == UserAnalyseRequestStatusCodes.Waiting)
                 )
                 .ToList();
         }
@@ -29,7 +29,7 @@ namespace DepremsizHayat.Business.ServiceRepository
             return _dbContext.USER_ANALYSE_REQUEST
                 .Where(p =>
                 p.USER_ACCOUNT_ID == expertId &&
-                (p.USER_ANALYSE_REQ_STATUS_CODE == AnalyseRequestStatusCodes.Waiting))
+                (p.USER_ANALYSE_REQ_STATUS_CODE == UserAnalyseRequestStatusCodes.Waiting))
                 .ToList();
         }
         public List<USER_ANALYSE_REQUEST> GetExpertsNotAnsweredRequests(int expertId)
@@ -37,7 +37,7 @@ namespace DepremsizHayat.Business.ServiceRepository
             return _dbContext.USER_ANALYSE_REQUEST
                 .Where(p =>
                 p.USER_ACCOUNT_ID == expertId &&
-                (p.USER_ANALYSE_REQ_STATUS_CODE == AnalyseRequestStatusCodes.Accepted))
+                (p.USER_ANALYSE_REQ_STATUS_CODE == UserAnalyseRequestStatusCodes.Accepted))
                 .ToList();
         }
         public List<USER_ANALYSE_REQUEST> GetByAnalyseRequestId(int analyseRequestId)
@@ -54,7 +54,7 @@ namespace DepremsizHayat.Business.ServiceRepository
                 CREATED_DATE = DateTime.Now,
                 DELETED = false,
                 ACTIVE = true,
-                USER_ANALYSE_REQ_STATUS_CODE = AnalyseRequestStatusCodes.Queue
+                USER_ANALYSE_REQ_STATUS_CODE = UserAnalyseRequestStatusCodes.Queue
             };
             Add(queue);
         }
@@ -78,7 +78,7 @@ namespace DepremsizHayat.Business.ServiceRepository
                     CREATED_DATE = DateTime.Now,
                     DELETED = false,
                     ACTIVE = true,
-                    USER_ANALYSE_REQ_STATUS_CODE = AnalyseRequestStatusCodes.Waiting,
+                    USER_ANALYSE_REQ_STATUS_CODE = UserAnalyseRequestStatusCodes.Waiting,
                     USER_ACCOUNT_ID = expert.USER_ACCOUNT_ID
                 };
                 Add(requestAssignmentOffer);
@@ -86,7 +86,7 @@ namespace DepremsizHayat.Business.ServiceRepository
             else
             {
                 var updating = GetById(queue.USER_ANALYSE_REQUEST_ID);
-                updating.USER_ANALYSE_REQ_STATUS_CODE = AnalyseRequestStatusCodes.Waiting;
+                updating.USER_ANALYSE_REQ_STATUS_CODE = UserAnalyseRequestStatusCodes.Waiting;
                 updating.USER_ACCOUNT_ID = expert.USER_ACCOUNT_ID;
                 Update(updating);
             }
@@ -106,8 +106,8 @@ namespace DepremsizHayat.Business.ServiceRepository
             var busyCount =
                 GetAll()
                 .Where(p =>
-                p.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Accepted ||
-                p.USER_ANALYSE_REQ_STATUS_CODE == Resources.AnalyseRequestStatusCodes.Waiting)
+                p.USER_ANALYSE_REQ_STATUS_CODE == Resources.UserAnalyseRequestStatusCodes.Accepted ||
+                p.USER_ANALYSE_REQ_STATUS_CODE == Resources.UserAnalyseRequestStatusCodes.Waiting)
                 .Count();
         FindAvailable:
             USER_ACCOUNT expert = null;
@@ -132,6 +132,15 @@ namespace DepremsizHayat.Business.ServiceRepository
                 }
             }
             return null;
+        }
+
+        public List<USER_ANALYSE_REQUEST> GetExpertsAnsweredRequests(int expertId)
+        {
+            return _dbContext.USER_ANALYSE_REQUEST
+                 .Where(p =>
+                 p.USER_ACCOUNT_ID == expertId &&
+                 (p.USER_ANALYSE_REQ_STATUS_CODE == UserAnalyseRequestStatusCodes.Completed))
+                 .ToList();
         }
     }
 }

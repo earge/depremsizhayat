@@ -35,11 +35,10 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-        //private FormsAuthenticationTicket GetTicket()
-        //{
-        //    HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-        //    return FormsAuthentication.Decrypt(authCookie.Value);
-        //}
+        public ActionResult RequestSent()
+        {
+            return View();
+        }
         public ActionResult Name()
         {
             return Content(CurrentUser().FIRST_NAME);
@@ -84,7 +83,7 @@ namespace DepremsizHayat.App.Controllers
                         NUMBER_OF_FLOORS = Convert.ToInt32(Request.Form["floor"]),
                         PHONE_NUMBER_1 = Request.Form["phone1"],
                         PHONE_NUMBER_2 = Request.Form["phone2"],
-                        STATUS_ID = _statusService.GetIdByCode(Resources.StatusCodes.WaitingAdminConfirmation),
+                        STATUS_ID = _statusService.GetIdByCode(Resources.AnalyseRequestStatusCodes.WaitingAdminConfirmation),
                         USER_ACCOUNT_ID = CurrentUser().USER_ACCOUNT_ID,
                         USER_NOTE = Request.Form["note"],
                         YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form["year"])
@@ -146,7 +145,7 @@ namespace DepremsizHayat.App.Controllers
         }
         public JsonResult RequestDetail(string requestId)
         {
-            return Json(_analyseRequestService.GetDetailRequest(requestId), JsonRequestBehavior.AllowGet);
+            return Json(_analyseRequestService.GetRequestDetail(requestId), JsonRequestBehavior.AllowGet);
         }
     }
 }

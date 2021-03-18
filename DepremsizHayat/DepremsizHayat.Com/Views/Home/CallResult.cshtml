@@ -1,0 +1,22 @@
+﻿@model DepremsizHayat.DTO.User.MyAnalyseRequest
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CallResult</title>
+</head>
+<body>
+    <div>
+        <form action="/Home/GetResult" method="post">
+        Code: <input type="text" name="code" />
+            <input type="submit" value="Gönder"/>
+        </form>
+    </div>
+</body>
+</html>

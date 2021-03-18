@@ -61,7 +61,7 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ACCEPTED.
+        ///   Looks up a localized string similar to accepted.
         /// </summary>
         public static string Accepted {
             get {
@@ -70,16 +70,16 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CANCELED.
+        ///   Looks up a localized string similar to completed.
         /// </summary>
-        public static string Canceled {
+        public static string Completed {
             get {
-                return ResourceManager.GetString("Canceled", resourceCulture);
+                return ResourceManager.GetString("Completed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DENIED.
+        ///   Looks up a localized string similar to denied.
         /// </summary>
         public static string Denied {
             get {
@@ -88,20 +88,29 @@ namespace DepremsizHayat.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to QUEUE.
+        ///   Looks up a localized string similar to sent.
         /// </summary>
-        public static string Queue {
+        public static string Sent {
             get {
-                return ResourceManager.GetString("Queue", resourceCulture);
+                return ResourceManager.GetString("Sent", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WAITING.
+        ///   Looks up a localized string similar to waitingadmconf.
         /// </summary>
-        public static string Waiting {
+        public static string WaitingAdminConfirmation {
             get {
-                return ResourceManager.GetString("Waiting", resourceCulture);
+                return ResourceManager.GetString("WaitingAdminConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to waitingexpconf.
+        /// </summary>
+        public static string WaitingExpertConfirmation {
+            get {
+                return ResourceManager.GetString("WaitingExpertConfirmation", resourceCulture);
             }
         }
     }

@@ -17,7 +17,7 @@
                     <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                         <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
                             <div class="col-sm-12">
-                                <div style="overflow-x:scroll;overflow-y:hidden" >
+                                <div style="overflow-x:scroll;overflow-y:hidden">
                                     <table class="table table-bordered">
                                         <thead>
                                             <tr>
@@ -40,6 +40,16 @@
                                                         <td>@analyse.STATUS.NAME</td>
                                                         <td>BURAYA USER NOTE GELECEK</td>
                                                     </tr>
+                                                    <tr>
+                                                        <td colspan="5" style="text-align:center">
+                                                            <form action="/Panel/ReplyRequest">
+                                                                <textarea placeholder="Cevap" name="answer"></textarea>
+                                                                <input type="number" name="score" placeholder="Risk Skoru" />
+                                                                <input type="hidden" value="@analyse.USER_ANALYSE_REQUEST_ID" name="requestId" />
+                                                                <input type="submit" value="Gönder" />
+                                                            </form>
+                                                        </td>
+                                                    </tr>
                                                 }
                                             }
                                             else
@@ -54,16 +64,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row d-flex justify-content-center"  id="pagination" data-content-count="@Model.DataCount" data-content-perpage="@Model.DataPerPage"></div>
+                        <div class="row d-flex justify-content-center" id="pagination" data-content-count="@Model.DataCount" data-content-perpage="@Model.DataPerPage"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @if (ViewBag.ReplyResponse != null && ViewBag.ReplyResponse.Message.Count>0)
+    {
+        for (int i = 0; i < ViewBag.ReplyResponse.Message.Count; i++)
+        {
+            <b>@ViewBag.ReplyResponse.Message[i]</b>
+        }
+    }
 </section>
 @Html.Partial("Shared/_StatusPartial")
 <script>
-    pagination("pagination", "/Panel/ExpertRequests")
+    pagination("pagination", "/Panel/ExpertNotAnsweredRequests")
 </script>
 
 

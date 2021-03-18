@@ -61,6 +61,7 @@
     <Compile Include="IServiceRepository\IStatusRepository.cs" />
     <Compile Include="IServiceRepository\IUserAnalyseRequestRepository.cs" />
     <Compile Include="IServiceRepository\IUserRepository.cs" />
+    <Compile Include="IService\IAnalyseRequestAnswerService.cs" />
     <Compile Include="IService\IAnalyseRequestService.cs" />
     <Compile Include="IService\IMailService.cs" />
     <Compile Include="IService\IRoleService.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="ServiceRepository\StatusRepository.cs" />
     <Compile Include="ServiceRepository\UserAnalyseRequestRepository.cs" />
     <Compile Include="ServiceRepository\UserRepository.cs" />
+    <Compile Include="Service\AnalyseRequestAnswerService.cs" />
     <Compile Include="Service\AnalyseRequestService.cs" />
     <Compile Include="Service\MailService.cs" />
     <Compile Include="Service\RoleService.cs" />

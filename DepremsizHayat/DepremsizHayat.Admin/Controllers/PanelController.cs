@@ -3,7 +3,6 @@ using DepremsizHayat.DataAccess;
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.Admin;
 using DepremsizHayat.Security;
-using DepremsizHayat.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +20,17 @@ namespace DepremsizHayat.Admin.Controllers
             IRoleService roleService,
             IAnalyseRequestService analyseRequestService,
             IStatusService statusService,
-            IUserAnalyseRequestService userAnalyseRequestService)
-            : base(userService, roleService, analyseRequestService, statusService, userAnalyseRequestService)
+            IUserAnalyseRequestService userAnalyseRequestService,
+            IAnalyseRequestAnswerService analyseRequestAnswerService)
+            : base(userService,
+                  roleService,
+                  analyseRequestService,
+                  statusService,
+                  userAnalyseRequestService,
+                  analyseRequestAnswerService)
         {
         }
-        private DataAccess.USER_ACCOUNT CurrentUser()
+        private USER_ACCOUNT CurrentUser()
         {
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
             FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
@@ -87,8 +92,6 @@ namespace DepremsizHayat.Admin.Controllers
             {
                 response.Status = true;
                 response.Message.Add("Değişiklikler uygulandı.");
-                response.Message.Add("1Değişiklikler uygulandı.");
-                response.Message.Add("2Değişiklikler uygulandı.");
             }
             else
             {
@@ -119,7 +122,7 @@ namespace DepremsizHayat.Admin.Controllers
         [Authorize(Roles = "SystemAdmin")]
         public ActionResult RequestDetail(string id)
         {
-            AnalyseDetailRequest request = _analyseRequestService.GetDetailRequest(id);
+            AnalyseDetailRequest request = _analyseRequestService.GetRequestDetail(id);
             return Json(request);
         }
         [Authorize(Roles = "SystemAdmin")]
@@ -152,7 +155,7 @@ namespace DepremsizHayat.Admin.Controllers
         public ActionResult ExpertNotAnsweredRequests(int? p)
         {
             int dataPerPage = 15;
-            decimal count = _analyseRequestService.GetAllRequests().Count;
+            decimal count = _userAnalyseRequestService.ExpertNotAnsweredRequests(CurrentUser().USER_ACCOUNT_ID).Count;
             decimal totalPages = Math.Ceiling(count / (decimal)dataPerPage);
             p = (p != null) ? (int)p : 1;
             p = (p >= totalPages) ? (int?)totalPages : p;
@@ -165,6 +168,27 @@ namespace DepremsizHayat.Admin.Controllers
                 DataCount = (int)count,
                 DataPerPage = dataPerPage
             };
+            ViewBag.ReplyResponse = (TempData["ReplyResponse"] != null) ? TempData["ReplyResponse"] : null;
+            return View(request);
+        }
+        [Authorize(Roles = "Expert")]
+        public ActionResult ExpertAnsweredRequests(int? p)
+        {
+            int dataPerPage = 15;
+            decimal count = _userAnalyseRequestService.ExpertAnsweredRequests(CurrentUser().USER_ACCOUNT_ID).Count;
+            decimal totalPages = Math.Ceiling(count / (decimal)dataPerPage);
+            p = (p != null) ? (int)p : 1;
+            p = (p >= totalPages) ? (int?)totalPages : p;
+            p = (p <= 0) ? 1 : p;
+            List<ExpertAnsweredRequest> list = new List<ExpertAnsweredRequest>();
+            list.AddRange(_userAnalyseRequestService.ExpertAnsweredRequests(CurrentUser().USER_ACCOUNT_ID).ToPagedList(p ?? 1, dataPerPage));
+            PaginationModel<ExpertAnsweredRequest> request = new PaginationModel<ExpertAnsweredRequest>()
+            {
+                DataList = list,
+                DataCount = (int)count,
+                DataPerPage = dataPerPage
+            };
+            ViewBag.ReplyResponse = (TempData["ReplyResponse"] != null) ? TempData["ReplyResponse"] : null;
             return View(request);
         }
         public ActionResult PageNotFound()
@@ -190,10 +214,17 @@ namespace DepremsizHayat.Admin.Controllers
             };
             return View(request);
         }
+        [Authorize(Roles="Expert")]
         public ActionResult ProcessTheRequest(string requestId, string type)
         {
             TempData["Carrier"] = _userAnalyseRequestService.ProcessTheRequest(Decryptor.DecryptInt(requestId), type);
             return RedirectToAction("ExpertNotConfirmedRequests", "Panel");
+        }
+        [Authorize(Roles = "Expert")]
+        public ActionResult ReplyRequest(string requestId, string answer, int score)
+        {
+            TempData["ReplyResponse"] = _analyseRequestAnswerService.ReplyRequest(requestId, answer, score);
+            return RedirectToAction("ExpertNotAnsweredRequests", "Panel");
         }
     }
 }

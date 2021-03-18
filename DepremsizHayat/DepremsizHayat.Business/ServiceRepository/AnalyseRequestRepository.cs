@@ -22,6 +22,10 @@ namespace DepremsizHayat.Business.ServiceRepository
             this._userAnalyseRequestRepository = userAnalyseRequestRepository;
             this._userRepository = userRepository;
         }
-        
+
+        public ANALYSE_REQUEST GetByUniqueCode(string code)
+        {
+            return _dbContext.ANALYSE_REQUEST.FirstOrDefault(p => p.UNIQUE_KEY == code);
+        }
     }
 }

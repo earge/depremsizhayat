@@ -13,6 +13,7 @@ namespace DepremsizHayat.Business.IService
     {
         List<ExpertWaitingAnalyseRequest> ExpertNotConfirmedRequests(int expertId);
         List<ExpertNotAnsweredRequest> ExpertNotAnsweredRequests(int expertId);
+        List<ExpertAnsweredRequest> ExpertAnsweredRequests(int expertId);
         BaseResponse ProcessTheRequest(int requestId, string type);
         List<USER_ANALYSE_REQUEST> GetWaitingRequests();
         void CancelRequest(int id);
