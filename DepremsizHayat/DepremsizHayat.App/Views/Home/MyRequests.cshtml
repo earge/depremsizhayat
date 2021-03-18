@@ -217,6 +217,7 @@
             type: "POST",
             contentType: false,
             success: function (data) {
+                console.log(data)
                 template.innerHTML = 
                     `
                         ${ConvertDate(data.CREATED_DATE)}
