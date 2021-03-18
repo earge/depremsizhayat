@@ -35,11 +35,10 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-        //private FormsAuthenticationTicket GetTicket()
-        //{
-        //    HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
-        //    return FormsAuthentication.Decrypt(authCookie.Value);
-        //}
+        public ActionResult RequestSent()
+        {
+            return View();
+        }
         public ActionResult Name()
         {
             return Content(CurrentUser().FIRST_NAME);
@@ -146,7 +145,7 @@ namespace DepremsizHayat.App.Controllers
         }
         public JsonResult RequestDetail(string requestId)
         {
-            return Json(_analyseRequestService.GetDetailRequest(requestId), JsonRequestBehavior.AllowGet);
+            return Json(_analyseRequestService.GetRequestDetail(requestId), JsonRequestBehavior.AllowGet);
         }
     }
 }

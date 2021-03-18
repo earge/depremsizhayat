@@ -174,7 +174,7 @@ namespace DepremsizHayat.Business.Service
                 return false;
             }
         }
-        public AnalyseDetailRequest GetDetailRequest(string id)
+        public AnalyseDetailRequest GetRequestDetail(string id)
         {
             int decryptedId = Decryptor.DecryptInt(id);
             ANALYSE_REQUEST thatRequest = _analyseRequestRepository.GetById(decryptedId);
@@ -233,7 +233,6 @@ namespace DepremsizHayat.Business.Service
             _unitOfWork.Commit();
             return response;
         }
-
         public MyAnalyseRequest GetRequestByUniqueCode(string code)
         {
             var dbRecord = _analyseRequestRepository.GetByUniqueCode(code);

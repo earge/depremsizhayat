@@ -38,19 +38,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/24/2021 19:59:16</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.App.dll">
-      <publishTime>02/22/2021 15:59:59</publishTime>
+      <publishTime>03/02/2021 15:00:41</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.App.pdb">
-      <publishTime>02/22/2021 15:59:59</publishTime>
+      <publishTime>03/02/2021 15:00:41</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Business.dll">
-      <publishTime>02/22/2021 15:59:58</publishTime>
+      <publishTime>03/02/2021 15:00:39</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Business.dll.config">
       <publishTime>02/09/2021 11:55:38</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Business.pdb">
-      <publishTime>02/22/2021 15:59:58</publishTime>
+      <publishTime>03/02/2021 15:00:39</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.DataAccess.dll">
       <publishTime>02/14/2021 14:49:23</publishTime>
@@ -62,43 +62,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/14/2021 14:49:23</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.DTO.dll">
-      <publishTime>02/22/2021 15:59:57</publishTime>
+      <publishTime>03/02/2021 15:00:39</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.DTO.pdb">
-      <publishTime>02/22/2021 15:59:57</publishTime>
+      <publishTime>03/02/2021 15:00:39</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Job.dll">
-      <publishTime>02/22/2021 15:59:58</publishTime>
+      <publishTime>03/02/2021 15:00:40</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Job.dll.config">
       <publishTime>02/09/2021 11:55:38</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Job.pdb">
-      <publishTime>02/22/2021 15:59:58</publishTime>
+      <publishTime>03/02/2021 15:00:40</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Resources.dll">
-      <publishTime>02/18/2021 13:11:56</publishTime>
+      <publishTime>03/02/2021 15:00:38</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Resources.pdb">
-      <publishTime>02/18/2021 13:11:56</publishTime>
+      <publishTime>03/02/2021 15:00:38</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Security.dll">
-      <publishTime>02/22/2021 15:59:57</publishTime>
+      <publishTime>03/02/2021 15:00:38</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Security.dll.config">
       <publishTime>01/24/2021 19:59:15</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Security.pdb">
-      <publishTime>02/22/2021 15:59:57</publishTime>
+      <publishTime>03/02/2021 15:00:38</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Utility.dll">
-      <publishTime>02/22/2021 15:59:58</publishTime>
+      <publishTime>03/02/2021 15:00:40</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Utility.dll.config">
       <publishTime>02/09/2021 11:55:38</publishTime>
     </File>
     <File Include="bin/DepremsizHayat.Utility.pdb">
-      <publishTime>02/22/2021 15:59:58</publishTime>
+      <publishTime>03/02/2021 15:00:40</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>01/24/2021 19:59:16</publishTime>
@@ -368,7 +368,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/28/2021 01:28:37</publishTime>
     </File>
     <File Include="Content/css/main.css">
-      <publishTime>02/14/2021 14:46:04</publishTime>
+      <publishTime>02/27/2021 22:44:23</publishTime>
     </File>
     <File Include="Content/css/pagenotfound.css">
       <publishTime>01/28/2021 00:34:34</publishTime>
@@ -420,6 +420,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/js/progress.js">
       <publishTime>02/10/2021 23:36:40</publishTime>
+    </File>
+    <File Include="Content/js/prompt.js">
+      <publishTime>02/27/2021 22:44:23</publishTime>
     </File>
     <File Include="Content/js/register.js">
       <publishTime>01/24/2021 19:59:15</publishTime>
@@ -506,7 +509,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/27/2021 22:02:17</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>01/30/2021 13:05:31</publishTime>
+      <publishTime>03/02/2021 15:00:25</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
       <publishTime>02/05/2021 14:19:04</publishTime>
@@ -533,7 +536,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/14/2021 14:46:04</publishTime>
     </File>
     <File Include="Views/Home/MyRequests.cshtml">
-      <publishTime>02/14/2021 22:38:23</publishTime>
+      <publishTime>02/27/2021 22:44:23</publishTime>
     </File>
     <File Include="Views/Home/PageNotFound.cshtml">
       <publishTime>02/13/2021 22:23:30</publishTime>

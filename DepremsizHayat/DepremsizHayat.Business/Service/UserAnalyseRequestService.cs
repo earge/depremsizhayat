@@ -160,5 +160,27 @@ namespace DepremsizHayat.Business.Service
             _userAnalyseRequestRepository.Update(outOfQueue);
             _unitOfWork.Commit();
         }
+
+        public List<ExpertAnsweredRequest> ExpertAnsweredRequests(int expertId)
+        {
+            var list = _userAnalyseRequestRepository.GetExpertsAnsweredRequests(expertId);
+            List<ExpertAnsweredRequest> request = new List<ExpertAnsweredRequest>();
+            foreach (USER_ANALYSE_REQUEST expert in list)
+            {
+                var userRequest = _analyseRequestRepository.GetById((int)expert.ANALYSE_REQUEST_ID);
+                request.Add(new ExpertAnsweredRequest()
+                {
+                    ACTIVE = true,
+                    ANALYSE_REQUEST_ID = Convert.ToString(expert.ANALYSE_REQUEST_ID),
+                    DELETED = false,
+                    EXPERT_USER = _userRepository.GetById((int)expert.USER_ACCOUNT_ID),
+                    STATUS = expert.USER_ANALYSE_REQUEST_STATUS,
+                    ANALYSE_REQUEST = userRequest,
+                    REQUESTER_USER = _userRepository.GetById(userRequest.USER_ACCOUNT_ID),
+                    USER_ANALYSE_REQUEST_ID = Encryptor.Encrypt(expert.USER_ANALYSE_REQUEST_ID.ToString())
+                });
+            }
+            return request;
+        }
     }
 }

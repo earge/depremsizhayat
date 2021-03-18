@@ -291,7 +291,8 @@ body {
     .flex .container {
         flex: 1 1 auto;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 50px;
+        padding:50px 10px;
     }
 
     .flex.direction-column {
@@ -300,7 +301,7 @@ body {
 
 @media only screen and (max-width:600px) {
     .flex .container {
-        padding: 0px 10px;
+        padding: 10px 10px;
     }
 }
 
@@ -739,14 +740,11 @@ a.inline {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 4px 15px -5px rgba(182,182,182,0.25);
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 @media only screen and (max-width:600px) {
     .white-box {
-        margin-top: 40px;
-        margin-bottom: 40px;
+       
     }
 }
 

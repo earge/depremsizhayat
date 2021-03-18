@@ -133,5 +133,14 @@ namespace DepremsizHayat.Business.ServiceRepository
             }
             return null;
         }
+
+        public List<USER_ANALYSE_REQUEST> GetExpertsAnsweredRequests(int expertId)
+        {
+            return _dbContext.USER_ANALYSE_REQUEST
+                 .Where(p =>
+                 p.USER_ACCOUNT_ID == expertId &&
+                 (p.USER_ANALYSE_REQ_STATUS_CODE == UserAnalyseRequestStatusCodes.Completed))
+                 .ToList();
+        }
     }
 }
