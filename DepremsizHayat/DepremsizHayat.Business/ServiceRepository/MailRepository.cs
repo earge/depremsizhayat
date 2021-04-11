@@ -61,5 +61,9 @@ namespace DepremsizHayat.Business.ServiceRepository
         {
             return _dbContext.E_MAIL_ACCOUNT.FirstOrDefault(p => p.E_MAIL_ACCOUNT_CODE == code).USER_NAME;
         }
+        public string GetTemplate(int id)
+        {
+            return _dbContext.MESSAGE_TEMPLATE.Find(id).BODY;
+        }
     }
 }

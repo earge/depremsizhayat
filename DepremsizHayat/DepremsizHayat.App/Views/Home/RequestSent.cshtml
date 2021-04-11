@@ -18,6 +18,18 @@
                 </svg>
             </div>
             <h2>Talebiniz Gönderildi</h2>
+            <div class="align-center">
+                <div class="b">
+                    Takip Kodunuz
+                </div>
+                <div id="code">
+                    @if (Request.QueryString["Code"] != null)
+                    {
+                        <div>@Request.QueryString["Code"]</div>
+                    }
+
+                </div>
+            </div>
             <a href="/Home/MyRequests" class="link btn btn-main btn-blue">Taleplerim</a>
             <div class="mt15 tx-blue fs-14">
                 <a href="/Home/Index" class="link">Yeni Talep Oluştur</a>
@@ -25,3 +37,6 @@
         </div>
     </div>
 </div>
+<script>
+
+</script>

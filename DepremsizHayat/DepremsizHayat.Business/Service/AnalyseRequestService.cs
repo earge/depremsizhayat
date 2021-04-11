@@ -22,13 +22,15 @@ namespace DepremsizHayat.Business.Service
         private IUserAnalyseRequestRepository _userAnalyseRequestRepository;
         private IUnitOfWork _unitOfWork;
         private IMailRepository _mailRepository;
+        private IFileRepository _fileRepository;
         public AnalyseRequestService(IAnalyseRequestRepository analyseRequestRepository,
             IUserRepository userRepository,
             IUnitOfWork unitOfWork,
             IStatusRepository statusRepository,
             IAnalyseRequestAnswerRepository analyseRequestAnswerRepository,
             IMailRepository mailRepository,
-            IUserAnalyseRequestRepository userAnalyseRequestRepository)
+            IUserAnalyseRequestRepository userAnalyseRequestRepository,
+            IFileRepository fileRepository)
         {
             this._analyseRequestRepository = analyseRequestRepository;
             this._userRepository = userRepository;
@@ -37,6 +39,7 @@ namespace DepremsizHayat.Business.Service
             this._unitOfWork = unitOfWork;
             this._mailRepository = mailRepository;
             this._userAnalyseRequestRepository = userAnalyseRequestRepository;
+            this._fileRepository = fileRepository;
         }
         public List<AnalyseRequest> GetAllRequests()
         {
@@ -89,20 +92,55 @@ namespace DepremsizHayat.Business.Service
             }
             return request;
         }
-        public BaseResponse SendNewRequest(ANALYSE_REQUEST request)
+
+        private static Random random = new Random();
+        public string GetUniqueCode()
         {
-            BaseResponse response = new BaseResponse();
-            request.UNIQUE_KEY = Guid.NewGuid().ToString();
-            if (_analyseRequestRepository.Add(request) != null)
+        TryAgain:
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var result = new string(Enumerable.Repeat(chars, 6)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+            if (_analyseRequestRepository.IsUniqueCodeExist(result))
+                goto TryAgain;
+            else
+                return result;
+        }
+
+        public SendAnalyseResponse SendNewRequest(ANALYSE_REQUEST request, List<string> paths)
+        {
+            SendAnalyseResponse response = new SendAnalyseResponse();
+            request.UNIQUE_KEY = GetUniqueCode();
+            var added = _analyseRequestRepository.Add(request);
+            if (added != null)
             {
+                _unitOfWork.Commit();
+                if (paths!=null)
+                {
+                    foreach (var path in paths)
+                    {
+                        _fileRepository.Add(new FILE()
+                        {
+                            CREATED_DATE = DateTime.Now,
+                            DELETED = false,
+                            ENTITY_ID = added.ANALYSIS_REQUEST_ID,
+                            ENTITY_TYPE_CODE = "IMAGE",
+                            FILE_TYPE_ID = 1,
+                            URL = path
+                        });
+                    }
+                }
                 var requester = _userRepository.GetById(request.USER_ACCOUNT_ID);
-                var body = request.CREATED_DATE.ToShortDateString() + " tarihli yeni bir analiz talebi var. Talep sahibi: " + requester.FIRST_NAME + " " + requester.LAST_NAME + "(" + requester.E_MAIL + ") Talep ID: " + request.UNIQUE_KEY;
+                var template = _mailRepository.GetTemplate(2);
+                var body = template.Replace("%BODY%", request.CREATED_DATE.ToShortDateString() + " tarihli yeni bir analiz talebi var. Talep sahibi: " + requester.FIRST_NAME + " " + requester.LAST_NAME + "(" + requester.E_MAIL + ") Talep ID: " + request.UNIQUE_KEY);
                 foreach (USER_ACCOUNT admin in _userRepository.GetAdmins())
                 {
                     _mailRepository.SendMail("app", admin.E_MAIL, "Bir yeni analiz talebi var", body);
                 }
+                body = template.Replace("%BODY%", "Analiz talebiniz gönderildi. Talep takip kodu: " + request.UNIQUE_KEY);
+                _mailRepository.SendMail("app", requester.E_MAIL, "Analiz talebiniz gönderildi", body);
                 response.Status = true;
                 response.Message.Add("Analiz talebi gönderildi.");
+                response.Code = request.UNIQUE_KEY;
             }
             else
             {
@@ -249,7 +287,7 @@ namespace DepremsizHayat.Business.Service
                 YEAR_OF_CONSTRUCTION = dbRecord.YEAR_OF_CONSTRUCTION,
                 ANSWER = (answer != null) ? answer.DETAIL : null,
                 RISK_SCORE = (answer != null) ? (int?)answer.RISK_SCORE : null,
-                STATUS_ID = (dbRecord != null && dbRecord.STATUS!=null) ? dbRecord.STATUS_ID.ToString() : ""
+                STATUS_ID = (dbRecord != null && dbRecord.STATUS != null) ? dbRecord.STATUS_ID.ToString() : ""
             };
             return request;
         }

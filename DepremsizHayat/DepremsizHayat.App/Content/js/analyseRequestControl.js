@@ -66,11 +66,16 @@ requestButton.addEventListener("click", function (event) {
                 return xhr
             },
             success: function (data) {
-                event.target.classList.remove("loading")
-                event.target.disabled = false
-                ResponseMessage("analyseJsonInfo", data)
-                resetForm()
-                window.location = "/Home/RequestSent"
+                //event.target.classList.remove("loading")
+                //event.target.disabled = false
+                //ResponseMessage("analyseJsonInfo", data)
+                //resetForm()
+                if (data.Status == true) {
+                    window.location = "/Home/RequestSent?code=" + data.Code
+                }
+                else {
+                    ResponseMessage("analyseJsonInfo", data)
+                }
             },
             error: function (err) {
                 event.target.classList.remove("loading")

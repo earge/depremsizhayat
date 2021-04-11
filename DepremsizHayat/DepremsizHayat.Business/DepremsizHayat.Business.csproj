@@ -56,6 +56,7 @@
     <Compile Include="Factory\IDbFactory.cs" />
     <Compile Include="IServiceRepository\IAnalyseRequestAnswerRepository.cs" />
     <Compile Include="IServiceRepository\IAnalyseRequestRepository.cs" />
+    <Compile Include="IServiceRepository\IFileRepository.cs" />
     <Compile Include="IServiceRepository\IMailRepository.cs" />
     <Compile Include="IServiceRepository\IRoleRepository.cs" />
     <Compile Include="IServiceRepository\IStatusRepository.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceRepository\AnalyseRequestAnswerRepository.cs" />
     <Compile Include="ServiceRepository\AnalyseRequestRepository.cs" />
+    <Compile Include="ServiceRepository\FileRepository.cs" />
     <Compile Include="ServiceRepository\MailRepository.cs" />
     <Compile Include="ServiceRepository\RoleRepository.cs" />
     <Compile Include="ServiceRepository\StatusRepository.cs" />

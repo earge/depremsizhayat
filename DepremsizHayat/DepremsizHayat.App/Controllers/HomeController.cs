@@ -2,6 +2,7 @@
 using DepremsizHayat.DTO;
 using DepremsizHayat.DTO.User;
 using DepremsizHayat.Security;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -35,9 +36,16 @@ namespace DepremsizHayat.App.Controllers
         {
             return View();
         }
-        public ActionResult RequestSent()
+        public ActionResult RequestSent(string Code)
         {
-            return View();
+            if (!string.IsNullOrEmpty(Code))
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
         public ActionResult Name()
         {
@@ -58,12 +66,14 @@ namespace DepremsizHayat.App.Controllers
             {
                 try
                 {
-                    int totalContentLength=0;
+                    int totalContentLength = 0;
+                    List<string> photos = new List<string>();
                     HttpFileCollectionBase files = Request.Files;
                     for (int i = 0; i < files.Count; i++)
                     {
                         HttpPostedFileBase file = files[i];
                         string fname = file.FileName;
+                        photos.Add("/Sources/" + encryptedId + "/" + fname);
                         if (!Directory.Exists(Server.MapPath("~/Sources/" + encryptedId + "/")))
                         {
                             Directory.CreateDirectory(Server.MapPath("~/Sources/" + encryptedId + "/"));
@@ -88,7 +98,8 @@ namespace DepremsizHayat.App.Controllers
                         USER_NOTE = Request.Form["note"],
                         YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form["year"])
                     };
-                    return Json(_analyseRequestService.SendNewRequest(request), JsonRequestBehavior.AllowGet);
+                    var response = _analyseRequestService.SendNewRequest(request, photos);
+                    return Json(response, JsonRequestBehavior.AllowGet);
                 }
                 catch (Exception)
                 {
@@ -111,7 +122,7 @@ namespace DepremsizHayat.App.Controllers
                     USER_NOTE = Request.Form["note"],
                     YEAR_OF_CONSTRUCTION = Convert.ToInt32(Request.Form["year"])
                 };
-                return Json(_analyseRequestService.SendNewRequest(request), JsonRequestBehavior.AllowGet);
+                return Json(_analyseRequestService.SendNewRequest(request, null), JsonRequestBehavior.AllowGet);
             }
             return View();
         }

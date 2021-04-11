@@ -27,5 +27,13 @@ namespace DepremsizHayat.Business.ServiceRepository
         {
             return _dbContext.ANALYSE_REQUEST.FirstOrDefault(p => p.UNIQUE_KEY == code);
         }
+
+        public bool IsUniqueCodeExist(string code)
+        {
+            if (_dbContext.ANALYSE_REQUEST.FirstOrDefault(P => P.UNIQUE_KEY == code) == null)
+                return false;
+            else
+                return true;
+        }
     }
 }

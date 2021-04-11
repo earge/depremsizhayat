@@ -11,5 +11,6 @@ namespace DepremsizHayat.Business.IServiceRepository
     public interface IAnalyseRequestRepository : IRepository<ANALYSE_REQUEST>
     {
         ANALYSE_REQUEST GetByUniqueCode(string code);
+        bool IsUniqueCodeExist(string code);
     }
 }

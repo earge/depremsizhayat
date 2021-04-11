@@ -23,6 +23,7 @@ namespace DepremsizHayat.Business.BaseRepository
         public T Add(T entity)
         {
             _dbSet.Add(entity);
+            _dbContext.SaveChanges();
             return entity;
         }
 
