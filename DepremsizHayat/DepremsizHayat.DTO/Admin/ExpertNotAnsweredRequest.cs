@@ -30,5 +30,6 @@ namespace DepremsizHayat.DTO.Admin
         public bool DELETED { get; set; }
         public ANALYSE_REQUEST ANALYSE_REQUEST { get; set; }
         public USER_ANALYSE_REQUEST_STATUS STATUS { get; set; }
+        public string USER_NOTE { get; set; }
     }
 }

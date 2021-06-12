@@ -12,5 +12,6 @@ namespace DepremsizHayat.Business.IServiceRepository
     {
         ANALYSE_REQUEST GetByUniqueCode(string code);
         bool IsUniqueCodeExist(string code);
+        IOrderedQueryable<ANALYSE_REQUEST> GetByUserIdDescendingDate(int userId);
     }
 }

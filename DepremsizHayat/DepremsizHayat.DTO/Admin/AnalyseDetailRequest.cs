@@ -20,5 +20,7 @@ namespace DepremsizHayat.DTO.Admin
         public string PHONE_NUMBER_1 { get; set; }
         public string PHONE_NUMBER_2 { get; set; }
         public string USER_NOTE { get; set; }
+        public string ANSWER { get; set; }
+        public int? RISK_SCORE { get; set; }
     }
 }

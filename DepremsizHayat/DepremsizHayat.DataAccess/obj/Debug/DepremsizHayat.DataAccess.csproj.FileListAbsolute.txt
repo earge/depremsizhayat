@@ -58,3 +58,15 @@ C:\Users\Rıdvan Windows\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHay
 C:\Users\Rıdvan Windows\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CopyComplete
 C:\Users\Rıdvan Windows\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.dll
 C:\Users\Rıdvan Windows\Source\Repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.dll.config
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csprojAssemblyReference.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CopyComplete
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.pdb

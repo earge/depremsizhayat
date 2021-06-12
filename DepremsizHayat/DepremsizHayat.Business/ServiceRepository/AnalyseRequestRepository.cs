@@ -28,6 +28,11 @@ namespace DepremsizHayat.Business.ServiceRepository
             return _dbContext.ANALYSE_REQUEST.FirstOrDefault(p => p.UNIQUE_KEY == code);
         }
 
+        public IOrderedQueryable<ANALYSE_REQUEST> GetByUserIdDescendingDate(int userId)
+        {
+            return _dbContext.ANALYSE_REQUEST.Where(T => T.USER_ACCOUNT_ID == userId).OrderByDescending(P => P.CREATED_DATE);
+        }
+
         public bool IsUniqueCodeExist(string code)
         {
             if (_dbContext.ANALYSE_REQUEST.FirstOrDefault(P => P.UNIQUE_KEY == code) == null)

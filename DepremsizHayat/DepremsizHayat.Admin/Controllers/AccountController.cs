@@ -46,7 +46,7 @@ namespace DepremsizHayat.Admin.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("**", "**");//aaaa
+                        return RedirectToAction("ExpertNotAnsweredRequests", "Panel");
                     }
                     
                 }

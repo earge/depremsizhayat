@@ -68,14 +68,13 @@ namespace DepremsizHayat.Business.Service
         public List<MyAnalyseRequest> GetRequestsByUserId(int ID)
         {
             var request = new List<MyAnalyseRequest>();
-            foreach (
-                DataAccess.ANALYSE_REQUEST analyse in _analyseRequestRepository
-                .GetAll()
-                .Where(T => T.USER_ACCOUNT_ID == ID)
-                .OrderByDescending(P => P.CREATED_DATE)
-                )
+            foreach (ANALYSE_REQUEST analyse in _analyseRequestRepository.GetByUserIdDescendingDate(ID))
             {
-                var dummy = new MyAnalyseRequest()
+                var answer =
+                    (analyse.STATUS.STATUS_CODE == AnalyseRequestStatusCodes.Completed)
+                    ? _analyseRequestAnswerRepository.GetByRequestId(analyse.ANALYSIS_REQUEST_ID)
+                    : null;
+                request.Add(new MyAnalyseRequest()
                 {
                     ANALYSIS_REQUEST_ID = analyse.ANALYSIS_REQUEST_ID.ToString(),
                     COUNTRY = analyse.COUNTRY,
@@ -86,9 +85,10 @@ namespace DepremsizHayat.Business.Service
                     USER_ACCOUNT_ID = analyse.USER_ACCOUNT_ID.ToString(),
                     YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION,
                     ADDRESS = analyse.ADDRESS,
-                    STATUS_CODE = analyse.STATUS.STATUS_CODE
-                };
-                request.Add(dummy);
+                    STATUS_CODE = analyse.STATUS.STATUS_CODE,
+                    COMPLETED = (answer != null) ? answer.COMPLETED : false,
+                    RISK_SCORE = answer?.RISK_SCORE
+                });
             }
             return request;
         }
@@ -114,7 +114,7 @@ namespace DepremsizHayat.Business.Service
             if (added != null)
             {
                 _unitOfWork.Commit();
-                if (paths!=null)
+                if (paths != null)
                 {
                     foreach (var path in paths)
                     {
@@ -216,6 +216,9 @@ namespace DepremsizHayat.Business.Service
         {
             int decryptedId = Decryptor.DecryptInt(id);
             ANALYSE_REQUEST thatRequest = _analyseRequestRepository.GetById(decryptedId);
+            var answer = _analyseRequestAnswerRepository.GetByRequestId(thatRequest.ANALYSIS_REQUEST_ID) != null
+                ? _analyseRequestAnswerRepository.GetByRequestId(thatRequest.ANALYSIS_REQUEST_ID)
+                : null;
             AnalyseDetailRequest detail = new AnalyseDetailRequest()
             {
                 ANALYSIS_REQUEST_ID = Convert.ToString(thatRequest.ANALYSIS_REQUEST_ID),
@@ -224,6 +227,9 @@ namespace DepremsizHayat.Business.Service
                 PHONE_NUMBER_1 = thatRequest.PHONE_NUMBER_1,
                 PHONE_NUMBER_2 = thatRequest.PHONE_NUMBER_2,
                 USER_NOTE = thatRequest.USER_NOTE,
+                ANSWER = answer?.DETAIL,
+                RISK_SCORE = answer?.RISK_SCORE
+
             };
             return detail;
         }

@@ -34,11 +34,12 @@ namespace DepremsizHayat.Business.ServiceRepository
         }
         public List<USER_ANALYSE_REQUEST> GetExpertsNotAnsweredRequests(int expertId)
         {
-            return _dbContext.USER_ANALYSE_REQUEST
+            var x = _dbContext.USER_ANALYSE_REQUEST
                 .Where(p =>
                 p.USER_ACCOUNT_ID == expertId &&
                 (p.USER_ANALYSE_REQ_STATUS_CODE == UserAnalyseRequestStatusCodes.Accepted))
                 .ToList();
+            return x;
         }
         public List<USER_ANALYSE_REQUEST> GetByAnalyseRequestId(int analyseRequestId)
         {

@@ -2,7 +2,7 @@
 @using DepremsizHayat.DTO;
 @model PaginationModel<ExpertAnsweredRequest>
 @{
-    ViewBag.Title = "ExpertAnsweredRequests";
+    ViewBag.Title = "Yanıtladığım Talepler";
     Layout = "~/Views/Panel/Shared/Layout_.cshtml";
 }
 <script src="~/Content/js/pagination.js"></script>
@@ -38,6 +38,7 @@
                                                         <td>@analyse.ANALYSE_REQUEST.COUNTRY @analyse.ANALYSE_REQUEST.DISTRICT</td>
                                                         <td>@analyse.ANALYSE_REQUEST.NUMBER_OF_FLOORS @analyse.ANALYSE_REQUEST.YEAR_OF_CONSTRUCTION</td>
                                                         <td>@analyse.STATUS.NAME</td>
+                                                        <td>@analyse.USER_NOTE</td>
                                                     </tr>
                                                 }
                                             }

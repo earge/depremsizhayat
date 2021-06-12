@@ -69,7 +69,8 @@ namespace DepremsizHayat.Business.Service
                     STATUS = expert.USER_ANALYSE_REQUEST_STATUS,
                     ANALYSE_REQUEST = userRequest,
                     REQUESTER_USER = _userRepository.GetById(userRequest.USER_ACCOUNT_ID),
-                    USER_ANALYSE_REQUEST_ID = Encryptor.Encrypt(expert.USER_ANALYSE_REQUEST_ID.ToString())
+                    USER_ANALYSE_REQUEST_ID = Encryptor.Encrypt(expert.USER_ANALYSE_REQUEST_ID.ToString()),
+                    USER_NOTE = userRequest.USER_NOTE
                 });
             }
             return request;
@@ -79,6 +80,7 @@ namespace DepremsizHayat.Business.Service
             BaseResponse response = new BaseResponse();
             try
             {
+                type = type?.ToUpper();
                 USER_ANALYSE_REQUEST assignedRequest = _userAnalyseRequestRepository.GetById(requestId);
                 if (assignedRequest.USER_ANALYSE_REQ_STATUS_CODE == Resources.UserAnalyseRequestStatusCodes.Waiting)
                 {

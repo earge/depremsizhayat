@@ -13,57 +13,60 @@
 
 <div class="flex h-center" id="sendnewrequest">
     <div class="container">
-        <div class="white-box">
-            <div class="top-header align-left p15">Talep Oluştur</div>
-            <div class="p15">
-                <div class="align-center mb15"><button id="addImageButton" class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
-                <div id="remaining" class="align-center fs-12 mb15 hidden">10 Adet Resim Seçebilirsiniz</div>
-                <div class="imagesBox mb15 p5 hidden">
-                    <div></div>
-                </div>
-                <div id="requestErrorImage" class="requestErrorSpan fs-12 b tx-red mb10 align-center hidden">En az bir resim seçmelisiniz.</div>
-                <div class="mb15 flex hidden" id="progressLine"><div class="white-space-now fs-12 mr10">Resimler Yükleniyor</div><ro-progressbar class="w-100" id="loadProgress" value="0"></ro-progressbar><div class="white-space-now ml5 fs-12" id="uploadInfo">0%</div></div>
-                <div class="mb15"><input type="text" class="input one" id="phone1" placeholder="Telefon Numaranız (İsteğe Bağlı)" /></div>
-                <div class="mb15"><input type="text" class="input one" id="phone2" placeholder="Diğer Telefon Numaranız (İsteğe Bağlı)" /></div>
-                <div class="flex h-stretch-100 mb15">
-                    <div class="mr7">
-                        <div class="mb10 ml10 fs-14 tx-gray">Binanın Yapım Yılı</div>
-                        <input id="year" class="input one mb5" placeholder="YYYY"/>
-                        <span id="requestErrorYear" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Lütfen geçerli bir yıl giriniz.</span>
+        <div class="form-area">
+            <div class="white-box">
+                <div class="top-header align-left p15">Talep Oluştur</div>
+                <div class="p15">
+                    <div class="align-center mb15"><button id="addImageButton" class="btn btn-main bg-green tx-white"><i class="fas fa-plus-circle mr7"></i> Resim Ekleyin</button><input type="file" id="imageInput" class="hidden" multiple="multiple" /></div>
+                    <div id="remaining" class="align-center fs-12 mb15 hidden">10 Adet Resim Seçebilirsiniz</div>
+                    <div class="imagesBox mb15 p5 hidden">
+                        <div></div>
                     </div>
-                    <div class="ml7">
-                        <div class="mb10 ml10 fs-14 tx-gray">Binanın Kat Sayısı</div>
-                        <input class="input one mb5" id="floor" type="number" min="0" placeholder="0"/>
-                        <span id="requestErrorFloor" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Kat sayısını giriniz.</span>
+                    <div id="requestErrorImage" class="requestErrorSpan fs-12 b tx-red mb10 align-center hidden">En az bir resim seçmelisiniz.</div>
+                    <div class="mb15 flex hidden" id="progressLine"><div class="white-space-now fs-12 mr10">Resimler Yükleniyor</div><ro-progressbar class="w-100" id="loadProgress" value="0"></ro-progressbar><div class="white-space-now ml5 fs-12" id="uploadInfo">0%</div></div>
+                    <div class="mb15"><input type="text" class="input one" id="phone1" placeholder="Telefon Numaranız (İsteğe Bağlı)" /></div>
+                    <div class="mb15"><input type="text" class="input one" id="phone2" placeholder="Diğer Telefon Numaranız (İsteğe Bağlı)" /></div>
+                    <div class="flex h-stretch-100 mb15">
+                        <div class="mr7">
+                            <div class="mb10 ml10 fs-14 tx-gray">Binanın Yapım Yılı</div>
+                            <input id="year" class="input one mb5" placeholder="YYYY" />
+                            <span id="requestErrorYear" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Lütfen geçerli bir yıl giriniz.</span>
+                        </div>
+                        <div class="ml7">
+                            <div class="mb10 ml10 fs-14 tx-gray">Binanın Kat Sayısı</div>
+                            <input class="input one mb5" id="floor" type="number" min="0" placeholder="0" />
+                            <span id="requestErrorFloor" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Kat sayısını giriniz.</span>
+                        </div>
+                    </div>
+                    <div class="flex h-stretch-100 mb15">
+                        <div class="mr7">
+                            <div class="mb10 ml10 fs-14 tx-gray">Ülke</div>
+                            <select id="country" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option><option value="Türkiye">Türkiye</option></select>
+                            <span id="requestErrorCountry" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Ülke seçiniz.</span>
+                        </div>
+                        <div class="ml7">
+                            <div class="mb10 ml10 fs-14 tx-gray">Şehir</div>
+                            <select id="district" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option></select>
+                            <span id="requestErrorDistrict" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Şehir seçiniz.</span>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea class="input textarea mb5" id="address" placeholder="Adres"></textarea>
+                        <span id="requestErrorAddress" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Adres alanı boş bırakılamaz.</span>
+                    </div>
+                    <div>
+                        <textarea class="input textarea mt15 mb5" id="note" placeholder="Açıklama"></textarea>
+                        <span id="requestErrorNote" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Açıklama alanı boş bırakılamaz.</span>
                     </div>
                 </div>
-                <div class="flex h-stretch-100 mb15">
-                    <div class="mr7">
-                        <div class="mb10 ml10 fs-14 tx-gray">Ülke</div>
-                        <select id="country" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option><option value="Türkiye">Türkiye</option></select>
-                        <span id="requestErrorCountry" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Ülke seçiniz.</span>
-                    </div>
-                    <div class="ml7">
-                        <div class="mb10 ml10 fs-14 tx-gray">Şehir</div>
-                        <select id="district" class="select one w-100 pl10 mb5"><option value="-1">Seçiniz</option></select>
-                        <span id="requestErrorDistrict" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Şehir seçiniz.</span>
-                    </div>
+                <div class="info-boxes error mr15 ml15 mb15 none json" id="analyseJsonInfo"></div>
+                <div class="align-center pb15 pl15 pr15">
+                    <button id="request" class="btn btn-main btn-blue spinner">
+                        <span class="spinner"></span>Talebi Gönder
+                    </button>
                 </div>
-                <div>
-                    <textarea class="input textarea mb5" id="address" placeholder="Adres"></textarea>
-                    <span id="requestErrorAddress" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Adres alanı boş bırakılamaz.</span>
-                </div>
-                <div>
-                    <textarea class="input textarea mt15 mb5" id="note" placeholder="Açıklama"></textarea>
-                    <span id="requestErrorNote" class="requestErrorSpan fs-12 b tx-red mb10 pl10 hidden">Açıklama alanı boş bırakılamaz.</span>
-                </div>
-            </div>
-            <div class="info-boxes error mr15 ml15 mb15 none json" id="analyseJsonInfo"></div>
-            <div class="align-center pb15 pl15 pr15">
-                <button id="request" class="btn btn-main btn-blue spinner">
-                    <span class="spinner"></span>Talebi Gönder
-                </button>
             </div>
         </div>
+        <div class="right"></div>
     </div>
 </div>
