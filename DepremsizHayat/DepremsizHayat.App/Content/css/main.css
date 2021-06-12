@@ -811,3 +811,6 @@ a.inline {
     -o-animation: spin .7s linear infinite;
     animation: spin .7s linear infinite;
 }
+.border-bottom {
+    border-bottom: 2px solid var(--color-border-gray);
+}

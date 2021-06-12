@@ -2,21 +2,22 @@
     display: grid;
     grid-template-columns: 600px 300px;
     grid-template-rows: 1fr;
-    gap: 10px 10px;
+    gap: 15px 15px;
     grid-template-areas:
         "form-area right";
     width: 100%;
-    max-width: 910px;
+    max-width: 940px;
 }
 
-@media screen and (max-width:820px) {
+@media screen and (max-width:940px) {
     #sendnewrequest .container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        gap: 10px 10px;
+        gap: 15px 15px;
         grid-template-areas:
-            "right" "form-area";
+            "form-area" "right";
+        max-width: 600px;
     }
 }
 
@@ -28,6 +29,10 @@
     grid-area: right;
 }
 
+
+    #sendnewrequest .right h3 {
+        color: var(--color-secondary)
+    }
 
 .select.one {
     height: 40px;

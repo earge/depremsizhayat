@@ -70,3 +70,15 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAcc
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.dll
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.dll.config
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\DepremsizHayat.DataAccess.pdb
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.csproj.CopyComplete
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.dll
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DataAccess\obj\Debug\DepremsizHayat.DataAccess.pdb

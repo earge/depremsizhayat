@@ -27,3 +27,13 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resourc
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.dll
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.pdb
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\bin\Debug\DepremsizHayat.Resources.dll
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\bin\Debug\DepremsizHayat.Resources.pdb
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csproj.AssemblyReference.cache
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.UserAnalyseRequestStatusCodes.resources
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.RoleCodes.resources
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.AnalyseRequestStatusCodes.resources
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csproj.GenerateResource.cache
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.csproj.CoreCompileInputs.cache
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.dll
+C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Debug\DepremsizHayat.Resources.pdb

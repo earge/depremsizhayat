@@ -35,3 +35,11 @@
         })
     }
 })
+
+Array.from(document.querySelectorAll(".login-inputs")).forEach(item => {
+    item.addEventListener("keyup", function (e) {
+        if (e.keyCode === 13) {
+            document.querySelector("#loginButton").click()
+        }
+    })
+})
