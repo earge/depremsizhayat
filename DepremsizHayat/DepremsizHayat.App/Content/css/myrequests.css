@@ -117,6 +117,7 @@
     border-radius: 10px;
     margin-top: 20px;
     border-spacing: 0px;
+    width:100%;
 }
 
     #prompt-request-detail tr td {
@@ -154,3 +155,53 @@
     #prompt-request-detail tr:last-child td:last-child {
         border-radius: 0px 0px 5px 0px
     }
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+    /* Style the images inside the grid */
+    .column img {
+        opacity: 0.8;
+        cursor: pointer;
+        width:100%;
+        height:auto
+    }
+
+        .column img:hover {
+            opacity: 1;
+        }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.image-container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}

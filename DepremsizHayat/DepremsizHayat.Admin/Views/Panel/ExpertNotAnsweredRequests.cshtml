@@ -37,7 +37,18 @@
                                                         <td>@analyse.REQUESTER_USER.FIRST_NAME @analyse.REQUESTER_USER.LAST_NAME</td>
                                                         <td>@analyse.ANALYSE_REQUEST.COUNTRY @analyse.ANALYSE_REQUEST.DISTRICT</td>
                                                         <td>@analyse.ANALYSE_REQUEST.NUMBER_OF_FLOORS @analyse.ANALYSE_REQUEST.YEAR_OF_CONSTRUCTION</td>
-                                                        <td>@analyse.STATUS.NAME</td>
+                                                        <td>
+                                                            @switch (analyse.STATUS.NAME)
+                                                            {
+                                                                case "Accepted":
+                                                                    <span>Kabul Edildi</span>
+                                                                    break;
+                                                                case "Denied":
+                                                                    <span>Ret Edildi</span>
+                                                                    break;
+
+                                                            }
+                                                        </td>
                                                         <td>@analyse.USER_NOTE</td>
                                                     </tr>
                                                     <tr>
@@ -51,13 +62,13 @@
                                                         </td>
                                                     </tr>
                                                 }
-                                            }
-                                            else
-                                            {
+                                                            }
+                                                            else
+                                                            {
                                                 <tr>
                                                     <td colspan="5" style="text-align:center">Bir kayıt bulunamadı.</td>
                                                 </tr>
-                                            }
+                                                            }
 
                                         </tbody>
                                     </table>
@@ -71,12 +82,12 @@
         </div>
     </div>
     @if (ViewBag.ReplyResponse != null && ViewBag.ReplyResponse.Message.Count>0)
-    {
-        for (int i = 0; i < ViewBag.ReplyResponse.Message.Count; i++)
-        {
+                                                        {
+                                                            for (int i = 0; i < ViewBag.ReplyResponse.Message.Count; i++)
+                                                            {
             <b>@ViewBag.ReplyResponse.Message[i]</b>
-        }
-    }
+                                                            }
+                                                        }
 </section>
 @Html.Partial("Shared/_StatusPartial")
 <script>

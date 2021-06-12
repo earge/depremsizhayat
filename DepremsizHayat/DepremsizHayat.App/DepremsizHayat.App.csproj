@@ -206,6 +206,7 @@
     <Content Include="Content\css\myrequests.css" />
     <Content Include="Content\css\pagenotfound.css" />
     <Content Include="Content\css\requestsent.css" />
+    <Content Include="Content\js\myRequests.js" />
     <Content Include="Content\js\prompt.js" />
     <Content Include="Content\css\register.css" />
     <Content Include="Content\css\setandforgotpassword.css" />

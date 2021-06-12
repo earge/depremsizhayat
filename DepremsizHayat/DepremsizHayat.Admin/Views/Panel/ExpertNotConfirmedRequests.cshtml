@@ -40,7 +40,12 @@
                                                                 <td><input type="hidden" name="type" id="type_@i">@waitingRequest.REQUESTER_USER.FIRST_NAME @waitingRequest.REQUESTER_USER.LAST_NAME</td>
                                                                 <td>@Html.Hidden("requestId", waitingRequest.USER_ANALYSE_REQUEST_ID, new { id = i })@waitingRequest.ANALYSE_REQUEST.CREATED_DATE</td>
                                                                 <td>@waitingRequest.ANALYSE_REQUEST.USER_NOTE</td>
-                                                                <td><button class="accept" type="button" data-form-id="@i"><i class="fas fa-check"></i></button><button data-form-id="@i" class="deny" type="button"><i class="fas fa-times"></i></button></td>
+                                                                <td>
+                                                                    <div class="btn-group">
+                                                                        <button type="button" data-form-id="@i" class="btn btn-success accept"><i class="fas fa-check"></i></button>
+                                                                        <button type="button" data-form-id="@i" class="btn btn-danger deny"><i class="fas fa-times"></i></button>    
+                                                                    </div>
+                                                                </td>
                                                             }
                                                         </tr>
                                                         i++;

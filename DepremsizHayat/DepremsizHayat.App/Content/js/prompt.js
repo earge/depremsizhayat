@@ -19,6 +19,7 @@ const promptTemplate = document.createElement("template")
             align-items:flex-start;
         }
         :host > div > div {
+            position:relative;
             margin:50px 10px 10px 10px ;
             flex: 1 1 auto;
             max-width:600px;
@@ -28,11 +29,19 @@ const promptTemplate = document.createElement("template")
             box-shadow:0px 0px 15px -5px rgba(0,0,0,0.1);
             box-sizing:border-box;
             padding:15px;
+            max-height:calc(100% - 100px);
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
-        :host > div > div > div:nth-of-type(1){
-            text-align:right
+        :host > div > div::-webkit-scrollbar{
+            display: none;
         }
-        :host > div > div > div > button {
+        :host > div > div >  button {
+            top:10px;
+            right:10px;
+            position:absolute;
             border-radius:5px;
             background-color:rgb(255,59,48);
             color:white;
@@ -42,10 +51,11 @@ const promptTemplate = document.createElement("template")
             outline:none;
             cursor:pointer
         }
+
         </style>
         <div>
             <div>
-                <div><button>Kapat</button></div>
+                <button>Kapat</button>
                 <div>
                     <slot></slot>
                 </div>
@@ -69,7 +79,7 @@ const promptTemplate = document.createElement("template")
                 document.body.appendChild(prompt)
             }
             connectedCallback(){
-                this.shadow.querySelector(":host>div>div>div>button").addEventListener("click", this.close.bind(this))
+                this.shadow.querySelector(":host>div>div>button").addEventListener("click", this.close.bind(this))
                 this.shadow.querySelector(":host>div").addEventListener("click", this.close.bind(this))
                 this.shadow.querySelector(":host>div div").addEventListener("click", (event)=>event.stopPropagation())
             }

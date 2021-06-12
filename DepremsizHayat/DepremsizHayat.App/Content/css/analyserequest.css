@@ -53,10 +53,16 @@
         height: 100%;
         width: 100%;
         border-radius: 5px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
         overflow-x: scroll;
-        overflow-y: auto;
+        overflow-y: hidden;
         display: flex;
     }
+
+        .imagesBox > div::-webkit-scrollbar {
+            display: none;
+        }
 
 .imagesBox > div > div{
     position:relative;
