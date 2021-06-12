@@ -243,8 +243,8 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\bin
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\bin\DepremsizHayat.Security.pdb
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\bin\DepremsizHayat.Security.dll.config
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\bin\DepremsizHayat.Resources.pdb
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\obj\Debug\DepremsizHayat.Com.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\obj\Debug\DepremsizHayat.Com.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\obj\Debug\DepremsizHayat.Com.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\obj\Debug\DepremsizHayat.Com.dll
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\obj\Debug\DepremsizHayat.Com.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Com\obj\Debug\DepremsizHayat.Com.csproj.AssemblyReference.cache

@@ -1,0 +1,63 @@
+﻿@model DepremsizHayat.DTO.Admin.AnalyseDetailRequest
+<h3>Talep Detayları</h3>
+
+<table>
+    <tr><td>Oluşturulma tarihi: </td><td>@Model.CREATED_DATE</td></tr>
+    <tr><td>Adres: </td><td>@Model.ADDRESS</td></tr>
+    <tr>
+        <td>1. Telefon no: </td>
+        <td>
+            @if (!string.IsNullOrEmpty(Model.PHONE_NUMBER_1))
+            {
+                <span>@Model.PHONE_NUMBER_1</span>
+
+            }
+            else
+            {
+                <span>-</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>2. Telefon no: </td>
+        <td>
+            @if (!string.IsNullOrEmpty(Model.PHONE_NUMBER_2))
+            {
+                <span>@Model.PHONE_NUMBER_2</span>
+
+            }
+            else
+            {
+                <span>-</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Kullanıcı Notu: </td>
+        <td>
+            @if (!string.IsNullOrEmpty(Model.USER_NOTE))
+            {
+                <span>@Model.USER_NOTE</span>
+            }
+            else
+            {
+                <span>-</span>
+            }
+        </td>
+    </tr>
+    @if (!string.IsNullOrEmpty(Model.ANSWER))
+    {
+        <tr><td>Cevap: </td><td>@Model.ANSWER</td></tr>
+    }
+    @if (Model.RISK_SCORE != null)
+    {
+        <tr><td>Risk Skoru: </td><td>@Model.RISK_SCORE</td></tr>
+    }
+</table>
+@if (Model.IMAGES != null && Model.IMAGES.Count > 0)
+{
+    foreach (string image in Model.IMAGES)
+    {
+        <img src="@image" />
+    }
+}

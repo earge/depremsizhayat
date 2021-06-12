@@ -341,7 +341,6 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\b
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\bin\System.Web.Helpers.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\bin\System.Web.Mvc.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.dll
@@ -462,3 +461,4 @@ C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.csproj.CopyComplete
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.dll
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Admin\obj\Debug\DepremsizHayat.Admin.csproj.AssemblyReference.cache
