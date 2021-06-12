@@ -125,7 +125,6 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Busines
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\DepremsizHayat.Security.dll.config
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.dll
@@ -152,3 +151,4 @@ C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Busin
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.CopyComplete
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.dll
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Debug\DepremsizHayat.Business.csproj.AssemblyReference.cache

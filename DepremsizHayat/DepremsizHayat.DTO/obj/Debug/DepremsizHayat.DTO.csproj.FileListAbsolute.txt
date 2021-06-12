@@ -73,7 +73,6 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.pdb
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\DepremsizHayat.Security.dll.config
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Debug\EntityFramework.xml
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.dll
@@ -93,3 +92,4 @@ C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\o
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.CopyComplete
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.dll
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Debug\DepremsizHayat.DTO.csproj.AssemblyReference.cache

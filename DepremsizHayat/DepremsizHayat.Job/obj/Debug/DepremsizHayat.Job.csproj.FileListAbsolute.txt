@@ -299,7 +299,6 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\bin
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\bin\Debug\EntityFramework.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\bin\Debug\DepremsizHayat.Security.pdb
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\bin\Debug\DepremsizHayat.Security.dll.config
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.dll
@@ -357,3 +356,4 @@ C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\o
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.csproj.CopyComplete
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.dll
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Job\obj\Debug\DepremsizHayat.Job.csproj.AssemblyReference.cache

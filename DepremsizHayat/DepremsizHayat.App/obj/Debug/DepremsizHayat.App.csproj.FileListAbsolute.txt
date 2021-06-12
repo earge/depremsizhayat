@@ -901,7 +901,6 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\System.Web.Http.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\System.Web.Http.WebHost.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.dll
@@ -1046,3 +1045,4 @@ C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\o
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.csproj.CopyComplete
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.dll
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.App\obj\Debug\DepremsizHayat.App.csproj.AssemblyReference.cache

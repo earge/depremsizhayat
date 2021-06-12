@@ -15,5 +15,10 @@ namespace DepremsizHayat.Business.ServiceRepository
         public FileRepository(IDbFactory dbFactory) : base(dbFactory)
         {
         }
+
+        public List<FILE> GetByEntityId(int EntityId)
+        {
+            return _dbContext.FILE.Where(p => p.ENTITY_ID == EntityId).ToList();
+        }
     }
 }

@@ -228,8 +228,8 @@ namespace DepremsizHayat.Business.Service
                 PHONE_NUMBER_2 = thatRequest.PHONE_NUMBER_2,
                 USER_NOTE = thatRequest.USER_NOTE,
                 ANSWER = answer?.DETAIL,
-                RISK_SCORE = answer?.RISK_SCORE
-
+                RISK_SCORE = answer?.RISK_SCORE,
+                IMAGES =  _fileRepository.GetByEntityId(thatRequest.ANALYSIS_REQUEST_ID).Select(p=>p.URL).ToList()
             };
             return detail;
         }
