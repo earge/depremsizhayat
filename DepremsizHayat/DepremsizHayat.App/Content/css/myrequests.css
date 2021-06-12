@@ -1,0 +1,156 @@
+﻿.container {
+    width: 100%;
+    max-width: 750px;
+}
+
+.free-spinner {
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--color-blue) var(--color-blue) var(--color-blue) transparent;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    -webkit-animation: spin .7s linear infinite;
+    -moz-animation: spin .7s linear infinite;
+    -ms-animation: spin .7s linear infinite;
+    -o-animation: spin .7s linear infinite;
+    animation: spin .7s linear infinite;
+}
+
+
+.request-box {
+    margin: 0px !important;
+    padding: 5px;
+}
+
+    .request-box:not(:last-child) {
+        margin-bottom: 10px !important;
+    }
+
+    .request-box .status {
+        font-size: 12px;
+        font-weight: bold;
+        text-align: right;
+        padding: 3px 10px;
+        color: white;
+        border-radius: 5px;
+    }
+
+        .request-box .status.green {
+            background-color: var(--color-green);
+        }
+
+        .request-box .status.yellow {
+            background-color: var(--color-yellow)
+        }
+
+        .request-box .status.red {
+            background-color: var(--color-red)
+        }
+
+        .request-box .status.blue {
+            background-color: rgb(90,200,250);
+        }
+
+        .request-box .status.orange {
+            background-color: rgb(255, 149, 0);
+        }
+
+    .request-box .line {
+        background-color: rgb(250,250,250);
+        border-radius: 5px;
+        border: 1px solid var(--color-hover-gray)
+    }
+
+        .request-box .line > div:not(:last-of-type) {
+            border-bottom: 1px solid var(--color-hover-gray)
+        }
+
+        .request-box .line > div > div:not(:first-child) {
+            border-left: 1px solid var(--color-hover-gray)
+        }
+
+.request-btn {
+    border-radius: 5px;
+    background-color: rgb(235,235,235);
+    color: rgb(50,50,50);
+    font-size: 14px;
+    border: 0px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none
+}
+
+    .request-btn:hover {
+        background-color: rgb(230,230,230);
+    }
+
+    .request-btn:active {
+        background-color: rgb(225,225,225);
+    }
+
+.request-button-container {
+    text-align: right;
+}
+
+.seperator {
+    height: 5px;
+    background-color: rgb(230,230,230);
+    border-radius: 5px;
+    width: calc(100% - 40px);
+    margin: 20px;
+}
+
+@@media only screen and (max-width:500px) {
+    .request-button-container {
+        text-align: right;
+    }
+
+        .request-button-container button {
+            width: 100%;
+        }
+}
+
+#prompt-request-detail {
+    border-radius: 10px;
+    margin-top: 20px;
+    border-spacing: 0px;
+}
+
+    #prompt-request-detail tr td {
+        border-top: 1px solid rgb(230,230,230);
+        border-left: 1px solid rgb(230,230,230);
+        padding: 5px;
+    }
+
+        #prompt-request-detail tr td:first-child {
+            background-color: rgb(250,250,250);
+            font-weight: bold;
+            white-space: nowrap
+        }
+
+        #prompt-request-detail tr td:last-child {
+            border-right: 1px solid rgb(230,230,230)
+        }
+
+    #prompt-request-detail tr:last-child td {
+        border-bottom: 1px solid rgb(230,230,230)
+    }
+
+    #prompt-request-detail tr:first-child td:first-child {
+        border-radius: 5px 0px 0px 0px
+    }
+
+    #prompt-request-detail tr:first-child td:last-child {
+        border-radius: 0px 5px 0px 0px
+    }
+
+    #prompt-request-detail tr:last-child td:first-child {
+        border-radius: 0px 0px 0px 5px
+    }
+
+    #prompt-request-detail tr:last-child td:last-child {
+        border-radius: 0px 0px 5px 0px
+    }
