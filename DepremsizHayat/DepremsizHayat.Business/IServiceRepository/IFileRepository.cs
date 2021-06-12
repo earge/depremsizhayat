@@ -10,5 +10,6 @@ namespace DepremsizHayat.Business.IServiceRepository
 {
     public interface IFileRepository : IRepository<FILE>
     {
+        List<FILE> GetByEntityId(int EntityId); 
     }
 }

@@ -22,5 +22,6 @@ namespace DepremsizHayat.DTO.Admin
         public string USER_NOTE { get; set; }
         public string ANSWER { get; set; }
         public int? RISK_SCORE { get; set; }
+        public List<string> IMAGES { get; set; }
     }
 }

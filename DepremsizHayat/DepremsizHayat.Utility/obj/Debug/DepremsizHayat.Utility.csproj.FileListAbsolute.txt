@@ -203,7 +203,6 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\bin\Debug\EntityFramework.xml
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\bin\Debug\DepremsizHayat.Resources.pdb
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.dll
@@ -244,3 +243,4 @@ C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utili
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.csproj.CopyComplete
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.dll
 C:\Users\Rıdvan\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Utility\obj\Debug\DepremsizHayat.Utility.csproj.AssemblyReference.cache
