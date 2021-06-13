@@ -7,7 +7,7 @@ Array.from(document.querySelectorAll(".detailButton")).forEach(item => {
 function editRequest(id) {
     let request = document.createElement("template")
     $.ajax({
-        url: "RequestDetail?id=" + id,
+        url: "RequestDetail_?id=" + id,
         type: "POST",
         contentType: false,
         beforeSend: function () {

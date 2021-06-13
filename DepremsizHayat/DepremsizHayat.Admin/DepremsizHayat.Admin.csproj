@@ -129,6 +129,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\additional.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\mailactivation.css" />
     <Content Include="Content\css\main.css" />

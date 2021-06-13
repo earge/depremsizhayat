@@ -27,6 +27,7 @@
                                                 <th>Durum</th>
                                                 <th>Detay</th>
                                             </tr>
+                                            <tr colspan="5" style="border-color:transparent;height:20px"></tr>
                                         </thead>
                                         <tbody>
                                             @if (Model.DataList.Count > 0)
@@ -49,18 +50,24 @@
 
                                                             }
                                                         </td>
-                                                        <td><button class="btn btn-block btn-info" onclick="showDetail('@analyse.ANALYSE_REQUEST_ID')">Detay</button></td>
+                                                        <td><button class="btn btn-block btn-info btn-sm" onclick="showDetail('@analyse.ANALYSE_REQUEST_ID')">Detay</button></td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="5" style="text-align:center">
+                                                        <td colspan="5" style="background:rgb(245,245,245); box-shadow:inset 0px 0px 0px 1px rgb(230,230,230)">
+                                                            <h5 class="mb-2 pl-2">Talebi Sonuçlandır</h5>
                                                             <form action="/Panel/ReplyRequest">
-                                                                <textarea placeholder="Cevap" name="answer"></textarea>
-                                                                <input type="number" name="score" placeholder="Risk Skoru" />
-                                                                <input type="hidden" value="@analyse.USER_ANALYSE_REQUEST_ID" name="requestId" />
-                                                                <input type="submit" value="Gönder" />
+                                                                <div>
+                                                                    <textarea class="form-control" placeholder="Cevap" name="answer"></textarea>
+                                                                </div>
+                                                                <div class="mt-2" style="text-align:right!important">
+                                                                    <input type="number" class="form-control mb-2" name="score" placeholder="Risk Skoru" />
+                                                                    <input type="hidden" value="@analyse.USER_ANALYSE_REQUEST_ID" name="requestId" />
+                                                                    <input type="submit" class="btn btn-secondary btn-sm" value="Gönder" />
+                                                                </div>
                                                             </form>
                                                         </td>
                                                     </tr>
+                                                    <tr colspan="5" style="border-color:transparent;height:20px"></tr>
                                                 }
                                                             }
                                                             else

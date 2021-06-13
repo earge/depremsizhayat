@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.css" integrity="sha512-eH1q4oFTd2cxUn/8647YcQzF4OdnDiSt+JeQf5BFonITxV+qqDic8Xv3ZXHzIiijDB2V9noETN/09GBN2buCQQ==" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid.js" integrity="sha512-nm8Za6M6Cl+T55KoR6WlrnESdOMO7iKTh6P9vbQiPiT+U8+FxpLVUs8Hxu8vh+LDasQBvrqP1SBs3R8wHkadxg==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsgrid/1.5.3/jsgrid-theme.css" integrity="sha512-fz1HF9fyPeFY4eK3GvDxWRjAnpUdoCZq+c96Gnt4kX4SCN/+r/iPyUiYE9iPMSrkXMZoqZ00YHPGy7SzdxYImA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="~/Content/css/additional.css"/>
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -76,13 +77,13 @@
                         {
                             <li class="nav-item">
                                 <a href="/Panel/ListUserRoles" class="nav-link menu-link" id="listuserroles">
-                                    <i class="fas fa-users-cog"></i>
+                                    <i class="fas fa-users-cog mr-1"></i>
                                     <p>Kullanıcı Yetkilendirme</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/Panel/Requests" class="nav-link menu-link" id="requests">
-                                    <i class="fas fa-envelope-open-text"></i>
+                                    <i class="fas fa-envelope-open-text mr-1"></i>
                                     <p>Tüm Talepler</p>
                                 </a>
                             </li>
@@ -91,19 +92,19 @@
                         {
                             <li class="nav-item">
                                 <a href="/Panel/ExpertNotAnsweredRequests" class="nav-link menu-link" id="listuserroles">
-                                    <i class="fas fa-envelope-open-text"></i>
+                                    <i class="fas fa-clock mr-1"></i>
                                     <p>Yanıt Bekleyen Talepler</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/Panel/ExpertNotConfirmedRequests" class="nav-link menu-link" id="listuserroles">
-                                    <i class="fas fa-envelope-open-text"></i>
+                                    <i class="fas fa-check-circle mr-1"></i>
                                     <p>Onay Bekleyen Talepler</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/Panel/ExpertAnsweredRequests" class="nav-link menu-link" id="listuserroles">
-                                    <i class="fas fa-envelope-open-text"></i>
+                                    <i class="fas fa-envelope-open-text mr-1"></i>
                                     <p>Yanıtladığım Talepler</p>
                                 </a>
                             </li>
@@ -162,6 +163,9 @@
     function showDetail(requestId){
         let modal = document.querySelector("#detail-modal")
         let iframe = modal.querySelector("iframe")
+        iframe.onload = function () {
+            iframe.height = iframe.contentWindow.document.body.scrollHeight
+        }
         iframe.setAttribute("src", `/Panel/RequestDetail?id=${requestId}`)
         $("#detail-modal").modal("show")
     }

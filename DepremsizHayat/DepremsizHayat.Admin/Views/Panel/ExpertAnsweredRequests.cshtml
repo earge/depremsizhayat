@@ -33,12 +33,12 @@
                                             {
                                                 foreach (ExpertAnsweredRequest analyse in Model.DataList)
                                                 {
-                                                    <tr>
+                                                    <tr >
                                                         <td>@analyse.REQUESTER_USER.FIRST_NAME @analyse.REQUESTER_USER.LAST_NAME</td>
                                                         <td>@analyse.ANALYSE_REQUEST.COUNTRY @analyse.ANALYSE_REQUEST.DISTRICT</td>
                                                         <td>@analyse.ANALYSE_REQUEST.NUMBER_OF_FLOORS @analyse.ANALYSE_REQUEST.YEAR_OF_CONSTRUCTION</td>
                                                         <td>@analyse.STATUS.NAME</td>
-                                                        <td>@analyse.USER_NOTE</td>
+                                                        <td><button class="btn btn-block btn-info btn-sm" onclick="showDetail('@analyse.ANALYSE_REQUEST_ID')">Detay</button></td>
                                                     </tr>
                                                 }
                                             }
