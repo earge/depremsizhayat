@@ -126,6 +126,12 @@ namespace DepremsizHayat.Admin.Controllers
             return View(request);
         }
         [Authorize(Roles = "SystemAdmin")]
+        public JsonResult RequestDetail_(string id)
+        {
+            AnalyseDetailRequest request = _analyseRequestService.GetRequestDetail(id);
+            return Json(request, JsonRequestBehavior.AllowGet);
+        }
+        [Authorize(Roles = "SystemAdmin")]
         public ActionResult DenyRequests(List<string> idList)
         {
             BaseResponse response = new BaseResponse();
@@ -214,7 +220,7 @@ namespace DepremsizHayat.Admin.Controllers
             };
             return View(request);
         }
-        [Authorize(Roles="Expert")]
+        [Authorize(Roles = "Expert")]
         public ActionResult ProcessTheRequest(string requestId, string type)
         {
             TempData["Carrier"] = _userAnalyseRequestService.ProcessTheRequest(Decryptor.DecryptInt(requestId), type);
