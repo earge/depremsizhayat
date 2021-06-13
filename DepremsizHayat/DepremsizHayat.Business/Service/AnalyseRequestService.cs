@@ -176,7 +176,6 @@ namespace DepremsizHayat.Business.Service
             }
             _unitOfWork.Commit();
         }
-
         public bool DenyRequests(List<string> requests)
         {
             try

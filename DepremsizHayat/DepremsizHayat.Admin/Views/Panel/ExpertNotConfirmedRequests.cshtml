@@ -75,14 +75,14 @@
     Array.from(document.querySelectorAll(".accept")).forEach(item => {
         item.addEventListener("click", function () {
             var id = item.dataset.formId
-            document.querySelector(`#type_${id}`).value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Accepted"
+            document.querySelector(`#type_${id}`).value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Accepted".toUpperCase()
             document.querySelector(`#processForm_${id}`).submit()
         })
     })
     Array.from(document.querySelectorAll(".deny")).forEach(item => {
         item.addEventListener("click", function () {
             var id = item.dataset.formId
-            document.querySelector(`#type_${id}`).value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Denied"
+            document.querySelector(`#type_${id}`).value = "@DepremsizHayat.Resources.AnalyseRequestStatusCodes.Denied".toUpperCase()
             document.querySelector(`#processForm_${id}`).submit()
         })
     })

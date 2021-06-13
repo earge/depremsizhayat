@@ -2141,6 +2141,7 @@
     <Content Include="Views\Panel\PageNotFound.cshtml" />
     <Content Include="Views\Panel\ExpertNotConfirmedRequests.cshtml" />
     <Content Include="Views\Panel\ExpertAnsweredRequests.cshtml" />
+    <Content Include="Views\Panel\RequestDetail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

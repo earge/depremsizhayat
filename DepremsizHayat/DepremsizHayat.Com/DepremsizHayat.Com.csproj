@@ -191,11 +191,8 @@
     <Content Include="Content\images\canvasone-dark.png" />
     <Content Include="Content\images\canvasone.png" />
     <Content Include="Content\images\devices-wireframe.png" />
-    <Content Include="Content\images\ekips\hasan.jpg" />
     <Content Include="Content\images\ekips\rdvnnl.jpg" />
     <Content Include="Content\images\ekips\senem.jpeg" />
-    <Content Include="Content\images\ekips\taylan.jpg" />
-    <Content Include="Content\images\ekips\ufuk.png" />
     <Content Include="Content\images\ekips\yigit.jpeg" />
     <Content Include="Content\images\ekips\zynpogk.jpg" />
     <Content Include="Content\images\fashion\1.jpg" />
