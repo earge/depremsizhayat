@@ -119,7 +119,7 @@ namespace DepremsizHayat.Admin.Controllers
             };
             return View(request);
         }
-        [Authorize(Roles = "SystemAdmin")]
+        [Authorize(Roles = "SystemAdmin,Expert")]
         public ActionResult RequestDetail(string id)
         {
             AnalyseDetailRequest request = _analyseRequestService.GetRequestDetail(id);

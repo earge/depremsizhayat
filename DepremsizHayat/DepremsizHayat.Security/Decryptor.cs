@@ -46,5 +46,38 @@ namespace DepremsizHayat.Security
 
             return returnText;
         }
+        //private static string DecryptCore(string text, string key)
+        //{
+        //    text = Base64Decode(text);
+        //    //text = text.Replace("_", " ").Replace("-", "+").Replace("*", "/") + "=";
+        //    byte[] byteArray = Convert.FromBase64String(text);
+
+        //    MD5CryptoServiceProvider cryptoService = new MD5CryptoServiceProvider();
+
+        //    byte[] keyArray = cryptoService.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+
+        //    cryptoService.Clear();
+
+        //    TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
+
+        //    tripleDES.Key = keyArray;
+
+        //    tripleDES.Mode = CipherMode.ECB;
+
+        //    tripleDES.Padding = PaddingMode.PKCS7;
+
+        //    byte[] resultArray = tripleDES.CreateDecryptor().TransformFinalBlock(byteArray, 0, byteArray.Length);
+
+        //    tripleDES.Clear();
+
+        //    string clearPassword = UTF8Encoding.UTF8.GetString(resultArray);
+
+        //    return clearPassword;
+        //}
+        //public static string Base64Decode(string base64EncodedData)
+        //{
+        //    var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+        //    return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        //}
     }
 }
