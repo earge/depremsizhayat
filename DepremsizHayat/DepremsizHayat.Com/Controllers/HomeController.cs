@@ -23,8 +23,9 @@ namespace DepremsizHayat.Com.Controllers
         {
             var body = "Gönderen: " + name;
             body = body + " Telefon: " + phone;
+            body = body + " Mail: " + mail;
             body = body + "Mesaj: " + message;
-            var receiver = /*_mailService.GetMailByCode("app")*/"ytgokk@gmail.com";
+            var receiver = "app@depremsizhayat.com";
             var smtp = new SmtpClient
             {
                 Host = "mail.depremsizhayat.com",
@@ -34,7 +35,7 @@ namespace DepremsizHayat.Com.Controllers
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(receiver, "8PxAVcBL3PyKt6fZ")
             };
-            using (var mess = new MailMessage(new MailAddress("app@depremsizhayat.com", name), new MailAddress(receiver, "Depremsiz Hayat"))
+            using (var mess = new MailMessage(new MailAddress(mail, name), new MailAddress(receiver, "Depremsiz Hayat"))
             {
                 Subject = subject,
                 Body = body,

@@ -92,11 +92,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\1D90FD4F-C897-469D-8057-6C78C2070AB0-1.jpg" />
+    <Content Include="Content\images\bg.jpg" />
     <Content Include="Content\images\ekip\bedriyegencturk.jpg" />
     <Content Include="Content\images\ekip\boratuzuner.jpg" />
     <Content Include="Content\images\ekip\damladenerkayadan.jpg" />
     <Content Include="Content\images\ekip\fatihserdaraydemir.jpg" />
     <Content Include="Content\images\ekip\hasanzeybek.jpg" />
+    <Content Include="Content\images\ekip\ilteraksencer.jpg" />
     <Content Include="Content\images\ekip\kivancergan.jpg" />
     <Content Include="Content\images\ekip\muratuysal.jpg" />
     <Content Include="Content\images\ekip\ridvanonal.jpg" />
