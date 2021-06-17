@@ -56,7 +56,9 @@ namespace DepremsizHayat.Business.Service
                     USER_ACCOUNT_ID = Convert.ToString(analyse.USER_ACCOUNT_ID),
                     STATUS_ID = Convert.ToString(analyse.STATUS.STATUS_ID),
                     STATUS_NAME = analyse.STATUS.NAME,
-                    YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION
+                    YEAR_OF_CONSTRUCTION = analyse.YEAR_OF_CONSTRUCTION,
+                    CREATED_DATE = analyse.CREATED_DATE
+                    
                 };
                 var userCache = _userRepository.GetById(analyse.USER_ACCOUNT_ID);
                 analyseCache.FIRST_NAME = userCache.FIRST_NAME;

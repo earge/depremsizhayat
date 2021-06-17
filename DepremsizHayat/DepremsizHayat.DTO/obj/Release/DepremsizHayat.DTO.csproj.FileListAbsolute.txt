@@ -28,3 +28,18 @@ C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHay
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.pdb
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.dll.config
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\EntityFramework.xml
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DTO.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DTO.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.Security.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\EntityFramework.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.DataAccess.dll.config
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.Security.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\DepremsizHayat.Security.dll.config
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\bin\Release\EntityFramework.xml
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.csproj.AssemblyReference.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.csproj.CoreCompileInputs.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.csproj.CopyComplete
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.DTO\obj\Release\DepremsizHayat.DTO.pdb

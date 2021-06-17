@@ -1,0 +1,98 @@
+﻿@model DepremsizHayat.DTO.User.MyAnalyseRequest
+
+@{
+    ViewBag.Title = "GetResult";
+}
+
+<h2>GetResult</h2>
+
+<div>
+    <h4>MyAnalyseRequest</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.USER_ACCOUNT_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.USER_ACCOUNT_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANALYSIS_REQUEST_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANALYSIS_REQUEST_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COUNTRY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COUNTRY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DISTRICT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DISTRICT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS_CODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS_CODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.COMPLETED)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.COMPLETED)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANSWER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANSWER)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

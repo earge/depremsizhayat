@@ -132,7 +132,7 @@ function getMyRequestDetail(dataRequestId) {
             if (data.RISK_SCORE) {
                 templateString +=
                     `<tr>
-                            <td>Uzman Yanıtı</td>
+                            <td>Risk Skoru</td>
                             <td>${data.RISK_SCORE}</td>
                         </tr>`
             }
