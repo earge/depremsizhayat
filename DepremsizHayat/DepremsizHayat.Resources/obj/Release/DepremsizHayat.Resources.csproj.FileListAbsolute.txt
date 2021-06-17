@@ -8,3 +8,12 @@ C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.R
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.AnalyseRequestStatusCodes.resources
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.csprojAssemblyReference.cache
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.UserAnalyseRequestStatusCodes.resources
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\bin\Release\DepremsizHayat.Resources.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\bin\Release\DepremsizHayat.Resources.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.UserAnalyseRequestStatusCodes.resources
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.RoleCodes.resources
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.AnalyseRequestStatusCodes.resources
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.csproj.GenerateResource.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.csproj.CoreCompileInputs.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Resources\obj\Release\DepremsizHayat.Resources.pdb

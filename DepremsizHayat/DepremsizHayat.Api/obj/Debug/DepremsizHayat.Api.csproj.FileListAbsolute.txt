@@ -591,8 +591,8 @@ C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Security.pdb
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Security.dll.config
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\bin\DepremsizHayat.Resources.pdb
-C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csprojAssemblyReference.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csproj.CoreCompileInputs.cache
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csproj.CopyComplete
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.dll
 C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Api\obj\Debug\DepremsizHayat.Api.csproj.AssemblyReference.cache

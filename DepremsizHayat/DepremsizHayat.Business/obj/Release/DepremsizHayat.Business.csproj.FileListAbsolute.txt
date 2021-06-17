@@ -40,3 +40,25 @@ C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHay
 C:\Users\Rıdvan Windows\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.pdb
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Resources.dll
 C:\Users\Yiğit\source\repos\depremsizhayatPROJE\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Resources.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Business.dll.config
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Business.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Business.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.DataAccess.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.DTO.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Resources.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Security.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\EntityFramework.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.DataAccess.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.DataAccess.dll.config
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.DTO.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Resources.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Security.pdb
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\DepremsizHayat.Security.dll.config
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\EntityFramework.xml
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.csproj.AssemblyReference.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.csproj.CoreCompileInputs.cache
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.csproj.CopyComplete
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.dll
+C:\Users\ytgok\source\repos\depremsizhayat\DepremsizHayat\DepremsizHayat.Business\obj\Release\DepremsizHayat.Business.pdb

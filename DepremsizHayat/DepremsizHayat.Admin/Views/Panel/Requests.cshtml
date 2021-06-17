@@ -31,30 +31,32 @@
                                                 <th>Adres</th>
                                                 <th>Bina</th>
                                                 <th>Durum</th>
+                                                <th>Talep Tarihi</th>
                                                 <th>Detay</th>
                                             </tr>
                                         </thead>
                                         <tbody @*id="requestsTable"*@>
                                             @foreach (AnalyseRequest analyse in Model.DataList)
                                             {
-                                                <tr>
-                                                    <td><ro-checkbox group="request" value="@analyse.ANALYSIS_REQUEST_ID" data-status="@analyse.STATUS_ID"></td>
-                                                    <td>@analyse.FIRST_NAME @analyse.LAST_NAME</td>
-                                                    <td>
-                                                        <div>
-                                                            <b>Ülke: </b>@analyse.COUNTRY<br>
-                                                            <b>Şehir: </b>@analyse.DISTRICT<br>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div>
-                                                            <b>Kat Sayısı: </b>@analyse.NUMBER_OF_FLOORS<br>
-                                                            <b>Yapım Yılı: </b>@analyse.YEAR_OF_CONSTRUCTION<br>
-                                                        </div>
-                                                    </td>
-                                                    <td>@analyse.STATUS_NAME</td>
-                                                    <td><button class="btn btn-primary detailButton btn-sm" data-analyse-id="@analyse.ANALYSIS_REQUEST_ID">Detay</button></td>
-                                                </tr>
+                                            <tr>
+                                                <td><ro-checkbox group="request" value="@analyse.ANALYSIS_REQUEST_ID" data-status="@analyse.STATUS_ID"></td>
+                                                <td>@analyse.FIRST_NAME @analyse.LAST_NAME</td>
+                                                <td>
+                                                    <div>
+                                                        <b>Ülke: </b>@analyse.COUNTRY<br>
+                                                        <b>Şehir: </b>@analyse.DISTRICT<br>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <b>Kat Sayısı: </b>@analyse.NUMBER_OF_FLOORS<br>
+                                                        <b>Yapım Yılı: </b>@analyse.YEAR_OF_CONSTRUCTION<br>
+                                                    </div>
+                                                </td>
+                                                <td>@analyse.STATUS_NAME</td>
+                                                <td>@analyse.CREATED_DATE</td>
+                                                <td><button class="btn btn-primary detailButton btn-sm" data-analyse-id="@analyse.ANALYSIS_REQUEST_ID">Detay</button></td>
+                                            </tr>
                                             }
                                         </tbody>
                                     </table>

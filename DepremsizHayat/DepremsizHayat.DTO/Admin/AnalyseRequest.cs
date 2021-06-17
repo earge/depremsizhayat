@@ -35,5 +35,6 @@ namespace DepremsizHayat.DTO.Admin
         public string COUNTRY { get; set; }
         public string DISTRICT { get; set; }
         public int NUMBER_OF_FLOORS { get; set; }
+        public DateTime CREATED_DATE { get; set; }
     }
 }
